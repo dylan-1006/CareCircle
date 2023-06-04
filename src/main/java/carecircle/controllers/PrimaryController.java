@@ -1,7 +1,9 @@
-package carecircle;
+package carecircle.controllers;
 
 import java.io.IOException;
+
 import javafx.fxml.FXML;
+import carecircle.App;
 
 public class PrimaryController {
 
