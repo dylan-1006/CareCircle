@@ -1,6 +1,9 @@
 package carecircle.classes;
 
+import carecircle.assets.classesTemplate.User;
+
 public class user {
+
 
     public String name;
     public String username;
@@ -21,6 +24,6 @@ public class user {
     public void setPassword(String p){
         password=p;
     }
-
 }
+
 
