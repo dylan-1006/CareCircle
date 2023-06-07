@@ -8,7 +8,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-/** hiii
+/** 
  * JavaFX App
  */
 public class App extends Application {
@@ -17,8 +17,8 @@ public class App extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
-        scene = new Scene(loadFXML("homeScreen"), 1200, 600);
-        // stage.setFullScreen(true);
+        scene = new Scene(loadFXML("loginScreen"), 1200, 600);
+        //stage.setFullScreen(true);
         stage.setScene(scene);
         stage.setResizable(false);
         stage.setTitle("CareCircle");
