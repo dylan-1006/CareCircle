@@ -8,7 +8,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-/** 
+/**
  * JavaFX App
  */
 public class App extends Application {
@@ -18,7 +18,7 @@ public class App extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         scene = new Scene(loadFXML("loginScreen"), 1200, 600);
-        //stage.setFullScreen(true);
+        // stage.setFullScreen(true);
         stage.setScene(scene);
         stage.setResizable(false);
         stage.setTitle("CareCircle");
@@ -31,7 +31,7 @@ public class App extends Application {
 
     private static Parent loadFXML(String fxml) throws IOException {
         System.out.println(App.class.getClassLoader());
-        FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("assets/fxml/homeScreen.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("assets/fxml/loginScreen.fxml"));
         return fxmlLoader.load();
     }
 
