@@ -64,7 +64,7 @@
                   <Font name="SansSerif Regular" size="10.5" />
                </font>
             </Text>
-            <Button fx:id="continueButton" layoutX="196.0" layoutY="463.0" mnemonicParsing="false" onAction="#continueToPrevious" prefHeight="38.0" prefWidth="183.0" style="-fx-background-color: #4FB3FF; -fx-background-radius: 10;" text="Continue" textAlignment="CENTER" textFill="WHITE">
+            <Button fx:id="continueButton" layoutX="196.0" layoutY="463.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="183.0" style="-fx-background-color: #4FB3FF; -fx-background-radius: 10;" text="Continue" textAlignment="CENTER" textFill="WHITE">
                <font>
                   <Font name="SansSerif Bold" size="15.0" />
                </font>
@@ -88,12 +88,12 @@
             </TextField>
             <Pane layoutX="155.0" layoutY="223.0" prefHeight="46.0" prefWidth="258.0" style="-fx-background-color: #F4F4F4; -fx-background-radius: 10;">
                <children>
-                  <Button fx:id="signUpButton" layoutX="129.0" layoutY="3.0" mnemonicParsing="false" onAction="#switchToRegisterScreen" onMouseClicked="#switchToRegister" prefHeight="38.0" prefWidth="130.0" style="-fx-background-color: #F4F4F4;" text="Sign up" textAlignment="CENTER" textFill="#4fb3ff">
+                  <Button fx:id="signUpButton" layoutX="129.0" layoutY="3.0" mnemonicParsing="false" onAction="#switchToRegisterScreen" prefHeight="38.0" prefWidth="130.0" style="-fx-background-color: #F4F4F4;" text="Sign up" textAlignment="CENTER" textFill="#4fb3ff">
                      <font>
                         <Font name="SansSerif Regular" size="13.0" />
                      </font>
                   </Button>
-                  <Button layoutX="3.0" layoutY="3.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="130.0" style="-fx-background-radius: 10; -fx-background-color: white;" text="Sign in" textAlignment="CENTER" textFill="#4fb3ff">
+                  <Button layoutX="4.0" layoutY="3.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="130.0" style="-fx-background-radius: 10; -fx-background-color: white;" text="Sign in" textAlignment="CENTER" textFill="#4fb3ff">
                      <font>
                         <Font name="SansSerif Regular" size="13.0" />
                      </font>
