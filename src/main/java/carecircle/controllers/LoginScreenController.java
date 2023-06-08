@@ -26,9 +26,9 @@ public class LoginScreenController {
     private TextField username;
 
     @FXML
-    void logIn(ActionEvent event) {
+    void logIn(ActionEvent event) throws IOException {
         if ((username.getText().equals("admin")) && ((password.getText().equals("admin")))) {
-          
+          App.setRoot("homeScreen");
         } 
         else {
             Alert alert= new Alert(AlertType.ERROR);
@@ -39,8 +39,8 @@ public class LoginScreenController {
     }
 
     @FXML
-    void switchToRegisterScreen(ActionEvent event) {
-        
+    void switchToRegisterScreen(ActionEvent event) throws IOException {
+        App.setRoot("registerScreen");        
     }
 
 }
