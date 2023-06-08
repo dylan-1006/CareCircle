@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.shape.*?>
@@ -18,6 +19,7 @@
                   </Text>
                   <Text fx:id="titleText2" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #4FB3FF;" text="Circle.">
                      <font>
+
                         <Font name="SansSerif Bold" size="28.0" />
                      </font>
                   </Text>
