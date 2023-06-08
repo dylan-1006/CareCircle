@@ -1,6 +1,9 @@
 package carecircle.controllers;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
 import java.io.IOException;
+import java.util.StringTokenizer;
 
 import carecircle.App;
 import javafx.event.ActionEvent;
@@ -27,15 +30,36 @@ public class LoginScreenController {
 
     @FXML
     void logIn(ActionEvent event) throws IOException {
-        if ((username.getText().equals("admin")) && ((password.getText().equals("admin")))) {
-          App.setRoot("homeScreen");
-        } 
-        else {
+        try {
+            boolean found=false;
+            FileReader info = new FileReader("user.txt");
+            BufferedReader infoR = new BufferedReader(info);
+            String line = "";
+            while ((line = infoR.readLine()) != null) {
+                StringTokenizer infoToken = new StringTokenizer(line, ",");
+                String Name = infoToken.nextToken();
+                String Username = infoToken.nextToken();
+                String Password = infoToken.nextToken();
+                if(username.getText().equals(Username)&&password.getText().equals(Password))
+                {
+                    found=true;
+                    infoR.close();
+                    App.setRoot("homeScreen");
+                }     
+            }
+            if(found==false){
             Alert alert= new Alert(AlertType.ERROR);
             alert.setTitle("Credentials incorrect");
             alert.setHeaderText("PLease enter your credentials correctly");
             alert.showAndWait();
+            
+            }
+
+        } 
+        catch (Exception e) {
+            
         }
+
     }
 
     @FXML
