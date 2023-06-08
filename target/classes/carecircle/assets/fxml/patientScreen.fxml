@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1200.0" style="-fx-background-color: #F6F8FA;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Circle layoutX="957.0" layoutY="140.0" radius="100.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0">
+         <fill>
+            <LinearGradient endX="1.0" endY="1.0" startX="1.0" startY="0.19558357214702038">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.30980393290519714" green="0.7019608020782471" blue="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.388920718066241">
+                     <color>
+                        <Color red="0.3100000023841858" green="0.7124999761581421" blue="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.3100000023841858" green="0.7124999761581421" blue="1.0" opacity="0.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Circle>
+      <Circle layoutX="446.0" layoutY="358.0" radius="148.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0">
+         <fill>
+            <LinearGradient endX="1.0" endY="1.0" startX="1.0" startY="0.19558357214702038">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.30980393290519714" green="0.7019608020782471" blue="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.388920718066241">
+                     <color>
+                        <Color red="0.3100000023841858" green="0.7124999761581421" blue="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.3100000023841858" green="0.7124999761581421" blue="1.0" opacity="0.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Circle>
+      <Text fill="#169bff" layoutX="194.0" layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Patient">
+         <font>
+            <Font name="SansSerif Bold" size="36.0" />
+         </font>
+         <effect>
+            <DropShadow blurType="GAUSSIAN" height="28.78" offsetX="1.0" offsetY="3.0" radius="11.945">
+               <color>
+                  <Color opacity="0.800000011920929" />
+               </color>
+            </DropShadow>
+         </effect>
+      </Text>
+      <Pane layoutY="-2.0" prefHeight="603.0" prefWidth="172.0" style="-fx-background-color: #FFFF;" />
+   </children>
+</Pane>
