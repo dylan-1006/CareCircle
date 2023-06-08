@@ -52,7 +52,7 @@ public class LoginScreenController {
             alert.setTitle("Credentials incorrect");
             alert.setHeaderText("PLease enter your credentials correctly");
             alert.showAndWait();
-            
+            infoR.close();
             }
 
         } 
