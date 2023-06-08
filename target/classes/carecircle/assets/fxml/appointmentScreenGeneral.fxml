@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.text.TextFlow?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Circle layoutX="537.0" layoutY="296.0" radius="145.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0">
+         <fill>
+            <LinearGradient endX="1.0" endY="1.0" startX="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.30980393290519714" green="0.7019608020782471" blue="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.14609592404648858">
+                     <color>
+                        <Color red="0.30980393290519714" green="0.7019608020782471" blue="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.3199999928474426" green="0.7166666388511658" blue="1.0" opacity="0.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Circle>
+      <VBox fx:id="menuBar" alignment="TOP_CENTER" layoutX="-5.0" layoutY="-5.0" prefHeight="600.0" prefWidth="220.0" style="-fx-background-color: #FFFF;">
+         <opaqueInsets>
+            <Insets bottom="50.0" left="50.0" right="50.0" top="50.0" />
+         </opaqueInsets>
+         <children>
+            <TextFlow fx:id="textFlowTitle1" cache="true" prefHeight="99.0" prefWidth="220.0" textAlignment="CENTER">
+               <children>
+                  <Text fx:id="titleText11" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #2E2E2E;" text="Care" wrappingWidth="22.13671875">
+                     <font>
+                        <Font name="SansSerif Bold" size="32.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="titleText21" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #4FB3FF;" text="Circle.">
+                     <font>
+                        <Font name="SansSerif Bold" size="32.0" />
+                     </font>
+                  </Text>
+               </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <padding>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+               </padding>
+            </TextFlow>
+         </children>
+      </VBox>
+      <Circle layoutX="904.0" layoutY="122.0" radius="100.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0">
+         <fill>
+            <LinearGradient endX="1.0" endY="1.0" startX="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.30980393290519714" green="0.7019608020782471" blue="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.14609592404648858">
+                     <color>
+                        <Color red="0.30980393290519714" green="0.7019608020782471" blue="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.3199999928474426" green="0.7166666388511658" blue="1.0" opacity="0.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Circle>
+      <Text layoutX="82.0" layoutY="87.0" strokeType="OUTSIDE" strokeWidth="0.0">
+         <font>
+            <Font name="SansSerif Bold" size="32.0" />
+         </font>
+      </Text>
+      <Text fill="#591111" layoutX="253.0" layoutY="98.0" strokeType="OUTSIDE" strokeWidth="0.0" />
+      <Text fill="#4fb3ff" layoutX="264.0" layoutY="69.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Appointments">
+         <font>
+            <Font name="SansSerif Bold" size="36.0" />
+         </font>
+      </Text>
+      <Text layoutX="262.0" layoutY="91.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Stay organized and informed with our intuitive dashboard" wrappingWidth="395.1251983642578">
+         <font>
+            <Font name="SansSerif Regular" size="15.0" />
+         </font>
+      </Text>
+      <Pane layoutX="802.0" layoutY="120.0" prefHeight="150.0" prefWidth="364.0" style="-fx-background-radius: 20; -fx-background-color: #4FB3FF;">
+         <children>
+            <Circle fill="WHITE" layoutX="86.0" layoutY="79.0" radius="59.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+            <Text fill="WHITE" layoutX="155.0" layoutY="117.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Appointment">
+               <font>
+                  <Font name="SansSerif Bold" size="33.0" />
+               </font>
+            </Text>
+            <Text fill="#169bff" layoutX="158.0" layoutY="62.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Add new">
+               <font>
+                  <Font name="SansSerif Bold" size="36.0" />
+               </font>
+            </Text>
+            <Text fill="#169bff" layoutX="50.0" layoutY="123.0" strokeType="OUTSIDE" strokeWidth="0.0" text="+">
+               <font>
+                  <Font name="SansSerif Bold" size="126.0" />
+               </font>
+            </Text>
+         </children>
+      </Pane>
+      <TextFlow fx:id="textFlowTitle" cache="true" layoutX="10.0" layoutY="10.0" prefHeight="99.0" prefWidth="220.0" textAlignment="CENTER">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <padding>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+         </padding>
+      </TextFlow>
+      <Pane layoutX="264.0" layoutY="120.0" prefHeight="150.0" prefWidth="504.0" style="-fx-background-radius: 20; -fx-background-color: #FFFFFF;">
+         <children>
+            <Text fill="#4fb3ff" layoutX="69.0" layoutY="39.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Appointments">
+               <font>
+                  <Font name="SansSerif Bold" size="24.0" />
+               </font>
+            </Text>
+            <Line endX="371.5955810546875" endY="-1.52587890625E-5" layoutX="118.0" layoutY="56.0" startX="-86.51385498046875" startY="-1.52587890625E-5" stroke="#a6a6a6" />
+            <Text fill="#4fb3ff" layoutX="68.0" layoutY="104.0" strokeType="OUTSIDE" strokeWidth="0.0" text="78">
+               <font>
+                  <Font name="SansSerif Bold" size="36.0" />
+               </font>
+            </Text>
+            <Text fill="#b3b3b3" layoutX="68.0" layoutY="128.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total Appointmetns Today">
+               <font>
+                  <Font name="SansSerif Regular" size="10.5" />
+               </font>
+            </Text>
+            <ImageView fitHeight="31.0" fitWidth="32.0" layoutX="27.0" layoutY="17.0">
+               <image>
+                  <Image url="@../../../../../../../../Downloads/user%20icon.png" />
+               </image>
+            </ImageView>
+            <Pane layoutX="246.0" layoutY="73.0" prefHeight="67.0" prefWidth="238.0">
+               <children>
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#89cff0" height="43.0" layoutX="14.0" layoutY="20.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="21.0" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#89cff0" height="29.0" layoutX="40.0" layoutY="34.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="21.0" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#89cff0" height="57.0" layoutX="67.0" layoutY="6.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="21.0" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#89cff0" height="29.0" layoutX="94.0" layoutY="34.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="21.0" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#89cff0" height="43.0" layoutX="121.0" layoutY="20.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="21.0" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#169bff" height="56.0" layoutX="147.0" layoutY="7.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="21.0" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#89cff0" height="21.0" layoutX="172.0" layoutY="42.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="21.0" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#89cff0" height="71.0" layoutX="198.0" layoutY="-7.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="21.0" />
+               </children>
+            </Pane>
+         </children>
+      </Pane>
+      <Pane layoutX="263.0" layoutY="285.0" prefHeight="288.0" prefWidth="903.0" style="-fx-background-radius: 20; -fx-background-color: #FFFFFF;">
+         <children>
+            <Text fill="#4fb3ff" layoutX="31.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Appointments">
+               <font>
+                  <Font name="SansSerif Bold" size="24.0" />
+               </font>
+            </Text>
+            <TableView layoutX="27.0" layoutY="46.0" prefHeight="234.0" prefWidth="858.0" style="-fx-background-radius: 20; -fx-background-color: #F4F4F4;">
+               <columns>
+                  <TableColumn prefWidth="162.5" text="Appointment ID" />
+                  <TableColumn prefWidth="134.0" text="Patient No." />
+                  <TableColumn prefWidth="152.5" text="Patient Name" />
+                  <TableColumn prefWidth="130.0" text="Directed By" />
+                  <TableColumn prefWidth="159.5" text="Appointment Date" />
+                  <TableColumn prefWidth="118.5" />
+               </columns>
+            </TableView>
+         </children>
+      </Pane>
+   </children>
+</Pane>
