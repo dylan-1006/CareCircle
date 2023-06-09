@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.effect.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.paint.*?>
-<?import javafx.scene.shape.*?>
-<?import javafx.scene.text.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.shape.Ellipse?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="carecircle.controllers.registerScreenController">
    <children>
@@ -52,7 +55,7 @@
                   <Font name="SansSerif Regular" size="12.0" />
                </font>
             </Text>
-            <TextField layoutX="141.0" layoutY="324.0" prefHeight="32.0" prefWidth="292.0" promptText="Enter username" style="-fx-background-radius: 11; -fx-background-color: #F6F6F6;">
+            <TextField fx:id="username" layoutX="141.0" layoutY="324.0" prefHeight="32.0" prefWidth="292.0" promptText="Enter username" style="-fx-background-radius: 11; -fx-background-color: #F6F6F6;">
                <font>
                   <Font name="SansSerif Regular" size="10.5" />
                </font>
@@ -62,7 +65,7 @@
                   <Font name="SansSerif Regular" size="10.5" />
                </font>
             </Text>
-            <Button layoutX="196.0" layoutY="463.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="183.0" style="-fx-background-color: #4FB3FF; -fx-background-radius: 10;" text="Continue" textAlignment="CENTER" textFill="WHITE">
+            <Button fx:id="continueButton" layoutX="196.0" layoutY="463.0" mnemonicParsing="false" onAction="#register" prefHeight="38.0" prefWidth="183.0" style="-fx-background-color: #4FB3FF; -fx-background-radius: 10;" text="Continue" textAlignment="CENTER" textFill="WHITE">
                <font>
                   <Font name="SansSerif Bold" size="15.0" />
                </font>
@@ -79,7 +82,7 @@
                   <Font name="SansSerif Regular" size="10.5" />
                </font>
             </Text>
-            <PasswordField layoutX="141.0" layoutY="401.0" prefHeight="32.0" prefWidth="292.0" promptText="Enter password" style="-fx-background-radius: 11; -fx-background-color: #F6F6F6;">
+            <PasswordField fx:id="password" layoutX="141.0" layoutY="401.0" prefHeight="32.0" prefWidth="292.0" promptText="Enter password" style="-fx-background-radius: 11; -fx-background-color: #F6F6F6;">
                <font>
                   <Font name="SansSerif Regular" size="10.5" />
                </font>
