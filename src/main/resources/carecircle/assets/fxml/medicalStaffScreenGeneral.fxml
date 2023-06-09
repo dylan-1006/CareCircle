@@ -127,11 +127,6 @@
                   <Font name="SansSerif Regular" size="10.5" />
                </font>
             </Text>
-            <ImageView fitHeight="31.0" fitWidth="32.0" layoutX="27.0" layoutY="17.0">
-               <image>
-                  <Image url="@../../../../../../../../Downloads/user%20icon.png" />
-               </image>
-            </ImageView>
             <Pane layoutX="246.0" layoutY="73.0" prefHeight="67.0" prefWidth="238.0">
                <children>
                   <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#89cff0" height="43.0" layoutX="14.0" layoutY="20.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="21.0" />
@@ -144,6 +139,11 @@
                   <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#89cff0" height="71.0" layoutX="198.0" layoutY="-7.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="21.0" />
                </children>
             </Pane>
+            <ImageView fitHeight="31.0" fitWidth="35.0" layoutX="29.0" layoutY="16.0">
+               <image>
+                  <Image url="@../images/user%20icon.png" />
+               </image>
+            </ImageView>
          </children>
       </Pane>
       <Pane layoutX="284.0" layoutY="285.0" prefHeight="288.0" prefWidth="882.0" style="-fx-background-radius: 20; -fx-background-color: #FFFFFF;">
