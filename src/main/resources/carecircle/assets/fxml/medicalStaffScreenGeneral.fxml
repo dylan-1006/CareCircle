@@ -3,10 +3,10 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.Pane?>
-<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.paint.LinearGradient?>
 <?import javafx.scene.paint.Stop?>
@@ -42,33 +42,6 @@
             </LinearGradient>
          </fill>
       </Circle>
-      <VBox fx:id="menuBar" alignment="TOP_CENTER" layoutX="-5.0" layoutY="-5.0" prefHeight="600.0" prefWidth="220.0" style="-fx-background-color: #FFFF;">
-         <opaqueInsets>
-            <Insets bottom="50.0" left="50.0" right="50.0" top="50.0" />
-         </opaqueInsets>
-         <children>
-            <TextFlow fx:id="textFlowTitle1" cache="true" prefHeight="99.0" prefWidth="220.0" textAlignment="CENTER">
-               <children>
-                  <Text fx:id="titleText11" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #2E2E2E;" text="Care" wrappingWidth="22.13671875">
-                     <font>
-                        <Font name="SansSerif Bold" size="32.0" />
-                     </font>
-                  </Text>
-                  <Text fx:id="titleText21" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #4FB3FF;" text="Circle.">
-                     <font>
-                        <Font name="SansSerif Bold" size="32.0" />
-                     </font>
-                  </Text>
-               </children>
-               <opaqueInsets>
-                  <Insets />
-               </opaqueInsets>
-               <padding>
-                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
-               </padding>
-            </TextFlow>
-         </children>
-      </VBox>
       <Circle layoutX="904.0" layoutY="122.0" radius="100.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0">
          <fill>
             <LinearGradient endX="1.0" endY="1.0" startX="1.0">
@@ -98,20 +71,20 @@
          </font>
       </Text>
       <Text fill="#591111" layoutX="253.0" layoutY="98.0" strokeType="OUTSIDE" strokeWidth="0.0" />
-      <Text fill="#4fb3ff" layoutX="264.0" layoutY="69.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Medical Staff">
+      <Text fill="#4fb3ff" layoutX="290.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Medical Staff">
          <font>
             <Font name="SansSerif Bold" size="36.0" />
          </font>
       </Text>
-      <Text layoutX="262.0" layoutY="91.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Stay organized and informed with our intuitive dashboard" wrappingWidth="395.1251983642578">
+      <Text fill="#a6a6a6" layoutX="289.0" layoutY="98.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Stay organized and informed with our intuitive dashboard" wrappingWidth="395.1251983642578">
          <font>
-            <Font name="SansSerif Regular" size="15.0" />
+            <Font name="SansSerif Bold" size="13.0" />
          </font>
       </Text>
       <Pane layoutX="802.0" layoutY="120.0" prefHeight="150.0" prefWidth="364.0" style="-fx-background-radius: 20; -fx-background-color: #4FB3FF;">
          <children>
             <Circle fill="WHITE" layoutX="86.0" layoutY="79.0" radius="59.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
-            <Text fill="WHITE" layoutX="169.0" layoutY="122.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Patient">
+            <Text fill="WHITE" layoutX="171.0" layoutY="122.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Staff">
                <font>
                   <Font name="SansSerif Bold" size="48.0" />
                </font>
@@ -136,7 +109,7 @@
             <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
          </padding>
       </TextFlow>
-      <Pane layoutX="264.0" layoutY="120.0" prefHeight="150.0" prefWidth="504.0" style="-fx-background-radius: 20; -fx-background-color: #FFFFFF;">
+      <Pane layoutX="283.0" layoutY="120.0" prefHeight="150.0" prefWidth="497.0" style="-fx-background-radius: 20; -fx-background-color: #FFFFFF;">
          <children>
             <Text fill="#4fb3ff" layoutX="69.0" layoutY="39.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Medical Staff">
                <font>
@@ -173,7 +146,7 @@
             </Pane>
          </children>
       </Pane>
-      <Pane layoutX="263.0" layoutY="285.0" prefHeight="288.0" prefWidth="903.0" style="-fx-background-radius: 20; -fx-background-color: #FFFFFF;">
+      <Pane layoutX="284.0" layoutY="285.0" prefHeight="288.0" prefWidth="882.0" style="-fx-background-radius: 20; -fx-background-color: #FFFFFF;">
          <children>
             <Text fill="#4fb3ff" layoutX="31.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Medical Staff">
                <font>
@@ -189,6 +162,84 @@
                   <TableColumn prefWidth="137.799560546875" text="Date of Birth" />
                </columns>
             </TableView>
+         </children>
+      </Pane>
+      <TextFlow fx:id="textFlowTitle1" cache="true" layoutX="42.0" layoutY="42.0" prefHeight="45.0" prefWidth="189.0" textAlignment="CENTER" />
+      <Pane layoutX="-3.0" prefHeight="600.0" prefWidth="265.0" style="-fx-background-color: FFFFFF;">
+         <children>
+            <TextFlow fx:id="textFlowTitle2" cache="true" layoutX="32.0" layoutY="32.0" prefHeight="45.0" prefWidth="189.0" textAlignment="CENTER">
+               <children>
+                  <Text fx:id="titleText11" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #2E2E2E;" text="Care" wrappingWidth="22.13671875">
+                     <font>
+                        <Font name="SansSerif Bold" size="28.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="titleText21" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #4FB3FF;" text="Circle.">
+                     <font>
+                        <Font name="SansSerif Bold" size="28.0" />
+                     </font>
+                  </Text>
+               </children>
+            </TextFlow>
+            <TextField layoutX="20.0" layoutY="91.0" prefHeight="26.0" prefWidth="226.0" promptText="search..." style="-fx-background-radius: 20;" />
+            <Text fill="#b3b3b3" layoutX="31.0" layoutY="147.0" strokeType="OUTSIDE" strokeWidth="0.0" text="MAIN MENU" wrappingWidth="105.35025024414062">
+               <font>
+                  <Font name="SansSerif Bold" size="13.0" />
+               </font>
+            </Text>
+            <Pane layoutX="18.0" layoutY="168.0" prefHeight="41.0" prefWidth="218.0" style="-fx-background-color: F6F6F6; -fx-background-radius: 15;">
+               <children>
+                  <Text layoutX="18.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #4FB3FF;" text="Dashboard" />
+               </children>
+            </Pane>
+            <Pane layoutX="18.0" layoutY="219.0" prefHeight="41.0" prefWidth="218.0" style="-fx-background-radius: 15;">
+               <children>
+                  <Text fill="#b3b3b3" layoutX="18.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Appointment">
+                     <font>
+                        <Font name="SansSerif Regular" size="13.0" />
+                     </font>
+                  </Text>
+               </children>
+            </Pane>
+            <Pane layoutX="18.0" layoutY="270.0" prefHeight="41.0" prefWidth="218.0" style="-fx-background-radius: 15;">
+               <children>
+                  <Text fill="#b3b3b3" layoutX="18.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Patient">
+                     <font>
+                        <Font name="SansSerif Regular" size="13.0" />
+                     </font>
+                  </Text>
+               </children>
+            </Pane>
+            <Pane layoutX="18.0" layoutY="321.0" prefHeight="41.0" prefWidth="218.0" style="-fx-background-radius: 15;">
+               <children>
+                  <Text fill="#b3b3b3" layoutX="18.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Medical Staff" />
+               </children>
+            </Pane>
+            <Line endX="100.0" layoutX="146.0" layoutY="394.0" startX="-130.0" stroke="#b3b3b3" />
+            <Text fill="#b3b3b3" layoutX="37.0" layoutY="430.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SUPPORT" wrappingWidth="71.99990195492336">
+               <font>
+                  <Font name="SansSerif Bold" size="13.0" />
+               </font>
+            </Text>
+            <Pane layoutX="18.0" layoutY="441.0" prefHeight="41.0" prefWidth="218.0" style="-fx-background-radius: 15;">
+               <children>
+                  <Text fill="#b3b3b3" layoutX="18.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Help Center" />
+               </children>
+            </Pane>
+            <Pane layoutX="18.0" layoutY="480.0" prefHeight="41.0" prefWidth="218.0" style="-fx-background-radius: 15;">
+               <children>
+                  <Text fill="#b3b3b3" layoutX="17.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Settings" />
+               </children>
+            </Pane>
+            <Pane layoutX="15.0" layoutY="528.0" prefHeight="41.0" prefWidth="218.0" style="-fx-background-radius: 15;">
+               <children>
+                  <Text fill="#b3b3b3" layoutX="22.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Logout">
+                     <font>
+                        <Font name="SansSerif Bold" size="13.0" />
+                     </font>
+                  </Text>
+               </children>
+            </Pane>
          </children>
       </Pane>
    </children>

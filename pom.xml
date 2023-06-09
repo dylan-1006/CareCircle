@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>carecircle</groupId>
     <artifactId>carecircle</artifactId>
-    <version>1.0</version>
+    <version>1.0-SNAPSHOT</version>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>11</maven.compiler.source>
@@ -13,12 +13,12 @@
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-controls</artifactId>
-            <version>18.0.2</version>
+            <version>13</version>
         </dependency>
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-fxml</artifactId>
-            <version>18.0.2</version>
+            <version>13</version>
         </dependency>
     </dependencies>
     <build>
