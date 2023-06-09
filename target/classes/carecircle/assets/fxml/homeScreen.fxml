@@ -87,7 +87,10 @@
                </font></Text>
             <Pane layoutX="18.0" layoutY="168.0" prefHeight="41.0" prefWidth="218.0" style="-fx-background-color: F6F6F6; -fx-background-radius: 15;">
                <children>
-                  <Text layoutX="18.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #4FB3FF;" text="Dashboard" />
+                  <Text layoutX="18.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #4FB3FF;" text="Dashboard">
+                     <font>
+                        <Font name="SansSerif Regular" size="13.0" />
+                     </font></Text>
                </children>
             </Pane>
             <Pane layoutX="18.0" layoutY="219.0" prefHeight="41.0" prefWidth="218.0" style="-fx-background-radius: 15;">
