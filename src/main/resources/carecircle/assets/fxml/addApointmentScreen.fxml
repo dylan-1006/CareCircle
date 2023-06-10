@@ -88,7 +88,7 @@
             <Font name="SansSerif Regular" size="18.0" />
          </font>
       </Text>
-      <Button layoutX="554.0" layoutY="508.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="160.0" style="-fx-font-size: 15; -fx-background-radius: 15; -fx-font-style: bold;" text="Continue" textFill="WHITE">
+      <Button layoutX="554.0" layoutY="508.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="160.0" style="-fx-font-size: 15; -fx-background-radius: 15;" text="Continue" textFill="WHITE">
          <font>
             <Font name="SansSerif Bold" size="48.0" />
          </font>
