@@ -17,7 +17,8 @@ public class App extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
-        scene = new Scene(loadFXML("loginScreen"), 1200, 600);
+
+        scene = new Scene(loadFXML("homeScreen"), 1200, 600);
         stage.setScene(scene);
         stage.setResizable(false);
         stage.setTitle("CareCircle");
@@ -26,6 +27,7 @@ public class App extends Application {
 
     public static void setRoot(String fxml) throws IOException {
         scene.setRoot(loadFXML(fxml));
+        System.out.println("set root to " + fxml + " successfully");
     }
 
     private static Parent loadFXML(String fxml) throws IOException {
