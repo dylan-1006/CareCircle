@@ -76,7 +76,7 @@
             <Font name="SansSerif Bold" size="36.0" />
          </font>
       </Text>
-      <Text fill="#a6a6a6" layoutX="291.0" layoutY="92.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Stay organized and informed with our intuitive dashboard" wrappingWidth="395.1251983642578">
+      <Text fill="#a6a6a6" layoutX="289.0" layoutY="98.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Stay organized and informed with our intuitive dashboard" wrappingWidth="395.1251983642578">
          <font>
             <Font name="SansSerif Bold" size="13.0" />
          </font>

@@ -1,21 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.Pane?>
-<?import javafx.scene.paint.Color?>
-<?import javafx.scene.paint.LinearGradient?>
-<?import javafx.scene.paint.Stop?>
-<?import javafx.scene.shape.Circle?>
-<?import javafx.scene.shape.Line?>
-<?import javafx.scene.shape.Rectangle?>
-<?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
-<?import javafx.scene.text.TextFlow?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
    <children>
@@ -83,18 +75,21 @@
       </Text>
       <Pane layoutX="802.0" layoutY="120.0" prefHeight="150.0" prefWidth="364.0" style="-fx-background-radius: 20; -fx-background-color: #4FB3FF;">
          <children>
-            <Circle fill="WHITE" layoutX="86.0" layoutY="79.0" radius="59.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
-            <Text fill="WHITE" layoutX="155.0" layoutY="117.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Appointment">
+            <Circle fill="WHITE" layoutX="75.0" layoutY="74.0" radius="53.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0">
+               <effect>
+                  <DropShadow blurType="GAUSSIAN" height="12.0" offsetY="1.8" radius="5.5" width="12.0" />
+               </effect></Circle>
+            <Text fill="WHITE" layoutX="151.0" layoutY="117.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Appointment">
                <font>
                   <Font name="SansSerif Bold" size="33.0" />
                </font>
             </Text>
-            <Text fill="#169bff" layoutX="158.0" layoutY="62.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Add new">
+            <Text fill="#169bff" layoutX="152.0" layoutY="62.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Add new">
                <font>
                   <Font name="SansSerif Bold" size="36.0" />
                </font>
             </Text>
-            <Text fill="#169bff" layoutX="50.0" layoutY="123.0" strokeType="OUTSIDE" strokeWidth="0.0" text="+">
+            <Text fill="#169bff" layoutX="39.0" layoutY="122.0" strokeType="OUTSIDE" strokeWidth="0.0" text="+">
                <font>
                   <Font name="SansSerif Bold" size="126.0" />
                </font>
@@ -165,9 +160,9 @@
             </TableView>
          </children>
       </Pane>
-      <Pane layoutX="-1.0" prefHeight="600.0" prefWidth="265.0" style="-fx-background-color: FFFFFF;">
+      <Pane fx:id="navigationSideBar" prefHeight="600.0" prefWidth="265.0" style="-fx-background-color: FFFFFF;">
          <children>
-            <TextFlow fx:id="textFlowTitle1" cache="true" layoutX="32.0" layoutY="32.0" prefHeight="45.0" prefWidth="189.0" textAlignment="CENTER">
+            <TextFlow fx:id="textFlowTitle" cache="true" layoutX="32.0" layoutY="32.0" prefHeight="45.0" prefWidth="189.0" textAlignment="CENTER">
                <children>
                   <Text fx:id="titleText1" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #2E2E2E;" text="Care" wrappingWidth="22.13671875">
                      <font>
@@ -181,63 +176,73 @@
                   </Text>
                </children>
             </TextFlow>
-            <TextField layoutX="20.0" layoutY="91.0" prefHeight="26.0" prefWidth="226.0" promptText="search..." style="-fx-background-radius: 20;" />
-            <Text fill="#b3b3b3" layoutX="31.0" layoutY="147.0" strokeType="OUTSIDE" strokeWidth="0.0" text="MAIN MENU" wrappingWidth="105.35025024414062">
+            <TextField alignment="CENTER" layoutX="20.0" layoutY="91.0" prefHeight="26.0" prefWidth="226.0" promptText="Search" style="-fx-background-radius: 20;">
                <font>
-                  <Font name="SansSerif Bold" size="13.0" />
-               </font>
-            </Text>
-            <Pane layoutX="18.0" layoutY="168.0" prefHeight="41.0" prefWidth="218.0" style="-fx-background-color: F6F6F6; -fx-background-radius: 15;">
+                  <Font name="SansSerif Regular" size="10.0" />
+               </font></TextField>
+            <Text fill="#d1d1d1" layoutX="26.0" layoutY="147.0" strokeType="OUTSIDE" strokeWidth="0.0" text="MAIN MENU" wrappingWidth="105.35025024414062">
+               <font>
+                  <Font name="SansSerif Bold" size="11.0" />
+               </font></Text>
+            <Pane fx:id="sideBarDashboardButton" layoutX="18.0" layoutY="168.0" onMouseClicked="#switchToHomeScreen" prefHeight="41.0" prefWidth="218.0" style="-fx-background-radius: 15;">
                <children>
-                  <Text layoutX="18.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #4FB3FF;" text="Dashboard" />
-               </children>
-            </Pane>
-            <Pane layoutX="18.0" layoutY="219.0" prefHeight="41.0" prefWidth="218.0" style="-fx-background-radius: 15;">
-               <children>
-                  <Text fill="#b3b3b3" layoutX="18.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Appointment">
+                  <Text fill="#b3b3b3" layoutX="18.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dashboard">
                      <font>
                         <Font name="SansSerif Regular" size="13.0" />
-                     </font>
-                  </Text>
+                     </font></Text>
                </children>
             </Pane>
-            <Pane layoutX="18.0" layoutY="270.0" prefHeight="41.0" prefWidth="218.0" style="-fx-background-radius: 15;">
+            <Pane fx:id="sideBarAppointmentButton" layoutX="18.0" layoutY="219.0" onMouseClicked="#switchToAppoitmentScreen" prefHeight="41.0" prefWidth="218.0" style="-fx-background-radius: 15; -fx-background-color: #f6f6f6;">
+               <children>
+                  <Text fill="#4fb3ff" layoutX="18.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Appointment">
+                     <font>
+                        <Font name="SansSerif Regular" size="13.0" />
+                     </font></Text>
+               </children>
+            </Pane>
+            <Pane fx:id="sideBarPatientButton" layoutX="18.0" layoutY="270.0" onMouseClicked="#switchToPatientScreen" prefHeight="41.0" prefWidth="218.0" style="-fx-background-radius: 15;">
                <children>
                   <Text fill="#b3b3b3" layoutX="18.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Patient">
                      <font>
                         <Font name="SansSerif Regular" size="13.0" />
-                     </font>
-                  </Text>
+                     </font></Text>
                </children>
             </Pane>
-            <Pane layoutX="18.0" layoutY="321.0" prefHeight="41.0" prefWidth="218.0" style="-fx-background-radius: 15;">
+            <Pane fx:id="sideBarMedicalStuffButton" layoutX="18.0" layoutY="321.0" onMouseClicked="#switchToMedicalStaffScreen" prefHeight="41.0" prefWidth="218.0" style="-fx-background-radius: 15;">
                <children>
-                  <Text fill="#b3b3b3" layoutX="18.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Medical Staff" />
-               </children>
-            </Pane>
-            <Line endX="100.0" layoutX="146.0" layoutY="394.0" startX="-130.0" stroke="#b3b3b3" />
-            <Text fill="#b3b3b3" layoutX="37.0" layoutY="430.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SUPPORT" wrappingWidth="71.99990195492336">
-               <font>
-                  <Font name="SansSerif Bold" size="13.0" />
-               </font>
-            </Text>
-            <Pane layoutX="18.0" layoutY="441.0" prefHeight="41.0" prefWidth="218.0" style="-fx-background-radius: 15;">
-               <children>
-                  <Text fill="#b3b3b3" layoutX="18.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Help Center" />
-               </children>
-            </Pane>
-            <Pane layoutX="18.0" layoutY="480.0" prefHeight="41.0" prefWidth="218.0" style="-fx-background-radius: 15;">
-               <children>
-                  <Text fill="#b3b3b3" layoutX="17.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Settings" />
-               </children>
-            </Pane>
-            <Pane layoutX="15.0" layoutY="528.0" prefHeight="41.0" prefWidth="218.0" style="-fx-background-radius: 15;">
-               <children>
-                  <Text fill="#b3b3b3" layoutX="22.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Logout">
+                  <Text fill="#b3b3b3" layoutX="18.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Medical Staff">
                      <font>
-                        <Font name="SansSerif Bold" size="13.0" />
-                     </font>
-                  </Text>
+                        <Font name="SansSerif Regular" size="13.0" />
+                     </font></Text>
+               </children>
+            </Pane>
+            <Line endX="100.0" layoutX="146.0" layoutY="410.0" startX="-130.0" stroke="#b3b3b3" />
+            <Text fill="#d1d1d1" layoutX="22.0" layoutY="430.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SUPPORT" wrappingWidth="71.99990195492336">
+               <font>
+                  <Font name="SansSerif Bold" size="11.0" />
+               </font></Text>
+            <Pane fx:id="sideBarHelpCenterButton" layoutX="18.0" layoutY="441.0" onMouseClicked="#switchToHelpCenterScreen" prefHeight="41.0" prefWidth="218.0" style="-fx-background-radius: 15;">
+               <children>
+                  <Text fill="#b3b3b3" layoutX="18.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Help Center">
+                     <font>
+                        <Font name="SansSerif Regular" size="13.0" />
+                     </font></Text>
+               </children>
+            </Pane>
+            <Pane fx:id="sideBarSettingsButton" layoutX="18.0" layoutY="480.0" onMouseClicked="#switchToSettingsScreen" prefHeight="41.0" prefWidth="218.0" style="-fx-background-radius: 15;">
+               <children>
+                  <Text fill="#b3b3b3" layoutX="17.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Settings">
+                     <font>
+                        <Font name="SansSerif Regular" size="13.0" />
+                     </font></Text>
+               </children>
+            </Pane>
+            <Pane fx:id="sideBarLogoutButton" layoutX="15.0" layoutY="550.0" onMouseClicked="#switchToLoginScreen" prefHeight="41.0" prefWidth="218.0" style="-fx-background-radius: 15;">
+               <children>
+                  <Text fill="#b3b3b3" layoutX="22.0" layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Logout">
+                     <font>
+                        <Font name="SansSerif Regular" size="13.0" />
+                     </font></Text>
                </children>
             </Pane>
          </children>
