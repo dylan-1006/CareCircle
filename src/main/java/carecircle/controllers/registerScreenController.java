@@ -7,6 +7,7 @@ import java.util.Optional;
 
 import carecircle.App;
 import carecircle.classes.user;
+import carecircle.data.userData;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
@@ -16,9 +17,8 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.TextInputDialog;
 import javafx.scene.control.Alert.AlertType;
 
-public class registerScreenController {
+public class RegisterScreenController {
 
- 
     @FXML
     private Button continueButton;
 
@@ -31,37 +31,34 @@ public class registerScreenController {
     @FXML
     private TextField username;
 
-
     @FXML
     void register(ActionEvent event) throws IOException {
-        
 
         try {
             if (!(username.getText()).equals("") && !(password.getText().equals(""))) {
-                
 
                 TextInputDialog nameInput = new TextInputDialog();
                 nameInput.setTitle("What should we call you");
                 nameInput.setHeaderText("Enter your name");
                 nameInput.setContentText("Name");
-                Optional<String> input=nameInput.showAndWait();
-                String name=input.get();
-                user newUser = new user(name,username.getText(),password.getText());
-                
+                Optional<String> input = nameInput.showAndWait();
+                String name = input.get();
+                user newUser = new user(name, username.getText(), password.getText());
+
                 FileWriter account = new FileWriter("user.txt", true);
 
                 PrintWriter accountWriter = new PrintWriter(account);
-                accountWriter.println(newUser.name+","+newUser.username+","+newUser.password);
+                accountWriter.println(newUser.name + "," + newUser.username + "," + newUser.password);
                 accountWriter.close();
-                Alert alert=new Alert(AlertType.CONFIRMATION);
+                Alert alert = new Alert(AlertType.CONFIRMATION);
                 alert.setTitle("Sign up successful!");
-                alert.setHeaderText("Welcome "+name);
+                alert.setHeaderText("Welcome " + name);
                 alert.showAndWait();
+                userData.initUserData.name = name;
                 App.setRoot("homeScreen");
 
-            } 
-            else {
-                Alert alert=new Alert(AlertType.ERROR);
+            } else {
+                Alert alert = new Alert(AlertType.ERROR);
                 alert.setTitle("Sign up failed!");
                 alert.setHeaderText("Please fill out all the required information!");
                 alert.showAndWait();
@@ -72,11 +69,9 @@ public class registerScreenController {
 
     }
 
-
     @FXML
     void switchToLoginScreen(ActionEvent event) throws IOException {
         App.setRoot("loginScreen");
     }
-    
 
 }
