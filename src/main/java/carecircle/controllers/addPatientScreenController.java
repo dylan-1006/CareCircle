@@ -14,6 +14,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 
 public class addPatientScreenController {
@@ -32,7 +33,7 @@ public class addPatientScreenController {
     private TextField contactNumber;
 
     @FXML
-    private TextField date;
+    private DatePicker date;
 
     @FXML
     private TextField email;
@@ -69,7 +70,7 @@ public class addPatientScreenController {
             // String gender, String address, double height, double weight, String
             // bloodType)
             Patient newPatient = new Patient("1", name.getText(), icNumber.getText(), contactNumber.getText(),
-                    email.getText(), date.getText(), gender.getValue().toString(), Double.parseDouble(height.getText()),
+                    email.getText(), date.getValue().toString(), gender.getValue().toString(), Double.parseDouble(height.getText()),
                     Double.parseDouble(weight.getText()), bloodType.getValue().toString());
 
             FileWriter account = new FileWriter("patient.txt", true);
