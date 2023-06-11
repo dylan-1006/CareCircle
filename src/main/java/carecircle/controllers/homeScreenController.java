@@ -8,6 +8,7 @@ import carecircle.data.userData;
 import javafx.application.Preloader.StateChangeNotification;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
@@ -17,7 +18,7 @@ import javafx.scene.text.TextFlow;
 public class HomeScreenController {
 
     @FXML
-    private static Label homeScreenUserName;
+    private static TextField homeScreenUserName;
 
     @FXML
     private Pane backgroundPane;
@@ -58,9 +59,15 @@ public class HomeScreenController {
     @FXML
     private Text titleText2;
 
-    public static void initialize() {
+    @FXML
+    public void initialize() {
         System.out.println(userData.initUserData.name);
-        homeScreenUserName.setText(userData.initUserData.name);
+        homeScreenUserName.setText("name2212");
+    }
+
+    @FXML
+    public void setUsername(String username) {
+        homeScreenUserName.setText(username);
     }
 
     @FXML

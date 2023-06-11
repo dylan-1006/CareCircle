@@ -48,7 +48,8 @@ public class LoginScreenController {
                     System.out.println(userData.initUserData.name);
                     userData.initUserData.name = Name;
                     System.out.println(userData.initUserData.name);
-                    // homeScreenController.initialize();
+                    //HomeScreenController.setUsername(userData.initUserData.name);
+                    // HomeScreenController.homeScreenUserName.setText(userData.initUserData.name);
                     App.setRoot("homeScreen");
 
                 }
