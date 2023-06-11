@@ -4,9 +4,11 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.StringTokenizer;
+import java.util.jar.Attributes.Name;
 
 import carecircle.App;
 import carecircle.classes.user;
+import carecircle.data.patientData;
 import carecircle.data.userData;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -32,9 +34,10 @@ public class LoginScreenController {
 
     @FXML
     void logIn(ActionEvent event) throws IOException {
+
         try {
             boolean found = false;
-            FileReader info = new FileReader("user.txt");
+            FileReader info = new FileReader("src/main/resources/carecircle/assets/database/user.txt");
             BufferedReader infoR = new BufferedReader(info);
             String line = "";
             while ((line = infoR.readLine()) != null) {
@@ -45,11 +48,10 @@ public class LoginScreenController {
                 if (username.getText().equals(Username) && password.getText().equals(Password)) {
                     found = true;
                     infoR.close();
-                    System.out.println(userData.initUserData.name);
-                    userData.initUserData.name = Name;
-                    System.out.println(userData.initUserData.name);
-                    //HomeScreenController.setUsername(userData.initUserData.name);
-                    // HomeScreenController.homeScreenUserName.setText(userData.initUserData.name);
+                    System.out.println(userData.initUserData.getName());
+                    userData.initUserData.setName(Name);
+                    System.out.println(userData.initUserData.getName());
+                    // HomeScreenController.initialize(userData.initUserData.getName());
                     App.setRoot("homeScreen");
 
                 }

@@ -5,10 +5,15 @@ import java.io.IOException;
 import carecircle.App;
 import carecircle.classes.user;
 import carecircle.data.userData;
+import carecircle.tableModels.patientTableModel;
 import javafx.application.Preloader.StateChangeNotification;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
@@ -18,7 +23,7 @@ import javafx.scene.text.TextFlow;
 public class HomeScreenController {
 
     @FXML
-    private static TextField homeScreenUserName;
+    private static Text homeScreenUserName;
 
     @FXML
     private Pane backgroundPane;
@@ -28,6 +33,9 @@ public class HomeScreenController {
 
     @FXML
     private Pane sideBarAppointmentButton;
+
+    @FXML
+    private TableView<patientTableModel> homeScreenPatientTable;
 
     @FXML
     private Pane sideBarDashboardButton;
@@ -61,8 +69,29 @@ public class HomeScreenController {
 
     @FXML
     public void initialize() {
-        System.out.println(userData.initUserData.name);
-        homeScreenUserName.setText("name2212");
+
+        ObservableList<patientTableModel> patientDataList = patientTableModel
+                .convertPatientDataToPatientDataModel();
+
+        TableColumn patientIdColumn = new TableColumn("Patient ID");
+        TableColumn patientNameColumn = new TableColumn<>("Patient Name");
+        TableColumn icColumn = new TableColumn("IC");
+        TableColumn phoneNoColumn = new TableColumn("Phone No");
+        TableColumn dateOfBirthColumn = new TableColumn("Date of Birth");
+        TableColumn detailsColumn = new TableColumn(" ");
+
+        homeScreenPatientTable.getColumns().addAll(patientIdColumn, patientNameColumn, icColumn, phoneNoColumn,
+                dateOfBirthColumn, detailsColumn);
+
+        patientIdColumn.setCellValueFactory(new PropertyValueFactory<>("patientId"));
+        patientNameColumn.setCellValueFactory(new PropertyValueFactory<>("patientName"));
+        icColumn.setCellValueFactory(new PropertyValueFactory<>("ic"));
+        phoneNoColumn.setCellValueFactory(new PropertyValueFactory<>("phoneNo"));
+        dateOfBirthColumn.setCellValueFactory(new PropertyValueFactory<>("dateOfBirth"));
+        detailsColumn.setCellValueFactory(new PropertyValueFactory<>("details"));
+
+        homeScreenPatientTable.setItems(patientDataList);
+
     }
 
     @FXML
