@@ -58,7 +58,6 @@
       </Text>
       <ComboBox layoutX="215.0" layoutY="179.0" prefHeight="28.0" prefWidth="314.0" />
       <ComboBox layoutX="215.0" layoutY="290.0" prefHeight="28.0" prefWidth="314.0" />
-      <ComboBox layoutX="679.0" layoutY="179.0" prefHeight="28.0" prefWidth="273.0" />
       <Text layoutX="679.0" layoutY="285.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #4FB3FF;" text="Patient's ID">
          <font>
             <Font name="SansSerif Regular" size="18.0" />
@@ -67,11 +66,6 @@
       <ComboBox layoutX="381.0" layoutY="417.0" prefHeight="28.0" prefWidth="148.0" />
       <ComboBox layoutX="215.0" layoutY="417.0" prefHeight="28.0" prefWidth="148.0" />
       <ComboBox layoutX="679.0" layoutY="417.0" prefHeight="28.0" prefWidth="273.0" />
-      <Text layoutX="678.0" layoutY="172.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #4FB3FF;" text="Venue">
-         <font>
-            <Font name="SansSerif Regular" size="18.0" />
-         </font>
-      </Text>
       <Text layoutX="679.0" layoutY="410.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #4FB3FF;" text="Department">
          <font>
             <Font name="SansSerif Regular" size="18.0" />
@@ -98,5 +92,11 @@
             <Font name="SansSerif Regular" size="13.0" />
          </font>
       </Button>
+      <Text layoutX="680.0" layoutY="175.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #4FB3FF;" text="Doctor's ID">
+         <font>
+            <Font name="SansSerif Regular" size="18.0" />
+         </font>
+      </Text>
+      <TextField layoutX="678.0" layoutY="182.0" />
    </children>
 </Pane>

@@ -11,16 +11,19 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
+import javafx.scene.control.Button;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 
 public class addPatientScreenController {
     ObservableList<String> bloodTypeOptions = FXCollections.observableArrayList(
-         "Choose Blood type","A-","A+","B-","B+","O-","O+","AB-","AB+");    
+         "Choose Blood type","A-","A+","B-","B+","O-","O+","AB-","AB+"); 
+    ObservableList<String> genderOptions = FXCollections.observableArrayList(
+        "Male","Female","Others");
 
     @FXML
-    private TextField Continue;
+    private Button Continue;
 
     @FXML
     private ComboBox<String> bloodType;
@@ -52,6 +55,7 @@ public class addPatientScreenController {
     @FXML
     public void initialize(){
         bloodType.setItems(bloodTypeOptions);
+        gender.setItems(genderOptions);
     }
 
     
@@ -85,6 +89,7 @@ public class addPatientScreenController {
 
         } catch (Exception e) {
             
+
         }
     }
 
