@@ -28,6 +28,8 @@ public class LoginScreenController {
     @FXML
     private TextField username;
 
+    
+
     @FXML
     void logIn(ActionEvent event) throws IOException {
         try {
