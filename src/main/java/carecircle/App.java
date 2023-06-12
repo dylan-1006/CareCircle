@@ -17,13 +17,9 @@ public class App extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
-<<<<<<< HEAD
-        scene = new Scene(loadFXML("addPatientScreen"), 1200, 600);
-        // stage.setFullScreen(true);
-=======
+
 
         scene = new Scene(loadFXML("loginScreen"), 1200, 600);
->>>>>>> 31b78fa4c790a517fa4fd0ff44b18934c04d95fe
         stage.setScene(scene);
         stage.setResizable(false);
         stage.setTitle("CareCircle");

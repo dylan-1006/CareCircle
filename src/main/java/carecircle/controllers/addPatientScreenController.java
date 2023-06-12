@@ -83,7 +83,7 @@ public class addPatientScreenController {
             accountWriter.close(); 
             Alert alert=new Alert(AlertType.CONFIRMATION);
             alert.setTitle("New Patient Added!");
-            alert.setHeaderText(name.getText());
+            alert.setHeaderText(name.getText()+" has been added");
             alert.showAndWait();
 
             App.setRoot("homeScreen");

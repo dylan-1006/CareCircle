@@ -17,7 +17,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.TextInputDialog;
 import javafx.scene.control.Alert.AlertType;
 
-public class RegisterScreenController {
+public class registerScreenController {
 
     @FXML
     private Button continueButton;
