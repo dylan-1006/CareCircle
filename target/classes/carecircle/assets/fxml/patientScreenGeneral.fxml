@@ -85,15 +85,14 @@
             <Font name="SansSerif Regular" size="13.0" />
          </font>
       </Text>
-      <Pane layoutX="806.0" layoutY="120.0" prefHeight="150.0" prefWidth="364.0" style="-fx-background-radius: 20; -fx-background-color: #4FB3FF;">
+      <Pane fx:id="addNewPatientPane" layoutX="806.0" layoutY="120.0" onMouseClicked="#switchToAddNewPatientScreen" prefHeight="150.0" prefWidth="364.0" style="-fx-background-radius: 20; -fx-background-color: #4FB3FF;">
          <children>
-            <Circle fill="WHITE" layoutX="80.0" layoutY="79.0" radius="59.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0">
+            <Circle fill="WHITE" layoutX="75.0" layoutY="74.0" radius="53.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0">
                <effect>
                   <DropShadow blurType="GAUSSIAN" height="10.0" offsetY="4.0" radius="4.5" width="10.0">
                      <color>
                         <Color opacity="0.25" />
-                     </color>
-                  </DropShadow>
+                     </color></DropShadow>
                </effect></Circle>
             <Text fill="WHITE" layoutX="163.0" layoutY="122.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Patient">
                <font>
@@ -105,7 +104,7 @@
                   <Font name="SansSerif Bold" size="36.0" />
                </font>
             </Text>
-            <Text fill="#169bff" layoutX="44.0" layoutY="123.0" strokeType="OUTSIDE" strokeWidth="0.0" text="+">
+            <Text fill="#169bff" layoutX="39.0" layoutY="121.0" strokeType="OUTSIDE" strokeWidth="0.0" text="+">
                <font>
                   <Font name="SansSerif Bold" size="126.0" />
                </font>

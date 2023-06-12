@@ -13,12 +13,15 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
+import javafx.scene.shape.Circle;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextFlow;
 import carecircle.tableModels.patientTableModel;
 
 public class PatientScreenGeneralController {
 
+    @FXML
+    private Pane addNewPatientPane;
     @FXML
     private Text totalPatientAdmissions;
 
@@ -98,8 +101,15 @@ public class PatientScreenGeneralController {
 
     }
 
-    void setPatientAmount(){
-            totalPatientAdmissions.setText(Integer.toString(patientData.loadPatientDataFromDatabase().size()));
+    void setPatientAmount() {
+        totalPatientAdmissions.setText(Integer.toString(patientData.loadPatientDataFromDatabase().size()));
+
+    }
+
+    @FXML
+    void switchToAddNewPatientScreen(MouseEvent event) throws IOException {
+        System.out.println("ENTERED SWITCH TO NEW PATIENT");
+        App.setRoot("addPatientScreen");
 
     }
 

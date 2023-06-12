@@ -22,7 +22,7 @@ public class App extends Application {
     public void start(Stage stage) throws IOException {
 
 
-        scene = new Scene(loadFXML("loginScreen"), 1200, 600);
+        scene = new Scene(loadFXML("addPatientScreen"), 1200, 600);
         stage.setScene(scene);
         stage.setResizable(false);
         stage.setTitle("CareCircle");
