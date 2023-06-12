@@ -1,11 +1,12 @@
 package carecircle.controllers;
 
-
 import java.io.FileWriter;
 import java.io.PrintWriter;
+import java.util.List;
 
 import carecircle.App;
-import carecircle.classes.Patient;
+import carecircle.classes.patient;
+import carecircle.data.patientData;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -19,9 +20,9 @@ import javafx.scene.control.TextField;
 
 public class addPatientScreenController {
     ObservableList<String> bloodTypeOptions = FXCollections.observableArrayList(
-         "Choose Blood type","A-","A+","B-","B+","O-","O+","AB-","AB+"); 
+            "Choose Blood type", "A-", "A+", "B-", "B+", "O-", "O+", "AB-", "AB+");
     ObservableList<String> genderOptions = FXCollections.observableArrayList(
-        "Male","Female","Others");
+            "Male", "Female", "Others");
 
     @FXML
     private Button Continue;
@@ -54,42 +55,44 @@ public class addPatientScreenController {
     private TextField weight;
 
     @FXML
-    public void initialize(){
+    public void initialize() {
         bloodType.setItems(bloodTypeOptions);
         gender.setItems(genderOptions);
     }
 
-    
-
     @FXML
     void addNewPatient(ActionEvent event) {
         try {
+            List<patient> patientList = patientData.loadPatientDataFromDatabase();
+            int newPatientId = Integer.parseInt(patientList.get(patientList.size() - 1).getPatientID().substring(1))
+                    + 1;
 
-            // public Patient(String patientID, String name, String ic, String phoneNo,
-            // String email, String dateOfBirth,
-            // String gender, String address, double height, double weight, String
-            // bloodType)
-            Patient newPatient = new Patient("1", name.getText(), icNumber.getText(), contactNumber.getText(),
-                    email.getText(), date.getValue().toString(), gender.getValue().toString(), Double.parseDouble(height.getText()),
+            String newPatientIdFormatted = String.format("P%03d", newPatientId);
+
+            patient newPatient = new patient(newPatientIdFormatted, name.getText(), icNumber.getText(), contactNumber.getText(),
+                    email.getText(), date.getValue().toString(), gender.getValue().toString(), " ",
+                    Double.parseDouble(height.getText()),
                     Double.parseDouble(weight.getText()), bloodType.getValue().toString());
 
             FileWriter account = new FileWriter("patient.txt", true);
 
             PrintWriter accountWriter = new PrintWriter(account);
             accountWriter.println(
-                    newPatient.patientID + "," + newPatient.name + "," + newPatient.ic + "," + newPatient.phoneNo + ","
-                            + newPatient.email + "," + newPatient.dateOfBirth + "," + newPatient.gender + ","
-                            + newPatient.height + "," + newPatient.weight + "," + newPatient.bloodType);
-            accountWriter.close(); 
-            Alert alert=new Alert(AlertType.CONFIRMATION);
+                    newPatient.getPatientID() + "," + newPatient.getName() + "," + newPatient.getIc() + ","
+                            + newPatient.getPhoneNo() + ","
+                            + newPatient.getEmail() + "," + newPatient.getDateOfBirth() + "," + newPatient.getGender()
+                            + ","
+                            + " " + "," + newPatient.getHeight() + "," + newPatient.getWeight() + ","
+                            + newPatient.getBloodType());
+            accountWriter.close();
+            Alert alert = new Alert(AlertType.CONFIRMATION);
             alert.setTitle("New Patient Added!");
-            alert.setHeaderText(name.getText()+" has been added");
+            alert.setHeaderText(name.getText() + " has been added");
             alert.showAndWait();
 
             App.setRoot("homeScreen");
 
         } catch (Exception e) {
-            
 
         }
     }
