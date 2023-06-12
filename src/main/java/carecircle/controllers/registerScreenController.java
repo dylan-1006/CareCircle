@@ -45,16 +45,16 @@ public class registerScreenController {
                 String name = input.get();
                 user newUser = new user(name, username.getText(), password.getText());
 
-                FileWriter account = new FileWriter("user.txt", true);
+                FileWriter account = new FileWriter("src/main/resources/carecircle/assets/database/user.txt", true);
 
                 PrintWriter accountWriter = new PrintWriter(account);
-                accountWriter.println(newUser.name + "," + newUser.username + "," + newUser.password);
+                accountWriter.println(newUser.getName() + "," + newUser.getUsername() + "," + newUser.getPassword());
                 accountWriter.close();
                 Alert alert = new Alert(AlertType.CONFIRMATION);
                 alert.setTitle("Sign up successful!");
                 alert.setHeaderText("Welcome " + name);
                 alert.showAndWait();
-                userData.initUserData.name = name;
+                userData.initUserData.setName(name);
                 App.setRoot("homeScreen");
 
             } else {

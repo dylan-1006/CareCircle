@@ -172,16 +172,7 @@
                   <Font name="SansSerif Bold" size="24.0" />
                </font>
             </Text>
-            <TableView layoutX="14.0" layoutY="46.0" prefHeight="234.0" prefWidth="850.0" style="-fx-background-radius: 20; -fx-background-color: #F4F4F4;">
-               <columns>
-                  <TableColumn prefWidth="162.5" text="Appointment ID" />
-                  <TableColumn prefWidth="134.0" text="Patient No." />
-                  <TableColumn prefWidth="152.5" text="Patient Name" />
-                  <TableColumn prefWidth="130.0" text="Directed By" />
-                  <TableColumn prefWidth="159.5" text="Appointment Date" />
-                  <TableColumn prefWidth="118.5" />
-               </columns>
-            </TableView>
+            <TableView layoutX="14.0" layoutY="46.0" prefHeight="234.0" prefWidth="850.0" style="-fx-background-radius: 20; -fx-background-color: #F4F4F4;" />
          </children>
       </Pane>
       <Pane fx:id="navigationSideBar" prefHeight="600.0" prefWidth="265.0" style="-fx-background-color: FFFFFF;">

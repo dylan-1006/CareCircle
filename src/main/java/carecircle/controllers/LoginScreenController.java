@@ -4,19 +4,28 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.StringTokenizer;
+import java.util.jar.Attributes.Name;
 
 import carecircle.App;
 import carecircle.classes.user;
+import carecircle.data.patientData;
 import carecircle.data.userData;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 import javafx.scene.control.Alert.AlertType;
 
 public class LoginScreenController {
+    private Stage stage;
+
+    private Scene scene;
 
     @FXML
     private Button continueButton;
@@ -29,14 +38,16 @@ public class LoginScreenController {
 
     @FXML
     private TextField username;
+    private Parent root;
 
     
 
     @FXML
     void logIn(ActionEvent event) throws IOException {
+
         try {
             boolean found = false;
-            FileReader info = new FileReader("user.txt");
+            FileReader info = new FileReader("src/main/resources/carecircle/assets/database/user.txt");
             BufferedReader infoR = new BufferedReader(info);
             String line = "";
             while ((line = infoR.readLine()) != null) {
@@ -47,11 +58,8 @@ public class LoginScreenController {
                 if (username.getText().equals(Username) && password.getText().equals(Password)) {
                     found = true;
                     infoR.close();
-                    System.out.println(userData.initUserData.name);
-                    userData.initUserData.name = Name;
-                    System.out.println(userData.initUserData.name);
-                    //HomeScreenController.setUsername(userData.initUserData.name);
-                    // HomeScreenController.homeScreenUserName.setText(userData.initUserData.name);
+                    userData.initUserData.setName(Name);
+
                     App.setRoot("homeScreen");
 
                 }

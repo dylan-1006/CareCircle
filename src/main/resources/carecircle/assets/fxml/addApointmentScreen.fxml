@@ -21,7 +21,7 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1200.0" style="-fx-background-color: #ffff;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Circle layoutX="924.0" layoutY="103.0" radius="100.0" rotate="49.2" stroke="WHITE" strokeType="INSIDE">
+      <Circle layoutX="924.0" layoutY="103.0" radius="100.0" rotate="49.2" stroke="WHITE" strokeType="I\NSIDE">
          <fill>
             <LinearGradient endX="1.0" endY="1.0">
                <stops>

@@ -18,10 +18,8 @@
 <?import javafx.scene.text.TextFlow?>
 =======
 <?import javafx.scene.control.*?>
-<?import javafx.scene.effect.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
-<?import javafx.scene.paint.*?>
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 >>>>>>> 31b78fa4c790a517fa4fd0ff44b18934c04d95fe
@@ -115,7 +113,7 @@
             </Pane>
          </children>
       </Pane>
-      <Text fill="#a6a6a6" layoutX="306.0" layoutY="74.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Stay in control and informed with our real-time insight dashboard">
+      <Text fill="#a6a6a6" layoutX="306.0" layoutY="71.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Stay in control and informed with our real-time insight dashboard">
          <font>
             <Font name="SansSerif Regular" size="13.0" />
          </font></Text>
@@ -210,14 +208,7 @@
       </Pane>
       <Pane layoutX="298.0" layoutY="243.0" prefHeight="339.0" prefWidth="614.0" style="-fx-background-color: white; -fx-background-radius: 20;">
          <children>
-            <TableView fx:id="patientTable" layoutX="14.0" layoutY="50.0" prefHeight="276.0" prefWidth="591.0">
-              <columns>
-                <TableColumn prefWidth="114.56072998046875" style="fx-background-color: #F4F4F4;" text="Patient ID" />
-                <TableColumn prefWidth="122.901611328125" text="Diagnosis ID" />
-                  <TableColumn prefWidth="124.098388671875" text="Treatment ID" />
-                  <TableColumn prefWidth="121.33746337890625" text="Procedure ID" />
-              </columns>
-            </TableView>
+            <TableView fx:id="homeScreenPatientTable" layoutX="14.0" layoutY="50.0" prefHeight="276.0" prefWidth="591.0" stylesheets="@../css/stylesheet.css" />
             <Text layoutX="16.0" layoutY="39.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #4FB3FF;" text="Patients">
                <font>
                   <Font name="SansSerif Bold" size="24.0" />
@@ -225,18 +216,6 @@
             </Text>
          </children>
       </Pane>
-      <Text layoutX="306.0" layoutY="52.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome back,">
-         <font>
-            <Font name="SansSerif Bold" size="36.0" />
-         </font>
-         <effect>
-            <DropShadow blurType="GAUSSIAN" height="10.0" offsetY="4.0" radius="4.5" width="10.0">
-               <color>
-                  <Color opacity="0.25" />
-               </color>
-            </DropShadow>
-         </effect>
-      </Text>
       <Pane layoutX="601.0" layoutY="86.0" prefHeight="143.0" prefWidth="276.0" style="-fx-background-color: white; -fx-background-radius: 20;">
          <children>
             <Text fill="#4fb3ff" layoutX="64.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Doctors">
@@ -303,17 +282,6 @@
             </ImageView>
          </children>
       </Pane>
-      <Label fx:id="homeScreenUserName" alignment="CENTER" layoutX="568.0" layoutY="18.0" style="-fx-text-fill: #4fb3ff;" text=" " textAlignment="CENTER" textFill="#4fb3ff">
-         <font>
-            <Font name="SansSerif Bold" size="36.0" />
-         </font>
-         <effect>
-            <DropShadow blurType="GAUSSIAN" height="10.0" offsetY="4.0" radius="4.5" width="10.0">
-               <color>
-                  <Color opacity="0.25" />
-               </color>
-            </DropShadow>
-         </effect>
-      </Label>
+      <TextFlow fx:id="welcomeMessageTextFlow" layoutX="304.0" layoutY="14.0" prefHeight="52.0" prefWidth="637.0" />
    </children>
 </Pane>

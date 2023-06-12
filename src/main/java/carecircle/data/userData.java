@@ -4,6 +4,6 @@ import carecircle.classes.user;
 
 public class userData {
 
-    public static user initUserData = new user(null, null, null);
-    
+    public static user initUserData = new user(" ", null, null);
+
 }
