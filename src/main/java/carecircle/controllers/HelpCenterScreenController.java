@@ -1,33 +1,15 @@
 package carecircle.controllers;
 
-<<<<<<< HEAD
-
-import javafx.fxml.FXML;
-import javafx.scene.control.TableView;
-=======
 import java.io.IOException;
 
 import carecircle.App;
-import carecircle.classes.user;
-import carecircle.data.userData;
-import javafx.application.Preloader.StateChangeNotification;
 import javafx.fxml.FXML;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
->>>>>>> 31b78fa4c790a517fa4fd0ff44b18934c04d95fe
 import javafx.scene.layout.Pane;
-import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextFlow;
 
-public class HomeScreenController {
-
-    @FXML
-    private static TextField homeScreenUserName;
-
-    @FXML
-    private Pane backgroundPane;
+public class HelpCenterScreenController {
 
     @FXML
     private Pane navigationSideBar;
@@ -54,9 +36,6 @@ public class HomeScreenController {
     private Pane sideBarSettingsButton;
 
     @FXML
-    private VBox menuBar;
-
-    @FXML
     private TextFlow textFlowTitle;
 
     @FXML
@@ -64,26 +43,6 @@ public class HomeScreenController {
 
     @FXML
     private Text titleText2;
-
-    @FXML
-<<<<<<< HEAD
-    private TableView<?> patientTable;
-
-
-    @FXML
-    public void initialize(){
-        
-       
-=======
-    public void initialize() {
-        System.out.println(userData.initUserData.name);
-        homeScreenUserName.setText("name2212");
-    }
-
-    @FXML
-    public void setUsername(String username) {
-        homeScreenUserName.setText(username);
-    }
 
     @FXML
     void switchToAppoitmentScreen(MouseEvent event) throws IOException {
@@ -128,6 +87,4 @@ public class HomeScreenController {
 
     }
 
->>>>>>> 31b78fa4c790a517fa4fd0ff44b18934c04d95fe
-}
 }

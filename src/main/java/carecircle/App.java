@@ -6,7 +6,6 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-
 import java.io.IOException;
 
 /**
@@ -18,8 +17,13 @@ public class App extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
+<<<<<<< HEAD
         scene = new Scene(loadFXML("addPatientScreen"), 1200, 600);
         // stage.setFullScreen(true);
+=======
+
+        scene = new Scene(loadFXML("loginScreen"), 1200, 600);
+>>>>>>> 31b78fa4c790a517fa4fd0ff44b18934c04d95fe
         stage.setScene(scene);
         stage.setResizable(false);
         stage.setTitle("CareCircle");
@@ -28,11 +32,12 @@ public class App extends Application {
 
     public static void setRoot(String fxml) throws IOException {
         scene.setRoot(loadFXML(fxml));
+        System.out.println("set root to " + fxml + " successfully");
     }
 
-    private static Parent loadFXML(String fxml) throws IOException {
+    public static Parent loadFXML(String fxml) throws IOException {
         System.out.println(App.class.getClassLoader());
-        FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("assets/fxml/"+ fxml + ".fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("assets/fxml/" + fxml + ".fxml"));
         return fxmlLoader.load();
     }
 

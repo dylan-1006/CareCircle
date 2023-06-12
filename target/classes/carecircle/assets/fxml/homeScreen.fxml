@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<<<<<<< HEAD
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
@@ -15,56 +16,19 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 <?import javafx.scene.text.TextFlow?>
+=======
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+>>>>>>> 31b78fa4c790a517fa4fd0ff44b18934c04d95fe
 
-<Pane fx:id="backgroundPane" maxHeight="605.0" maxWidth="1428.0" minHeight="605.0" minWidth="1183.0" prefHeight="605.0" prefWidth="1198.0" style="-fx-background-color: #F6F8FA;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="carecircle.controllers.homeScreenController">
+<Pane fx:id="backgroundPane" maxHeight="605.0" maxWidth="1428.0" minHeight="605.0" minWidth="1183.0" prefHeight="605.0" prefWidth="1198.0" style="-fx-background-color: #F6F8FA;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="carecircle.controllers.HomeScreenController">
    <children>
-      <Circle layoutX="547.0" layoutY="306.0" radius="145.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0">
-         <fill>
-            <LinearGradient endX="0.23040380047505937" endY="1.0" startX="1.0">
-               <stops>
-                  <Stop>
-                     <color>
-                        <Color red="0.30980393290519714" green="0.7019608020782471" blue="1.0" />
-                     </color>
-                  </Stop>
-                  <Stop offset="0.14609592404648858">
-                     <color>
-                        <Color red="0.30980393290519714" green="0.7019608020782471" blue="1.0" />
-                     </color>
-                  </Stop>
-                  <Stop offset="1.0">
-                     <color>
-                        <Color red="0.3199999928474426" green="0.7166666388511658" blue="1.0" opacity="0.0" />
-                     </color>
-                  </Stop>
-               </stops>
-            </LinearGradient>
-         </fill>
-      </Circle>
-      <Circle layoutX="923.0" layoutY="118.0" radius="100.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0">
-         <fill>
-            <LinearGradient endX="1.0" endY="1.0" startX="1.0">
-               <stops>
-                  <Stop>
-                     <color>
-                        <Color red="0.30980393290519714" green="0.7019608020782471" blue="1.0" />
-                     </color>
-                  </Stop>
-                  <Stop offset="0.14609592404648858">
-                     <color>
-                        <Color red="0.30980393290519714" green="0.7019608020782471" blue="1.0" />
-                     </color>
-                  </Stop>
-                  <Stop offset="1.0">
-                     <color>
-                        <Color red="0.3199999928474426" green="0.7166666388511658" blue="1.0" opacity="0.0" />
-                     </color>
-                  </Stop>
-               </stops>
-            </LinearGradient>
-         </fill>
-      </Circle>
-      <Pane prefHeight="600.0" prefWidth="265.0" style="-fx-background-color: FFFFFF;">
+      <Pane fx:id="navigationSideBar" prefHeight="600.0" prefWidth="265.0" style="-fx-background-color: FFFFFF;">
          <children>
             <TextFlow fx:id="textFlowTitle" cache="true" layoutX="32.0" layoutY="32.0" prefHeight="45.0" prefWidth="189.0" textAlignment="CENTER">
                <children>
@@ -80,12 +44,15 @@
                   </Text>
                </children>
             </TextFlow>
-            <TextField layoutX="20.0" layoutY="91.0" prefHeight="26.0" prefWidth="226.0" promptText="search..." style="-fx-background-radius: 20;" />
-            <Text fill="#b3b3b3" layoutX="31.0" layoutY="147.0" strokeType="OUTSIDE" strokeWidth="0.0" text="MAIN MENU" wrappingWidth="105.35025024414062">
+            <TextField alignment="CENTER" focusTraversable="false" layoutX="20.0" layoutY="91.0" prefHeight="26.0" prefWidth="226.0" promptText="🔍  Search" style="-fx-background-radius: 20; -fx-prompt-text-fill: #000000;">
                <font>
-                  <Font name="SansSerif Bold" size="13.0" />
+                  <Font name="SansSerif Regular" size="10.0" />
+               </font></TextField>
+            <Text fill="#d1d1d1" layoutX="26.0" layoutY="147.0" strokeType="OUTSIDE" strokeWidth="0.0" text="MAIN MENU" wrappingWidth="105.35025024414062">
+               <font>
+                  <Font name="SansSerif Bold" size="11.0" />
                </font></Text>
-            <Pane layoutX="18.0" layoutY="168.0" prefHeight="41.0" prefWidth="218.0" style="-fx-background-color: F6F6F6; -fx-background-radius: 15;">
+            <Pane fx:id="sideBarDashboardButton" layoutX="18.0" layoutY="168.0" onMouseClicked="#switchToHomeScreen" prefHeight="41.0" prefWidth="218.0" style="-fx-background-color: F6F6F6; -fx-background-radius: 15;">
                <children>
                   <Text layoutX="18.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #4FB3FF;" text="Dashboard">
                      <font>
@@ -93,7 +60,7 @@
                      </font></Text>
                </children>
             </Pane>
-            <Pane layoutX="18.0" layoutY="219.0" prefHeight="41.0" prefWidth="218.0" style="-fx-background-radius: 15;">
+            <Pane fx:id="sideBarAppointmentButton" layoutX="18.0" layoutY="219.0" onMouseClicked="#switchToAppoitmentScreen" prefHeight="41.0" prefWidth="218.0" style="-fx-background-radius: 15;">
                <children>
                   <Text fill="#b3b3b3" layoutX="18.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Appointment">
                      <font>
@@ -101,7 +68,7 @@
                      </font></Text>
                </children>
             </Pane>
-            <Pane layoutX="18.0" layoutY="270.0" prefHeight="41.0" prefWidth="218.0" style="-fx-background-radius: 15;">
+            <Pane fx:id="sideBarPatientButton" layoutX="18.0" layoutY="270.0" onMouseClicked="#switchToPatientScreen" prefHeight="41.0" prefWidth="218.0" style="-fx-background-radius: 15;">
                <children>
                   <Text fill="#b3b3b3" layoutX="18.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Patient">
                      <font>
@@ -109,31 +76,40 @@
                      </font></Text>
                </children>
             </Pane>
-            <Pane layoutX="18.0" layoutY="321.0" prefHeight="41.0" prefWidth="218.0" style="-fx-background-radius: 15;">
+            <Pane fx:id="sideBarMedicalStuffButton" layoutX="18.0" layoutY="321.0" onMouseClicked="#switchToMedicalStaffScreen" prefHeight="41.0" prefWidth="218.0" style="-fx-background-radius: 15;">
                <children>
-                  <Text fill="#b3b3b3" layoutX="18.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Medical Staff" />
-               </children>
-            </Pane>
-            <Line endX="100.0" layoutX="146.0" layoutY="394.0" startX="-130.0" stroke="#b3b3b3" />
-            <Text fill="#b3b3b3" layoutX="37.0" layoutY="430.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SUPPORT" wrappingWidth="71.99990195492336">
-               <font>
-                  <Font name="SansSerif Bold" size="13.0" />
-               </font></Text>
-            <Pane layoutX="18.0" layoutY="441.0" prefHeight="41.0" prefWidth="218.0" style="-fx-background-radius: 15;">
-               <children>
-                  <Text fill="#b3b3b3" layoutX="18.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Help Center" />
-               </children>
-            </Pane>
-            <Pane layoutX="18.0" layoutY="480.0" prefHeight="41.0" prefWidth="218.0" style="-fx-background-radius: 15;">
-               <children>
-                  <Text fill="#b3b3b3" layoutX="17.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Settings" />
-               </children>
-            </Pane>
-            <Pane layoutX="15.0" layoutY="528.0" prefHeight="41.0" prefWidth="218.0" style="-fx-background-radius: 15;">
-               <children>
-                  <Text fill="#b3b3b3" layoutX="22.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Logout">
+                  <Text fill="#b3b3b3" layoutX="18.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Medical Staff">
                      <font>
-                        <Font name="SansSerif Bold" size="13.0" />
+                        <Font name="SansSerif Regular" size="13.0" />
+                     </font></Text>
+               </children>
+            </Pane>
+            <Line endX="100.0" layoutX="146.0" layoutY="410.0" startX="-130.0" stroke="#b3b3b3" />
+            <Text fill="#d1d1d1" layoutX="22.0" layoutY="430.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SUPPORT" wrappingWidth="71.99990195492336">
+               <font>
+                  <Font name="SansSerif Bold" size="11.0" />
+               </font></Text>
+            <Pane fx:id="sideBarHelpCenterButton" layoutX="18.0" layoutY="441.0" onMouseClicked="#switchToHelpCenterScreen" prefHeight="41.0" prefWidth="218.0" style="-fx-background-radius: 15;">
+               <children>
+                  <Text fill="#b3b3b3" layoutX="18.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Help Center">
+                     <font>
+                        <Font name="SansSerif Regular" size="13.0" />
+                     </font></Text>
+               </children>
+            </Pane>
+            <Pane fx:id="sideBarSettingsButton" layoutX="18.0" layoutY="480.0" onMouseClicked="#switchToSettingsScreen" prefHeight="41.0" prefWidth="218.0" style="-fx-background-radius: 15;">
+               <children>
+                  <Text fill="#b3b3b3" layoutX="17.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Settings">
+                     <font>
+                        <Font name="SansSerif Regular" size="13.0" />
+                     </font></Text>
+               </children>
+            </Pane>
+            <Pane fx:id="sideBarLogoutButton" layoutX="15.0" layoutY="550.0" onMouseClicked="#switchToLoginScreen" prefHeight="41.0" prefWidth="218.0" style="-fx-background-radius: 15;">
+               <children>
+                  <Text fill="#b3b3b3" layoutX="22.0" layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Logout">
+                     <font>
+                        <Font name="SansSerif Regular" size="13.0" />
                      </font></Text>
                </children>
             </Pane>
@@ -141,7 +117,7 @@
       </Pane>
       <Text fill="#a6a6a6" layoutX="306.0" layoutY="74.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Stay in control and informed with our real-time insight dashboard">
          <font>
-            <Font name="SansSerif Bold" size="13.0" />
+            <Font name="SansSerif Regular" size="13.0" />
          </font></Text>
       <Pane layoutX="297.0" layoutY="85.0" prefHeight="143.0" prefWidth="276.0" style="-fx-background-color: white; -fx-background-radius: 20;">
          <children>
@@ -236,7 +212,7 @@
          <children>
             <TableView fx:id="patientTable" layoutX="14.0" layoutY="50.0" prefHeight="276.0" prefWidth="591.0">
               <columns>
-                <TableColumn prefWidth="114.56072998046875" text="Patient ID" />
+                <TableColumn prefWidth="114.56072998046875" style="fx-background-color: #F4F4F4;" text="Patient ID" />
                 <TableColumn prefWidth="122.901611328125" text="Diagnosis ID" />
                   <TableColumn prefWidth="124.098388671875" text="Treatment ID" />
                   <TableColumn prefWidth="121.33746337890625" text="Procedure ID" />
@@ -249,10 +225,17 @@
             </Text>
          </children>
       </Pane>
-      <Text layoutX="306.0" layoutY="52.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome back">
+      <Text layoutX="306.0" layoutY="52.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome back,">
          <font>
             <Font name="SansSerif Bold" size="36.0" />
          </font>
+         <effect>
+            <DropShadow blurType="GAUSSIAN" height="10.0" offsetY="4.0" radius="4.5" width="10.0">
+               <color>
+                  <Color opacity="0.25" />
+               </color>
+            </DropShadow>
+         </effect>
       </Text>
       <Pane layoutX="601.0" layoutY="86.0" prefHeight="143.0" prefWidth="276.0" style="-fx-background-color: white; -fx-background-radius: 20;">
          <children>
@@ -320,5 +303,17 @@
             </ImageView>
          </children>
       </Pane>
+      <Label fx:id="homeScreenUserName" alignment="CENTER" layoutX="568.0" layoutY="18.0" style="-fx-text-fill: #4fb3ff;" text=" " textAlignment="CENTER" textFill="#4fb3ff">
+         <font>
+            <Font name="SansSerif Bold" size="36.0" />
+         </font>
+         <effect>
+            <DropShadow blurType="GAUSSIAN" height="10.0" offsetY="4.0" radius="4.5" width="10.0">
+               <color>
+                  <Color opacity="0.25" />
+               </color>
+            </DropShadow>
+         </effect>
+      </Label>
    </children>
 </Pane>
