@@ -29,7 +29,7 @@ import javafx.scene.text.Text;
 import javafx.scene.text.TextFlow;
 import javafx.scene.effect.DropShadow;
 
-public class homeScreenController {
+public class HomeScreenController {
 
     @FXML
     private TextFlow welcomeMessageTextFlow;

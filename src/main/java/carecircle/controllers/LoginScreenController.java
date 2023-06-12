@@ -59,7 +59,6 @@ public class LoginScreenController {
                     found = true;
                     infoR.close();
                     userData.initUserData.setName(Name);
-
                     App.setRoot("homeScreen");
 
                 }
