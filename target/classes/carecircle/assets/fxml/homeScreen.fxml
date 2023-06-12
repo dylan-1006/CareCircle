@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.*?>
-<?import javafx.scene.effect.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
-<?import javafx.scene.paint.*?>
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
@@ -97,7 +95,7 @@
             </Pane>
          </children>
       </Pane>
-      <Text fill="#a6a6a6" layoutX="306.0" layoutY="74.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Stay in control and informed with our real-time insight dashboard">
+      <Text fill="#a6a6a6" layoutX="306.0" layoutY="71.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Stay in control and informed with our real-time insight dashboard">
          <font>
             <Font name="SansSerif Regular" size="13.0" />
          </font></Text>
@@ -200,18 +198,6 @@
             </Text>
          </children>
       </Pane>
-      <Text layoutX="306.0" layoutY="52.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome back,">
-         <font>
-            <Font name="SansSerif Bold" size="36.0" />
-         </font>
-         <effect>
-            <DropShadow blurType="GAUSSIAN" height="10.0" offsetY="4.0" radius="4.5" width="10.0">
-               <color>
-                  <Color opacity="0.25" />
-               </color>
-            </DropShadow>
-         </effect>
-      </Text>
       <Pane layoutX="601.0" layoutY="86.0" prefHeight="143.0" prefWidth="276.0" style="-fx-background-color: white; -fx-background-radius: 20;">
          <children>
             <Text fill="#4fb3ff" layoutX="64.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Doctors">
@@ -278,6 +264,6 @@
             </ImageView>
          </children>
       </Pane>
-      <Text fx:id="homeScreenUserName" layoutX="567.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name" />
+      <TextFlow fx:id="welcomeMessageTextFlow" layoutX="304.0" layoutY="14.0" prefHeight="52.0" prefWidth="637.0" />
    </children>
 </Pane>

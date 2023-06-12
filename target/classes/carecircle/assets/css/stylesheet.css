@@ -55,12 +55,15 @@
     -fx-background-color: #4FB3FF; 
     -fx-background-radius: 10px;
  }
- .table-row-cell:selected .text {
+ .table-row-cell:selected {
         -fx-fill: white;
  
  }
+
+
  .table-row-cell:hover {
     -fx-background-color: #4FB3FF;
     -fx-text-background-color: white;
     -fx-background-radius: 10px;
+    -fx-button-background-color: white;
 }

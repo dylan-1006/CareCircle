@@ -26,6 +26,8 @@ public class patientTableModel {
         this.dateOfBirth = new SimpleStringProperty(dateOfBirth);
         this.details = new Button("Details");
 
+        this.details.setStyle("-fx-background-color: transparent;-fx-text-fill: black; -fx-padding: 0 0 5 0 px");
+
     }
 
     public static ObservableList<patientTableModel> convertPatientDataToPatientDataModel() {
@@ -110,5 +112,10 @@ public class patientTableModel {
 
     public SimpleStringProperty dateOfBirthProperty() {
         return dateOfBirth;
+    }
+
+    public Button getDetails() {
+
+        return details;
     }
 }

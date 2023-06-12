@@ -9,21 +9,29 @@ import carecircle.tableModels.patientTableModel;
 import javafx.application.Preloader.StateChangeNotification;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.geometry.Pos;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.effect.BlurType;
+import javafx.scene.effect.DropShadow;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
+import javafx.scene.text.Font;
+import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextFlow;
+import javafx.scene.effect.DropShadow;
 
 public class HomeScreenController {
 
     @FXML
-    private static Text homeScreenUserName;
+    private TextFlow welcomeMessageTextFlow;
 
     @FXML
     private Pane backgroundPane;
@@ -70,6 +78,7 @@ public class HomeScreenController {
     @FXML
     public void initialize() {
 
+        // Loading the patient table
         ObservableList<patientTableModel> patientDataList = patientTableModel
                 .convertPatientDataToPatientDataModel();
 
@@ -78,7 +87,7 @@ public class HomeScreenController {
         TableColumn icColumn = new TableColumn("IC");
         TableColumn phoneNoColumn = new TableColumn("Phone No");
         TableColumn dateOfBirthColumn = new TableColumn("Date of Birth");
-        TableColumn detailsColumn = new TableColumn(" ");
+        TableColumn detailsColumn = new TableColumn("");
 
         homeScreenPatientTable.getColumns().addAll(patientIdColumn, patientNameColumn, icColumn, phoneNoColumn,
                 dateOfBirthColumn, detailsColumn);
@@ -92,11 +101,40 @@ public class HomeScreenController {
 
         homeScreenPatientTable.setItems(patientDataList);
 
+        homeScreenPatientTable.setOnMouseEntered(event -> {
+            detailsColumn.setStyle("-fx-text-fill: white;");
+        });
+
+        // Setting the username in welcome message
+        setUserName();
+
     }
 
-    @FXML
-    public void setUsername(String username) {
-        homeScreenUserName.setText(username);
+    void setUserName() {
+
+        Text welcomeBackText = new Text("Welcome back,");
+        // welcomeBackText.setLayoutY(35);
+        welcomeBackText.setFont(Font.font("SansSerif", FontWeight.BOLD, 36));
+
+        DropShadow dropShadow = new DropShadow();
+        dropShadow.setBlurType(BlurType.GAUSSIAN);
+        dropShadow.setColor(Color.rgb(0, 0, 0, 0.25));
+        dropShadow.setHeight(5);
+        dropShadow.setOffsetY(4);
+        dropShadow.setRadius(4.5);
+        dropShadow.setWidth(10);
+
+        welcomeBackText.setEffect(dropShadow);
+        welcomeBackText.setWrappingWidth(803);
+
+        Text homeScreenUserName = new Text(userData.initUserData.getName());
+        homeScreenUserName.setFont(Font.font("SansSerif", FontWeight.BOLD, 36));
+        homeScreenUserName.setFill(Color.web("#4FB3FF"));
+
+        homeScreenUserName.setEffect(dropShadow);
+        homeScreenUserName.setWrappingWidth(803);
+
+        welcomeMessageTextFlow.getChildren().addAll(welcomeBackText, homeScreenUserName);
     }
 
     @FXML
