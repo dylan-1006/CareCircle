@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.Pane?>
@@ -14,27 +13,27 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1200.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="carecircle.controllers.AddPatientScreenController">
    <children>
-      <Text layoutX="211.0" layoutY="105.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Patient">
+      <Text layoutX="211.0" layoutY="105.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Analysis">
          <font>
             <Font name="SansSerif Bold" size="36.0" />
          </font>
       </Text>
-      <Text layoutX="342.0" layoutY="104.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #4FB3FF;" text="Information">
+      <Text layoutX="371.0" layoutY="104.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #4FB3FF;" text="Results">
          <font>
             <Font name="SansSerif Bold" size="36.0" />
          </font>
       </Text>
-      <Text layoutX="214.0" layoutY="129.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #A6A6A6;" text="Fill in all required sections below to add a new patient">
+      <Text layoutX="214.0" layoutY="131.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #A6A6A6;" text="Fill in all required sections down below to add a new analysis result">
          <font>
             <Font name="SansSerif Regular" size="15.0" />
          </font>
       </Text>
-      <Text layoutX="225.0" layoutY="182.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #4FB3FF;" text="Full Name">
+      <Text layoutX="229.0" layoutY="182.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #4FB3FF;" text="Patient Name">
          <font>
             <Font name="SansSerif Regular" size="18.0" />
          </font>
       </Text>
-      <Text layoutX="231.0" layoutY="423.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #4FB3FF;" text="Email Address">
+      <Text layoutX="231.0" layoutY="423.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #4FB3FF;" text="Date">
          <font>
             <Font name="SansSerif Regular" size="18.0" />
          </font>
@@ -62,34 +61,17 @@
             </LinearGradient>
          </fill>
       </Circle>
-      <Text layoutX="689.0" layoutY="182.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #4FB3FF;" text="Identification Card Number">
+      <Text layoutX="689.0" layoutY="182.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #4FB3FF;" text="Analysis ID">
          <font>
             <Font name="SansSerif Regular" size="18.0" />
          </font>
       </Text>
-      <Text layoutX="689.0" layoutY="295.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #4FB3FF;" text="Contact Number">
+      <Text layoutX="689.0" layoutY="295.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #4FB3FF;" text="Description">
          <font>
             <Font name="SansSerif Regular" size="18.0" />
          </font>
       </Text>
-      <Text layoutX="231.0" layoutY="294.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #4FB3FF;" text="Date of Birth">
-         <font>
-            <Font name="SansSerif Regular" size="18.0" />
-         </font>
-      </Text>
-      <Text layoutX="414.0" layoutY="294.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #4FB3FF;" text="Gender">
-         <font>
-            <Font name="SansSerif Regular" size="18.0" />
-         </font>
-      </Text>
-      <TextField fx:id="email" layoutX="229.0" layoutY="430.0" prefHeight="27.0" prefWidth="321.0" />
-      <Text layoutX="689.0" layoutY="423.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #4FB3FF;" text="Blood Type">
-         <font>
-            <Font name="SansSerif Regular" size="18.0" />
-         </font>
-      </Text>
-      <ComboBox fx:id="bloodType" layoutX="689.0" layoutY="430.0" prefHeight="28.0" prefWidth="89.0" />
-      <Text layoutX="804.0" layoutY="422.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #4FB3FF;" text="Height">
+      <Text layoutX="231.0" layoutY="294.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #4FB3FF;" text="Doctor ID">
          <font>
             <Font name="SansSerif Regular" size="18.0" />
          </font>
@@ -99,22 +81,20 @@
             <Font name="SansSerif Bold" size="18.0" />
          </font>
       </Text>
-      <Text layoutX="898.0" layoutY="422.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #4FB3FF;" text="Weight">
+      <Text layoutX="898.0" layoutY="422.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #4FB3FF;">
          <font>
             <Font name="SansSerif Regular" size="18.0" />
          </font>
       </Text>
-      <TextField fx:id="name" layoutX="229.0" layoutY="199.0" />
-      <ComboBox fx:id="gender" layoutX="412.0" layoutY="313.0" prefWidth="150.0" />
-      <TextField fx:id="icNumber" layoutX="687.0" layoutY="201.0" />
-      <TextField fx:id="contactNumber" layoutX="688.0" layoutY="316.0" />
-      <TextField fx:id="height" layoutX="805.0" layoutY="430.0" prefHeight="33.0" prefWidth="61.0" />
-      <TextField fx:id="weight" layoutX="899.0" layoutY="431.0" prefHeight="33.0" prefWidth="61.0" />
+      <TextField fx:id="name" layoutX="228.0" layoutY="199.0" />
+      <TextField fx:id="icNumber" layoutX="689.0" layoutY="199.0" />
+      <TextField fx:id="contactNumber" layoutX="689.0" layoutY="307.0" />
       <Button fx:id="Continue" focusTraversable="false" layoutX="485.0" layoutY="502.0" mnemonicParsing="false" onAction="#addNewPatient" prefHeight="60.0" prefWidth="250.0" style="-fx-background-radius: 15; -fx-background-color: #4FB3FF;" text="Continue" textFill="WHITE">
          <font>
             <Font name="SansSerif Bold" size="25.5" />
          </font>
       </Button>
-      <DatePicker fx:id="date" layoutX="229.0" layoutY="313.0" prefHeight="23.0" prefWidth="159.0" />
+      <DatePicker fx:id="date" layoutX="229.0" layoutY="434.0" prefHeight="23.0" prefWidth="159.0" />
+      <TextField fx:id="name1" layoutX="230.0" layoutY="314.0" />
    </children>
 </Pane>
