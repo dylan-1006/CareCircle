@@ -16,7 +16,7 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1200.0" style="-fx-background-color: #F6F8FA;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Circle layoutX="938.0" layoutY="140.0" radius="122.0" rotate="23.5" stroke="TRANSPARENT" strokeType="INSIDE">
+      <Circle layoutX="928.0" layoutY="130.0" radius="122.0" rotate="23.5" stroke="TRANSPARENT" strokeType="INSIDE">
          <fill>
             <LinearGradient endX="1.0" endY="1.0">
                <stops>
@@ -44,7 +44,7 @@
             <Font name="SansSerif Regular" size="15.0" />
          </font>
       </Button>
-      <Button alignment="TOP_CENTER" layoutX="564.0" layoutY="79.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="92.0" style="-fx-background-color: #F4F4F4; -fx-background-radius: 10;" text="Diagnosis" textFill="#a6a6a6">
+      <Button alignment="TOP_CENTER" layoutX="564.0" layoutY="79.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="92.0" style="-fx-background-color: white; -fx-background-radius: 10;" text="Diagnosis" textFill="#169bff">
          <font>
             <Font name="SansSerif Regular" size="15.0" />
          </font>
@@ -54,7 +54,7 @@
             <Font name="SansSerif Regular" size="15.0" />
          </font>
       </Button>
-      <Button alignment="TOP_CENTER" layoutX="464.0" layoutY="79.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="92.0" style="-fx-background-color: white; -fx-background-radius: 10;" text="History" textFill="#169bff">
+      <Button alignment="TOP_CENTER" layoutX="464.0" layoutY="79.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="92.0" style="-fx-background-color: #F4F4F4; -fx-background-radius: 10;" text="History" textFill="#a6a6a6">
          <font>
             <Font name="SansSerif Regular" size="15.0" />
          </font>
@@ -148,7 +148,7 @@
       </Pane>
       <Pane layoutX="364.0" layoutY="107.0" prefHeight="304.0" prefWidth="813.0" style="-fx-background-color: white; -fx-background-radius: 15;">
          <children>
-            <Text fill="#169bff" layoutX="23.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" text="MEDICAL HISTORY">
+            <Text fill="#169bff" layoutX="23.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DIAGNOSIS">
                <font>
                   <Font name="SansSerif Regular" size="18.0" />
                </font>
@@ -170,32 +170,18 @@
               </columns>
             </TableView>
          </children></Pane>
-      <Pane layoutX="364.0" layoutY="441.0" prefHeight="136.0" prefWidth="385.0" style="-fx-background-color: white; -fx-background-radius: 15;">
+      <Pane layoutX="364.0" layoutY="441.0" prefHeight="136.0" prefWidth="813.0" style="-fx-background-color: white; -fx-background-radius: 15;">
          <children>
-            <Text fill="#169bff" layoutX="23.0" layoutY="29.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ALLERGIES">
+            <Text fill="#169bff" layoutX="23.0" layoutY="29.0" strokeType="OUTSIDE" strokeWidth="0.0" text="NOTES">
                <font>
                   <Font name="SansSerif Regular" size="18.0" />
                </font>
             </Text>
-            <TextArea layoutX="14.0" layoutY="45.0" prefHeight="84.0" prefWidth="344.0" style="-fx-background-color: WHITE; -fx-border-color: white;" text="1.  Atopic Dermatitis&#10;2.  Anaphylaxis">
+            <TextArea layoutX="14.0" layoutY="45.0" prefHeight="84.0" prefWidth="785.0" style="-fx-background-color: WHITE; -fx-border-color: white;">
                <font>
                   <Font name="SansSerif Regular" size="18.0" />
                </font>
             </TextArea>
          </children></Pane>
-      <Pane layoutX="793.0" layoutY="441.0" prefHeight="136.0" prefWidth="385.0" style="-fx-background-color: white; -fx-background-radius: 15;">
-         <children>
-            <Text fill="#169bff" layoutX="23.0" layoutY="29.0" strokeType="OUTSIDE" strokeWidth="0.0" text="PAST MEDICATIONS">
-               <font>
-                  <Font name="SansSerif Regular" size="18.0" />
-               </font>
-            </Text>
-            <TextArea layoutX="14.0" layoutY="45.0" prefHeight="76.0" prefWidth="344.0" style="-fx-background-color: WHITE; -fx-border-color: white;" text="1.  Acryvastin">
-               <font>
-                  <Font name="SansSerif Regular" size="18.0" />
-               </font>
-            </TextArea>
-         </children>
-      </Pane>
    </children>
 </Pane>
