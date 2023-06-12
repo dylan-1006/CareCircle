@@ -40,6 +40,8 @@ public class LoginScreenController {
     private TextField username;
     private Parent root;
 
+    
+
     @FXML
     void logIn(ActionEvent event) throws IOException {
 
@@ -57,7 +59,6 @@ public class LoginScreenController {
                     found = true;
                     infoR.close();
                     userData.initUserData.setName(Name);
-
                     App.setRoot("homeScreen");
 
                 }

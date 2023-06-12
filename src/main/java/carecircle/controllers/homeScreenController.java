@@ -1,5 +1,6 @@
 package carecircle.controllers;
 
+
 import java.io.IOException;
 
 import carecircle.App;
@@ -76,6 +77,7 @@ public class HomeScreenController {
     private Text titleText2;
 
     @FXML
+
     public void initialize() {
 
         // Loading the patient table
@@ -179,5 +181,6 @@ public class HomeScreenController {
         // App.setRoot("appointmentScreenGeneral");
 
     }
+
 
 }
