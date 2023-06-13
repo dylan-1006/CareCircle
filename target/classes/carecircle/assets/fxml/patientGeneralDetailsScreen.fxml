@@ -37,22 +37,22 @@
             <Font name="SansSerif Regular" size="15.0" />
          </font>
       </Button>
-      <Button alignment="TOP_CENTER" layoutX="664.0" layoutY="79.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="92.0" style="-fx-background-color: #F4F4F4; -fx-background-radius: 10;" text="Analysis" textFill="#a6a6a6">
+      <Button fx:id="analysisButton" alignment="TOP_CENTER" layoutX="664.0" layoutY="79.0" mnemonicParsing="false" onAction="#switchToAnalysisSection" prefHeight="44.0" prefWidth="92.0" style="-fx-background-color: #F4F4F4; -fx-background-radius: 10;" text="Analysis" textFill="#a6a6a6">
          <font>
             <Font name="SansSerif Regular" size="15.0" />
          </font>
       </Button>
-      <Button alignment="TOP_CENTER" layoutX="564.0" layoutY="79.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="92.0" style="-fx-background-color: #F4F4F4; -fx-background-radius: 10;" text="Diagnosis" textFill="#a6a6a6">
+      <Button fx:id="diagnosisButton" alignment="TOP_CENTER" layoutX="564.0" layoutY="79.0" mnemonicParsing="false" onAction="#switchToDiagnosisSection" prefHeight="44.0" prefWidth="92.0" style="-fx-background-color: #F4F4F4; -fx-background-radius: 10;" text="Diagnosis" textFill="#a6a6a6">
          <font>
             <Font name="SansSerif Regular" size="15.0" />
          </font>
       </Button>
-      <Button alignment="TOP_CENTER" layoutX="764.0" layoutY="79.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="92.0" style="-fx-background-color: #F4F4F4; -fx-background-radius: 10;" text="Treatment" textFill="#a6a6a6">
+      <Button fx:id="treatmentButton" alignment="TOP_CENTER" layoutX="764.0" layoutY="79.0" mnemonicParsing="false" onAction="#switchToTreatmentSection" prefHeight="44.0" prefWidth="92.0" style="-fx-background-color: #F4F4F4; -fx-background-radius: 10;" text="Treatment" textFill="#a6a6a6">
          <font>
             <Font name="SansSerif Regular" size="15.0" />
          </font>
       </Button>
-      <Button alignment="TOP_CENTER" layoutX="464.0" layoutY="79.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="92.0" style="-fx-background-color: #F4F4F4; -fx-background-radius: 10;" text="History" textFill="#a6a6a6">
+      <Button fx:id="historyButton" alignment="TOP_CENTER" layoutX="464.0" layoutY="79.0" mnemonicParsing="false" onAction="#switchToHistorySection" prefHeight="44.0" prefWidth="92.0" style="-fx-background-color: #F4F4F4; -fx-background-radius: 10;" text="History" textFill="#a6a6a6">
          <font>
             <Font name="SansSerif Regular" size="15.0" />
          </font>
@@ -78,7 +78,7 @@
                   <Font name="SansSerif Regular" size="18.0" />
                </font>
             </Text>
-            <TextField layoutX="123.0" layoutY="113.0" prefHeight="26.0" prefWidth="124.0" style="-fx-text-fill: #169BFF; -fx-background-color: white;" text="P212123">
+            <TextField fx:id="patientID" layoutX="123.0" layoutY="113.0" prefHeight="26.0" prefWidth="124.0" style="-fx-text-fill: #169BFF; -fx-background-color: white;" text="P212123">
                <font>
                   <Font name="SansSerif Regular" size="18.0" />
                </font></TextField>
@@ -107,37 +107,37 @@
                   <Font name="SansSerif Regular" size="18.0" />
                </font>
             </Text>
-            <Button layoutX="75.0" layoutY="461.0" mnemonicParsing="false" style="-fx-background-color: white;" text="Delete patient" textFill="RED">
+            <Button fx:id="deletePatientButton" layoutX="75.0" layoutY="461.0" mnemonicParsing="false" style="-fx-background-color: white;" text="Delete patient" textFill="RED">
                <font>
                   <Font name="SansSerif Regular" size="16.5" />
                </font>
             </Button>
-            <TextField layoutX="26.0" layoutY="19.0" prefHeight="68.0" prefWidth="224.0" style="-fx-text-fill: black; -fx-background-color: white;" text="James Baker">
+            <TextField fx:id="patientName" layoutX="26.0" layoutY="19.0" prefHeight="68.0" prefWidth="224.0" style="-fx-text-fill: black; -fx-background-color: white;" text="James Baker">
                <font>
                   <Font name="SansSerif Bold" size="30.0" />
                </font>
             </TextField>
-            <TextField layoutX="123.0" layoutY="213.0" prefHeight="26.0" prefWidth="124.0" style="-fx-text-fill: #169BFF; -fx-background-color: white;" text="23">
+            <TextField fx:id="age" layoutX="123.0" layoutY="213.0" prefHeight="26.0" prefWidth="124.0" style="-fx-text-fill: #169BFF; -fx-background-color: white;" text="23">
                <font>
                   <Font name="SansSerif Regular" size="18.0" />
                </font>
             </TextField>
-            <TextField layoutX="123.0" layoutY="163.0" prefHeight="26.0" prefWidth="124.0" style="-fx-text-fill: #169BFF; -fx-background-color: white;" text="Male">
+            <TextField fx:id="gender" layoutX="123.0" layoutY="163.0" prefHeight="26.0" prefWidth="124.0" style="-fx-text-fill: #169BFF; -fx-background-color: white;" text="Male">
                <font>
                   <Font name="SansSerif Regular" size="18.0" />
                </font>
             </TextField>
-            <TextField layoutX="123.0" layoutY="263.0" prefHeight="26.0" prefWidth="124.0" style="-fx-text-fill: #169BFF; -fx-background-color: white;" text="172cm">
+            <TextField fx:id="height" layoutX="123.0" layoutY="263.0" prefHeight="26.0" prefWidth="124.0" style="-fx-text-fill: #169BFF; -fx-background-color: white;" text="172cm">
                <font>
                   <Font name="SansSerif Regular" size="18.0" />
                </font>
             </TextField>
-            <TextField layoutX="123.0" layoutY="363.0" prefHeight="26.0" prefWidth="124.0" style="-fx-text-fill: #169BFF; -fx-background-color: white;" text="A-">
+            <TextField fx:id="bloodType" layoutX="123.0" layoutY="363.0" prefHeight="26.0" prefWidth="124.0" style="-fx-text-fill: #169BFF; -fx-background-color: white;" text="A-">
                <font>
                   <Font name="SansSerif Regular" size="18.0" />
                </font>
             </TextField>
-            <TextField layoutX="123.0" layoutY="313.0" prefHeight="26.0" prefWidth="124.0" style="-fx-text-fill: #169BFF; -fx-background-color: white;" text="65kg">
+            <TextField fx:id="weight" layoutX="123.0" layoutY="313.0" prefHeight="26.0" prefWidth="124.0" style="-fx-text-fill: #169BFF; -fx-background-color: white;" text="65kg">
                <font>
                   <Font name="SansSerif Regular" size="18.0" />
                </font>
@@ -151,7 +151,7 @@
                   <Font name="SansSerif Regular" size="18.0" />
                </font>
             </Text>
-            <Button layoutX="743.0" layoutY="12.0" mnemonicParsing="false" style="-fx-background-color: white;" text="Edit">
+            <Button fx:id="editButton" layoutX="743.0" layoutY="12.0" mnemonicParsing="false" onAction="#editPatientDetails" style="-fx-background-color: white;" text="Edit">
                <font>
                   <Font name="SansSerif Regular" size="16.5" />
                </font>
@@ -163,7 +163,7 @@
                         <Font name="SansSerif Regular" size="16.5" />
                      </font>
                   </Text>
-                  <TextField layoutX="-11.0" layoutY="21.0" prefHeight="31.0" prefWidth="107.0" style="-fx-background-color: white;" text="Baker">
+                  <TextField fx:id="lastName" layoutX="-11.0" layoutY="21.0" prefHeight="31.0" prefWidth="107.0" style="-fx-background-color: white;" text="Baker">
                      <font>
                         <Font size="16.5" />
                      </font>
@@ -177,7 +177,7 @@
                         <Font name="SansSerif Regular" size="16.5" />
                      </font>
                   </Text>
-                  <TextField layoutX="-11.0" layoutY="21.0" prefHeight="31.0" prefWidth="107.0" style="-fx-background-color: white;" text="James">
+                  <TextField fx:id="firstName" layoutX="-11.0" layoutY="21.0" prefHeight="31.0" prefWidth="107.0" style="-fx-background-color: white;" text="James">
                      <font>
                         <Font size="16.5" />
                      </font>
@@ -191,7 +191,7 @@
                         <Font name="SansSerif Regular" size="16.5" />
                      </font>
                   </Text>
-                  <TextField layoutX="-11.0" layoutY="21.0" prefHeight="31.0" prefWidth="107.0" style="-fx-background-color: white;" text="12/12/1999">
+                  <TextField fx:id="dateOfBirth" layoutX="-11.0" layoutY="21.0" prefHeight="31.0" prefWidth="107.0" style="-fx-background-color: white;" text="12/12/1999">
                      <font>
                         <Font size="16.5" />
                      </font>
@@ -205,7 +205,7 @@
                         <Font name="SansSerif Regular" size="16.5" />
                      </font>
                   </Text>
-                  <TextField layoutX="-11.0" layoutY="21.0" prefHeight="31.0" prefWidth="107.0" style="-fx-background-color: white;" text="Male">
+                  <TextField fx:id="gender2" layoutX="-11.0" layoutY="21.0" prefHeight="31.0" prefWidth="107.0" style="-fx-background-color: white;" text="Male">
                      <font>
                         <Font size="16.5" />
                      </font>
@@ -219,7 +219,7 @@
                         <Font name="SansSerif Regular" size="16.5" />
                      </font>
                   </Text>
-                  <TextField layoutX="-11.0" layoutY="21.0" prefHeight="31.0" prefWidth="107.0" style="-fx-background-color: white;" text="A-">
+                  <TextField fx:id="bloodType2" layoutX="-11.0" layoutY="21.0" prefHeight="31.0" prefWidth="107.0" style="-fx-background-color: white;" text="A-">
                      <font>
                         <Font size="16.5" />
                      </font>
@@ -233,7 +233,7 @@
                         <Font name="SansSerif Regular" size="16.5" />
                      </font>
                   </Text>
-                  <TextField layoutX="-11.0" layoutY="21.0" prefHeight="31.0" prefWidth="135.0" style="-fx-background-color: white;" text="+60212312332">
+                  <TextField fx:id="contactNo" layoutX="-11.0" layoutY="21.0" prefHeight="31.0" prefWidth="135.0" style="-fx-background-color: white;" text="+60212312332">
                      <font>
                         <Font size="16.5" />
                      </font>
@@ -247,7 +247,7 @@
                         <Font name="SansSerif Regular" size="16.5" />
                      </font>
                   </Text>
-                  <TextField layoutX="-11.0" layoutY="21.0" prefHeight="31.0" prefWidth="193.0" style="-fx-background-color: white;" text="bakerjames@gmail.com">
+                  <TextField fx:id="emailAddress" layoutX="-11.0" layoutY="21.0" prefHeight="31.0" prefWidth="193.0" style="-fx-background-color: white;" text="bakerjames@gmail.com">
                      <font>
                         <Font size="16.5" />
                      </font>
@@ -266,7 +266,7 @@
                         <Font name="SansSerif Regular" size="16.5" />
                      </font>
                   </Text>
-                  <TextField layoutX="-11.0" layoutY="21.0" prefHeight="31.0" prefWidth="107.0" style="-fx-background-color: white;" text="AP1213">
+                  <TextField fx:id="appointmentID" layoutX="-11.0" layoutY="21.0" prefHeight="31.0" prefWidth="107.0" style="-fx-background-color: white;" text="AP1213">
                      <font>
                         <Font size="16.5" />
                      </font>
@@ -280,7 +280,7 @@
                         <Font name="SansSerif Regular" size="16.5" />
                      </font>
                   </Text>
-                  <TextField layoutX="-11.0" layoutY="21.0" prefHeight="31.0" prefWidth="107.0" style="-fx-background-color: white;" text="22/08/2023">
+                  <TextField fx:id="date" layoutX="-11.0" layoutY="21.0" prefHeight="31.0" prefWidth="107.0" style="-fx-background-color: white;" text="22/08/2023">
                      <font>
                         <Font size="16.5" />
                      </font>
@@ -294,7 +294,7 @@
                         <Font name="SansSerif Regular" size="16.5" />
                      </font>
                   </Text>
-                  <TextField layoutX="-11.0" layoutY="21.0" prefHeight="31.0" prefWidth="107.0" style="-fx-background-color: white;" text="8:00 am">
+                  <TextField fx:id="time" layoutX="-11.0" layoutY="21.0" prefHeight="31.0" prefWidth="107.0" style="-fx-background-color: white;" text="8:00 am">
                      <font>
                         <Font size="16.5" />
                      </font>
@@ -308,7 +308,7 @@
                         <Font name="SansSerif Regular" size="16.5" />
                      </font>
                   </Text>
-                  <TextField layoutX="-11.0" layoutY="21.0" prefHeight="31.0" prefWidth="107.0" style="-fx-background-color: white;" text="MSD23293">
+                  <TextField fx:id="doctorID" layoutX="-11.0" layoutY="21.0" prefHeight="31.0" prefWidth="107.0" style="-fx-background-color: white;" text="MSD23293">
                      <font>
                         <Font size="16.5" />
                      </font>
@@ -322,7 +322,7 @@
                         <Font name="SansSerif Regular" size="16.5" />
                      </font>
                   </Text>
-                  <TextField layoutX="-11.0" layoutY="21.0" prefHeight="31.0" prefWidth="107.0" style="-fx-background-color: white;" text="D4.02">
+                  <TextField fx:id="venue" layoutX="-11.0" layoutY="21.0" prefHeight="31.0" prefWidth="107.0" style="-fx-background-color: white;" text="D4.02">
                      <font>
                         <Font size="16.5" />
                      </font>
@@ -337,7 +337,7 @@
                   <Font name="SansSerif Regular" size="18.0" />
                </font>
             </Text>
-            <TextArea layoutX="23.0" layoutY="36.0" prefHeight="90.0" prefWidth="765.0" style="-fx-background-color: white;" />
+            <TextArea fx:id="notes" layoutX="23.0" layoutY="36.0" prefHeight="90.0" prefWidth="765.0" style="-fx-background-color: white;" />
          </children></Pane>
    </children>
 </Pane>
