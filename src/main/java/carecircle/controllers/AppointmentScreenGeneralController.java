@@ -6,11 +6,14 @@ import carecircle.App;
 import javafx.fxml.FXML;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
+import javafx.scene.shape.Circle;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextFlow;
 
 public class AppointmentScreenGeneralController {
 
+    @FXML
+    private Circle addNewAppointmentButton;
     @FXML
     private Pane navigationSideBar;
 
@@ -43,6 +46,11 @@ public class AppointmentScreenGeneralController {
 
     @FXML
     private Text titleText2;
+
+    @FXML
+    void switchToAddAppointmentScreen(MouseEvent event) {
+
+    }
 
     @FXML
     void switchToAppoitmentScreen(MouseEvent event) throws IOException {
