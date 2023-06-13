@@ -1,16 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ComboBox?>
-<?import javafx.scene.control.DatePicker?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.Pane?>
-<?import javafx.scene.paint.Color?>
-<?import javafx.scene.paint.LinearGradient?>
-<?import javafx.scene.paint.Stop?>
-<?import javafx.scene.shape.Circle?>
-<?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1200.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="carecircle.controllers.AddPatientScreenController">
    <children>
@@ -104,17 +100,29 @@
             <Font name="SansSerif Regular" size="18.0" />
          </font>
       </Text>
-      <TextField fx:id="name" layoutX="229.0" layoutY="199.0" />
+      <TextField fx:id="name" layoutX="229.0" layoutY="199.0" prefHeight="25.0" prefWidth="321.0" />
       <ComboBox fx:id="gender" layoutX="412.0" layoutY="313.0" prefWidth="150.0" />
-      <TextField fx:id="icNumber" layoutX="687.0" layoutY="201.0" />
-      <TextField fx:id="contactNumber" layoutX="688.0" layoutY="316.0" />
+      <TextField fx:id="icNumber" layoutX="687.0" layoutY="201.0" prefHeight="25.0" prefWidth="274.0" />
+      <TextField fx:id="contactNumber" layoutX="688.0" layoutY="316.0" prefHeight="25.0" prefWidth="274.0" />
       <TextField fx:id="height" layoutX="805.0" layoutY="430.0" prefHeight="33.0" prefWidth="61.0" />
       <TextField fx:id="weight" layoutX="899.0" layoutY="431.0" prefHeight="33.0" prefWidth="61.0" />
-      <Button fx:id="Continue" focusTraversable="false" layoutX="485.0" layoutY="502.0" mnemonicParsing="false" onAction="#addNewPatient" prefHeight="60.0" prefWidth="250.0" style="-fx-background-radius: 15; -fx-background-color: #4FB3FF;" text="Continue" textFill="WHITE">
+      <Button fx:id="Continue" focusTraversable="false" layoutX="559.0" layoutY="514.0" mnemonicParsing="false" onAction="#addNewPatient" prefHeight="51.0" prefWidth="177.0" style="-fx-background-radius: 15; -fx-background-color: #4FB3FF;" text="Continue" textFill="WHITE">
          <font>
-            <Font name="SansSerif Bold" size="25.5" />
+            <Font name="SansSerif Bold" size="18.0" />
          </font>
+         <effect>
+            <DropShadow blurType="GAUSSIAN" height="10.0" offsetY="4.0" radius="4.5" width="10.0">
+               <color>
+                  <Color opacity="0.25" />
+               </color>
+            </DropShadow>
+         </effect>
       </Button>
-      <DatePicker fx:id="date" layoutX="229.0" layoutY="313.0" prefHeight="23.0" prefWidth="159.0" />
+      <DatePicker fx:id="date" editable="false" layoutX="229.0" layoutY="313.0" prefHeight="23.0" prefWidth="159.0" promptText="Select date of birth" />
+      <Text fx:id="backToPatientButton" fill="#4fb3ff" layoutX="33.0" layoutY="47.0" onMouseClicked="#backToPatientScreen" strokeType="OUTSIDE" strokeWidth="0.0" text="＜  Patients" wrappingWidth="100.0458984375">
+         <font>
+            <Font name="SansSerif Regular" size="16.0" />
+         </font>
+      </Text>
    </children>
 </Pane>
