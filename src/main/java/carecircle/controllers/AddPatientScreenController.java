@@ -1,6 +1,7 @@
 package carecircle.controllers;
 
 import java.io.FileWriter;
+import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
 
@@ -14,6 +15,8 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Alert.AlertType;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.text.Text;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
@@ -24,6 +27,8 @@ public class AddPatientScreenController {
         ObservableList<String> genderOptions = FXCollections.observableArrayList(
                         "Male", "Female", "Others");
 
+        @FXML
+        private Text backToPatientButton;
         @FXML
         private Button Continue;
 
@@ -140,6 +145,12 @@ public class AddPatientScreenController {
                 } catch (Exception e) {
 
                 }
+        }
+
+        @FXML
+        void backToPatientScreen(MouseEvent event) throws IOException {
+                App.setRoot("patientScreenGeneral");
+
         }
 
 }

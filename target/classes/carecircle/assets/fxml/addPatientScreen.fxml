@@ -118,5 +118,10 @@
          </effect>
       </Button>
       <DatePicker fx:id="date" editable="false" layoutX="229.0" layoutY="313.0" prefHeight="23.0" prefWidth="159.0" promptText="Select date of birth" />
+      <Text fx:id="backToPatientButton" fill="#4fb3ff" layoutX="33.0" layoutY="47.0" onMouseClicked="#backToPatientScreen" strokeType="OUTSIDE" strokeWidth="0.0" text="＜  Patients" wrappingWidth="100.0458984375">
+         <font>
+            <Font name="SansSerif Regular" size="16.0" />
+         </font>
+      </Text>
    </children>
 </Pane>
