@@ -14,7 +14,7 @@
 <?import javafx.scene.text.Text?>
 <?import javafx.scene.text.TextFlow?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1200.0" style="-fx-background-color: #F6F8FA;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1200.0" style="-fx-background-color: #F6F8FA;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="carecircle.controllers.PatientDetailsScreenAnalysisController">
    <children>
       <Circle layoutX="938.0" layoutY="140.0" radius="122.0" rotate="23.5" stroke="TRANSPARENT" strokeType="INSIDE">
          <fill>
@@ -148,7 +148,7 @@
       </Pane>
       <Pane layoutX="364.0" layoutY="107.0" prefHeight="304.0" prefWidth="813.0" style="-fx-background-color: white; -fx-background-radius: 15;">
          <children>
-            <Text fill="#169bff" layoutX="23.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TREATMENT">
+            <Text fill="#169bff" layoutX="23.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ANALYSIS">
                <font>
                   <Font name="SansSerif Regular" size="18.0" />
                </font>
