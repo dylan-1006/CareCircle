@@ -1,0 +1,13 @@
+A001,P67890,D001,2023-06-14,09:00,Main Hospital,Cardiology
+A002,P67891,D002,2023-06-15,10:00,Specialty Clinic,Orthopedics
+A003,P67892,D003,2023-06-16,11:00,Main Hospital,Neurology
+A004,P67893,D004,2023-06-17,12:00,Specialty Clinic,Dermatology
+A005,P67894,D005,2023-06-18,13:00,Main Hospital,Ophthalmology
+A006,P67895,D006,2023-06-19,14:00,Specialty Clinic,Gastroenterology
+A007,P67896,D007,2023-06-20,15:00,Main Hospital,Endocrinology
+A008,P67897,D008,2023-06-21,16:00,Specialty Clinic,Cardiology
+A009,P67898,D009,2023-06-22,17:00,Main Hospital,Orthopedics
+A010,P67899,D010,2023-06-23,18:00,Specialty Clinic,Neurology
+A011,P67900,D011,2023-06-24,19:00,Main Hospital,Dermatology
+A012,P67901,D012,2023-06-25,20:00,Specialty Clinic,Ophthalmology
+A013,P67902,D013,2023-06-26,21:00,Main Hospital,Gastroenterology
