@@ -1,17 +1,16 @@
 package carecircle.classes;
 
-import java.util.Date;
 
 public class appointment {
     private String appointmentID;
     private String patientID;
     private String doctorID;
-    private Date date;
+    private String date;
     private String time;
     private String venue;
     private String department;
     
-    public appointment(String appointmentID, String patientID, String doctorID, Date date, String time, String venue, String department) {
+    public appointment(String appointmentID, String patientID, String doctorID, String date, String time, String venue, String department) {
         this.appointmentID = appointmentID;
         this.patientID = patientID;
         this.doctorID = doctorID;
@@ -45,11 +44,11 @@ public class appointment {
         return doctorID;
     }
     
-    public void setDate(Date date) {
+    public void setDate(String date) {
         this.date = date;
     }
     
-    public Date getDate() {
+    public String getDate() {
         return date;
     }
     
