@@ -200,7 +200,7 @@
             <TextField layoutX="316.0" layoutY="227.0" />
             <Text layoutX="554.0" layoutY="223.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Department">
                <font>
-f<Font name="SansSeri Regular" size="18.0" />
+                  <Font name="SansSeri Regular" size="18.0" />
                </font>
             </Text>
             <TextField layoutX="554.0" layoutY="227.0" />
