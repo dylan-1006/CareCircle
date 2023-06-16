@@ -97,6 +97,7 @@ public class PatientScreenGeneralController {
 
         patientScreenTable.setItems(patientDataList);
 
+        //Setting total patient amount
         setPatientAmount();
 
     }

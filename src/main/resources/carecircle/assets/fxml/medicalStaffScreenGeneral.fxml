@@ -173,15 +173,7 @@
                   <Font name="SansSerif Bold" size="24.0" />
                </font>
             </Text>
-            <TableView layoutX="27.0" layoutY="46.0" prefHeight="234.0" prefWidth="858.0" style="-fx-background-radius: 20; -fx-background-color: #F4F4F4;">
-               <columns>
-                  <TableColumn prefWidth="144.00198364257812" text="Staff No" />
-                  <TableColumn prefWidth="155.49801635742188" text="Staff Name" />
-                  <TableColumn prefWidth="144.301513671875" text="Contact Number" />
-                  <TableColumn prefWidth="181.19842529296875" text="Email" />
-                  <TableColumn prefWidth="137.799560546875" text="Date of Birth" />
-               </columns>
-            </TableView>
+            <TableView fx:id="medicalStaffScreenTable" layoutX="27.0" layoutY="46.0" prefHeight="234.0" prefWidth="837.0" stylesheets="@../css/stylesheet.css" />
          </children>
       </Pane>
       <TextFlow fx:id="textFlowTitle1" cache="true" layoutX="42.0" layoutY="42.0" prefHeight="45.0" prefWidth="189.0" textAlignment="CENTER" />
