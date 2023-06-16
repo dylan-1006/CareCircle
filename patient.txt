@@ -1,3 +1,0 @@
-1,Rex Lim,031127020167,0147593534,rex@gmail.com,11/11/2003,Female,180.0,70.0,A-
-1,Dylan,031127020167,0147593534,dylan123@gmail.com,2023-06-01,Male,123.0,20.0,A-
-P52741,Hans Andreanto,1232132123,02112321321,hansuasu@gmail.com,2012-06-07,Male, ,190.0,76.0,O-

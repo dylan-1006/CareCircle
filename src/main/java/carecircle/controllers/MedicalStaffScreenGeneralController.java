@@ -62,7 +62,7 @@ public class MedicalStaffScreenGeneralController {
 
     public void initialize() {
 
-         // Loading the staff table
+        // Loading the staff table
 
         ObservableList<staffTableModel> staffDataList = staffTableModel
                 .convertStaffDataToStaffDataModel();
@@ -90,8 +90,7 @@ public class MedicalStaffScreenGeneralController {
 
         medicalStaffScreenTable.setItems(staffDataList);
 
-
-        //Setting total staff amount
+        // Setting total staff amount
         setStaffAmount();
     }
 
