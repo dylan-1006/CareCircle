@@ -5,33 +5,31 @@ import java.util.List;
 import carecircle.classes.nurse;
 import carecircle.classes.doctor;
 import carecircle.data.doctorData;
-import carecircle.data.nurseData; 
+import carecircle.data.nurseData;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.control.Button;
 
 public class staffTableModel {
-    private SimpleStringProperty doctorID;
-    private SimpleStringProperty nurseID;
+    private SimpleStringProperty staffID;
     private SimpleStringProperty name;
     private SimpleStringProperty phoneNo;
     private SimpleStringProperty email;
     private SimpleStringProperty dateOfBirth;
     private SimpleStringProperty gender;
-    private SimpleStringProperty specialization;
+    private SimpleStringProperty department;
     private Button details;
 
-    public staffTableModel(String doctorID, String nurseID, String name, String phoneNo, String email, String dateOfBirth, String gender,
-    String specialization) {
-        this.doctorID = new SimpleStringProperty(doctorID);
-        this.nurseID = new SimpleStringProperty(nurseID);
+    public staffTableModel(String staffID, String name, String phoneNo, String email, String dateOfBirth, String gender,
+            String department) {
+        this.staffID = new SimpleStringProperty(staffID);
         this.name = new SimpleStringProperty(name);
         this.phoneNo = new SimpleStringProperty(phoneNo);
         this.email = new SimpleStringProperty(email);
         this.dateOfBirth = new SimpleStringProperty(dateOfBirth);
         this.gender = new SimpleStringProperty(gender);
-        this.specialization = new SimpleStringProperty(specialization);
+        this.department = new SimpleStringProperty(department);
         this.details = new Button("Details");
         this.details.setStyle("-fx-background-color: transparent; -fx-text-fill: black; -fx-padding: 0 0 5 0px");
     }
@@ -44,120 +42,98 @@ public class staffTableModel {
 
         for (int i = 0; i < doctorList.size(); i++) {
 
-            String doctorID = doctorList.get(i).getPatientID();
-            String patientName = patientList.get(i).getName();
-            String ic = patientList.get(i).getIc();
-            String phoneNo = patientList.get(i).getPhoneNo();
-            String dateOfBirth = patientList.get(i).getDateOfBirth();
-            double height = patientList.get(i).getHeight();
-            double weight = patientList.get(i).getWeight();
-            String bloodType = patientList.get(i).getBloodType();
+            String doctorID = doctorList.get(i).getDoctorID();
+            String name = doctorList.get(i).getName();
+            String phoneNo = doctorList.get(i).getPhoneNo();
+            String email = doctorList.get(i).getEmail();
+            String dateOfBirth = doctorList.get(i).getDateOfBirth();
+            String gender = doctorList.get(i).getGender();
+            String department = "Doctor";
 
-            patientTableModel patientTableModel = new patientTableModel(patientId, patientName, ic,
-                    phoneNo,
-                    dateOfBirth, height, weight, bloodType);
+            staffTableModel staffDoctorTableModel = new staffTableModel(doctorID, name, phoneNo, email, dateOfBirth,
+                    gender,
+                    department);
 
-            observablePatientList.add(patientTableModel);
+            observableStaffList.add(staffDoctorTableModel);
 
         }
 
-        return observablePatientList;
+        for (int i = 0; i < nurseList.size(); i++) {
+
+            String nurseID = nurseList.get(i).getNurseID();
+            String name = nurseList.get(i).getName();
+            String phoneNo = nurseList.get(i).getPhoneNo();
+            String email = nurseList.get(i).getEmail();
+            String dateOfBirth = nurseList.get(i).getDateOfBirth();
+            String gender = nurseList.get(i).getGender();
+            String department = "Nurse";
+
+            staffTableModel staffNurseTableModel = new staffTableModel(nurseID, name, phoneNo, email, dateOfBirth,
+                    gender,
+                    department);
+
+            observableStaffList.add(staffNurseTableModel);
+
+        }
+
+        return observableStaffList;
 
     }
-    public String getDoctorID() {
-        return doctorID.get();
+
+    public String getStaffID() {
+        return staffID.get();
     }
 
-    public void setDoctorID(String patientId) {
-        this.patientId.set(patientId);
+    public SimpleStringProperty staffIDProperty() {
+        return staffID;
     }
 
-    public SimpleStringProperty patientIdProperty() {
-        return patientId;
+    public String getName() {
+        return name.get();
     }
 
-    public String getPatientName() {
-        return patientName.get();
-    }
-
-    public void setPatientName(String patientName) {
-        this.patientName.set(patientName);
-    }
-
-    public SimpleStringProperty patientNameProperty() {
-        return patientName;
-    }
-
-    public String getIc() {
-        return ic.get();
-    }
-
-    public void setIc(String ic) {
-        this.ic.set(ic);
-    }
-
-    public SimpleStringProperty icProperty() {
-        return ic;
+    public SimpleStringProperty nameProperty() {
+        return name;
     }
 
     public String getPhoneNo() {
         return phoneNo.get();
     }
 
-    public void setPhoneNo(String phoneNo) {
-        this.phoneNo.set(phoneNo);
-    }
-
     public SimpleStringProperty phoneNoProperty() {
         return phoneNo;
+    }
+
+    public String getEmail() {
+        return email.get();
+    }
+
+    public SimpleStringProperty emailProperty() {
+        return email;
     }
 
     public String getDateOfBirth() {
         return dateOfBirth.get();
     }
 
-    public void setDateOfBirth(String dateOfBirth) {
-        this.dateOfBirth.set(dateOfBirth);
-    }
-
     public SimpleStringProperty dateOfBirthProperty() {
         return dateOfBirth;
     }
 
-    public double getHeight() {
-        return height.get();
+    public String getGender() {
+        return gender.get();
     }
 
-    public void setHeight(double height) {
-        this.height.set(height);
+    public SimpleStringProperty genderProperty() {
+        return gender;
     }
 
-    public SimpleDoubleProperty heightProperty() {
-        return height;
+    public String getDepartment() {
+        return department.get();
     }
 
-    public double getWeight() {
-        return weight.get();
-    }
-
-    public void setWeight(double weight) {
-        this.weight.set(weight);
-    }
-
-    public SimpleDoubleProperty weightProperty() {
-        return weight;
-    }
-
-    public String getBloodType() {
-        return bloodType.get();
-    }
-
-    public void setBloodType(String bloodType) {
-        this.bloodType.set(bloodType);
-    }
-
-    public SimpleStringProperty bloodTypeProperty() {
-        return bloodType;
+    public SimpleStringProperty departmentProperty() {
+        return department;
     }
 
     public Button getDetails() {
