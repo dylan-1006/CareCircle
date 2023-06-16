@@ -4,30 +4,35 @@ import java.util.List;
 
 import carecircle.classes.patient;
 import carecircle.data.patientData;
+import javafx.beans.property.SimpleDoubleProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.control.Button;
 
 public class patientTableModel {
-
     private SimpleStringProperty patientId;
     private SimpleStringProperty patientName;
     private SimpleStringProperty ic;
     private SimpleStringProperty phoneNo;
     private SimpleStringProperty dateOfBirth;
+    private SimpleDoubleProperty height;
+    private SimpleDoubleProperty weight;
+    private SimpleStringProperty bloodType;
     private Button details;
 
-    public patientTableModel(String patientId, String patientName, String ic, String phoneNo, String dateOfBirth) {
+    public patientTableModel(String patientId, String patientName, String ic, String phoneNo, String dateOfBirth,
+            double height, double weight, String bloodType) {
         this.patientId = new SimpleStringProperty(patientId);
         this.patientName = new SimpleStringProperty(patientName);
         this.ic = new SimpleStringProperty(ic);
         this.phoneNo = new SimpleStringProperty(phoneNo);
         this.dateOfBirth = new SimpleStringProperty(dateOfBirth);
+        this.height = new SimpleDoubleProperty(height);
+        this.weight = new SimpleDoubleProperty(weight);
+        this.bloodType = new SimpleStringProperty(bloodType);
         this.details = new Button("Details");
-
-        this.details.setStyle("-fx-background-color: transparent;-fx-text-fill: black; -fx-padding: 0 0 5 0 px");
-
+        this.details.setStyle("-fx-background-color: transparent; -fx-text-fill: black; -fx-padding: 0 0 5 0px");
     }
 
     public static ObservableList<patientTableModel> convertPatientDataToPatientDataModel() {
@@ -42,9 +47,13 @@ public class patientTableModel {
             String ic = patientList.get(i).getIc();
             String phoneNo = patientList.get(i).getPhoneNo();
             String dateOfBirth = patientList.get(i).getDateOfBirth();
+            double height = patientList.get(i).getHeight();
+            double weight = patientList.get(i).getWeight();
+            String bloodType = patientList.get(i).getBloodType();
 
-            patientTableModel patientTableModel = new patientTableModel(patientId, patientName, ic, phoneNo,
-                    dateOfBirth);
+            patientTableModel patientTableModel = new patientTableModel(patientId, patientName, ic,
+                    phoneNo,
+                    dateOfBirth, height, weight, bloodType);
 
             observablePatientList.add(patientTableModel);
 
@@ -114,8 +123,47 @@ public class patientTableModel {
         return dateOfBirth;
     }
 
-    public Button getDetails() {
+    public double getHeight() {
+        return height.get();
+    }
 
+    public void setHeight(double height) {
+        this.height.set(height);
+    }
+
+    public SimpleDoubleProperty heightProperty() {
+        return height;
+    }
+
+    public double getWeight() {
+        return weight.get();
+    }
+
+    public void setWeight(double weight) {
+        this.weight.set(weight);
+    }
+
+    public SimpleDoubleProperty weightProperty() {
+        return weight;
+    }
+
+    public String getBloodType() {
+        return bloodType.get();
+    }
+
+    public void setBloodType(String bloodType) {
+        this.bloodType.set(bloodType);
+    }
+
+    public SimpleStringProperty bloodTypeProperty() {
+        return bloodType;
+    }
+
+    public Button getDetails() {
         return details;
+    }
+
+    public void setDetails(Button details) {
+        this.details = details;
     }
 }

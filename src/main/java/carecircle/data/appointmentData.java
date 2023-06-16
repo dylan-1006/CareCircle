@@ -11,6 +11,7 @@ import carecircle.classes.appointment;
 public class appointmentData {
     public static void main(String[] args) {
         loadAppointmentDataFromDatabase();
+
     }
 
     public static String fileName = "src/main/resources/carecircle/assets/database/appointment.txt";
@@ -18,29 +19,34 @@ public class appointmentData {
     public static List<appointment> loadAppointmentDataFromDatabase() {
         List<appointment> appointmentList = new ArrayList<>();
 
-        try (BufferedReader reader = new BufferedReader(new FileReader(fileName))) {
+        try (
+
+                BufferedReader reader = new BufferedReader(new FileReader(fileName))
+
+        ) {
             String newLine;
             while ((newLine = reader.readLine()) != null) {
                 String[] appointmentData = newLine.split(",");
-                String doctorID = appointmentData[0].trim();
-                String venue = appointmentData[1].trim();
-                String patientName = appointmentData[2].trim();
-                String patientID = appointmentData[3].trim();
-                String date = appointmentData[4].trim();
-                String time = appointmentData[5].trim();
+                String appointmentId = appointmentData[0].trim();
+                String patientId = appointmentData[1].trim();
+                String doctorId = appointmentData[2].trim();
+                String date = appointmentData[3].trim();
+                String time = appointmentData[4].trim();
+                String venue = appointmentData[5].trim();
                 String department = appointmentData[6].trim();
-                String appointmentID = appointmentData[7].trim();
 
-
-                appointment newAppointment = new appointment(doctorID, venue, patientName, patientID, date, time,
-                        department, appointmentID);
+                appointment newAppointment = new appointment(appointmentId, patientId, doctorId, date, 
+                time, venue, department);
 
                 appointmentList.add(newAppointment);
+
             }
         } catch (IOException e) {
+            // TODO Auto-generated catch block
             e.printStackTrace();
         }
 
         return appointmentList;
     }
+
 }

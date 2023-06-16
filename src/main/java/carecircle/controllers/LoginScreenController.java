@@ -23,9 +23,6 @@ import javafx.stage.Stage;
 import javafx.scene.control.Alert.AlertType;
 
 public class LoginScreenController {
-    private Stage stage;
-
-    private Scene scene;
 
     @FXML
     private Button continueButton;
@@ -38,9 +35,7 @@ public class LoginScreenController {
 
     @FXML
     private TextField username;
-    private Parent root;
 
-    
 
     @FXML
     void logIn(ActionEvent event) throws IOException {

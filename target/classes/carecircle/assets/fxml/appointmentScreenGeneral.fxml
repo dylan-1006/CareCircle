@@ -82,7 +82,7 @@
       </Text>
       <Pane layoutX="802.0" layoutY="120.0" prefHeight="150.0" prefWidth="364.0" style="-fx-background-radius: 20; -fx-background-color: #4FB3FF;">
          <children>
-            <Circle fill="WHITE" layoutX="75.0" layoutY="74.0" radius="53.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0">
+            <Circle fx:id="addNewAppointmentButton" fill="WHITE" layoutX="75.0" layoutY="74.0" onMouseClicked="#switchToAddAppointmentScreen" radius="53.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0">
                <effect>
                   <DropShadow blurType="GAUSSIAN" height="10.0" offsetY="4.0" radius="4.5" width="10.0">
                      <color>
@@ -129,7 +129,7 @@
                </font>
             </Text>
             <Line endX="371.5955810546875" endY="-1.52587890625E-5" layoutX="118.0" layoutY="56.0" startX="-86.51385498046875" startY="-1.52587890625E-5" stroke="#a6a6a6" />
-            <Text fill="#4fb3ff" layoutX="68.0" layoutY="104.0" strokeType="OUTSIDE" strokeWidth="0.0" text="78">
+            <Text fx:id="totalAppointments" fill="#4fb3ff" layoutX="68.0" layoutY="104.0" strokeType="OUTSIDE" strokeWidth="0.0" text="78">
                <font>
                   <Font name="SansSerif Bold" size="36.0" />
                </font>
@@ -172,7 +172,7 @@
                   <Font name="SansSerif Bold" size="24.0" />
                </font>
             </Text>
-            <TableView layoutX="14.0" layoutY="46.0" prefHeight="234.0" prefWidth="850.0" style="-fx-background-radius: 20; -fx-background-color: #F4F4F4;" />
+            <TableView fx:id="appointmentTable" layoutX="14.0" layoutY="46.0" prefHeight="234.0" prefWidth="850.0" stylesheets="@../css/stylesheet.css" />
          </children>
       </Pane>
       <Pane fx:id="navigationSideBar" prefHeight="600.0" prefWidth="265.0" style="-fx-background-color: FFFFFF;">

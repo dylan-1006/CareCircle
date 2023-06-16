@@ -85,15 +85,14 @@
             <Font name="SansSerif Regular" size="13.0" />
          </font>
       </Text>
-      <Pane layoutX="806.0" layoutY="120.0" prefHeight="150.0" prefWidth="364.0" style="-fx-background-radius: 20; -fx-background-color: #4FB3FF;">
+      <Pane fx:id="addNewPatientPane" layoutX="806.0" layoutY="120.0" onMouseClicked="#switchToAddNewPatientScreen" prefHeight="150.0" prefWidth="364.0" style="-fx-background-radius: 20; -fx-background-color: #4FB3FF;">
          <children>
-            <Circle fill="WHITE" layoutX="80.0" layoutY="79.0" radius="59.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0">
+            <Circle fill="WHITE" layoutX="75.0" layoutY="74.0" radius="53.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0">
                <effect>
                   <DropShadow blurType="GAUSSIAN" height="10.0" offsetY="4.0" radius="4.5" width="10.0">
                      <color>
                         <Color opacity="0.25" />
-                     </color>
-                  </DropShadow>
+                     </color></DropShadow>
                </effect></Circle>
             <Text fill="WHITE" layoutX="163.0" layoutY="122.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Patient">
                <font>
@@ -105,7 +104,7 @@
                   <Font name="SansSerif Bold" size="36.0" />
                </font>
             </Text>
-            <Text fill="#169bff" layoutX="44.0" layoutY="123.0" strokeType="OUTSIDE" strokeWidth="0.0" text="+">
+            <Text fill="#169bff" layoutX="39.0" layoutY="121.0" strokeType="OUTSIDE" strokeWidth="0.0" text="+">
                <font>
                   <Font name="SansSerif Bold" size="126.0" />
                </font>
@@ -127,7 +126,7 @@
                </font>
             </Text>
             <Line endX="371.5955810546875" endY="-1.52587890625E-5" layoutX="118.0" layoutY="56.0" startX="-86.51385498046875" startY="-1.52587890625E-5" stroke="#a6a6a6" />
-            <Text fill="#4fb3ff" layoutX="68.0" layoutY="104.0" strokeType="OUTSIDE" strokeWidth="0.0" text="372">
+            <Text fx:id="totalPatientAdmissions" fill="#4fb3ff" layoutX="68.0" layoutY="104.0" strokeType="OUTSIDE" strokeWidth="0.0" text="372">
                <font>
                   <Font name="SansSerif Bold" size="36.0" />
                </font>
@@ -163,22 +162,14 @@
             </DropShadow>
          </effect>
       </Pane>
-      <Pane layoutX="281.0" layoutY="285.0" prefHeight="288.0" prefWidth="892.0" style="-fx-background-radius: 20; -fx-background-color: #FFFFFF;">
+      <Pane layoutX="281.0" layoutY="285.0" prefHeight="288.0" prefWidth="892.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 20;">
          <children>
-            <Text fill="#4fb3ff" layoutX="31.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Patients">
+            <Text fill="#4fb3ff" layoutX="17.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Patients">
                <font>
                   <Font name="SansSerif Bold" size="24.0" />
                </font>
             </Text>
-            <TableView layoutX="27.0" layoutY="46.0" prefHeight="234.0" prefWidth="846.0" style="-fx-background-radius: 20; -fx-background-color: #F4F4F4;">
-              <columns>
-                <TableColumn prefWidth="150.47775268554688" text="Patient No" />
-                <TableColumn prefWidth="148.52224731445312" text="Patient Name" />
-                  <TableColumn prefWidth="185.0511474609375" text="Identification No." />
-                  <TableColumn prefWidth="172.58892822265625" text="Contact Number" />
-                  <TableColumn prefWidth="102.1400146484375" text="Age" />
-              </columns>
-            </TableView>
+            <TableView fx:id="patientScreenTable" layoutX="11.0" layoutY="46.0" prefHeight="234.0" prefWidth="841.0" stylesheets="@../css/stylesheet.css" />
          </children>
       </Pane>
       <Pane fx:id="navigationSideBar" prefHeight="600.0" prefWidth="265.0" style="-fx-background-color: FFFFFF;">

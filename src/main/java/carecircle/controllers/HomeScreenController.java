@@ -1,25 +1,19 @@
 package carecircle.controllers;
 
-
 import java.io.IOException;
 
 import carecircle.App;
 import carecircle.classes.user;
 import carecircle.data.userData;
-import carecircle.tableModels.patientTableModel;
-import javafx.application.Preloader.StateChangeNotification;
+import carecircle.tableModels.homeScreenPatientTableModel;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
-import javafx.geometry.Pos;
-import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.effect.BlurType;
 import javafx.scene.effect.DropShadow;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
@@ -27,7 +21,6 @@ import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextFlow;
-import javafx.scene.effect.DropShadow;
 
 public class HomeScreenController {
 
@@ -44,7 +37,7 @@ public class HomeScreenController {
     private Pane sideBarAppointmentButton;
 
     @FXML
-    private TableView<patientTableModel> homeScreenPatientTable;
+    private TableView<homeScreenPatientTableModel> homeScreenPatientTable;
 
     @FXML
     private Pane sideBarDashboardButton;
@@ -81,7 +74,7 @@ public class HomeScreenController {
     public void initialize() {
 
         // Loading the patient table
-        ObservableList<patientTableModel> patientDataList = patientTableModel
+        ObservableList<homeScreenPatientTableModel> patientDataList = homeScreenPatientTableModel
                 .convertPatientDataToPatientDataModel();
 
         TableColumn patientIdColumn = new TableColumn("Patient ID");
@@ -102,10 +95,6 @@ public class HomeScreenController {
         detailsColumn.setCellValueFactory(new PropertyValueFactory<>("details"));
 
         homeScreenPatientTable.setItems(patientDataList);
-
-        homeScreenPatientTable.setOnMouseEntered(event -> {
-            detailsColumn.setStyle("-fx-text-fill: white;");
-        });
 
         // Setting the username in welcome message
         setUserName();
@@ -181,6 +170,5 @@ public class HomeScreenController {
         // App.setRoot("appointmentScreenGeneral");
 
     }
-
 
 }
