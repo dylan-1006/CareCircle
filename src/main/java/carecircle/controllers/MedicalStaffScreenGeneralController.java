@@ -1,9 +1,9 @@
 package carecircle.controllers;
 
 import java.io.IOException;
-
 import carecircle.App;
 import javafx.fxml.FXML;
+import javafx.scene.control.TableView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.scene.text.Text;
@@ -46,6 +46,12 @@ public class MedicalStaffScreenGeneralController {
 
     @FXML
     private Text titleText2;
+
+    @FXML
+    private Text totalStaff;
+    
+    @FXML
+    private TableView<?> medicalStaffScreenTable;
 
     @FXML
     void switchToAppoitmentScreen(MouseEvent event) throws IOException {
