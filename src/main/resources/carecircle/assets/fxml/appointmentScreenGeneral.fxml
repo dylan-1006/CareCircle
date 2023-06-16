@@ -9,7 +9,7 @@
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1200.0" style="-fx-background-color: #F6F8FA;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="carecircle.controllers.AppointmentScreenGeneralController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#switchToAddAppointmentScreen" prefHeight="600.0" prefWidth="1200.0" style="-fx-background-color: #F6F8FA;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="carecircle.controllers.AppointmentScreenGeneralController">
    <children>
       <Circle layoutX="537.0" layoutY="296.0" radius="145.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0">
          <fill>
@@ -80,9 +80,9 @@
             <Font name="SansSerif Regular" size="13.0" />
          </font>
       </Text>
-      <Pane layoutX="802.0" layoutY="120.0" prefHeight="150.0" prefWidth="364.0" style="-fx-background-radius: 20; -fx-background-color: #4FB3FF;">
+      <Pane fx:id="addNewAppointmentPane" layoutX="802.0" layoutY="120.0" onMouseClicked="#switchToAddAppointmentScreen" prefHeight="150.0" prefWidth="364.0" style="-fx-background-radius: 20; -fx-background-color: #4FB3FF;">
          <children>
-            <Circle fx:id="addNewAppointmentButton" fill="WHITE" layoutX="75.0" layoutY="74.0" onMouseClicked="#switchToAddAppointmentScreen" radius="53.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0">
+            <Circle fill="WHITE" layoutX="75.0" layoutY="74.0" radius="53.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0">
                <effect>
                   <DropShadow blurType="GAUSSIAN" height="10.0" offsetY="4.0" radius="4.5" width="10.0">
                      <color>

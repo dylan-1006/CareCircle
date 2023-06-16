@@ -17,9 +17,8 @@ import javafx.scene.text.Text;
 import javafx.scene.text.TextFlow;
 
 public class AppointmentScreenGeneralController {
-
     @FXML
-    private Circle addNewAppointmentButton;
+    private Pane addNewAppointmentPane;
     @FXML
     private Pane navigationSideBar;
 
@@ -76,7 +75,7 @@ public class AppointmentScreenGeneralController {
         TableColumn detailsColumn = new TableColumn("");
 
         appointmentTable.getColumns().addAll(appointmentIDColumn, patientIDColumn, doctorIDColumn, dateColum,
-        timeColumn, venueColumn, departmentColumn, detailsColumn);
+                timeColumn, venueColumn, departmentColumn, detailsColumn);
 
         appointmentIDColumn.setCellValueFactory(new PropertyValueFactory<>("appointmentID"));
         patientIDColumn.setCellValueFactory(new PropertyValueFactory<>("patientID"));
@@ -100,7 +99,8 @@ public class AppointmentScreenGeneralController {
     }
 
     @FXML
-    void switchToAddAppointmentScreen(MouseEvent event) {
+    void switchToAddAppointmentScreen(MouseEvent event) throws IOException {
+        App.setRoot("addAppointmentScreen");
 
     }
 
