@@ -90,7 +90,6 @@ public class AddPatientScreenController {
                                 alert.setHeaderText("Missing Information");
                                 alert.setContentText("Please fill in all the required fields.");
                                 alert.showAndWait();
-                                App.setRoot("addPatientScreen");
 
                         } else if (isDoubleInput == false) {
                                 Alert alert = new Alert(AlertType.ERROR);
@@ -98,7 +97,8 @@ public class AddPatientScreenController {
                                 alert.setHeaderText("Wrong input");
                                 alert.setContentText("Please make sure height and weight fields are numbers.");
                                 alert.showAndWait();
-                                App.setRoot("addPatientScreen");
+                                height.setText("");
+                                weight.setText("");
 
                         } else {
                                 List<patient> patientList = patientData.loadPatientDataFromDatabase();

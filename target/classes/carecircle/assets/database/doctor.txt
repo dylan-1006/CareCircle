@@ -5,3 +5,13 @@ D7654,Dr. Sarah Davis,4567890123,sarah.davis@example.com,1982-04-04,Female,Ophth
 D4269,Dr. Robert Wilson,5678901234,robert.wilson@example.com,1975-05-05,Male,Pediatrics
 D9850,Dr. Jennifer Taylor,6789012345,jennifer.taylor@example.com,1988-06-06,Female,Neurology
 D0057,Dr. David Thompson,7890123456,david.thompson@example.com,1983-07-07,Male,Internal Medicine
+D1298,Dr. Jessica Anderson,8901234567,jessica.anderson@example.com,1976-08-08,Female,Obstetrics and Gynecology
+D7642,Dr. Christopher Lee,9012345678,christopher.lee@example.com,1981-09-09,Male,Surgery
+D8756,Dr. Amanda White,0123456789,amanda.white@example.com,1979-10-10,Female,Psychiatry
+D4591,Dr. Matthew Garcia,1234567890,matthew.garcia@example.com,1984-11-11,Male,Oncology
+D2435,Dr. Samantha Wilson,2345678901,samantha.wilson@example.com,1987-12-12,Female,Radiology
+D6734,Dr. Benjamin Adams,3456789012,benjamin.adams@example.com,1980-01-13,Male,Emergency Medicine
+D2301,Dr. Olivia Martinez,4567890123,olivia.martinez@example.com,1983-02-14,Female,Physical Therapy
+D3124,Dr. Ethan Scott,5678901234,ethan.scott@example.com,1977-03-15,Male,Cardiothoracic Surgery
+D9823,Dr. Isabella Green,6789012345,isabella.green@example.com,1986-04-16,Female,Endocrinology
+D5310,Dr. Noah Wilson,7890123456,noah.wilson@example.com,1989-05-17,Male,ENT (Otorhinolaryngology)
