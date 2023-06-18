@@ -45,7 +45,7 @@ public class AddStaffScreenController {
     private ComboBox<String> typeOfStaff;
 
     @FXML
-    void initialize(ActionEvent event) {
+    void initialize() {
         gender.setItems(genderOptions);
         typeOfStaff.setItems(staffOptions);
     }
