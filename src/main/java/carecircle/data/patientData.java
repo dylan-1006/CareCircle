@@ -54,4 +54,6 @@ public class patientData {
         return patientList;
     }
 
+    public static patient initPatientData = new patient(" ", " ", " ", " ", " ", " "," ", " ", 0, 0," ");
+
 }

@@ -169,7 +169,7 @@
                   <Font name="SansSerif Bold" size="24.0" />
                </font>
             </Text>
-            <TableView fx:id="patientScreenTable" layoutX="11.0" layoutY="46.0" prefHeight="234.0" prefWidth="841.0" stylesheets="@../css/stylesheet.css" />
+            <TableView fx:id="patientScreenTable" layoutX="11.0" layoutY="46.0" onMouseClicked="#switchToUpdateScreen" prefHeight="234.0" prefWidth="841.0" stylesheets="@../css/stylesheet.css" />
          </children>
       </Pane>
       <Pane fx:id="navigationSideBar" prefHeight="600.0" prefWidth="265.0" style="-fx-background-color: FFFFFF;">
