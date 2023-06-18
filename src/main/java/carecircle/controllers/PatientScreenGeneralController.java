@@ -1,6 +1,7 @@
 package carecircle.controllers;
 
 import java.io.IOException;
+import java.util.List;
 
 import carecircle.App;
 import carecircle.classes.patient;
@@ -97,7 +98,7 @@ public class PatientScreenGeneralController {
 
         patientScreenTable.setItems(patientDataList);
 
-        //Setting total patient amount
+        // Setting total patient amount
         setPatientAmount();
 
     }
@@ -108,8 +109,48 @@ public class PatientScreenGeneralController {
     }
 
     @FXML
+    void switchToUpdateScreen(MouseEvent event) {
+        patientTableModel selectedPatient = patientScreenTable.getSelectionModel().getSelectedItem();
+
+        patientData.initPatientData.setPatientID(selectedPatient.getPatientId());
+        List<patient> patientList = patientData.loadPatientDataFromDatabase();
+
+        // System.out.println(patientData.initPatientData.getPatientID());
+        for (int i = 0; i < patientList.size(); i++) {
+
+            if (patientList.get(i).getPatientID().equals(patientData.initPatientData.getPatientID())) {
+
+                patientData.initPatientData.setName(patientList.get(i).getName());
+                patientData.initPatientData.setIc(patientList.get(i).getIc());
+                patientData.initPatientData.setPhoneNo(patientList.get(i).getPhoneNo());
+                patientData.initPatientData.setEmail(patientList.get(i).getEmail());
+                patientData.initPatientData.setDateOfBirth(patientList.get(i).getDateOfBirth());
+                patientData.initPatientData.setGender(patientList.get(i).getGender());
+                patientData.initPatientData.setAddress(patientList.get(i).getAddress());
+                patientData.initPatientData.setWeight(patientList.get(i).getWeight());
+                patientData.initPatientData.setHeight(patientList.get(i).getHeight());
+                patientData.initPatientData.setBloodType(patientList.get(i).getBloodType());
+
+                try {
+                    App.setRoot("patientGeneralDetailsScreen");
+                } catch (IOException e) {
+                    // TODO Auto-generated catch block
+                    e.printStackTrace();
+                }
+
+                break;
+            } else {
+
+                continue;
+            }
+
+        }
+
+    }
+
+    @FXML
     void switchToAddNewPatientScreen(MouseEvent event) throws IOException {
-        System.out.println("ENTERED SWITCH TO NEW PATIENT");
+
         App.setRoot("addPatientScreen");
 
     }
