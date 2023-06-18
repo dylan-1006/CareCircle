@@ -127,6 +127,9 @@ public class PatientGeneralDetailsScreenController {
     @FXML
     private Button cancelButton;
 
+    @FXML
+    private Pane patientDetailsSidePane;
+
     public void initialize() {
         setSideBarPatientDetails();
         setGeneralPatientDetails();

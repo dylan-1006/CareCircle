@@ -1,7 +1,6 @@
 P12345,John Doe,1234567890,555-123-4567,johndoe@example.com,1980-01-01,Male,123 Main St,170.5,75.0,O+
 P67890,Jane Smith,0987654321,555-987-6543,janesmith@example.com,1990-02-02,Female,456 Elm St,160.0,65.0,A-
 P24680,Michael Johnson,1357924680,555-246-8024,michaeljohnson@example.com,1975-03-03,Male,789 Oak St,180.0,80.0,B+
-P13579,Sarah Brown,8642097531,555-135-7903,sarahbrown@example.com,1985-04-04,Female,321 Pine St,155.5,60.0,O-
 P54321,Robert Davis,1975308642,555-543-2165,robertdavis@example.com,1995-05-05,Male,987 Cedar St,175.0,70.0,AB+
 P97531,Emily Wilson,8642097531,555-975-3186,emilywilson@example.com,1988-06-06,Female,654 Birch St,160.5,65.5,A+
 P86420,Christopher Miller,7531864209,555-864-2097,christophermiller@example.com,1982-07-07,Male,321 Maple St,185.0,85.0,B-
