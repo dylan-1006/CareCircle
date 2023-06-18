@@ -162,6 +162,7 @@ public class PatientGeneralDetailsScreenController {
         for (int i = 0; i < appointmentList.size(); i++) {
 
             if (appointmentList.get(i).getPatientID().equals(patientData.initPatientData.getPatientID())) {
+                System.out.println("Patient Found");
 
                 appointmentPane.setVisible(false);
 
@@ -170,6 +171,8 @@ public class PatientGeneralDetailsScreenController {
                 time.setText(appointmentList.get(i).getTime());
                 doctorID.setText(appointmentList.get(i).getDoctorID());
                 venue.setText(appointmentList.get(i).getVenue());
+
+                break;
 
             } else {
                 appointmentPane.setVisible(true);
