@@ -15,6 +15,7 @@ import carecircle.data.patientData;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.TextArea;
@@ -26,6 +27,9 @@ import javafx.scene.text.Text;
 import javafx.scene.text.TextFlow;
 
 public class PatientGeneralDetailsScreenController {
+
+    @FXML
+    private Button saveButton;
 
     @FXML
     private ImageView backButton;
@@ -119,6 +123,9 @@ public class PatientGeneralDetailsScreenController {
 
     @FXML
     private TextField weight;
+
+    @FXML
+    private Button cancelButton;
 
     public void initialize() {
         setSideBarPatientDetails();
@@ -217,6 +224,121 @@ public class PatientGeneralDetailsScreenController {
 
     @FXML
     void editPatientDetails(ActionEvent event) {
+
+        // Setting details to be editable
+        firstName.setEditable(true);
+        lastName.setEditable(true);
+        dateOfBirth.setEditable(true);
+        personalDetailsGender.setEditable(true);
+        bloodType2.setEditable(true);
+        contactNo.setEditable(true);
+        emailAddress.setEditable(true);
+        height.setEditable(true);
+        weight.setEditable(true);
+
+        // Changing background colour of textfield
+        firstName.setStyle("-fx-control-inner-background: #F6F6F6");
+        lastName.setStyle("-fx-control-inner-background: #F6F6F6;");
+        dateOfBirth.setStyle("-fx-control-inner-background: #F6F6F6;");
+        personalDetailsGender.setStyle("-fx-control-inner-background: #F6F6F6;");
+        bloodType2.setStyle("-fx-control-inner-background: #F6F6F6;");
+        contactNo.setStyle("-fx-control-inner-background: #F6F6F6;");
+        emailAddress.setStyle("-fx-control-inner-background: #F6F6F6;");
+        height.setStyle("-fx-control-inner-background: #F6F6F6;");
+        weight.setStyle("-fx-control-inner-background: #F6F6F6;");
+
+        // Set save button to be visible
+        saveButton.setVisible(true);
+
+        // Set cancel button to be visible
+        cancelButton.setVisible(true);
+
+        // Set edit button to be not visible
+        editButton.setVisible(false);
+
+    }
+
+    @FXML
+    void cancelEditPatient(ActionEvent event) throws IOException {
+        App.setRoot("patientGeneralDetailsScreen");
+
+    }
+
+    @FXML
+    void savePatientDetails(ActionEvent event) throws IOException {
+
+        Alert confirmation = new Alert(Alert.AlertType.CONFIRMATION);
+        confirmation.setTitle("Confirmation");
+        confirmation.setHeaderText("Are you sure you want to proceed?");
+        confirmation.setContentText("Click OK to continue or Cancel to abort.");
+
+        Optional<ButtonType> result = confirmation.showAndWait();
+
+        if (result.get() == ButtonType.OK) {
+
+            List<patient> patientList = patientData.loadPatientDataFromDatabase();
+
+            for (int i = 0; i < patientList.size(); i++) {
+
+                if (patientList.get(i).getPatientID().equals(patientData.initPatientData.getPatientID())) {
+
+                    // Setting the updated details
+                    patientList.get(i).setName(firstName.getText() + " " + lastName.getText());
+                    patientList.get(i).setDateOfBirth(dateOfBirth.getText());
+                    patientList.get(i).setGender(personalDetailsGender.getText());
+                    patientList.get(i).setBloodType(bloodType2.getText());
+                    patientList.get(i).setPhoneNo(contactNo.getText());
+                    patientList.get(i).setEmail(emailAddress.getText());
+
+                    // Special formatting and conversion to dobule required for height and weight
+                    double editedHeight = Double.parseDouble(height.getText().replace("cm", ""));
+                    double editedWeight = Double.parseDouble(weight.getText().replace("kg", ""));
+
+                    // Setting updated & formatted details for height and weight
+                    patientList.get(i).setHeight(editedHeight);
+                    patientList.get(i).setWeight(editedWeight);
+
+                    break;
+                }
+
+            }
+
+            String patientId = patientData.initPatientData.getPatientID();
+
+            try (FileWriter account = new FileWriter(
+                    "src/main/resources/carecircle/assets/database/patient.txt",
+                    false)) {
+                PrintWriter accountWriter = new PrintWriter(account);
+
+                for (int i = 0; i < patientList.size(); i++) {
+
+                    accountWriter.println(
+                            patientList.get(i).getPatientID() + "," + patientList.get(i).getName() + ","
+                                    + patientList.get(i).getIc() + ","
+                                    + patientList.get(i).getPhoneNo() + ","
+                                    + patientList.get(i).getEmail() + ","
+                                    + patientList.get(i).getDateOfBirth()
+                                    + "," + patientList.get(i).getGender()
+                                    + ","
+                                    + patientList.get(i).getAddress() + "," + patientList.get(i).getHeight() + ","
+                                    + patientList.get(i).getWeight() + ","
+                                    + patientList.get(i).getBloodType());
+
+                }
+                accountWriter.close();
+                Alert alert = new Alert(AlertType.CONFIRMATION);
+                alert.setTitle("Patient Edited!");
+                alert.setHeaderText("Patient record has been edited");
+                alert.showAndWait();
+
+                App.setRoot("patientScreenGeneral");
+
+            } catch (IOException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+
+        }
 
     }
 
