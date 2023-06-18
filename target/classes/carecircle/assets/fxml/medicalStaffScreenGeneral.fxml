@@ -80,7 +80,7 @@
             <Font name="SansSerif Regular" size="13.0" />
          </font>
       </Text>
-      <Pane layoutX="802.0" layoutY="120.0" prefHeight="150.0" prefWidth="364.0" style="-fx-background-radius: 20; -fx-background-color: #4FB3FF;">
+      <Pane fx:id="addNewStaff" layoutX="802.0" layoutY="120.0" onMouseClicked="#switchToAddStaffScreen" prefHeight="150.0" prefWidth="364.0" style="-fx-background-radius: 20; -fx-background-color: #4FB3FF;">
          <children>
             <Circle fill="WHITE" layoutX="81.0" layoutY="79.0" radius="59.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0">
                <effect>

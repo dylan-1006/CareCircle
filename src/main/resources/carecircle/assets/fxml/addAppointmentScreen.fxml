@@ -86,7 +86,7 @@
             <Font name="SansSerif Bold" size="25.5" />
          </font>
       </Button>
-      <DatePicker fx:id="date" layoutX="229.0" layoutY="434.0" prefHeight="23.0" prefWidth="159.0" />
+      <DatePicker fx:id="date" editable="false" layoutX="229.0" layoutY="434.0" prefHeight="23.0" prefWidth="159.0" promptText="Select appointment date" />
       <ComboBox fx:id="doctorID" layoutX="230.0" layoutY="199.0" prefWidth="150.0" />
       <ComboBox fx:id="venue" layoutX="689.0" layoutY="199.0" prefWidth="150.0" />
       <ComboBox fx:id="patientID" layoutX="235.0" layoutY="318.0" prefWidth="150.0" />

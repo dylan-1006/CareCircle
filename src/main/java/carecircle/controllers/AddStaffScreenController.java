@@ -1,11 +1,16 @@
 package carecircle.controllers;
+
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 
 import carecircle.App;
 import carecircle.classes.doctor;
 import carecircle.classes.nurse;
+import carecircle.classes.patient;
+import carecircle.data.doctorData;
+import carecircle.data.nurseData;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -15,13 +20,14 @@ import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.text.Text;
 
 public class AddStaffScreenController {
     ObservableList<String> genderOptions = FXCollections.observableArrayList(
-        "Male", "Female", "Others");
+            "Male", "Female", "Others");
     ObservableList<String> staffOptions = FXCollections.observableArrayList(
-         "Doctor", "Nurse", "Others");
-    
+            "Doctor", "Nurse", "Others");
 
     @FXML
     private TextField contactNumber;
@@ -45,73 +51,90 @@ public class AddStaffScreenController {
     private ComboBox<String> typeOfStaff;
 
     @FXML
+    private Text backToStaffButton;
+
+    @FXML
     void initialize() {
         gender.setItems(genderOptions);
         typeOfStaff.setItems(staffOptions);
     }
 
     @FXML
+    void backToStaffScreen(MouseEvent event) throws IOException {
+
+        App.setRoot("medicalStaffScreenGeneral");
+
+    }
+
+    @FXML
     void createNewStaff(ActionEvent event) {
-        if(typeOfStaff.getValue().toString().equals("Doctor")){
+        if (typeOfStaff.getValue().toString().equals("Doctor")) {
             try {
-                /*public doctor(String doctorID, String name, String phoneNo, String email, String dateOfBirth, String gender,
-            String specialization) */
-                doctor newDoctor = new doctor("1", name.getText(), contactNumber.getText(), email.getText(), date.getValue().toString(),
-                gender.getValue().toString(), "");
+                List<doctor> doctorList = doctorData.loadDoctorDataFromDatabase();
+                int newDoctorId = Integer.parseInt(doctorList.get(doctorList.size() - 1).getDoctorID()
+                        .substring(1))
+                        + 1;
+                String newDoctorIdFormatted = String.format("D%02d", newDoctorId);
+
+                doctor newDoctor = new doctor(newDoctorIdFormatted, name.getText(), contactNumber.getText(),
+                        email.getText(), date.getValue().toString(),
+                        gender.getValue().toString(), " ");
                 FileWriter account = new FileWriter(
-                "src/main/resources/carecircle/assets/database/doctor.txt",
-                true);
+                        "src/main/resources/carecircle/assets/database/doctor.txt",
+                        true);
                 PrintWriter accountWriter = new PrintWriter(account);
                 accountWriter.println(
-                                                newDoctor.getDoctorID() + "," + newDoctor.getName() + ","
-                                                                + newDoctor.getPhoneNo() + ","
-                                                                + newDoctor.getEmail() + ","
-                                                                + newDoctor.getDateOfBirth()
-                                                                + "," + newDoctor.getGender()
-                                                                + ","
-                                                                + newDoctor.getSpecialization());
+                        newDoctor.getDoctorID() + "," + newDoctor.getName() + ","
+                                + newDoctor.getPhoneNo() + ","
+                                + newDoctor.getEmail() + ","
+                                + newDoctor.getDateOfBirth()
+                                + "," + newDoctor.getGender()
+                                + ","
+                                + newDoctor.getSpecialization());
                 accountWriter.close();
                 Alert alert = new Alert(AlertType.CONFIRMATION);
-                                alert.setTitle("New Doctor Added!");
-                                alert.setHeaderText(name.getText() + " has been added");
-                                alert.showAndWait();
+                alert.setTitle("New Doctor Added!");
+                alert.setHeaderText(name.getText() + " has been added");
+                alert.showAndWait();
 
-                                App.setRoot("homeScreen");
+                App.setRoot("medicalStaffScreenGeneral");
 
-            } 
-            
-            
+            }
+
             catch (IOException e) {
                 e.printStackTrace();
             }
-        }
-        else if(typeOfStaff.getValue().toString().equals("Nurse")){
+        } else if (typeOfStaff.getValue().toString().equals("Nurse")) {
             try {
-                /* public nurse(String nurseID, String name, String phoneNo, String email, String dateOfBirth, String gender) */
-                nurse newNurse = new nurse("1", name.getText(), contactNumber.getText(), email.getText(), date.getValue().toString(),
-                gender.getValue().toString());
+                List<nurse> nurseList = nurseData.loadNurseDataFromDatabase();
+                int newNurseId = Integer.parseInt(nurseList.get(nurseList.size() - 1).getNurseID()
+                        .substring(1))
+                        + 1;
+                String newNurseIdFormatted = String.format("N%02d", newNurseId);
+                nurse newNurse = new nurse(newNurseIdFormatted, name.getText(), contactNumber.getText(),
+                        email.getText(),
+                        date.getValue().toString(),
+                        gender.getValue().toString());
                 FileWriter account = new FileWriter(
-                "src/main/resources/carecircle/assets/database/nurse.txt",
-                true);
+                        "src/main/resources/carecircle/assets/database/nurse.txt",
+                        true);
                 PrintWriter accountWriter = new PrintWriter(account);
                 accountWriter.println(
-                                                newNurse.getNurseID() + "," + newNurse.getName() + ","
-                                                                + newNurse.getPhoneNo() + ","
-                                                                + newNurse.getEmail() + ","
-                                                                + newNurse.getDateOfBirth()
-                                                                + "," + newNurse.getGender()
-                );
+                        newNurse.getNurseID() + "," + newNurse.getName() + ","
+                                + newNurse.getPhoneNo() + ","
+                                + newNurse.getEmail() + ","
+                                + newNurse.getDateOfBirth()
+                                + "," + newNurse.getGender());
                 accountWriter.close();
                 Alert alert = new Alert(AlertType.CONFIRMATION);
-                                alert.setTitle("New Nurse Added!");
-                                alert.setHeaderText(name.getText() + " has been added");
-                                alert.showAndWait();
+                alert.setTitle("New Nurse Added!");
+                alert.setHeaderText(name.getText() + " has been added");
+                alert.showAndWait();
 
-                                App.setRoot("homeScreen");
+                App.setRoot("homeScreen");
 
-            } 
-            
-            
+            }
+
             catch (IOException e) {
                 e.printStackTrace();
             }

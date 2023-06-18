@@ -43,6 +43,9 @@ public class MedicalStaffScreenGeneralController {
     private Pane sideBarSettingsButton;
 
     @FXML
+    private Pane addNewStaff;
+
+    @FXML
     private TextFlow textFlowTitle;
 
     @FXML
@@ -96,6 +99,12 @@ public class MedicalStaffScreenGeneralController {
 
     void setStaffAmount() {
         totalStaff.setText(Integer.toString(staffTableModel.convertStaffDataToStaffDataModel().size()));
+
+    }
+
+    @FXML
+    void switchToAddStaffScreen(MouseEvent event) throws IOException {
+        App.setRoot("addStaffScreen");
 
     }
 
