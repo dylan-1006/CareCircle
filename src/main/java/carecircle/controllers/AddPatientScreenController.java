@@ -26,6 +26,7 @@ public class AddPatientScreenController {
                         "Choose Blood type", "A-", "A+", "B-", "B+", "O-", "O+", "AB-", "AB+");
         ObservableList<String> genderOptions = FXCollections.observableArrayList(
                         "Male", "Female", "Others");
+        
 
         @FXML
         private Text backToPatientButton;
@@ -61,6 +62,7 @@ public class AddPatientScreenController {
 
         @FXML
         public void initialize() {
+                
                 bloodType.setItems(bloodTypeOptions);
                 gender.setItems(genderOptions);
         }
