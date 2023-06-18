@@ -11,4 +11,3 @@ P42681,Amy Wilson,3209754681,555-426-8172,amywilson@example.com,1984-10-10,Femal
 P91357,Michaela Thompson,2097531864,555-913-5729,michaelathompson@example.com,1993-11-11,Female,654 Mango St,170.0,70.0,B+
 P82046,Thomas Martinez,1985320794,555-820-4601,thomasmartinez@example.com,1978-12-12,Male,321 Apple St,180.5,80.5,AB-
 P31025,Jennifer Rodriguez,1975430286,555-310-2518,jenniferrodriguez@example.com,1991-01-13,Female,789 Peach St,160.0,65.0,A+
-P52740,Matthew Walker,1298430576,555-527-4023,matthewwalker@example.com,1986-02-14,Male,456 Cherry St,175.0,72.0,B-
