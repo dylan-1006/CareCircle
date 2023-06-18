@@ -2,11 +2,18 @@ package carecircle.data;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
+import carecircle.App;
 import carecircle.classes.patient;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.ButtonType;
 
 public class patientData {
     public static void main(String[] args) {
@@ -54,6 +61,52 @@ public class patientData {
         return patientList;
     }
 
-    public static patient initPatientData = new patient(" ", " ", " ", " ", " ", " "," ", " ", 0, 0," ");
+    public static void deletePatient(String patientId) throws IOException {
+
+        List<patient> patientList = patientData.loadPatientDataFromDatabase();
+        for (int i = 0; i < patientList.size(); i++) {
+            if (patientList.get(i).getPatientID().equals(patientId)) {
+
+                patientList.remove(i);
+                break;
+
+            }
+
+        }
+
+        try (FileWriter account = new FileWriter(
+                "src/main/resources/carecircle/assets/database/patient.txt",
+                false)) {
+            PrintWriter accountWriter = new PrintWriter(account);
+
+            for (int i = 0; i < patientList.size(); i++) {
+
+                accountWriter.println(
+                        patientList.get(i).getPatientID() + "," + patientList.get(i).getName() + ","
+                                + patientList.get(i).getIc() + ","
+                                + patientList.get(i).getPhoneNo() + ","
+                                + patientList.get(i).getEmail() + ","
+                                + patientList.get(i).getDateOfBirth()
+                                + "," + patientList.get(i).getGender()
+                                + ","
+                                + patientList.get(i).getAddress() + "," + patientList.get(i).getHeight() + ","
+                                + patientList.get(i).getWeight() + ","
+                                + patientList.get(i).getBloodType());
+
+            }
+            accountWriter.close();
+            Alert alert = new Alert(AlertType.CONFIRMATION);
+            alert.setTitle("Patient Deleted!");
+            alert.setHeaderText("Patient record has been deleted");
+            alert.showAndWait();
+
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+
+    }
+
+    public static patient initPatientData = new patient(" ", " ", " ", " ", " ", " ", " ", " ", 0, 0, " ");
 
 }

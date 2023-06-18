@@ -1,16 +1,22 @@
 package carecircle.controllers;
 
+import java.io.FileWriter;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.time.Year;
 import java.util.List;
+import java.util.Optional;
 
 import carecircle.App;
 import carecircle.classes.appointment;
+import carecircle.classes.patient;
 import carecircle.data.appointmentData;
 import carecircle.data.patientData;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
@@ -143,7 +149,12 @@ public class PatientGeneralDetailsScreenController {
         String[] name = patientData.initPatientData.getName().split(" ");
 
         // Setting name
-        lastName.setText(name[1]);
+        try {
+            lastName.setText(name[1]);
+        } catch (Exception e) {
+            lastName.setText("-");
+
+        }
         firstName.setText(name[0]);
 
         // Setting rest of the details
@@ -179,6 +190,27 @@ public class PatientGeneralDetailsScreenController {
 
             }
 
+        }
+
+    }
+
+    @FXML
+    void deleteThisPatient(ActionEvent event) throws IOException {
+
+        Alert confirmation = new Alert(Alert.AlertType.CONFIRMATION);
+        confirmation.setTitle("Confirmation");
+        confirmation.setHeaderText("Are you sure you want to proceed?");
+        confirmation.setContentText("Click OK to continue or Cancel to abort.");
+
+        Optional<ButtonType> result = confirmation.showAndWait();
+
+        if (result.get() == ButtonType.OK) {
+
+            patientData.deletePatient(patientData.initPatientData.getPatientID());
+            App.setRoot("patientScreenGeneral");
+        } else {
+
+            App.setRoot("patientGeneralDetailsScreen");
         }
 
     }

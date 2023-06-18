@@ -102,7 +102,7 @@
                   <Font name="SansSerif Regular" size="18.0" />
                </font>
             </Text>
-            <Button fx:id="deletePatientButton" layoutX="75.0" layoutY="461.0" mnemonicParsing="false" style="-fx-background-color: white;" text="Delete patient" textFill="RED">
+            <Button fx:id="deletePatientButton" layoutX="75.0" layoutY="461.0" mnemonicParsing="false" onAction="#deleteThisPatient" style="-fx-background-color: white;" text="Delete patient" textFill="RED">
                <font>
                   <Font name="SansSerif Regular" size="16.5" />
                </font>
