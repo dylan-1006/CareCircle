@@ -48,5 +48,5 @@ public class appointmentData {
 
         return appointmentList;
     }
-
+    public static appointment initAppointmentData = new appointment(" ", " ", " ", " ", " ", " ", " ");
 }
