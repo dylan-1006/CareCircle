@@ -189,12 +189,7 @@
                   <Font name="SansSerif Regular" size="18.0" />
                </font>
             </Text>
-            <TableView fx:id="pastMedicationTable" layoutX="23.0" layoutY="43.0" prefHeight="86.0" prefWidth="783.0" stylesheets="@../css/stylesheet.css">
-              <columns>
-                <TableColumn prefWidth="75.0" text="C1" />
-                <TableColumn prefWidth="75.0" text="C2" />
-              </columns>
-            </TableView>
+            <TableView fx:id="pastMedicationTable" layoutX="23.0" layoutY="43.0" prefHeight="86.0" prefWidth="783.0" stylesheets="@../css/stylesheet.css" />
             <Button fx:id="addMedicineButton" layoutX="688.0" layoutY="7.0" mnemonicParsing="false" onAction="#switchToAddMedicineScreen" style="-fx-background-color: white;" text="Add" textFill="#169bff">
                <font>
                   <Font name="SansSerif Regular" size="16.5" />

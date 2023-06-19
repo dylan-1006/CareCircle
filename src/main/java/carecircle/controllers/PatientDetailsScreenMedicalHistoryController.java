@@ -7,8 +7,10 @@ import java.util.Optional;
 import carecircle.App;
 import carecircle.classes.medicalHistory;
 import carecircle.data.medicalHistoryData;
+import carecircle.data.medicineData;
 import carecircle.data.patientData;
 import carecircle.tableModels.patientMedicalHistoryTableModel;
+import carecircle.tableModels.patientMedicineTableModel;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -119,7 +121,7 @@ public class PatientDetailsScreenMedicalHistoryController {
     private Pane showAvailablilityofMedicationsRecord;
 
     @FXML
-    private TableView<?> pastMedicationTable;
+    private TableView<patientMedicineTableModel> pastMedicationTable;
 
     @FXML
     private TableView<patientMedicalHistoryTableModel> medicalHistoryTable;
@@ -128,6 +130,7 @@ public class PatientDetailsScreenMedicalHistoryController {
 
         setSideBarPatientDetails();
         setMedicalHistoryTable();
+        setPastMedicationTable();
     }
 
     void setSideBarPatientDetails() {
@@ -154,15 +157,8 @@ public class PatientDetailsScreenMedicalHistoryController {
 
         if (medicalHistoryDataList.isEmpty()) {
 
-            // Setting tables & buttons to be non-visible
+            // Setting table & buttons to be non-visible
             medicalHistoryTable.setVisible(false);
-            pastMedicationTable.setVisible(false);
-
-            cancelEditMedicineButton.setVisible(false);
-            saveUpdateMedicineButton.setVisible(false);
-            addMedicineButton.setVisible(false);
-            editMedicineButton.setVisible(false);
-            deleteMedicineButton.setVisible(false);
 
             cancelEditMedicalHistoryButton.setVisible(false);
             saveMedicalHistoryButton.setVisible(false);
@@ -175,7 +171,6 @@ public class PatientDetailsScreenMedicalHistoryController {
         else {
 
             showAvailablilityofMedicalRecord.setVisible(false);
-            showAvailablilityofMedicationsRecord.setVisible(false);
 
             TableColumn<patientMedicalHistoryTableModel, String> diagnosisIdColumn = new TableColumn<>("Diagnosis ID");
             TableColumn<patientMedicalHistoryTableModel, String> treatmentIdColumn = new TableColumn<>("Treatment ID");
@@ -228,8 +223,77 @@ public class PatientDetailsScreenMedicalHistoryController {
         }
     }
 
+    void setPastMedicationTable() {
+        ObservableList<patientMedicineTableModel> pastMedicationDataList = patientMedicineTableModel
+                .convertSelectedPatientMedicineDataToModel();
+
+        if (pastMedicationDataList.isEmpty()) {
+
+            // Setting table & buttons to be non-visible
+            pastMedicationTable.setVisible(false);
+
+            cancelEditMedicineButton.setVisible(false);
+            saveUpdateMedicineButton.setVisible(false);
+            addMedicineButton.setVisible(false);
+            editMedicineButton.setVisible(false);
+            deleteMedicineButton.setVisible(false);
+
+        }
+
+        else {
+
+            showAvailablilityofMedicationsRecord.setVisible(false);
+
+            TableColumn<patientMedicineTableModel, String> medicineIDColumn = new TableColumn<>("Medicine ID");
+            TableColumn<patientMedicineTableModel, String> patientIdColumn = new TableColumn<>("Patient ID");
+            TableColumn<patientMedicineTableModel, String> doctorIdColumn = new TableColumn<>("Doctor ID");
+            TableColumn<patientMedicineTableModel, String> medicineNameColumn = new TableColumn<>("Medicine Name");
+            TableColumn<patientMedicineTableModel, Double> quantityColumn = new TableColumn<>("Quantity");
+            TableColumn<patientMedicineTableModel, Double> dosageColumn = new TableColumn<>("Dosage");
+
+            pastMedicationTable.getColumns().addAll(medicineIDColumn, patientIdColumn, doctorIdColumn,
+                    medicineNameColumn,
+                    quantityColumn, dosageColumn);
+
+            medicineIDColumn.setCellValueFactory(new PropertyValueFactory<>("medicineID"));
+            patientIdColumn.setCellValueFactory(new PropertyValueFactory<>("patientId"));
+            doctorIdColumn.setCellValueFactory(new PropertyValueFactory<>("doctorId"));
+            medicineNameColumn.setCellValueFactory(new PropertyValueFactory<>("medicineName"));
+            quantityColumn.setCellValueFactory(new PropertyValueFactory<>("quantity"));
+            dosageColumn.setCellValueFactory(new PropertyValueFactory<>("dosage"));
+
+            pastMedicationTable.setItems(patientMedicineTableModel.convertSelectedPatientMedicineDataToModel());
+        }
+
+    }
+
     @FXML
-    void deleteMedicineRecord(ActionEvent event) {
+    void deleteMedicineRecord(ActionEvent event) throws IOException {
+
+        Alert confirmation = new Alert(Alert.AlertType.CONFIRMATION);
+        confirmation.setTitle("Confirmation");
+        confirmation.setHeaderText("Are you sure you want to proceed?");
+        confirmation.setContentText("Click OK to continue or Cancel to abort.");
+
+        Optional<ButtonType> result = confirmation.showAndWait();
+
+        if (result.get() == ButtonType.OK) {
+
+            patientMedicineTableModel selectedPastMedicine = pastMedicationTable.getSelectionModel()
+                    .getSelectedItem();
+
+            pastMedicationTable.getItems().remove(selectedPastMedicine);
+
+            String pastMedicineId = selectedPastMedicine.getMedicineID();
+
+            medicineData.deleteMedicine(pastMedicineId);
+  
+
+            App.setRoot("patientGeneralDetailsScreen");
+        } else {
+
+            App.setRoot("patientGeneralDetailsScreenMedicalHistory");
+        }
 
     }
 
