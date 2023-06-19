@@ -14,3 +14,4 @@ A013,P67902,D013,2023-06-26,21:00,Main Hospital,Gastroen
 A014,P67890,D7654,2023-06-23,12:30,Main Hospital,Dermatology
 A015,P67890,D7654,2023-06-24,12:30,Speciality Clinic,Orthopedics
 A016,P54321,D7654,2023-06-30,12:30,Main Hospital,Dermatology
+A017,P24680,D7654,2023-06-23,12:00,Speciality Clinic,Cardiology

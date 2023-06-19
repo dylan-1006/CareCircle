@@ -66,7 +66,7 @@
             <Font name="SansSerif Regular" size="18.0" />
          </font>
       </Text>
-      <Text layoutX="231.0" layoutY="294.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #4FB3FF;" text="Patient ID">
+      <Text layoutX="231.0" layoutY="294.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #4FB3FF;" text="Patient Name">
          <font>
             <Font name="SansSerif Regular" size="18.0" />
          </font>
@@ -89,7 +89,7 @@
       <DatePicker fx:id="date" editable="false" layoutX="229.0" layoutY="434.0" prefHeight="23.0" prefWidth="159.0" promptText="Select appointment date" />
       <ComboBox fx:id="doctorID" layoutX="230.0" layoutY="199.0" prefWidth="150.0" />
       <ComboBox fx:id="venue" layoutX="689.0" layoutY="199.0" prefWidth="150.0" />
-      <ComboBox fx:id="patientID" layoutX="235.0" layoutY="318.0" prefWidth="150.0" />
+      <ComboBox fx:id="patientNameBox" layoutX="235.0" layoutY="318.0" prefWidth="150.0" />
       <ComboBox fx:id="department" layoutX="689.0" layoutY="318.0" prefWidth="150.0" />
       <Text layoutX="689.0" layoutY="422.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #4FB3FF;" text="Time" wrappingWidth="61.33233642578125">
          <font>

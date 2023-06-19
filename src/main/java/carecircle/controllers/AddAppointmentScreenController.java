@@ -65,7 +65,7 @@ public class AddAppointmentScreenController {
         private ComboBox<String> department;
 
         @FXML
-        private ComboBox<String> patientID;
+        private ComboBox<String> patientNameBox;
 
         @FXML
         private DatePicker date;
@@ -86,13 +86,13 @@ public class AddAppointmentScreenController {
                 appointmentTime.setItems(appointmentTimeOptions);
                 venue.setItems(venueOptions);
                 department.setItems(departmentOptions);
-                patientID.setItems(fetchAvailablePatientId());
+                patientNameBox.setItems(fetchAvailablePatientName());
         }
 
         @FXML
         void addAppointment(ActionEvent event) {
 
-                if (patientID.getSelectionModel().isEmpty() ||
+                if (patientNameBox.getSelectionModel().isEmpty() ||
                                 doctorID.getSelectionModel().isEmpty() || date.getValue().toString().equals("")
                                 || venue.getSelectionModel().isEmpty() || appointmentTime.getSelectionModel().isEmpty()
                                 || department.getSelectionModel().isEmpty()) {
@@ -113,8 +113,22 @@ public class AddAppointmentScreenController {
 
                                 String newAppointmentIdFormatted = String.format("A0%2d", newAppointmentID);
 
+                                List<patient> patientList = patientData.loadPatientDataFromDatabase();
+
+                                String patientId = " ";
+                                for (int i = 0; i < patientList.size(); i++) {
+
+                                        if (patientList.get(i).getName().equals(patientNameBox.getSelectionModel()
+                                                        .getSelectedItem().toString())) {
+
+                                                patientId = patientList.get(i).getPatientID();
+                                                break;
+                                        }
+
+                                }
+
                                 appointment newAppointment = new appointment(newAppointmentIdFormatted,
-                                                patientID.getSelectionModel().getSelectedItem().toString(),
+                                                patientId,
                                                 doctorID.getSelectionModel().getSelectedItem().toString(),
                                                 date.getValue().toString(),
                                                 venue.getSelectionModel().getSelectedItem().toString(),
@@ -162,14 +176,14 @@ public class AddAppointmentScreenController {
                 return doctorIdOptions;
         }
 
-        ObservableList<String> fetchAvailablePatientId() {
+        ObservableList<String> fetchAvailablePatientName() {
 
                 List<patient> patientList = patientData.loadPatientDataFromDatabase();
-                ObservableList<String> patientIdOptions = FXCollections.observableArrayList("Choose patient ID");
+                ObservableList<String> patientIdOptions = FXCollections.observableArrayList("Choose patient name");
 
                 for (int i = 0; i < patientList.size(); i++) {
 
-                        patientIdOptions.add(patientList.get(i).getPatientID());
+                        patientIdOptions.add(patientList.get(i).getName());
 
                 }
 
