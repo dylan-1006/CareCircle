@@ -2,6 +2,7 @@ package carecircle.classes;
 
 public class medicalHistory {
 
+    private String medicalHistoryId;
     private String patientId;
     private String diagnosisId;
     private String treatmentId;
@@ -10,7 +11,8 @@ public class medicalHistory {
     private String allergies;
     private String pastMedicationId;
 
-    public medicalHistory(String patientId, String diagnosisId, String treatmentId, String procedureId,
+    public medicalHistory(String medicalHistoryId, String patientId, String diagnosisId, String treatmentId,
+            String procedureId,
             String description, String allergies, String pastMedicationId) {
         this.patientId = patientId;
         this.diagnosisId = diagnosisId;
@@ -19,6 +21,15 @@ public class medicalHistory {
         this.description = description;
         this.allergies = allergies;
         this.pastMedicationId = pastMedicationId;
+        this.medicalHistoryId = medicalHistoryId;
+    }
+
+    public String getMedicalHistoryId() {
+        return medicalHistoryId;
+    }
+
+    public void setMedicalHistoryId(String medicalHistoryId) {
+        this.medicalHistoryId = medicalHistoryId;
     }
 
     public String getPatientId() {
