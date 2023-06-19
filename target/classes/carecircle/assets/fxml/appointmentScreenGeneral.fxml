@@ -180,7 +180,7 @@
                   <Font name="SansSerif Bold" size="24.0" />
                </font>
             </Text>
-            <TableView fx:id="appointmentTable" layoutX="14.0" layoutY="46.0" onMouseClicked="#switchToUpdateScreen" prefHeight="234.0" prefWidth="850.0" stylesheets="@../css/stylesheet.css" />
+            <TableView fx:id="appointmentTable" layoutX="14.0" layoutY="46.0" onMouseClicked="#switchToUpdateAppointmentScreen" prefHeight="234.0" prefWidth="850.0" stylesheets="@../css/stylesheet.css" />
          </children>
       </Pane>
       <Pane fx:id="navigationSideBar" prefHeight="600.0" prefWidth="265.0" style="-fx-background-color: FFFFFF;">

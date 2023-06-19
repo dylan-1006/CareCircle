@@ -5,18 +5,15 @@ import java.util.List;
 
 import carecircle.App;
 import carecircle.classes.appointment;
-import carecircle.classes.patient;
 import carecircle.data.appointmentData;
 import javafx.collections.ObservableList;
 import carecircle.tableModels.appointmentTableModel;
-import carecircle.tableModels.patientTableModel;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.fxml.FXML;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
-import javafx.scene.shape.Circle;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextFlow;
 
@@ -64,7 +61,6 @@ public class AppointmentScreenGeneralController {
 
     public void initialize() {
 
-        // Loading the patient table
         ObservableList<appointmentTableModel> appointmentDataList = appointmentTableModel
                 .convertAppointmentDataToAppointmentDataModel();
 
@@ -104,7 +100,8 @@ public class AppointmentScreenGeneralController {
 
 
     @FXML
-    void switchToUpdateScreen(MouseEvent event) {
+    void switchToUpdateAppointmentScreen(MouseEvent event) {
+        System.out.println("GEGEGFFEF");
         appointmentTableModel selectedAppointment = appointmentTable.getSelectionModel().getSelectedItem();
 
         appointmentData.initAppointmentData.setAppointmentID(selectedAppointment.getAppointmentID());
@@ -124,8 +121,10 @@ public class AppointmentScreenGeneralController {
                
                 try {
                     App.setRoot("appointmentDetailScreen");
+                    
                 } catch (IOException e) {
                     // TODO Auto-generated catch block
+                    
                     e.printStackTrace();
                 }
 

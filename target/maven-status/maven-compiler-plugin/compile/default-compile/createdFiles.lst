@@ -15,6 +15,7 @@ carecircle/tableModels/staffTableModel.class
 carecircle/controllers/PatientDetailsScreenTreatmentController.class
 carecircle/controllers/AddStaffScreenController.class
 carecircle/controllers/AddPatientScreenController.class
+carecircle/controllers/AppointmentDetailScreenController.class
 carecircle/classes/diagnosis.class
 carecircle/controllers/LoginScreenController.class
 carecircle/data/nurseData.class
