@@ -254,10 +254,10 @@ public class PatientDetailsScreenMedicalHistoryController {
     @FXML
     void deleteMedicineRecord(ActionEvent event) throws IOException {
 
-        patientMedicalHistoryTableModel selectedMedicalHistory = medicalHistoryTable.getSelectionModel()
+        patientMedicineTableModel selectedPastMedication = pastMedicationTable.getSelectionModel()
                 .getSelectedItem();
 
-        if (selectedMedicalHistory == null) {
+        if (selectedPastMedication == null) {
 
             Alert error = new Alert(Alert.AlertType.ERROR);
             error.setTitle("Error");
