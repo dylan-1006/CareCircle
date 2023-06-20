@@ -9,7 +9,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1200.0" style="-fx-background-radius: 20;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="carecircle.controllers.PatientScreenGeneralController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1200.0" style="-fx-background-radius: 20;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="carecircle.controllers.AppointmentDetailScreenController">
    <children>
       <Circle layoutX="934.0" layoutY="113.0" radius="100.0" stroke="WHITE" strokeType="INSIDE">
          <fill>
@@ -86,7 +86,7 @@
                   <Font name="SansSerif Regular" size="16.0" />
                </font>
             </Text>
-            <Text fx:id="deleteAppointmentButton" fill="RED" layoutX="15.0" layoutY="400.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Delete Appointment">
+            <Text fx:id="deleteAppointmentButton" fill="RED" layoutX="15.0" layoutY="400.0" onMouseClicked="#deleteThisAppointment" strokeType="OUTSIDE" strokeWidth="0.0" text="Delete Appointment">
                <font>
                   <Font name="SansSerif Bold" size="18.0" />
                </font>
@@ -164,9 +164,9 @@
                   <Font name="SansSerif Regular" size="18.0" />
                </font>
             </Text>
-            <TextField fx:id="date" layoutX="82.0" layoutY="80.0" />
-            <TextField fx:id="time" layoutX="316.0" layoutY="80.0" />
-            <TextField fx:id="venue" layoutX="554.0" layoutY="80.0" />
+            <TextField fx:id="date" editable="false" layoutX="82.0" layoutY="80.0" />
+            <TextField fx:id="time" editable="false" layoutX="316.0" layoutY="80.0" />
+            <TextField fx:id="venue" editable="false" layoutX="554.0" layoutY="80.0" />
             <Text layoutX="82.0" layoutY="147.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Patient's ID">
                <font>
                   <Font name="SansSerif Regular" size="18.0" />
@@ -182,27 +182,27 @@
                   <Font name="SansSerif Regular" size="18.0" />
                </font>
             </Text>
-            <TextField fx:id="patientID" layoutX="82.0" layoutY="151.0" />
-            <TextField fx:id="patientName" layoutX="316.0" layoutY="151.0" />
-            <TextField fx:id="contactNumber" layoutX="554.0" layoutY="151.0" />
+            <TextField fx:id="patientID" editable="false" layoutX="82.0" layoutY="151.0" />
+            <TextField fx:id="patientName" editable="false" layoutX="316.0" layoutY="151.0" />
+            <TextField fx:id="contactNumber" editable="false" layoutX="554.0" layoutY="151.0" />
             <Text layoutX="82.0" layoutY="223.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Doctor's ID">
                <font>
                   <Font name="SansSerif Regular" size="18.0" />
                </font>
             </Text>
-            <TextField fx:id="doctorID" layoutX="82.0" layoutY="227.0" />
+            <TextField fx:id="doctorID" editable="false" layoutX="82.0" layoutY="227.0" />
             <Text layoutX="316.0" layoutY="223.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Doctor's Name">
                <font>
                   <Font name="SansSerif Regular" size="18.0" />
                </font>
             </Text>
-            <TextField fx:id="doctorName" layoutX="316.0" layoutY="227.0" />
+            <TextField fx:id="doctorName" editable="false" layoutX="316.0" layoutY="227.0" />
             <Text layoutX="554.0" layoutY="223.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Department">
                <font>
                   <Font name="SansSeri Regular" size="18.0" />
                </font>
             </Text>
-            <TextField fx:id="department" layoutX="554.0" layoutY="227.0" />
+            <TextField fx:id="department" editable="false" layoutX="554.0" layoutY="227.0" />
          </children>
       </Pane>
    </children>
