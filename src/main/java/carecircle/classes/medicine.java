@@ -54,8 +54,8 @@ public class medicine {
         return quantity;
     }
 
-    public void setQuantity(int quantity) {
-        this.quantity = quantity;
+    public void setQuantity(int d) {
+        this.quantity = d;
     }
 
     public double getDosage() {

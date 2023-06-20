@@ -49,12 +49,6 @@ public class PatientDetailsScreenMedicalHistoryController {
     private TextField bloodType;
 
     @FXML
-    private Button cancelEditMedicalHistoryButton;
-
-    @FXML
-    private Button cancelEditMedicineButton;
-
-    @FXML
     private Button deletePatientButton;
 
     @FXML
@@ -86,12 +80,6 @@ public class PatientDetailsScreenMedicalHistoryController {
 
     @FXML
     private TextField patientName;
-
-    @FXML
-    private Button saveMedicalHistoryButton;
-
-    @FXML
-    private Button saveUpdateMedicineButton;
 
     @FXML
     private TextFlow textFlowTitle;
@@ -160,9 +148,7 @@ public class PatientDetailsScreenMedicalHistoryController {
             // Setting table & buttons to be non-visible
             medicalHistoryTable.setVisible(false);
 
-            cancelEditMedicalHistoryButton.setVisible(false);
-            saveMedicalHistoryButton.setVisible(false);
-            addMedicalHistoryButton.setVisible(false);
+            addMedicalHistoryButton.setVisible(true);
             editMedicalHistoryButton.setVisible(false);
             deleteMedicalHistoryButton.setVisible(false);
 
@@ -232,9 +218,7 @@ public class PatientDetailsScreenMedicalHistoryController {
             // Setting table & buttons to be non-visible
             pastMedicationTable.setVisible(false);
 
-            cancelEditMedicineButton.setVisible(false);
-            saveUpdateMedicineButton.setVisible(false);
-            addMedicineButton.setVisible(false);
+            addMedicineButton.setVisible(true);
             editMedicineButton.setVisible(false);
             deleteMedicineButton.setVisible(false);
 
@@ -270,60 +254,95 @@ public class PatientDetailsScreenMedicalHistoryController {
     @FXML
     void deleteMedicineRecord(ActionEvent event) throws IOException {
 
-        Alert confirmation = new Alert(Alert.AlertType.CONFIRMATION);
-        confirmation.setTitle("Confirmation");
-        confirmation.setHeaderText("Are you sure you want to proceed?");
-        confirmation.setContentText("Click OK to continue or Cancel to abort.");
+        patientMedicalHistoryTableModel selectedMedicalHistory = medicalHistoryTable.getSelectionModel()
+                .getSelectedItem();
 
-        Optional<ButtonType> result = confirmation.showAndWait();
+        if (selectedMedicalHistory == null) {
 
-        if (result.get() == ButtonType.OK) {
+            Alert error = new Alert(Alert.AlertType.ERROR);
+            error.setTitle("Error");
+            error.setHeaderText("Please select a record before proceeding");
+            error.showAndWait();
+        }
 
-            patientMedicineTableModel selectedPastMedicine = pastMedicationTable.getSelectionModel()
-                    .getSelectedItem();
+        else {
+            Alert confirmation = new Alert(Alert.AlertType.CONFIRMATION);
+            confirmation.setTitle("Confirmation");
+            confirmation.setHeaderText("Are you sure you want to proceed?");
+            confirmation.setContentText("Click OK to continue or Cancel to abort.");
 
-            pastMedicationTable.getItems().remove(selectedPastMedicine);
+            Optional<ButtonType> result = confirmation.showAndWait();
 
-            String pastMedicineId = selectedPastMedicine.getMedicineID();
+            if (result.get() == ButtonType.OK) {
 
-            medicineData.deleteMedicine(pastMedicineId);
-  
+                patientMedicineTableModel selectedPastMedicine = pastMedicationTable.getSelectionModel()
+                        .getSelectedItem();
 
-            App.setRoot("patientGeneralDetailsScreen");
-        } else {
+                pastMedicationTable.getItems().remove(selectedPastMedicine);
 
-            App.setRoot("patientGeneralDetailsScreenMedicalHistory");
+                String pastMedicineId = selectedPastMedicine.getMedicineID();
+
+                medicineData.deleteMedicine(pastMedicineId);
+
+                App.setRoot("patientGeneralDetailsScreen");
+            } else {
+
+                App.setRoot("patientGeneralDetailsScreenMedicalHistory");
+            }
         }
 
     }
 
     @FXML
-    void cancelEditMedicalHistory(ActionEvent event) {
+    void editMedicalHistoryRecord(ActionEvent event) throws IOException {
+        patientMedicalHistoryTableModel selectedMedicalHistory = medicalHistoryTable.getSelectionModel()
+                .getSelectedItem();
+
+        if (selectedMedicalHistory == null) {
+
+            Alert error = new Alert(Alert.AlertType.ERROR);
+            error.setTitle("Error");
+            error.setHeaderText("Please select a record before proceeding");
+            error.showAndWait();
+
+        } else {
+
+            medicalHistoryData.initMedicalHistoryData.setMedicalHistoryId(selectedMedicalHistory.getMedicalHistoryId());
+            medicalHistoryData.initMedicalHistoryData.setPastMedicationId(selectedMedicalHistory.getPastMedicationId());
+            medicalHistoryData.initMedicalHistoryData.setAllergies(selectedMedicalHistory.getAllergies());
+            medicalHistoryData.initMedicalHistoryData.setDescription(selectedMedicalHistory.getDescription());
+            medicalHistoryData.initMedicalHistoryData.setDiagnosisId(selectedMedicalHistory.getDiagnosisId());
+            medicalHistoryData.initMedicalHistoryData.setPatientId(selectedMedicalHistory.getPatientId());
+            medicalHistoryData.initMedicalHistoryData.setProcedureId(selectedMedicalHistory.getProcedureId());
+            medicalHistoryData.initMedicalHistoryData.setTreatmentId(selectedMedicalHistory.getTreatmentId());
+
+            App.setRoot("editMedicalHistoryScreen");
+        }
 
     }
 
     @FXML
-    void cancelEditMedicine(ActionEvent event) {
+    void editMedicine(ActionEvent event) throws IOException {
 
-    }
+        patientMedicineTableModel selectedPastMedication = pastMedicationTable.getSelectionModel()
+                .getSelectedItem();
 
-    @FXML
-    void editMedicalHistoryRecord(ActionEvent event) {
+        if (selectedPastMedication == null) {
 
-    }
+            Alert error = new Alert(Alert.AlertType.ERROR);
+            error.setTitle("Error");
+            error.setHeaderText("Please select a record before proceeding");
+            error.showAndWait();
 
-    @FXML
-    void editMedicine(ActionEvent event) {
+        } else {
 
-    }
+            medicineData.initMedicineData.setDoctorId(selectedPastMedication.getDoctorId());
+            medicineData.initMedicineData.setMedicineName(selectedPastMedication.getMedicineName());
+            medicineData.initMedicineData.setQuantity(selectedPastMedication.getQuantity());
+            medicineData.initMedicineData.setDosage(selectedPastMedication.getDosage());
 
-    @FXML
-    void saveUpdateMedicalHistory(ActionEvent event) {
-
-    }
-
-    @FXML
-    void saveUpdatedMedicine(ActionEvent event) {
+            App.setRoot("editPastMedicationScreen");
+        }
 
     }
 

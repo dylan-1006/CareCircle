@@ -82,4 +82,6 @@ public class medicineData {
             e.printStackTrace();
         }
     }
+
+    public static medicine initMedicineData = new medicine(fileName, fileName, fileName, fileName, 0, 0);
 }

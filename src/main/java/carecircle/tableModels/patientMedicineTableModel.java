@@ -106,8 +106,8 @@ public class patientMedicineTableModel {
         this.medicineName.set(medicineName);
     }
 
-    public double getQuantity() {
-        return quantity.get();
+    public int getQuantity() {
+        return (int) quantity.get();
     }
 
     public SimpleDoubleProperty quantityProperty() {

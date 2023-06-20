@@ -88,4 +88,7 @@ public class medicalHistoryData {
             e.printStackTrace();
         }
     }
+
+    public static medicalHistory initMedicalHistoryData = new medicalHistory(" ", " ", " ", " ",
+            " ", " ", " ", " ");
 }

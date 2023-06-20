@@ -157,16 +157,6 @@
                </font>
             </Button>
             <TableView fx:id="medicalHistoryTable" layoutX="23.0" layoutY="50.0" prefHeight="229.0" prefWidth="766.0" stylesheets="@../css/stylesheet.css" />
-            <Button fx:id="saveMedicalHistoryButton" layoutX="560.0" layoutY="12.0" mnemonicParsing="false" onAction="#saveUpdateMedicalHistory" style="-fx-background-color: white;" text="Save" textFill="#169bff" visible="false">
-               <font>
-                  <Font name="SansSerif Regular" size="16.5" />
-               </font>
-            </Button>
-            <Button fx:id="cancelEditMedicalHistoryButton" layoutX="494.0" layoutY="13.0" mnemonicParsing="false" onAction="#cancelEditMedicalHistory" style="-fx-background-color: white;" text="Cancel" textFill="RED" visible="false">
-               <font>
-                  <Font name="SansSerif Regular" size="16.5" />
-               </font>
-            </Button>
             <Pane fx:id="showAvailablilityofMedicalRecord" layoutX="22.0" layoutY="54.0" prefHeight="241.0" prefWidth="783.0">
                <children>
                   <Text layoutX="142.0" layoutY="126.0" strokeType="OUTSIDE" strokeWidth="0.0" text="No past medical history records of this patient available" textAlignment="CENTER" wrappingWidth="499.3164463043213">
@@ -200,17 +190,7 @@
                   <Font name="SansSerif Regular" size="16.5" />
                </font>
             </Button>
-            <Button fx:id="saveUpdateMedicineButton" layoutX="567.0" layoutY="6.0" mnemonicParsing="false" onAction="#saveUpdatedMedicine" style="-fx-background-color: white;" text="Save" textFill="#169bff" visible="false">
-               <font>
-                  <Font name="SansSerif Regular" size="16.5" />
-               </font>
-            </Button>
             <Button fx:id="deleteMedicineButton" layoutX="628.0" layoutY="6.0" mnemonicParsing="false" onAction="#deleteMedicineRecord" style="-fx-background-color: white;" text="Delete" textFill="RED">
-               <font>
-                  <Font name="SansSerif Regular" size="16.5" />
-               </font>
-            </Button>
-            <Button fx:id="cancelEditMedicineButton" layoutX="502.0" layoutY="6.0" mnemonicParsing="false" onAction="#cancelEditMedicine" style="-fx-background-color: white;" text="Cancel" textFill="RED" visible="false">
                <font>
                   <Font name="SansSerif Regular" size="16.5" />
                </font>
