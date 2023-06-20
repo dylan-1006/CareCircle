@@ -130,7 +130,7 @@ public class PatientDetailsScreenAnalysisController {
 
     @FXML
     void switchToAddAnalysisScreen(ActionEvent event) throws IOException {
-
+        App.setRoot("addAnalysisScreen");
     }
 
     @FXML
@@ -155,7 +155,6 @@ public class PatientDetailsScreenAnalysisController {
 
     @FXML
     void switchToPatient(MouseEvent event) throws IOException {
-
         App.setRoot("patientScreenGeneral");
 
     }

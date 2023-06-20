@@ -62,7 +62,6 @@ public class AddPatientScreenController {
 
         @FXML
         public void initialize() {
-                
                 bloodType.setItems(bloodTypeOptions);
                 gender.setItems(genderOptions);
         }
