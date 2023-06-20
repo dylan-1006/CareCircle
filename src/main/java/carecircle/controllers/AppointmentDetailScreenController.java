@@ -1,13 +1,20 @@
 package carecircle.controllers;
 
+import java.io.IOException;
 import java.util.List;
+import java.util.Optional;
+
+import carecircle.App;
 import carecircle.classes.doctor;
 import carecircle.classes.patient;
 import carecircle.data.appointmentData;
 import carecircle.data.doctorData;
 import carecircle.data.patientData;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.TextField;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Text;
 
 public class AppointmentDetailScreenController {
@@ -69,7 +76,7 @@ public class AppointmentDetailScreenController {
     @FXML
     public void initialize() {
         
-        // setAppointmentDetails();
+        setAppointmentDetails();
        
     }
    
@@ -78,7 +85,7 @@ public class AppointmentDetailScreenController {
       
   
 
-    void setAppointmentDetails() {
+    public void setAppointmentDetails() {
         List<patient> patientList = patientData.loadPatientDataFromDatabase();
         List<doctor> doctorList = doctorData.loadDoctorDataFromDatabase();
 
@@ -102,7 +109,7 @@ public class AppointmentDetailScreenController {
       
         for(int i=0;i<patientList.size();i++)
         {
-            if(patientID.getText().equals(patientList.get(i).getPatientID()))
+            if(appointmentData.initAppointmentData.getPatientID().equals(patientList.get(i).getPatientID()))
             {
                 patientName.setText(patientList.get(i).getName());
                 contactNumber.setText(patientList.get(i).getPhoneNo());
@@ -113,7 +120,7 @@ public class AppointmentDetailScreenController {
         }
         for(int i=0;i<doctorList.size();i++)
         {
-            if(doctorID.getText().equals(doctorList.get(i).getDoctorID()))
+            if(appointmentData.initAppointmentData.getDoctorID().equals(doctorList.get(i).getDoctorID()))
             {
                 doctorName.setText(doctorList.get(i).getName());
                 sideDoctorName.setText(doctorList.get(i).getName());
@@ -123,27 +130,29 @@ public class AppointmentDetailScreenController {
         }
     }
 
+
+   
     
-    // @FXML
-    // void deleteThisAppointment(MouseEvent event) throws IOException {
+    @FXML
+    void deleteThisAppointment(MouseEvent event) throws IOException {
 
-    //     Alert confirmation = new Alert(Alert.AlertType.CONFIRMATION);
-    //     confirmation.setTitle("Confirmation");
-    //     confirmation.setHeaderText("Are you sure you want to proceed?");
-    //     confirmation.setContentText("Click OK to continue or Cancel to abort.");
+        Alert confirmation = new Alert(Alert.AlertType.CONFIRMATION);
+        confirmation.setTitle("Confirmation");
+        confirmation.setHeaderText("Are you sure you want to proceed?");
+        confirmation.setContentText("Click OK to continue or Cancel to abort.");
 
-    //     Optional<ButtonType> result = confirmation.showAndWait();
+        Optional<ButtonType> result = confirmation.showAndWait();
 
-    //     if (result.get() == ButtonType.OK) {
+        if (result.get() == ButtonType.OK) {
 
-    //         appointmentData.deleteAppointment(appointmentData.initAppointmentData.getAppointmentID());
-    //         App.setRoot("appointmentScreenGeneral");
-    //     } else {
+            appointmentData.deleteAppointment(appointmentData.initAppointmentData.getAppointmentID());
+            App.setRoot("appointmentScreenGeneral");
+        } else {
 
-    //         App.setRoot("patientGeneralDetailsScreen");
-    //     }
+            App.setRoot("appointmentDetailScreen");
+        }
 
-    // }
+    }
 
     
     
