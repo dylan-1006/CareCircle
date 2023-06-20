@@ -1,88 +1,90 @@
 package carecircle.classes;
 
 public class medicalHistory {
-    String medicalHistoryID;
-    String patientID;
-    String diagnosisID;
-    String treatmentID;
-    String procedureID;
-    String allergies;
-    String pastMedicine;
-    String description;
 
-    public medicalHistory(String medicalHistoryID, String patientID, String diagnosisID, String treatmentID,
-            String procedureID, String allergies, String pastMedicine, String description) {
-        this.medicalHistoryID = medicalHistoryID;
-        this.patientID = patientID;
-        this.diagnosisID = diagnosisID;
-        this.treatmentID = treatmentID;
-        this.procedureID = procedureID;
-        this.allergies = allergies;
-        this.pastMedicine = pastMedicine;
+    private String medicalHistoryId;
+    private String patientId;
+    private String diagnosisId;
+    private String treatmentId;
+    private String procedureId;
+    private String description;
+    private String allergies;
+    private String pastMedicationId;
+
+    public medicalHistory(String medicalHistoryId, String patientId, String diagnosisId, String treatmentId,
+            String procedureId,
+            String description, String allergies, String pastMedicationId) {
+        this.patientId = patientId;
+        this.diagnosisId = diagnosisId;
+        this.treatmentId = treatmentId;
+        this.procedureId = procedureId;
         this.description = description;
-    }
-
-    public void setMedicalHistoryID(String patientID) {
-        this.medicalHistoryID = medicalHistoryID;
-    }
-
-    public String getMedicalHistoryID() {
-        return medicalHistoryID;
-    }
-
-    public void setPatientID(String patientID) {
-        this.patientID = patientID;
-    }
-
-    public String getPatientID() {
-        return patientID;
-    }
-
-    public void setDiagnosisID(String diagnosisID) {
-        this.diagnosisID = diagnosisID;
-    }
-
-    public String getDiagnosisID() {
-        return diagnosisID;
-    }
-
-    public void setTreatmentID(String treatmentID) {
-        this.treatmentID = treatmentID;
-    }
-
-    public String getTreatmentID() {
-        return treatmentID;
-    }
-
-    public void setProcedureID(String procedureID) {
-        this.procedureID = procedureID;
-    }
-
-    public String getProcedureID() {
-        return procedureID;
-    }
-
-    public void setAllergies(String allergies) {
         this.allergies = allergies;
+        this.pastMedicationId = pastMedicationId;
+        this.medicalHistoryId = medicalHistoryId;
     }
 
-    public String getAllergies() {
-        return allergies;
+    public String getMedicalHistoryId() {
+        return medicalHistoryId;
     }
 
-    public void setPastMedicine(String pastMedicine) {
-        this.pastMedicine = pastMedicine;
+    public void setMedicalHistoryId(String medicalHistoryId) {
+        this.medicalHistoryId = medicalHistoryId;
     }
 
-    public String getPastMedicine() {
-        return pastMedicine;
+    public String getPatientId() {
+        return patientId;
+    }
+
+    public void setPatientId(String patientId) {
+        this.patientId = patientId;
+    }
+
+    public String getDiagnosisId() {
+        return diagnosisId;
+    }
+
+    public void setDiagnosisId(String diagnosisId) {
+        this.diagnosisId = diagnosisId;
+    }
+
+    public String getTreatmentId() {
+        return treatmentId;
+    }
+
+    public void setTreatmentId(String treatmentId) {
+        this.treatmentId = treatmentId;
+    }
+
+    public String getProcedureId() {
+        return procedureId;
+    }
+
+    public void setProcedureId(String procedureId) {
+        this.procedureId = procedureId;
+    }
+
+    public String getDescription() {
+        return description;
     }
 
     public void setDescription(String description) {
         this.description = description;
     }
 
-    public String getDescription() {
-        return description;
+    public String getAllergies() {
+        return allergies;
+    }
+
+    public void setAllergies(String allergies) {
+        this.allergies = allergies;
+    }
+
+    public String getPastMedicationId() {
+        return pastMedicationId;
+    }
+
+    public void setPastMedicationId(String pastMedicationId) {
+        this.pastMedicationId = pastMedicationId;
     }
 }
