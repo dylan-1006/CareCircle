@@ -15,6 +15,7 @@ import javafx.scene.control.Alert.AlertType;
 public class medicalHistoryData {
     public static void main(String[] args) {
         loadMedicalHistoryDataFromDatabase();
+
     }
 
     public static String fileName = "src/main/resources/carecircle/assets/database/medicalHistory.txt";

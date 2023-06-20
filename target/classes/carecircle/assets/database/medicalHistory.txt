@@ -1,5 +1,4 @@
 MH001,P12345,D001,T001,PR001,Cold and fever,None,M001
-MH002,P67890,D002,T002,PR002,Fractured ankle,None,M002
 MH003,P24680,D003,T003,PR003,High blood pressure,None,M003
 MH004,P54321,D004,T004,PR004,Allergic reaction to penicillin,Penicillin,M004
 MH005,P97531,D005,T005,PR005,Flu symptoms,Penicillin,M005
