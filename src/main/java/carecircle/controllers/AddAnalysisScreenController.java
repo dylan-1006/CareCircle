@@ -72,7 +72,7 @@ public class AddAnalysisScreenController {
                                 .substring(1))
                         + 1;
 
-                String newAnalysisIdFormatted = String.format("A0%2d", newAnalysisID);
+                String newAnalysisIdFormatted = String.format("AN0%2d", newAnalysisID);
 
                 List<patient> patientList = patientData.loadPatientDataFromDatabase();
 

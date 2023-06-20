@@ -72,7 +72,7 @@ public class AddDiagnosisScreenController {
                                                                 .substring(1))
                                                 + 1;
 
-                                String newDiagnosisIdFormatted = String.format("A0%2d", newDiagnosisID);
+                                String newDiagnosisIdFormatted = String.format("D0%2d", newDiagnosisID);
 
                                 List<patient> patientList = patientData.loadPatientDataFromDatabase();
 

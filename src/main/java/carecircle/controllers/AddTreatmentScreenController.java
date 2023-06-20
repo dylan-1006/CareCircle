@@ -72,7 +72,7 @@ public class AddTreatmentScreenController {
                                                                 .substring(1))
                                                 + 1;
 
-                                String newTreatmentIdFormatted = String.format("A0%2d", newTreatmentID);
+                                String newTreatmentIdFormatted = String.format("T0%2d", newTreatmentID);
 
                                 List<patient> patientList = patientData.loadPatientDataFromDatabase();
 

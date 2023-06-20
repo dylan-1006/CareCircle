@@ -10,15 +10,11 @@ import carecircle.classes.medicalHistory;
 import carecircle.classes.patient;
 import carecircle.classes.analysis;
 import carecircle.classes.treatment;
-//import carecircle.classes.procedure;
-import carecircle.classes.medication;
-
+import carecircle.classes.procedure;
 import carecircle.data.medicalHistoryData;
 import carecircle.data.patientData;
 import carecircle.data.analysisData;
 import carecircle.data.treatmentData;
-//import carecircle.classes.procedureData;
-import carecircle.data.medicationData;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -87,7 +83,7 @@ public class AddMedicalHistoryScreenController {
                                 .substring(1))
                         + 1;
 
-                String newMedicalHistoryIdFormatted = String.format("A0%2d", newMedicalHistoryID);
+                String newMedicalHistoryIdFormatted = String.format("MH0%2d", newMedicalHistoryID);
 
                 List<patient> patientList = patientData.loadPatientDataFromDatabase();
 

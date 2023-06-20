@@ -6,13 +6,13 @@ import java.io.PrintWriter;
 import java.util.List;
 
 import carecircle.App;
-import carecircle.classes.medication;
+import carecircle.classes.medicine;
 import carecircle.classes.doctor;
 import carecircle.classes.patient;
 import carecircle.data.doctorData;
-import carecircle.data.medicationData;
+import carecircle.data.medicineData;
 import carecircle.data.patientData;
-
+import carecircle.data.userData;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -31,7 +31,7 @@ public class AddMedicationScreenController {
     private Button Continue;
 
     @FXML
-    private Text backToMedicalHistoryButton;
+    private Text backToMedicationButton;
 
     @FXML
     private ComboBox<String> doctorID;
@@ -43,21 +43,31 @@ public class AddMedicationScreenController {
     private TextField medicationName;
 
     @FXML
-    private ComboBox<String> patientNameBox;
-
+    private TextField patientNameBox;
     @FXML
     private TextField quantity;
 
     @FXML
     public void initialize() {
-        patientNameBox.setItems(fetchAvailablePatientName());
+        patientNameBox.setText(patientData.initPatientData.getName());
         doctorID.setItems(fetchAvailableDoctorId());
     }
 
     @FXML
     void addNewMedication(ActionEvent event) {
-        if (patientNameBox.getSelectionModel().isEmpty() ||
-                doctorID.getSelectionModel().isEmpty() || medicationName.getText().equals("")
+
+        System.out.println("Entered add new medication");
+
+        boolean isDoubleInput = true;
+
+        try {
+            Integer.parseInt(quantity.getText());
+            Double.parseDouble(dosage.getText());
+
+        } catch (NumberFormatException e) {
+            isDoubleInput = false;
+        }
+        if (doctorID.getSelectionModel().isEmpty() || medicationName.getText().equals("")
                 || quantity.getText().equals("") || dosage.getText().equals("")) {
             Alert alert = new Alert(AlertType.ERROR);
             alert.setTitle("Error");
@@ -65,48 +75,60 @@ public class AddMedicationScreenController {
             alert.setContentText("Please fill in all the required fields.");
             alert.showAndWait();
 
-        } else {
+        } else if (isDoubleInput == false) {
+            Alert alert = new Alert(AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setHeaderText("Wrong input");
+            alert.setContentText("Please make sure quantity and dosage fields are numbers.");
+            alert.showAndWait();
+            quantity.setText("");
+            dosage.setText("");
+
+        }
+
+        else {
             try {
-                List<medication> medicationList = medicationData.loadMedicationDataFromDatabase();
+                List<medicine> medicineList = medicineData.loadMedicineDataFromDatabase();
                 int newMedicationID = Integer
-                        .parseInt(medicationList.get(medicationList.size() - 1)
-                                .getMedicationID()
+                        .parseInt(medicineList.get(medicineList.size() - 1)
+                                .getMedicineID()
                                 .substring(1))
                         + 1;
 
-                String newMedicationIdFormatted = String.format("A0%2d", newMedicationID);
+                String newMedicationIdFormatted = String.format("M0%2d", newMedicationID);
 
                 List<patient> patientList = patientData.loadPatientDataFromDatabase();
 
                 String patientId = " ";
                 for (int i = 0; i < patientList.size(); i++) {
 
-                    if (patientList.get(i).getName().equals(patientNameBox.getSelectionModel()
-                            .getSelectedItem().toString())) {
+                    if (patientList.get(i).getName().equals(patientNameBox.getText())) {
 
                         patientId = patientList.get(i).getPatientID();
+                        System.out.println("Found patient id");
                         break;
+
                     }
 
                 }
 
-                medication newMedication = new medication(newMedicationIdFormatted,
+                medicine newMedicine = new medicine(newMedicationIdFormatted,
                         doctorID.getSelectionModel().getSelectedItem().toString(),
                         patientId,
                         medicationName.getText(),
-                        quantity.getText(),
-                        dosage.getText());
+                        Integer.parseInt(quantity.getText()),
+                        Double.parseDouble(dosage.getText()));
 
                 FileWriter account = new FileWriter(
-                        "src/main/resources/carecircle/assets/database/medication.txt", true);
+                        "src/main/resources/carecircle/assets/database/medicine.txt", true);
 
                 PrintWriter accountWriter = new PrintWriter(account);
                 accountWriter.println(
-                        newMedicationIdFormatted + "," + newMedication.getDoctorID() + ","
-                                + newMedication.getPatientID() + ","
-                                + newMedication.getMedicationName() + ","
-                                + newMedication.getQuantity() + ","
-                                + newMedication.getDosage());
+                        newMedicationIdFormatted + "," + newMedicine.getDoctorId() + ","
+                                + newMedicine.getPatientId() + ","
+                                + newMedicine.getMedicineName() + ","
+                                + newMedicine.getQuantity() + ","
+                                + newMedicine.getDosage());
 
                 accountWriter.close();
                 Alert alert = new Alert(AlertType.CONFIRMATION);
@@ -117,6 +139,7 @@ public class AddMedicationScreenController {
                 App.setRoot("patientDetailsScreenMedicalHistory");
 
             } catch (Exception e) {
+                System.out.println(e);
 
             }
         }
