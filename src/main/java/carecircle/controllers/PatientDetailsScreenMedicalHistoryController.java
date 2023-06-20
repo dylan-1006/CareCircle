@@ -336,6 +336,7 @@ public class PatientDetailsScreenMedicalHistoryController {
 
         } else {
 
+            medicineData.initMedicineData.setMedicineID(selectedPastMedication.getMedicineID());
             medicineData.initMedicineData.setDoctorId(selectedPastMedication.getDoctorId());
             medicineData.initMedicineData.setMedicineName(selectedPastMedication.getMedicineName());
             medicineData.initMedicineData.setQuantity(selectedPastMedication.getQuantity());
