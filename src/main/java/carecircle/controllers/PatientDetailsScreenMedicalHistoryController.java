@@ -347,8 +347,6 @@ public class PatientDetailsScreenMedicalHistoryController {
 
     }
 
- 
-
     @FXML
     void switchToAddMedicineScreen(ActionEvent event) {
 
@@ -375,11 +373,9 @@ public class PatientDetailsScreenMedicalHistoryController {
 
     }
 
-  
-
     @FXML
     void switchToAddMedicalHistoryScreen(ActionEvent event) throws IOException {
-        App.setRoot("addMedicalHistoryScreen");    
+        App.setRoot("addMedicalHistory");
     }
 
     @FXML

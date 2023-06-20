@@ -83,7 +83,7 @@ public class AddMedicalHistoryScreenController {
                 List<medicalHistory> medicalHistoryList = medicalHistoryData.loadMedicalHistoryDataFromDatabase();
                 int newMedicalHistoryID = Integer
                         .parseInt(medicalHistoryList.get(medicalHistoryList.size() - 1)
-                                .getMedicalHistoryID()
+                                .getMedicalHistoryId()
                                 .substring(1))
                         + 1;
 
@@ -118,12 +118,12 @@ public class AddMedicalHistoryScreenController {
                 PrintWriter accountWriter = new PrintWriter(account);
                 accountWriter.println(
                         newMedicalHistoryIdFormatted + ","
-                                + newMedicalHistory.getPatientID() + ","
-                                + newMedicalHistory.getDiagnosisID() + ","
-                                + newMedicalHistory.getTreatmentID() + ","
-                                + newMedicalHistory.getProcedureID() + ","
+                                + newMedicalHistory.getPatientId() + ","
+                                + newMedicalHistory.getDiagnosisId() + ","
+                                + newMedicalHistory.getTreatmentId() + ","
+                                + newMedicalHistory.getProcedureId() + ","
                                 + newMedicalHistory.getAllergies() + ","
-                                + newMedicalHistory.getPastMedicine()
+                                + newMedicalHistory.getPastMedicationId()
                                 + newMedicalHistory.getDescription());
 
                 accountWriter.close();
