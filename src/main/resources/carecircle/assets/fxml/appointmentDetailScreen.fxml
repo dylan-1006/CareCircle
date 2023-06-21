@@ -144,7 +144,7 @@
                   <Font name="SansSerif Regular" size="18.0" />
                </font>
             </Text>
-            <Text fx:id="editButton" layoutX="747.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #000000;" text="Edit">
+            <Text fx:id="editButton" layoutX="747.0" layoutY="33.0" onMouseClicked="#editDetails" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #000000;" text="Edit">
                <font>
                   <Font name="SansSerif Regular" size="18.0" />
                </font>

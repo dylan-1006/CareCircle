@@ -131,7 +131,12 @@ public class AppointmentDetailScreenController {
     }
 
 
-   
+    @FXML
+    void editDetails(MouseEvent event) {
+        venue.setEditable(true);
+        time.setEditable(true);
+        date.setEditable(true);
+    }
     
     @FXML
     void deleteThisAppointment(MouseEvent event) throws IOException {
