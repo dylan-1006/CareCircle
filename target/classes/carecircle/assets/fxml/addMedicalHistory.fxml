@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.paint.Color?>
@@ -10,8 +11,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="carecircle.controllers.AddMedicalHistoryScreenController">
    <children>
       <Text layoutX="234.0" layoutY="125.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Medical">
          <font>
@@ -33,25 +33,21 @@
             <Font name="SansSerif Regular" size="18.0" />
          </font>
       </Text>
-      <TextField fx:id="name" layoutX="249.0" layoutY="219.0" />
       <Text layoutX="709.0" layoutY="202.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #4FB3FF;" text="Diagnosis ID">
          <font>
             <Font name="SansSerif Regular" size="18.0" />
          </font>
       </Text>
-      <TextField fx:id="icNumber" layoutX="707.0" layoutY="221.0" />
       <Text layoutX="249.0" layoutY="315.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #4FB3FF;" text="Treatment ID">
          <font>
             <Font name="SansSerif Regular" size="18.0" />
          </font>
       </Text>
-      <TextField fx:id="name1" layoutX="249.0" layoutY="336.0" />
       <Text layoutX="709.0" layoutY="315.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #4FB3FF;" text="Procedure ID">
          <font>
             <Font name="SansSerif Regular" size="18.0" />
          </font>
       </Text>
-      <TextField fx:id="contactNumber" layoutX="708.0" layoutY="336.0" />
       <Text layoutX="249.0" layoutY="432.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #4FB3FF;" text="Allergies">
          <font>
             <Font name="SansSerif Regular" size="18.0" />
@@ -62,15 +58,15 @@
             <Font name="SansSerif Regular" size="18.0" />
          </font>
       </Text>
-      <TextField fx:id="height" layoutX="253.0" layoutY="447.0" prefHeight="33.0" prefWidth="61.0" />
-      <TextField fx:id="weight" layoutX="382.0" layoutY="447.0" prefHeight="33.0" prefWidth="61.0" />
+      <TextField fx:id="allergies" layoutX="253.0" layoutY="447.0" prefHeight="33.0" prefWidth="61.0" />
+      <TextField fx:id="pastMedication" layoutX="382.0" layoutY="447.0" prefHeight="33.0" prefWidth="61.0" />
       <Text layoutX="707.0" layoutY="432.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #4FB3FF;" text="Description">
          <font>
             <Font name="SansSerif Regular" size="18.0" />
          </font>
       </Text>
-      <TextField fx:id="contactNumber1" layoutX="708.0" layoutY="451.0" />
-      <Button layoutX="569.0" layoutY="524.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="177.0" style="-fx-background-radius: 15; -fx-background-color: #4FB3FF;" text="Continue" textFill="WHITE">
+      <TextField fx:id="description" layoutX="708.0" layoutY="448.0" />
+      <Button fx:id="Continue" layoutX="569.0" layoutY="524.0" mnemonicParsing="false" onAction="#addNewMedicalHistory" prefHeight="51.0" prefWidth="177.0" style="-fx-background-radius: 15; -fx-background-color: #4FB3FF;" text="Continue" textFill="WHITE">
          <font>
             <Font name="Modern No. 20" size="15.0" />
          </font>
@@ -98,5 +94,14 @@
             </LinearGradient>
          </fill>
       </Circle>
+      <ComboBox fx:id="patientNameBox" layoutX="245.0" layoutY="207.0" prefWidth="150.0" />
+      <ComboBox fx:id="treatmentID" layoutX="246.0" layoutY="319.0" prefWidth="150.0" />
+      <ComboBox fx:id="diagnosisID" layoutX="707.0" layoutY="207.0" prefWidth="150.0" />
+      <ComboBox fx:id="procedureID" layoutX="707.0" layoutY="319.0" prefWidth="150.0" />
+         <Text fx:id="backToMedicalHistoryButton" fill="#4fb3ff" layoutX="33.0" layoutY="26.0" onMouseClicked="#backToMedicalHistoryScreen" strokeType="OUTSIDE" strokeWidth="0.0" text="＜  Medical History" wrappingWidth="163.61811002289062">
+               <font>
+                  <Font name="SansSerif Regular" size="16.0" />
+               </font>
+            </Text>
    </children>
 </Pane>

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1200.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="carecircle.controllers.EditMedicalHistoryScreen">
+   <children>
+      <Text layoutX="234.0" layoutY="125.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Medical">
+         <font>
+            <Font name="SansSerif Bold" size="36.0" />
+         </font>
+      </Text>
+      <Text layoutX="372.0" layoutY="125.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #4FB3FF;" text="History">
+         <font>
+            <Font name="SansSerif Bold" size="36.0" />
+         </font>
+      </Text>
+      <Text layoutX="234.0" layoutY="149.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #A6A6A6;" text="Fill in all required sections below to edit medical history">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Text>
+      <Text layoutX="245.0" layoutY="202.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #4FB3FF;" text="Patient Name">
+         <font>
+            <Font name="SansSerif Regular" size="18.0" />
+         </font>
+      </Text>
+      <TextField fx:id="name" editable="false" layoutX="249.0" layoutY="219.0" style="-fx-background-color: white;" />
+      <Text layoutX="709.0" layoutY="202.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #4FB3FF;" text="Diagnosis ID">
+         <font>
+            <Font name="SansSerif Regular" size="18.0" />
+         </font>
+      </Text>
+      <TextField fx:id="diagnosis" layoutX="707.0" layoutY="221.0" />
+      <Text layoutX="249.0" layoutY="315.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #4FB3FF;" text="Treatment ID">
+         <font>
+            <Font name="SansSerif Regular" size="18.0" />
+         </font>
+      </Text>
+      <TextField fx:id="treatment" layoutX="249.0" layoutY="336.0" />
+      <Text layoutX="709.0" layoutY="315.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #4FB3FF;" text="Procedure ID">
+         <font>
+            <Font name="SansSerif Regular" size="18.0" />
+         </font>
+      </Text>
+      <TextField fx:id="procedure" layoutX="708.0" layoutY="336.0" />
+      <Text layoutX="249.0" layoutY="432.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #4FB3FF;" text="Allergies">
+         <font>
+            <Font name="SansSerif Regular" size="18.0" />
+         </font>
+      </Text>
+      <Text layoutX="382.0" layoutY="432.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #4FB3FF;" text="Past Medication ID">
+         <font>
+            <Font name="SansSerif Regular" size="18.0" />
+         </font>
+      </Text>
+      <TextField fx:id="allergies" layoutX="253.0" layoutY="447.0" prefHeight="33.0" prefWidth="90.0" />
+      <TextField fx:id="pastMedication" layoutX="382.0" layoutY="447.0" prefHeight="33.0" prefWidth="158.0" />
+      <Text layoutX="707.0" layoutY="432.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #4FB3FF;" text="Description">
+         <font>
+            <Font name="SansSerif Regular" size="18.0" />
+         </font>
+      </Text>
+      <TextField fx:id="medicalHistoryDescription" layoutX="708.0" layoutY="451.0" />
+      <Button fx:id="continueButton" layoutX="569.0" layoutY="524.0" mnemonicParsing="false" onAction="#saveChangesMedicalHistory" prefHeight="51.0" prefWidth="177.0" style="-fx-background-radius: 15; -fx-background-color: #4FB3FF;" text="Continue" textFill="WHITE">
+         <font>
+            <Font name="SansSerif Regular" size="16.5" />
+         </font>
+      </Button>
+      <Text fx:id="backToAppointmentButton" fill="#4fb3ff" layoutX="33.0" layoutY="31.0" onMouseClicked="#backToAppointmentScreen" strokeType="OUTSIDE" strokeWidth="0.0" text="＜ Medical History" wrappingWidth="140.0458984375">
+         <font>
+            <Font name="SansSerif Regular" size="16.0" />
+         </font>
+      </Text>
+      <Circle layoutX="954.0" layoutY="133.0" radius="100.0" stroke="WHITE" strokeType="INSIDE">
+         <fill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.30980393290519714" green="0.7019608020782471" blue="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.598243771132193">
+                     <color>
+                        <Color red="0.3100000023841858" green="0.7124999761581421" blue="1.0" opacity="0.5592705011367798" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.3100000023841858" green="0.7124999761581421" blue="1.0" opacity="0.0" />
+                     </color>
+
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Circle>
+   </children>
+</Pane>

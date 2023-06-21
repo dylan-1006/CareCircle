@@ -1,19 +1,58 @@
 package carecircle.classes;
-
-import java.util.Date;
-
 public class analysis {
     String analysisID;
-    Date date;
-    String description;
-    String patientID;
     String doctorID;
+    String patientID;
+    String date;
+    String description;
+    
 
-    public analysis(String analysisID, Date date,String description,String patientID, String doctorID){
+    public analysis(String analysisID, String doctorID, String patientID, String date,String description ){
         this.analysisID=analysisID;
-        this.date=date;
-        this.description=description;
         this.patientID=patientID;
         this.doctorID=doctorID;
+        this.date=date;
+        this.description=description;
+        
+    }
+
+     public void setAnalysisID (String analysisID) {
+        this.analysisID = analysisID;
+    }
+
+    public String getAnalysisID() {
+        return analysisID;
+    }
+
+    public void setDoctorID(String doctorID) {
+        this.doctorID = doctorID;
+    }
+
+    public String getDoctorID() {
+        return doctorID;
+    }
+    
+    public void setPatientID(String patientID) {
+        this.patientID = patientID;
+    }
+
+    public String getPatientID() {
+        return patientID;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getDescription() {
+        return description;
     }
 }

@@ -127,7 +127,7 @@ public class PatientDetailsScreenTreatmentController {
 
     @FXML
     void switchToAddTreatmentScreen(ActionEvent event) throws IOException {
-        App.setRoot("patientDetailsScreenTreatment");
+        App.setRoot("addTreatmentScreen");
     }
 
     @FXML

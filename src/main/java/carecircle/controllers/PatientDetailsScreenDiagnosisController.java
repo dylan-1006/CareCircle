@@ -129,10 +129,11 @@ public class PatientDetailsScreenDiagnosisController {
     }
 
     @FXML
-    void switchToAddDiagnosisScreen(ActionEvent event) {
+    void switchToAddDiagnosisScreen(ActionEvent event) throws IOException {
+        App.setRoot("addDiagnosisScreen");
+
 
     }
-
     @FXML
     void switchToAnalysisSection(ActionEvent event) throws IOException {
         App.setRoot("patientDetailsScreenAnalysis");
