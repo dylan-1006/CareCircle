@@ -1,8 +1,10 @@
 package carecircle.controllers;
 
 import java.io.IOException;
+import java.util.List;
 
 import carecircle.App;
+import carecircle.classes.appointment;
 import carecircle.data.appointmentData;
 import javafx.collections.ObservableList;
 import carecircle.tableModels.appointmentTableModel;
@@ -12,7 +14,6 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.fxml.FXML;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
-import javafx.scene.shape.Circle;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextFlow;
 
@@ -60,7 +61,6 @@ public class AppointmentScreenGeneralController {
 
     public void initialize() {
 
-        // Loading the patient table
         ObservableList<appointmentTableModel> appointmentDataList = appointmentTableModel
                 .convertAppointmentDataToAppointmentDataModel();
 
@@ -95,6 +95,46 @@ public class AppointmentScreenGeneralController {
 
     void setAppointmentAmount() {
         totalAppointments.setText(Integer.toString(appointmentData.loadAppointmentDataFromDatabase().size()));
+
+    }
+
+
+    @FXML
+    void switchToUpdateAppointmentScreen(MouseEvent event) {
+        System.out.println("GEGEGFFEF");
+        appointmentTableModel selectedAppointment = appointmentTable.getSelectionModel().getSelectedItem();
+
+        appointmentData.initAppointmentData.setAppointmentID(selectedAppointment.getAppointmentID());
+        List<appointment> appointmentList = appointmentData.loadAppointmentDataFromDatabase();
+
+        // System.out.println(patientData.initPatientData.getPatientID());
+        for (int i = 0; i < appointmentList.size(); i++) {
+
+            if (appointmentList.get(i).getAppointmentID().equals(appointmentData.initAppointmentData.getAppointmentID())) {
+
+                appointmentData.initAppointmentData.setPatientID(appointmentList.get(i).getPatientID());
+                appointmentData.initAppointmentData.setDoctorID(appointmentList.get(i).getDoctorID());
+                appointmentData.initAppointmentData.setDate(appointmentList.get(i).getDate());
+                appointmentData.initAppointmentData.setTime(appointmentList.get(i).getTime());
+                appointmentData.initAppointmentData.setVenue(appointmentList.get(i).getVenue());
+                appointmentData.initAppointmentData.setDepartment(appointmentList.get(i).getDepartment());
+               
+                try {
+                    App.setRoot("appointmentDetailScreen");
+                    
+                } catch (IOException e) {
+                    // TODO Auto-generated catch block
+                    
+                    e.printStackTrace();
+                }
+
+                break;
+            } else {
+
+                continue;
+            }
+
+        }
 
     }
 

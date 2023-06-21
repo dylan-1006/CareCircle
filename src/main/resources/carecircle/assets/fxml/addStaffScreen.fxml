@@ -1,10 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.paint.*?>
-<?import javafx.scene.shape.*?>
-<?import javafx.scene.text.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1200.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="carecircle.controllers.AddStaffScreenController">
    <children>
@@ -69,7 +75,7 @@
             <Font name="SansSerif Regular" size="18.0" />
          </font>
       </Text>
-      <ComboBox fx:id="gender" layoutX="422.0" layoutY="323.0" prefWidth="150.0" />
+      <ComboBox fx:id="gender" layoutX="422.0" layoutY="323.0" prefWidth="150.0" promptText="Choose Gender" />
       <Text layoutX="699.0" layoutY="305.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #4FB3FF;" text="Contact Number">
          <font>
             <Font name="SansSerif Regular" size="18.0" />
@@ -97,6 +103,6 @@
             <Font name="SansSerif Regular" size="16.0" />
          </font>
       </Text>
-      <ComboBox fx:id="typeOfStaff" layoutX="702.0" layoutY="441.0" prefWidth="150.0" />
+      <ComboBox fx:id="typeOfStaff" layoutX="702.0" layoutY="441.0" prefWidth="150.0" promptText="Choose Staff" />
    </children>
 </Pane>

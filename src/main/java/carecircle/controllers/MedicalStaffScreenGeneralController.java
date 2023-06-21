@@ -1,8 +1,13 @@
 package carecircle.controllers;
 
 import java.io.IOException;
+import java.util.List;
 
 import carecircle.App;
+import carecircle.classes.doctor;
+import carecircle.classes.nurse;
+import carecircle.data.doctorData;
+import carecircle.data.nurseData;
 import carecircle.tableModels.appointmentTableModel;
 import carecircle.tableModels.staffTableModel;
 import javafx.collections.ObservableList;
@@ -17,7 +22,7 @@ import javafx.scene.text.Text;
 import javafx.scene.text.TextFlow;
 
 public class MedicalStaffScreenGeneralController {
-
+    public static boolean doctorOrNurse=false;
     @FXML
     private Pane navigationSideBar;
 
@@ -101,6 +106,73 @@ public class MedicalStaffScreenGeneralController {
         totalStaff.setText(Integer.toString(staffTableModel.convertStaffDataToStaffDataModel().size()));
 
     }
+
+
+    @FXML
+    void switchToUpdateScreen(MouseEvent event) {
+       staffTableModel selectedStaff = medicalStaffScreenTable.getSelectionModel().getSelectedItem();
+
+       
+
+        if(selectedStaff.getDepartment().equals("Doctor")){
+            doctorData.initDoctorData.setDoctorID(selectedStaff.getStaffID());
+            List<doctor> doctorList = doctorData.loadDoctorDataFromDatabase();
+            doctorOrNurse=true;
+
+            for (int i = 0; i < doctorList.size(); i++) {
+
+                if (doctorList.get(i).getDoctorID().equals(doctorData.initDoctorData.getDoctorID())) {
+    
+                    doctorData.initDoctorData.setName(doctorList.get(i).getName());
+                    doctorData.initDoctorData.setDateOfBirth(doctorList.get(i).getDateOfBirth());
+                    doctorData.initDoctorData.setEmail(doctorList.get(i).getEmail());
+                    doctorData.initDoctorData.setGender(doctorList.get(i).getGender());
+                    doctorData.initDoctorData.setPhoneNo(doctorList.get(i).getPhoneNo());
+                    doctorData.initDoctorData.setSpecialization(doctorList.get(i).getSpecialization());    
+                    try {
+                        App.setRoot("staffDetailScreen");
+                    } catch (IOException e) {
+                        // TODO Auto-generated catch block
+                        e.printStackTrace();
+                    }
+    
+                    break;
+                } 
+                
+            }
+
+        }
+
+        else if(selectedStaff.getDepartment().equals("Nurse")){
+            nurseData.initNurseData.setNurseID(selectedStaff.getStaffID());
+            List<nurse> nurseList = nurseData.loadNurseDataFromDatabase();
+            doctorOrNurse=false;
+
+            for (int i = 0; i < nurseList.size(); i++) {
+
+                if (nurseList.get(i).getNurseID().equals(nurseData.initNurseData.getNurseID())) {
+    
+                    nurseData.initNurseData.setName(nurseList.get(i).getName());
+                    nurseData.initNurseData.setGender(nurseList.get(i).getGender());
+                    nurseData.initNurseData.setDateOfBirth(nurseList.get(i).getDateOfBirth());   
+                    nurseData.initNurseData.setEmail(nurseList.get(i).getEmail());
+                    nurseData.initNurseData.setPhoneNo(nurseList.get(i).getPhoneNo());
+                    try {
+                        App.setRoot("staffDetailScreen");
+                    } catch (IOException e) {
+                       
+                        e.printStackTrace();
+                    }
+    
+                    break;
+                } 
+                
+            }
+        }
+        
+    }
+
+    
 
     @FXML
     void switchToAddStaffScreen(MouseEvent event) throws IOException {

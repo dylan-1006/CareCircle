@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.paint.LinearGradient?>
@@ -9,8 +11,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1200.0" style="-fx-background-radius: 20;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1200.0" style="-fx-background-radius: 20;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="carecircle.controllers.AppointmentDetailScreenController">
    <children>
       <Circle layoutX="934.0" layoutY="113.0" radius="100.0" stroke="WHITE" strokeType="INSIDE">
          <fill>
@@ -47,12 +48,12 @@
       </Text>
       <Pane layoutX="107.0" layoutY="124.0" prefHeight="437.0" prefWidth="200.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 10;">
          <children>
-            <Text layoutX="28.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" text="22 June ">
+            <Text fx:id="sideDate" layoutX="28.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" text="22 June ">
                <font>
                   <Font name="SansSerif Bold" size="36.0" />
                </font>
             </Text>
-            <Text layoutX="28.0" layoutY="97.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #4FB3FF;" text="9:00 AM">
+            <Text fx:id="sideTime" layoutX="28.0" layoutY="97.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #4FB3FF;" text="9:00 AM">
                <font>
                   <Font name="SansSerif Bold" size="36.0" />
                </font>
@@ -67,7 +68,7 @@
                   <Font name="SansSerif Regular" size="16.0" />
                </font>
             </Text>
-            <Text layoutX="14.0" layoutY="241.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name" wrappingWidth="104.06639099121094">
+            <Text layoutX="14.0" layoutY="241.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Patient" wrappingWidth="104.06639099121094">
                <font>
                   <Font name="SansSerif Regular" size="16.0" />
                </font>
@@ -87,37 +88,37 @@
                   <Font name="SansSerif Regular" size="16.0" />
                </font>
             </Text>
-            <Text fill="RED" layoutX="15.0" layoutY="400.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Delete Appointment">
+            <Text fx:id="deleteAppointmentButton" fill="RED" layoutX="15.0" layoutY="400.0" onMouseClicked="#deleteThisAppointment" strokeType="OUTSIDE" strokeWidth="0.0" text="Delete Appointment">
                <font>
                   <Font name="SansSerif Bold" size="18.0" />
                </font>
             </Text>
-            <Text fill="#169bff" layoutX="120.0" layoutY="168.0" strokeType="OUTSIDE" strokeWidth="0.0" text="AP12980" wrappingWidth="104.06639099121094">
+            <Text fx:id="sideAppointmentID" fill="#169bff" layoutX="120.0" layoutY="168.0" strokeType="OUTSIDE" strokeWidth="0.0" text="AP12980" wrappingWidth="104.06639099121094">
                <font>
                   <Font name="SansSerif Regular" size="16.0" />
                </font>
             </Text>
-            <Text fill="#169bff" layoutX="120.0" layoutY="206.0" strokeType="OUTSIDE" strokeWidth="0.0" text="P193486" wrappingWidth="104.06639099121094">
+            <Text fx:id="sidePatientID" fill="#169bff" layoutX="120.0" layoutY="206.0" strokeType="OUTSIDE" strokeWidth="0.0" text="P193486" wrappingWidth="104.06639099121094">
                <font>
                   <Font name="SansSerif Regular" size="16.0" />
                </font>
             </Text>
-            <Text fill="#169bff" layoutX="120.0" layoutY="231.0" strokeType="OUTSIDE" strokeWidth="0.0" text="James Baker" wrappingWidth="68.06639099121094">
+            <Text fx:id="sidePatientName" fill="#169bff" layoutX="120.0" layoutY="231.0" strokeType="OUTSIDE" strokeWidth="0.0" text="James Baker" wrappingWidth="68.06639099121094">
                <font>
                   <Font name="SansSerif Regular" size="16.0" />
                </font>
             </Text>
-            <Text fill="#169bff" layoutX="120.0" layoutY="278.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dr Lim" wrappingWidth="104.06639099121094">
+            <Text fx:id="sideDoctorName" fill="#169bff" layoutX="120.0" layoutY="278.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dr Lim" wrappingWidth="104.06639099121094">
                <font>
                   <Font name="SansSerif Regular" size="16.0" />
                </font>
             </Text>
-            <Text fill="#169bff" layoutX="120.0" layoutY="314.0" strokeType="OUTSIDE" strokeWidth="0.0" text="MD98123" wrappingWidth="104.06639099121094">
+            <Text fx:id="sideDoctorID" fill="#169bff" layoutX="120.0" layoutY="314.0" strokeType="OUTSIDE" strokeWidth="0.0" text="MD98123" wrappingWidth="104.06639099121094">
                <font>
                   <Font name="SansSerif Regular" size="16.0" />
                </font>
             </Text>
-            <Text fill="#169bff" layoutX="120.0" layoutY="353.0" strokeType="OUTSIDE" strokeWidth="0.0" text="E1.06" wrappingWidth="104.06639099121094">
+            <Text fx:id="sideVenue" fill="#169bff" layoutX="120.0" layoutY="353.0" strokeType="OUTSIDE" strokeWidth="0.0" text="E1.06" wrappingWidth="104.06639099121094">
                <font>
                   <Font name="SansSerif Regular" size="16.0" />
                </font>
@@ -140,12 +141,12 @@
                   <Font name="SansSerif Bold" size="18.0" />
                </font>
             </Text>
-            <Text layoutX="258.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #000000;" text="#AP12980">
+            <Text fx:id="appointmentID" layoutX="258.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #000000;" text="#AP12980">
                <font>
                   <Font name="SansSerif Regular" size="18.0" />
                </font>
             </Text>
-            <Text layoutX="747.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #000000;" text="Edit">
+            <Text fx:id="editButton" layoutX="747.0" layoutY="33.0" onMouseClicked="#editDetails" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #000000;" text="Edit">
                <font>
                   <Font name="SansSerif Regular" size="18.0" />
                </font>
@@ -165,10 +166,10 @@
                   <Font name="SansSerif Regular" size="18.0" />
                </font>
             </Text>
-            <TextField layoutX="82.0" layoutY="80.0" />
-            <TextField layoutX="316.0" layoutY="80.0" />
-            <TextField layoutX="554.0" layoutY="80.0" />
-            <Text layoutX="82.0" layoutY="147.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date">
+            <TextField fx:id="date" editable="false" layoutX="82.0" layoutY="80.0" />
+            <TextField fx:id="time" editable="false" layoutX="316.0" layoutY="80.0" />
+            <TextField fx:id="venue" editable="false" layoutX="554.0" layoutY="80.0" />
+            <Text layoutX="82.0" layoutY="147.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Patient's ID">
                <font>
                   <Font name="SansSerif Regular" size="18.0" />
                </font>
@@ -183,28 +184,33 @@
                   <Font name="SansSerif Regular" size="18.0" />
                </font>
             </Text>
-            <TextField layoutX="82.0" layoutY="151.0" />
-            <TextField layoutX="316.0" layoutY="151.0" />
-            <TextField layoutX="554.0" layoutY="151.0" />
+            <TextField fx:id="patientID" editable="false" layoutX="82.0" layoutY="151.0" />
+            <TextField fx:id="patientName" editable="false" layoutX="316.0" layoutY="151.0" />
+            <TextField fx:id="contactNumber" editable="false" layoutX="554.0" layoutY="151.0" />
             <Text layoutX="82.0" layoutY="223.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Doctor's ID">
                <font>
                   <Font name="SansSerif Regular" size="18.0" />
                </font>
             </Text>
-            <TextField layoutX="82.0" layoutY="227.0" />
+            <TextField fx:id="doctorID" editable="false" layoutX="82.0" layoutY="227.0" />
             <Text layoutX="316.0" layoutY="223.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Doctor's Name">
                <font>
                   <Font name="SansSerif Regular" size="18.0" />
                </font>
             </Text>
-            <TextField layoutX="316.0" layoutY="227.0" />
+            <TextField fx:id="doctorName" editable="false" layoutX="316.0" layoutY="227.0" />
             <Text layoutX="554.0" layoutY="223.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Department">
                <font>
                   <Font name="SansSeri Regular" size="18.0" />
                </font>
             </Text>
-            <TextField layoutX="554.0" layoutY="227.0" />
+            <TextField fx:id="department" editable="false" layoutX="554.0" layoutY="227.0" />
          </children>
       </Pane>
+      <ImageView fx:id="backButton" fitHeight="20.0" fitWidth="24.0" layoutX="38.0" layoutY="39.0" onMouseClicked="#goBack" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/backButton.png" />
+         </image>
+      </ImageView>
    </children>
 </Pane>
