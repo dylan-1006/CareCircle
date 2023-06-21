@@ -96,5 +96,6 @@ public class appointmentData {
         }
 
     }
+    
     public static appointment initAppointmentData = new appointment(" ", " ", " ", " ", " ", " ", " ");
 }

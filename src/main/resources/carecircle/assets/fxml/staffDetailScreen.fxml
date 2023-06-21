@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.paint.LinearGradient?>
@@ -9,7 +11,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1200.0" style="-fx-background-radius: 20;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="carecircle.controllers.AppointmentDetailScreenController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1200.0" style="-fx-background-radius: 20;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="carecircle.controllers.StaffDetailScreenController">
    <children>
       <Circle layoutX="934.0" layoutY="113.0" radius="100.0" stroke="WHITE" strokeType="INSIDE">
          <fill>
@@ -132,12 +134,12 @@
             <TextField fx:id="name" editable="false" layoutX="82.0" layoutY="96.0" />
             <TextField fx:id="dateOfBirth" editable="false" layoutX="316.0" layoutY="96.0" />
             <TextField fx:id="gender" editable="false" layoutX="554.0" layoutY="96.0" />
-            <Text layoutX="82.0" layoutY="187.0" strokeType="OUTSIDE" strokeWidth="0.0" text="staffID">
+            <Text layoutX="82.0" layoutY="187.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Type Of Staff">
                <font>
                   <Font name="SansSerif Regular" size="18.0" />
                </font>
             </Text>
-            <TextField fx:id="doctorID" editable="false" layoutX="82.0" layoutY="194.0" />
+            <TextField fx:id="typeOfStaff" editable="false" layoutX="82.0" layoutY="194.0" />
             <Text layoutX="316.0" layoutY="186.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Contact No.">
                <font>
                   <Font name="SansSerif Regular" size="18.0" />
@@ -149,8 +151,13 @@
                   <Font name="SansSeri Regular" size="18.0" />
                </font>
             </Text>
-            <TextField fx:id="department" editable="false" layoutX="554.0" layoutY="194.0" />
+            <TextField fx:id="email" editable="false" layoutX="554.0" layoutY="194.0" />
          </children>
       </Pane>
+      <ImageView fx:id="backButton" fitHeight="20.0" fitWidth="24.0" layoutX="48.0" layoutY="49.0" onMouseClicked="#goBack" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/backButton.png" />
+         </image>
+      </ImageView>
    </children>
 </Pane>

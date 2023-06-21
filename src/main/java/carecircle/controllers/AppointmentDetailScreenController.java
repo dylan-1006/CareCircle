@@ -158,6 +158,10 @@ public class AppointmentDetailScreenController {
         }
 
     }
+    @FXML
+    void goBack(MouseEvent event) throws IOException {
+        App.setRoot("appointmentScreenGeneral");
+    }
 
     
     
