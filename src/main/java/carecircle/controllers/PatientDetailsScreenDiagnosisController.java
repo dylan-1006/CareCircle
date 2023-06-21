@@ -6,6 +6,8 @@ import java.util.Optional;
 
 import carecircle.App;
 import carecircle.data.patientData;
+import carecircle.data.diagnosisData;
+import carecircle.tableModels.patientDiagnosisTableModel;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
@@ -18,6 +20,9 @@ import javafx.scene.layout.Pane;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextFlow;
 import javafx.scene.control.TableView;
+import javafx.collections.ObservableList;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.cell.PropertyValueFactory;
 
 public class PatientDetailsScreenDiagnosisController {
 
@@ -40,7 +45,7 @@ public class PatientDetailsScreenDiagnosisController {
     private Button diagnosisButton;
 
     @FXML
-    private Button editDiagnosis;
+    private Button editDiagnosisButton;
 
     @FXML
     private TextField gender;
@@ -79,14 +84,18 @@ public class PatientDetailsScreenDiagnosisController {
     private TextField weight;
 
     @FXML
+    private Pane showAvailabilityOfDiagnosisRecord;
+
+    @FXML
     private Pane patientDetailsSidePane;
 
     @FXML
-    private TableView<?> patientDetailsDiagnosisTable;
+    private TableView<patientDiagnosisTableModel> patientDetailsDiagnosisTable;
 
     public void initialize() {
 
         setSideBarPatientDetails();
+        setDiagnosisTable();
     }
 
     void setSideBarPatientDetails() {
@@ -104,6 +113,43 @@ public class PatientDetailsScreenDiagnosisController {
         weight.setText(Double.toString(patientData.initPatientData.getWeight()) + "kg");
         bloodType.setText(patientData.initPatientData.getBloodType());
 
+    }
+
+    void setDiagnosisTable() {
+
+        ObservableList<patientDiagnosisTableModel> diagnosisDataList = patientDiagnosisTableModel.convertSelectedPatientDiagnosisDataToModel();
+    
+        if (diagnosisDataList.isEmpty()) {
+    
+            // Setting table & buttons to be non-visible
+            patientDetailsDiagnosisTable.setVisible(false);
+    
+            addDiagnosisButton.setVisible(true);
+            editDiagnosisButton.setVisible(false);
+            // deletediagnosisButton.setVisible(false);
+    
+        } else {
+    
+            showAvailabilityOfDiagnosisRecord.setVisible(false);
+    
+            TableColumn<patientDiagnosisTableModel, String> diagnosisIDColumn = new TableColumn<>("diagnosis ID");
+            TableColumn<patientDiagnosisTableModel, String> doctorIDColumn = new TableColumn<>("Doctor ID");
+            TableColumn<patientDiagnosisTableModel, String> patientIDColumn = new TableColumn<>("Patient ID");
+            TableColumn<patientDiagnosisTableModel, String> dateColumn = new TableColumn<>("Date");
+            TableColumn<patientDiagnosisTableModel, String> descriptionColumn = new TableColumn<>("Description");
+    
+            patientDetailsDiagnosisTable.getColumns().addAll(diagnosisIDColumn, doctorIDColumn, patientIDColumn, dateColumn,
+                    descriptionColumn);
+    
+            diagnosisIDColumn.setCellValueFactory(new PropertyValueFactory<>("diagnosisID"));
+            doctorIDColumn.setCellValueFactory(new PropertyValueFactory<>("doctorID"));
+            patientIDColumn.setCellValueFactory(new PropertyValueFactory<>("patientID"));
+            dateColumn.setCellValueFactory(new PropertyValueFactory<>("date"));
+            descriptionColumn.setCellValueFactory(new PropertyValueFactory<>("description"));
+    
+            patientDetailsDiagnosisTable.setItems(diagnosisDataList);
+        }
+    
     }
 
     @FXML
