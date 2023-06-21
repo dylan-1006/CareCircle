@@ -46,7 +46,6 @@ public class nurseData {
         return nurseList;
     }
 
-
     public static void deleteData(String nurseID) throws IOException {
 
         List<nurse> nurseList = nurseData.loadNurseDataFromDatabase();
@@ -61,18 +60,18 @@ public class nurseData {
         }
 
         try (FileWriter account = new FileWriter(
-                "src/main/resources/carecircle/assets/database/doctor.txt",
+                "src/main/resources/carecircle/assets/database/nurse.txt",
                 false)) {
             PrintWriter accountWriter = new PrintWriter(account);
 
             for (int i = 0; i < nurseList.size(); i++) {
 
                 accountWriter.println(
-                    nurseList.get(i).getNurseID() + "," + nurseList.get(i).getName() + ","
-                            + nurseList.get(i).getPhoneNo() + ","
-                            + nurseList.get(i).getEmail() + ","
-                            + nurseList.get(i).getDateOfBirth()
-                            + "," + nurseList.get(i).getGender());
+                        nurseList.get(i).getNurseID() + "," + nurseList.get(i).getName() + ","
+                                + nurseList.get(i).getPhoneNo() + ","
+                                + nurseList.get(i).getEmail() + ","
+                                + nurseList.get(i).getDateOfBirth()
+                                + "," + nurseList.get(i).getGender());
             }
             accountWriter.close();
             Alert alert = new Alert(AlertType.CONFIRMATION);
@@ -86,6 +85,7 @@ public class nurseData {
         }
 
     }
+
     public static nurse initNurseData = new nurse(" ", " ", " ", " ", " ", " ");
 
 }
