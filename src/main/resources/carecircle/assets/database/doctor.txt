@@ -1,3 +1,5 @@
+D3212,Dr. John Smith,1234567890,john.smith@example.com,1980-01-01,Male,Cardiology
+D4343,Dr. Emily Johnson,2345678901,emily.johnson@example.com,1985-02-02,Female,Dermatology
 D4321,Dr. Michael Brown,3456789012,michael.brown@example.com,1978-03-03,Male,Orthopedics
 D7654,Dr. Sarah Davis,4567890123,sarah.davis@example.com,1982-04-04,Female,Ophthalmology
 D4269,Dr. Robert Wilson,5678901234,robert.wilson@example.com,1975-05-05,Male,Pediatrics
