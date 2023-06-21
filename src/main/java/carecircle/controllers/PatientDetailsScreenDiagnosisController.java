@@ -17,6 +17,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextFlow;
+import javafx.scene.control.TableView;
 
 public class PatientDetailsScreenDiagnosisController {
 
@@ -79,6 +80,9 @@ public class PatientDetailsScreenDiagnosisController {
 
     @FXML
     private Pane patientDetailsSidePane;
+
+    @FXML
+    private TableView<?> patientDetailsDiagnosisTable;
 
     public void initialize() {
 
