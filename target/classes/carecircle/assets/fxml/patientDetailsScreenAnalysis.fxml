@@ -167,8 +167,8 @@
             </Button>
             <TableView fx:id="patientDetailsAnalysisTable" layoutX="23.0" layoutY="50.0" prefHeight="229.0" prefWidth="766.0" stylesheets="@../css/stylesheet.css">
               <columns>
-                <TableColumn prefWidth="75.0" text="C1" />
-                <TableColumn prefWidth="75.0" text="C2" />
+                <TableColumn prefWidth="75.0" text="C1" visible="false" />
+                <TableColumn prefWidth="75.0" text="C2" visible="false" />
               </columns>
             </TableView>
             <Pane fx:id="showAvailabilityOfAnalysisRecord" layoutX="23.0" layoutY="75.0" prefHeight="204.0" prefWidth="766.0">

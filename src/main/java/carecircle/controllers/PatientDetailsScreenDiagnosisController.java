@@ -132,7 +132,7 @@ public class PatientDetailsScreenDiagnosisController {
     
             showAvailabilityOfDiagnosisRecord.setVisible(false);
     
-            TableColumn<patientDiagnosisTableModel, String> diagnosisIDColumn = new TableColumn<>("diagnosis ID");
+            TableColumn<patientDiagnosisTableModel, String> diagnosisIDColumn = new TableColumn<>("Diagnosis ID");
             TableColumn<patientDiagnosisTableModel, String> doctorIDColumn = new TableColumn<>("Doctor ID");
             TableColumn<patientDiagnosisTableModel, String> patientIDColumn = new TableColumn<>("Patient ID");
             TableColumn<patientDiagnosisTableModel, String> dateColumn = new TableColumn<>("Date");
