@@ -8,6 +8,7 @@ import carecircle.App;
 import carecircle.data.patientData;
 import carecircle.data.diagnosisData;
 import carecircle.tableModels.patientDiagnosisTableModel;
+import carecircle.tableModels.patientMedicalHistoryTableModel;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
@@ -177,7 +178,22 @@ public class PatientDetailsScreenDiagnosisController {
 
     @FXML
     void editDiagnosisRecord(ActionEvent event) {
+        patientDiagnosisTableModel selectedDiagnosis = patientDetailsDiagnosisTable.getSelectionModel()
+                .getSelectedItem();
 
+        if (selectedDiagnosis == null) {
+
+            Alert error = new Alert(Alert.AlertType.ERROR);
+            error.setTitle("Error");
+            error.setHeaderText("Please select a record before proceeding");
+            error.showAndWait();
+
+        } else {
+
+            diagnosisData.
+
+            App.setRoot("editMedicalHistoryScreen");
+        }
     }
 
     @FXML
