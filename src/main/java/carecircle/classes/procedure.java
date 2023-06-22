@@ -3,17 +3,17 @@ package carecircle.classes;
 public class procedure {
 
     private String procedureId;
-    private String description;
-    private String date;
     private String doctorId;
     private String patientId;
+    private String description;
+    private String date;
 
-    public procedure(String procedureId, String description, String date, String doctorId, String patientId) {
+    public procedure(String procedureId, String doctorId, String patientId, String date, String description) {
         this.procedureId = procedureId;
-        this.description = description;
-        this.date = date;
         this.doctorId = doctorId;
         this.patientId = patientId;
+        this.description = description;
+        this.date = date;
     }
 
     public String getProcedureId() {
