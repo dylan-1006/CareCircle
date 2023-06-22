@@ -55,6 +55,9 @@ public class RegisterScreenController {
                 alert.setHeaderText("Welcome " + name);
                 alert.showAndWait();
                 userData.initUserData.setName(name);
+
+                userData.initUserData.setUsername(newUser.getUsername());
+                userData.initUserData.setPassword(newUser.getPassword());
                 App.setRoot("homeScreen");
 
             } else {

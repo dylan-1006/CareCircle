@@ -166,8 +166,8 @@ public class HomeScreenController {
 
     @FXML
     void switchToSettingsScreen(MouseEvent event) throws IOException {
-        // Have to merge settings screen with master first
-        // App.setRoot("appointmentScreenGeneral");
+
+        App.setRoot("settingsScreen");
 
     }
 

@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.text.TextFlow?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1200.0" style="-fx-background-color: # F4F4F4;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="carecircle.controllers.SettingsController">
+   <children>
+      <Circle layoutX="1011.0" layoutY="197.0" radius="120.0" rotate="-23.5" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0">
+         <fill>
+            <LinearGradient endX="1.0" endY="1.0" startX="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.30980393290519714" green="0.7019608020782471" blue="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.14609592404648858">
+                     <color>
+                        <Color red="0.30980393290519714" green="0.7019608020782471" blue="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.3199999928474426" green="0.7166666388511658" blue="1.0" opacity="0.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Circle>
+     <Pane fx:id="navigationSideBar" prefHeight="600.0" prefWidth="265.0" style="-fx-background-color: FFFFFF;">
+         <children>
+            <TextFlow fx:id="textFlowTitle" cache="true" layoutX="32.0" layoutY="32.0" prefHeight="45.0" prefWidth="189.0" textAlignment="CENTER">
+               <children>
+                  <Text fx:id="titleText1" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #2E2E2E;" text="Care" wrappingWidth="22.13671875">
+                     <font>
+                        <Font name="SansSerif Bold" size="28.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="titleText2" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #4FB3FF;" text="Circle.">
+                     <font>
+                        <Font name="SansSerif Bold" size="28.0" />
+                     </font>
+                  </Text>
+               </children>
+            </TextFlow>
+            <TextField alignment="CENTER" focusTraversable="false" layoutX="20.0" layoutY="91.0" prefHeight="26.0" prefWidth="226.0" promptText="🔍  Search" style="-fx-background-radius: 20; -fx-prompt-text-fill: #000000;">
+               <font>
+                  <Font name="SansSerif Regular" size="10.0" />
+               </font></TextField>
+            <Text fill="#d1d1d1" layoutX="26.0" layoutY="147.0" strokeType="OUTSIDE" strokeWidth="0.0" text="MAIN MENU" wrappingWidth="105.35025024414062">
+               <font>
+                  <Font name="SansSerif Bold" size="11.0" />
+               </font></Text>
+            <Pane fx:id="sideBarDashboardButton" layoutX="18.0" layoutY="168.0" onMouseClicked="#switchToHomeScreen" prefHeight="41.0" prefWidth="218.0" style="-fx-background-radius: 15;">
+               <children>
+                  <Text fill="#b3b3b3" layoutX="18.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dashboard">
+                     <font>
+                        <Font name="SansSerif Regular" size="13.0" />
+                     </font></Text>
+               </children>
+            </Pane>
+            <Pane fx:id="sideBarAppointmentButton" layoutX="18.0" layoutY="219.0" onMouseClicked="#switchToAppoitmentScreen" prefHeight="41.0" prefWidth="218.0" style="-fx-background-radius: 15;">
+               <children>
+                  <Text fill="#b3b3b3" layoutX="18.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Appointment">
+                     <font>
+                        <Font name="SansSerif Regular" size="13.0" />
+                     </font></Text>
+               </children>
+            </Pane>
+            <Pane fx:id="sideBarPatientButton" layoutX="18.0" layoutY="270.0" onMouseClicked="#switchToPatientScreen" prefHeight="41.0" prefWidth="218.0" style="-fx-background-radius: 15;">
+               <children>
+                  <Text fill="#b3b3b3" layoutX="18.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Patient">
+                     <font>
+                        <Font name="SansSerif Regular" size="13.0" />
+                     </font></Text>
+               </children>
+            </Pane>
+            <Pane fx:id="sideBarMedicalStuffButton" layoutX="18.0" layoutY="321.0" onMouseClicked="#switchToMedicalStaffScreen" prefHeight="41.0" prefWidth="218.0" style="-fx-background-radius: 15;">
+               <children>
+                  <Text fill="#b3b3b3" layoutX="18.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Medical Staff">
+                     <font>
+                        <Font name="SansSerif Regular" size="13.0" />
+                     </font></Text>
+               </children>
+            </Pane>
+            <Line endX="100.0" layoutX="146.0" layoutY="410.0" startX="-130.0" stroke="#b3b3b3" />
+            <Text fill="#d1d1d1" layoutX="22.0" layoutY="430.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SUPPORT" wrappingWidth="71.99990195492336">
+               <font>
+                  <Font name="SansSerif Bold" size="11.0" />
+               </font></Text>
+            <Pane fx:id="sideBarHelpCenterButton" layoutX="18.0" layoutY="441.0" onMouseClicked="#switchToHelpCenterScreen" prefHeight="41.0" prefWidth="218.0" style="-fx-background-radius: 15;">
+               <children>
+                  <Text fill="#b3b3b3" layoutX="18.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Help Center">
+                     <font>
+                        <Font name="SansSerif Regular" size="13.0" />
+                     </font></Text>
+               </children>
+            </Pane>
+            <Pane fx:id="sideBarSettingsButton" layoutX="18.0" layoutY="480.0" onMouseClicked="#switchToSettingsScreen" prefHeight="41.0" prefWidth="218.0" style="-fx-background-radius: 15; -fx-background-color: F6F6F6;">
+               <children>
+                  <Text fill="#4fb3ff" layoutX="17.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Settings">
+                     <font>
+                        <Font name="SansSerif Regular" size="13.0" />
+                     </font></Text>
+               </children>
+            </Pane>
+            <Pane fx:id="sideBarLogoutButton" layoutX="15.0" layoutY="550.0" onMouseClicked="#switchToLoginScreen" prefHeight="41.0" prefWidth="218.0" style="-fx-background-radius: 15;">
+               <children>
+                  <Text fill="#b3b3b3" layoutX="22.0" layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Logout">
+                     <font>
+                        <Font name="SansSerif Regular" size="13.0" />
+                     </font></Text>
+               </children>
+            </Pane>
+         </children>
+      </Pane>
+      <Pane layoutX="294.0" layoutY="222.0" prefHeight="355.0" prefWidth="879.0" style="-fx-background-color: white; -fx-background-radius: 15;">
+         <children>
+            <Text fill="#4fb3ff" layoutX="239.0" layoutY="208.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username" wrappingWidth="93.25398611673836">
+               <font>
+                  <Font name="SansSerif Regular" size="18.0" />
+               </font>
+            </Text>
+            <Text fill="#4fb3ff" layoutX="592.0" layoutY="208.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password" wrappingWidth="85.99463004647066">
+               <font>
+                  <Font name="SansSerif Regular" size="18.0" />
+               </font>
+            </Text>
+            <TextField fx:id="userName" editable="false" layoutX="196.0" layoutY="216.0" prefHeight="29.0" prefWidth="178.0" style="-fx-background-color: #D9D9D9; -fx-background-radius: 10;" text="Useruser">
+               <font>
+                  <Font size="14.0" />
+               </font></TextField>
+            <TextField fx:id="userPassword" editable="false" layoutX="548.0" layoutY="216.0" style="-fx-background-color: #D9D9D9; -fx-background-radius: 10;" text="21312">
+               <font>
+                  <Font size="14.0" />
+               </font></TextField>
+            <Text fx:id="name" layoutX="381.0" layoutY="173.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name" textAlignment="CENTER" wrappingWidth="148.6496982574463">
+               <font>
+                  <Font name="SansSerif Bold" size="36.0" />
+               </font>
+            </Text>
+            <Button fx:id="resetPassword" layoutX="137.0" layoutY="291.0" mnemonicParsing="false" onMouseClicked="#resetPassword" prefHeight="33.0" prefWidth="277.0" style="-fx-background-color: white; -fx-background-radius: 10; -fx-border-color: #D1D1D1; -fx-border-radius: 10;" text="Reset Password">
+               <font>
+                  <Font name="SansSerif Bold" size="18.0" />
+               </font>
+            </Button>
+            <Button fx:id="deleteUser" layoutX="492.0" layoutY="291.0" mnemonicParsing="false" onMouseClicked="#deleteUser" prefHeight="35.0" prefWidth="277.0" style="-fx-background-radius: 10; -fx-border-color: #D1D1D1; -fx-border-radius: 10; -fx-background-color: white;" text="Delete Account " textFill="RED">
+               <font>
+                  <Font name="SansSerif Bold" size="18.0" />
+               </font>
+            </Button>
+            <ImageView fitHeight="117.0" fitWidth="122.0" layoutX="395.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/userPicture.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="saveEditedPassword" layoutX="515.0" layoutY="258.0" mnemonicParsing="false" onMouseClicked="#savePassword" prefHeight="35.0" prefWidth="231.0" style="-fx-background-radius: 10; -fx-border-color: #D1D1D1; -fx-border-radius: 10; -fx-background-color: white;" text="Save" visible="false">
+               <font>
+                  <Font name="SansSerif Bold" size="18.0" />
+               </font>
+            </Button>
+            <Button fx:id="cancel" layoutX="515.0" layoutY="305.0" mnemonicParsing="false" onMouseClicked="#cancelEdit" prefHeight="35.0" prefWidth="231.0" style="-fx-background-radius: 10; -fx-border-color: #D1D1D1; -fx-border-radius: 10; -fx-background-color: white;" text="Cancel" textFill="#726e6e" visible="false">
+               <font>
+                  <Font name="SansSerif Bold" size="18.0" />
+               </font>
+            </Button>
+         </children>
+         <effect>
+            <DropShadow height="10.0" offsetY="4.0" radius="4.5" width="10.0">
+               <color>
+                  <Color red="0.6447368264198303" green="0.6447368264198303" blue="0.6447368264198303" />
+               </color>
+            </DropShadow>
+         </effect>
+      </Pane>
+      <Text fill="#a6a6a6" layoutX="646.0" layoutY="109.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Set your account settings down below">
+         <font>
+            <Font name="SansSerif Regular" size="14.0" />
+         </font>
+      </Text>
+      <Text layoutX="299.0" layoutY="199.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Edit Profile" wrappingWidth="211.37918312181262">
+         <font>
+            <Font name="SansSerif Bold" size="36.0" />
+         </font>
+         <effect>
+            <DropShadow height="18.06" offsetY="4.0" radius="7.055" width="12.16">
+               <color>
+                  <Color red="0.5394737124443054" green="0.5394737124443054" blue="0.5394737124443054" />
+               </color>
+            </DropShadow>
+         </effect>
+      </Text>
+      <Line endX="797.5328369140625" layoutX="387.0" layoutY="148.0" startX="-100.0" />
+      <TextFlow layoutX="594.0" layoutY="44.0" prefHeight="51.0" prefWidth="347.0">
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Account ">
+               <font>
+                  <Font name="SansSerif Bold" size="40.0" />
+               </font>
+               <effect>
+                  <DropShadow height="9.4" offsetY="3.0" radius="4.1525" width="9.21">
+                     <color>
+                        <Color red="0.4868420958518982" green="0.4733187258243561" blue="0.4733187258243561" />
+                     </color>
+                  </DropShadow>
+               </effect>
+            </Text>
+            <Text fill="#169bff" strokeType="OUTSIDE" strokeWidth="0.0" text="Settings">
+               <font>
+                  <Font name="SansSerif Bold" size="40.0" />
+               </font>
+               <effect>
+                  <DropShadow height="9.4" offsetY="3.0" radius="4.1525" width="9.21">
+                     <color>
+                        <Color red="0.4868420958518982" green="0.4733187258243561" blue="0.4733187258243561" />
+                     </color>
+                  </DropShadow>
+               </effect>
+            </Text>
+         </children>
+      </TextFlow>
+   </children>
+</Pane>
