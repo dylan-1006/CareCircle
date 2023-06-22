@@ -12,6 +12,7 @@ import carecircle.classes.user;
 import carecircle.data.userData;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
+import javafx.scene.control.Button;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.TextField;
@@ -23,13 +24,13 @@ import javafx.scene.text.TextFlow;
 public class SettingsController {
 
     @FXML
-    private Text saveEditedPassword;
+    private Button saveEditedPassword;
 
     @FXML
-    private Text cancel;
+    private Button cancel;
 
     @FXML
-    private Text deleteUser;
+    private Button deleteUser;
 
     @FXML
     private Text name;
@@ -38,7 +39,7 @@ public class SettingsController {
     private Pane navigationSideBar;
 
     @FXML
-    private Text resetPassword;
+    private Button resetPassword;
 
     @FXML
     private Pane sideBarAppointmentButton;
@@ -171,6 +172,7 @@ public class SettingsController {
 
         saveEditedPassword.setVisible(true);
         cancel.setVisible(true);
+        deleteUser.setVisible(false);
 
         userPassword.setEditable(true);
 
