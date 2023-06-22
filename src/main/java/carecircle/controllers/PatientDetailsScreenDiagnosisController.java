@@ -5,6 +5,7 @@ import java.time.Year;
 import java.util.Optional;
 
 import carecircle.App;
+import carecircle.data.diagnosisData;
 import carecircle.data.patientData;
 import carecircle.data.diagnosisData;
 import carecircle.tableModels.patientDiagnosisTableModel;
@@ -211,6 +212,33 @@ public class PatientDetailsScreenDiagnosisController {
 
         App.setRoot("patientScreenGeneral");
 
+    }
+
+    @FXML
+    void deleteDiagnosisRecord(ActionEvent event) throws IOException {
+
+        Alert confirmation = new Alert(Alert.AlertType.CONFIRMATION);
+        confirmation.setTitle("Confirmation");
+        confirmation.setHeaderText("Are you sure you want to proceed?");
+        confirmation.setContentText("Click OK to continue or Cancel to abort.");
+
+        Optional<ButtonType> result = confirmation.showAndWait();
+
+        if (result.get() == ButtonType.OK) {
+
+            patientDiagnosisTableModel selectedDiagnosis = patientDetailsDiagnosisTable.getSelectionModel()
+                    .getSelectedItem();
+            patientDetailsDiagnosisTable.getItems().remove(selectedDiagnosis);
+
+            String DiagnosisId = selectedDiagnosis.getDiagnosisID();
+
+            diagnosisData.deleteDiagnosis(DiagnosisId);
+
+            App.setRoot("patientGeneralDetailsScreen");
+        } else {
+
+            App.setRoot("patientGeneralDetailsScreenMedicalHistory");
+        }
     }
 
 }
