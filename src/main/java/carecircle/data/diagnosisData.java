@@ -2,10 +2,14 @@ package carecircle.data;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
 import carecircle.classes.diagnosis;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 
 
 public class diagnosisData {
@@ -45,4 +49,46 @@ public class diagnosisData {
         return diagnosisList;
     }
 
-}
+    public static void deleteDiagnosis(String diagnosisId) {
+        List<diagnosis> diagnosisList = diagnosisData.loadDiagnosisDataFromDatabase();
+
+        for (int i = 0; i < diagnosisList.size(); i++) {
+            if (diagnosisList.get(i).getDiagnosisID().equals(diagnosisId)) {
+                diagnosisList.remove(i);
+                break;
+            }
+               }
+
+        try (FileWriter fileWriter = new FileWriter("src/main/resources/carecircle/assets/database/diagnosis.txt",
+                false)) {
+            PrintWriter printWriter = new PrintWriter(fileWriter);
+
+            for (int i = 0; i < diagnosisList.size(); i++) {
+                diagnosis diagnosis = diagnosisList.get(i);
+
+                printWriter.println(
+                        diagnosis.getDiagnosisID() + "," +
+                                "," + diagnosis.getDoctorID() + ","
+                                + diagnosis.getPatientID() + ","
+                                + diagnosis.getDate() + ","
+                                + diagnosis.getDescription() + ",");
+            }
+
+            printWriter.close();
+
+            Alert alert = new Alert(AlertType.CONFIRMATION);
+            alert.setTitle("Diagnosis Deleted!");
+            alert.setHeaderText("Diagnosis record has been deleted");
+            alert.showAndWait();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static diagnosis initDiagnosis = new diagnosis(" ", " ", " ", " ",
+            "description ");
+   
+    }
+
+
+

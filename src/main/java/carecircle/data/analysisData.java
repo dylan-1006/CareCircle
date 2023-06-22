@@ -2,10 +2,14 @@ package carecircle.data;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
 import carecircle.classes.analysis;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 
 
 public class analysisData {
@@ -45,4 +49,45 @@ public class analysisData {
         return analysisList;
     }
 
-}
+    public static void deleteAnalysis(String analysisId) {
+
+        List<analysis> analysisList = analysisData.loadAnalysisDataFromDatabase();
+
+        for (int i = 0; i < analysisList.size(); i++) {
+            if (analysisList.get(i).getAnalysisID().equals(analysisId)) {
+                analysisList.remove(i);
+                break;
+            }
+               }
+
+        try (FileWriter fileWriter = new FileWriter("src/main/resources/carecircle/assets/database/diagnosis.txt",
+                false)) {
+            PrintWriter printWriter = new PrintWriter(fileWriter);
+
+            for (int i = 0; i < analysisList.size(); i++) {
+                analysis analysis = analysisList.get(i);
+
+                printWriter.println(
+                        analysis.getAnalysisID() + "," +
+                                analysis.getDoctorID() + "," + analysis.getDoctorID() + ","
+                                + analysis.getDate() + ","
+                                + analysis.getDescription() + ",");
+            }
+
+            printWriter.close();
+
+            Alert alert = new Alert(AlertType.CONFIRMATION);
+            alert.setTitle("Analysis Deleted!");
+            alert.setHeaderText("Analysis record has been deleted");
+            alert.showAndWait();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static analysis initAnalysis = new analysis("analysisID ", "doctorID ", "patientID ", "date ",
+            "description ");
+    }
+
+
+

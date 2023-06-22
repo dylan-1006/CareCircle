@@ -6,6 +6,7 @@ import java.util.Optional;
 
 import carecircle.App;
 import carecircle.data.patientData;
+import carecircle.data.treatmentData;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
@@ -155,6 +156,33 @@ public class PatientDetailsScreenTreatmentController {
 
         App.setRoot("patientScreenGeneral");
 
+    }
+
+     @FXML
+    void deleteTreatmentRecord(ActionEvent event) throws IOException {
+
+        Alert confirmation = new Alert(Alert.AlertType.CONFIRMATION);
+        confirmation.setTitle("Confirmation");
+        confirmation.setHeaderText("Are you sure you want to proceed?");
+        confirmation.setContentText("Click OK to continue or Cancel to abort.");
+
+        Optional<ButtonType> result = confirmation.showAndWait();
+
+        if (result.get() == ButtonType.OK) {
+
+            patientTreatmentTableModel selectedDiagnosis = TreatmentTable.getSelectionModel()
+                    .getSelectedItem();
+           TreatmentTable.getItems().remove(selectedDiagnosis);
+
+            String DiagnosisId = selectedDiagnosis.getDiagnosis();
+
+            treatmentData.deleteTreatment(DiagnosisId);
+
+            App.setRoot("patientGeneralDetailsScreen");
+        } else {
+
+            App.setRoot("patientGeneralDetailsScreenMedicalHistory");
+        }
     }
 
 }

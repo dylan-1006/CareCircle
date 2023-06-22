@@ -22,7 +22,7 @@ public class diagnosis {
         return diagnosisID;
     }
 
-    public void setDoctorID(String doctorID) {
+    public void setDoctorID(String doctorId) {
         this.doctorID = doctorID;
     }
 
@@ -52,5 +52,9 @@ public class diagnosis {
 
     public String getDescription() {
         return description;
+    }
+
+    public static Object getText() {
+        return null;
     }
 }

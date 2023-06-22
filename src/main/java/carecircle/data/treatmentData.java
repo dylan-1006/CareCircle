@@ -2,10 +2,15 @@ package carecircle.data;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
+
 import carecircle.classes.treatment;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 
 public class treatmentData {
     public static void main(String[] args) {
@@ -44,4 +49,43 @@ public class treatmentData {
         return treatmentList;
     }
 
-}
+    public static void deleteTreatment(String treatmentId) {
+        List<treatment> treatmentList = treatmentData.loadTreatmentDataFromDatabase();
+
+        for (int i = 0; i < treatmentList.size(); i++) {
+            if (treatmentList.get(i).getTreatmentID().equals(treatmentId)) {
+                treatmentList.remove(i);
+                break;
+            }
+               }
+
+        try (FileWriter fileWriter = new FileWriter("src/main/resources/carecircle/assets/database/diagnosis.txt",
+                false)) {
+            PrintWriter printWriter = new PrintWriter(fileWriter);
+
+            for (int i = 0; i < treatmentList.size(); i++) {
+                treatment treatment = treatmentList.get(i);
+
+                printWriter.println(
+                        treatment.getTreatmentID() + ","
+                                + treatment.getDoctorID() + ","
+                                + treatment.getPatientID() + ","
+                                + treatment.getDate() + ","
+                                + treatment.getDescription() + ",");
+            }
+
+            printWriter.close();
+
+            Alert alert = new Alert(AlertType.CONFIRMATION);
+            alert.setTitle("Treatment Deleted!");
+            alert.setHeaderText("Treatment record has been deleted");
+            alert.showAndWait();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static treatment initTreatment = new treatment("treatmentID ", "doctorID ", "patientID ", "date ",
+            "description ");
+    }
+
