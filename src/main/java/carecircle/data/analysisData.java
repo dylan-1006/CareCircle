@@ -11,7 +11,6 @@ import carecircle.classes.analysis;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 
-
 public class analysisData {
     public static void main(String[] args) {
         loadAnalysisDataFromDatabase();
@@ -58,9 +57,9 @@ public class analysisData {
                 analysisList.remove(i);
                 break;
             }
-               }
+        }
 
-        try (FileWriter fileWriter = new FileWriter("src/main/resources/carecircle/assets/database/diagnosis.txt",
+        try (FileWriter fileWriter = new FileWriter("src/main/resources/carecircle/assets/database/analysis.txt",
                 false)) {
             PrintWriter printWriter = new PrintWriter(fileWriter);
 
@@ -69,7 +68,7 @@ public class analysisData {
 
                 printWriter.println(
                         analysis.getAnalysisID() + "," +
-                                analysis.getDoctorID() + "," + analysis.getDoctorID() + ","
+                                analysis.getPatientID() + "," + analysis.getDoctorID() + ","
                                 + analysis.getDate() + ","
                                 + analysis.getDescription() + ",");
             }
@@ -87,7 +86,4 @@ public class analysisData {
 
     public static analysis initAnalysis = new analysis("analysisID ", "doctorID ", "patientID ", "date ",
             "description ");
-    }
-
-
-
+}

@@ -209,7 +209,7 @@ public class PatientDetailsScreenTreatmentController {
 
     }
 
-     @FXML
+    @FXML
     void deleteTreatmentRecord(ActionEvent event) throws IOException {
 
         Alert confirmation = new Alert(Alert.AlertType.CONFIRMATION);
@@ -221,13 +221,13 @@ public class PatientDetailsScreenTreatmentController {
 
         if (result.get() == ButtonType.OK) {
 
-            patientTreatmentTableModel selectedDiagnosis = TreatmentTable.getSelectionModel()
+            patientTreatmentTableModel selectedTreatment = patientDetailsTreatmentTable.getSelectionModel()
                     .getSelectedItem();
-           TreatmentTable.getItems().remove(selectedDiagnosis);
+            patientDetailsTreatmentTable.getItems().remove(selectedTreatment);
 
-            String DiagnosisId = selectedDiagnosis.getDiagnosis();
+            String treatmentId = selectedTreatment.getTreatmentID();
 
-            treatmentData.deleteTreatment(DiagnosisId);
+            treatmentData.deleteTreatment(treatmentId);
 
             App.setRoot("patientGeneralDetailsScreen");
         } else {

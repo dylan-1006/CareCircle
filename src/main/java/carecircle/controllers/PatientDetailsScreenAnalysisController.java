@@ -223,13 +223,13 @@ public class PatientDetailsScreenAnalysisController {
 
         if (result.get() == ButtonType.OK) {
 
-            patientAnalysisTableModel selectedDiagnosis = AnalysisTable.getSelectionModel()
+            patientAnalysisTableModel selectedAnalysis =  patientDetailsAnalysisTable.getSelectionModel()
                     .getSelectedItem();
-            AnalysisTable.getItems().remove(selectedDiagnosis);
+            patientDetailsAnalysisTable.getItems().remove(selectedAnalysis);
 
-            String DiagnosisId = selectedDiagnosis.getDiagnosis();
+            String analysisId = selectedAnalysis.getAnalysisID();
 
-            analysisData.deleteAnalysis(DiagnosisId);
+            analysisData.deleteAnalysis(analysisId);
 
             App.setRoot("patientGeneralDetailsScreen");
         } else {

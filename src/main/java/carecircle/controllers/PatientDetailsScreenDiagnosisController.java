@@ -226,11 +226,11 @@ public class PatientDetailsScreenDiagnosisController {
 
         if (result.get() == ButtonType.OK) {
 
-            patientDiagnosisTableModel selectedDiagnosis = DiagnosisTable.getSelectionModel()
+            patientDiagnosisTableModel selectedDiagnosis = patientDetailsDiagnosisTable.getSelectionModel()
                     .getSelectedItem();
-            DiagnosisTable.getItems().remove(selectedDiagnosis);
+            patientDetailsDiagnosisTable.getItems().remove(selectedDiagnosis);
 
-            String DiagnosisId = selectedDiagnosis.getDiagnosis();
+            String DiagnosisId = selectedDiagnosis.getDiagnosisID();
 
             diagnosisData.deleteDiagnosis(DiagnosisId);
 
