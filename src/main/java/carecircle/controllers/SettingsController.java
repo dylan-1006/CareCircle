@@ -175,6 +175,7 @@ public class SettingsController {
         deleteUser.setVisible(false);
 
         userPassword.setEditable(true);
+        userPassword.setStyle("-fx-control-inner-background: #F6F6F6;");
 
     }
 
