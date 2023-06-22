@@ -178,7 +178,7 @@ public class PatientDetailsScreenDiagnosisController {
     }
 
     @FXML
-    void editDiagnosisRecord(ActionEvent event) {
+    void editDiagnosisRecord(ActionEvent event) throws IOException {
         patientDiagnosisTableModel selectedDiagnosis = patientDetailsDiagnosisTable.getSelectionModel()
                 .getSelectedItem();
 
@@ -191,9 +191,13 @@ public class PatientDetailsScreenDiagnosisController {
 
         } else {
 
-            diagnosisData.
+            diagnosisData.initDiagnosis.setDiagnosisID(selectedDiagnosis.getDiagnosisID());
+            diagnosisData.initDiagnosis.setDoctorID(selectedDiagnosis.getDoctorID());
+            diagnosisData.initDiagnosis.setPatientID(selectedDiagnosis.getPatientID());
+            diagnosisData.initDiagnosis.setDate(selectedDiagnosis.getDate());
+            diagnosisData.initDiagnosis.setDescription(selectedDiagnosis.getDescription());
 
-            App.setRoot("editMedicalHistoryScreen");
+            App.setRoot("editDiagnosisScreen");
         }
     }
 

@@ -8,6 +8,7 @@ import carecircle.App;
 import carecircle.data.analysisData;
 import carecircle.data.patientData;
 import carecircle.tableModels.patientAnalysisTableModel;
+import carecircle.tableModels.patientDiagnosisTableModel;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
@@ -176,7 +177,29 @@ public class PatientDetailsScreenAnalysisController {
     }
 
     @FXML
-    void editAnalysisRecord(ActionEvent event) {
+    void editAnalysisRecord(ActionEvent event) throws IOException {
+
+        patientAnalysisTableModel selectedAnalysis = patientDetailsAnalysisTable.getSelectionModel()
+                .getSelectedItem();
+
+        if (selectedAnalysis == null) {
+
+            Alert error = new Alert(Alert.AlertType.ERROR);
+            error.setTitle("Error");
+            error.setHeaderText("Please select a record before proceeding");
+            error.showAndWait();
+
+        } else {
+
+            analysisData.initAnalysis.setAnalysisID(selectedAnalysis.getAnalysisID());
+            analysisData.initAnalysis.setPatientID(selectedAnalysis.getPatientID());
+            analysisData.initAnalysis.setDoctorID(selectedAnalysis.getDoctorID());
+            analysisData.initAnalysis.setDate(selectedAnalysis.getDate());
+            analysisData.initAnalysis.setDescription(selectedAnalysis.getDescription());
+
+            App.setRoot("editAnalysisScreen");
+
+        }
 
     }
 
@@ -223,7 +246,7 @@ public class PatientDetailsScreenAnalysisController {
 
         if (result.get() == ButtonType.OK) {
 
-            patientAnalysisTableModel selectedAnalysis =  patientDetailsAnalysisTable.getSelectionModel()
+            patientAnalysisTableModel selectedAnalysis = patientDetailsAnalysisTable.getSelectionModel()
                     .getSelectedItem();
             patientDetailsAnalysisTable.getItems().remove(selectedAnalysis);
 
@@ -237,6 +260,5 @@ public class PatientDetailsScreenAnalysisController {
             App.setRoot("patientGeneralDetailsScreenMedicalHistory");
         }
     }
-    
 
 }

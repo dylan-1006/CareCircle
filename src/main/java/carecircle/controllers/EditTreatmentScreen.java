@@ -36,8 +36,6 @@ public class EditTreatmentScreen {
     @FXML
     private TextField treatmentId;
 
-    
-
     public void initialize() {
 
         setDiagnosisDetails();
@@ -58,59 +56,68 @@ public class EditTreatmentScreen {
 
     }
 
-@FXML
-void saveChangesTreatment(ActionEvent event) {
+    @FXML
+    void saveChangesTreatment(ActionEvent event) {
 
-    Alert confirmation = new Alert(Alert.AlertType.CONFIRMATION);
-    confirmation.setTitle("Confirmation");
-    confirmation.setHeaderText("Are you sure you want to proceed?");
-    confirmation.setContentText("Click OK to continue or Cancel to abort.");
+        Alert confirmation = new Alert(Alert.AlertType.CONFIRMATION);
+        confirmation.setTitle("Confirmation");
+        confirmation.setHeaderText("Are you sure you want to proceed?");
+        confirmation.setContentText("Click OK to continue or Cancel to abort.");
 
-    Optional<ButtonType> result = confirmation.showAndWait();
+        Optional<ButtonType> result = confirmation.showAndWait();
 
-    if (result.get() == ButtonType.OK) {
+        if (result.get() == ButtonType.OK) {
 
-        List<treatment> treatmentList = treatmentData.loadTreatmentDataFromDatabase();
-
-        for (int i = 0; i < treatmentList.size(); i++) {
-
-            if (treatmentList.get(i).getTreatmentID()
-                    .equals(treatmentData.initTreatment.getTreatmentID())) {
-
-                // Setting the updated details
-                treatmentList.get(i).setDoctorID(doctorId.getText());
-                treatmentList.get(i).setTreatmentID(treatmentId.getText());
-                treatmentList.get(i).setDate(date.getPromptText());
-                treatmentList.get(i).setDescription(description.getText());
-
-                break;
-            }
-        }
-
-        try (FileWriter account = new FileWriter(
-                "src/main/resources/carecircle/assets/database/treatment.txt",
-                false)) {
-            PrintWriter accountWriter = new PrintWriter(account);
+            List<treatment> treatmentList = treatmentData.loadTreatmentDataFromDatabase();
 
             for (int i = 0; i < treatmentList.size(); i++) {
 
-                accountWriter.println(
-                        treatmentList.get(i).getTreatmentID() + ","
-                                + treatmentList.get(i).getDoctorID() + ","
-                                + treatmentList.get(i).getPatientID() + ","
-                                + treatmentList.get(i).getDate());
+                if (treatmentList.get(i).getTreatmentID()
+                        .equals(treatmentData.initTreatment.getTreatmentID())) {
+
+                    String editedDate;
+
+                    if (date.getValue() == null) {
+                        editedDate = date.getPromptText();
+                    } else {
+
+                        editedDate = date.getValue().toString();
+                    }
+
+                    // Setting the updated details
+                    treatmentList.get(i).setDoctorID(doctorId.getText());
+                    treatmentList.get(i).setTreatmentID(treatmentId.getText());
+                    treatmentList.get(i).setDate(editedDate);
+                    treatmentList.get(i).setDescription(description.getText());
+
+                    break;
+                }
             }
-            accountWriter.close();
-            Alert alert = new Alert(AlertType.CONFIRMATION);
-            alert.setTitle("Treatment Edited!");
-            alert.setHeaderText("Treatment record has been edited");
-            alert.showAndWait();
 
-            App.setRoot("patientGeneralDetailsScreen");
+            try (FileWriter account = new FileWriter(
+                    "src/main/resources/carecircle/assets/database/treatment.txt",
+                    false)) {
+                PrintWriter accountWriter = new PrintWriter(account);
 
-        } catch (IOException e) {
-            e.printStackTrace();
+                for (int i = 0; i < treatmentList.size(); i++) {
+
+                    accountWriter.println(
+                            treatmentList.get(i).getTreatmentID() + ","
+                                    + treatmentList.get(i).getDoctorID() + ","
+                                    + treatmentList.get(i).getPatientID() + ","
+                                    + treatmentList.get(i).getDate() + "," + treatmentList.get(i).getDescription());
+                }
+                accountWriter.close();
+                Alert alert = new Alert(AlertType.CONFIRMATION);
+                alert.setTitle("Treatment Edited!");
+                alert.setHeaderText("Treatment record has been edited");
+                alert.showAndWait();
+
+                App.setRoot("patientGeneralDetailsScreen");
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
     }
-}
 }

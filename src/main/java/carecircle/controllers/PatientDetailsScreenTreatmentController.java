@@ -6,6 +6,7 @@ import java.util.Optional;
 
 import carecircle.App;
 import carecircle.data.patientData;
+import carecircle.tableModels.patientDiagnosisTableModel;
 import carecircle.tableModels.patientTreatmentTableModel;
 import carecircle.data.treatmentData;
 import javafx.event.ActionEvent;
@@ -173,7 +174,27 @@ public class PatientDetailsScreenTreatmentController {
     }
 
     @FXML
-    void editTreatmentRecord(ActionEvent event) {
+    void editTreatmentRecord(ActionEvent event) throws IOException {
+
+        patientTreatmentTableModel selectedTreatment = patientDetailsTreatmentTable.getSelectionModel()
+                .getSelectedItem();
+
+        if (selectedTreatment == null) {
+
+            Alert error = new Alert(Alert.AlertType.ERROR);
+            error.setTitle("Error");
+            error.setHeaderText("Please select a record before proceeding");
+            error.showAndWait();
+
+        } else {
+
+            treatmentData.initTreatment.setTreatmentID(selectedTreatment.getTreatmentID());
+            treatmentData.initTreatment.setPatientID(selectedTreatment.getPatientID());
+            treatmentData.initTreatment.setDoctorID(selectedTreatment.getDoctorID());
+            treatmentData.initTreatment.setDate(selectedTreatment.getDate());
+            treatmentData.initTreatment.setDescription(selectedTreatment.getDescription());
+            App.setRoot("editTreatmentScreen");
+        }
 
     }
 

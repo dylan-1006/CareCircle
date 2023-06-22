@@ -22,7 +22,7 @@ import javafx.scene.input.MouseEvent;
 
 public class EditAnalysisScreen {
 
-        @FXML
+    @FXML
     private Button Continue;
 
     @FXML
@@ -39,7 +39,6 @@ public class EditAnalysisScreen {
 
     @FXML
     private TextField patientName;
-    
 
     public void initialize() {
 
@@ -63,59 +62,67 @@ public class EditAnalysisScreen {
     }
 
     @FXML
-void saveChangesAnalysis(ActionEvent event) {
+    void saveChangesAnalysis(ActionEvent event) {
 
-    Alert confirmation = new Alert(Alert.AlertType.CONFIRMATION);
-    confirmation.setTitle("Confirmation");
-    confirmation.setHeaderText("Are you sure you want to proceed?");
-    confirmation.setContentText("Click OK to continue or Cancel to abort.");
+        Alert confirmation = new Alert(Alert.AlertType.CONFIRMATION);
+        confirmation.setTitle("Confirmation");
+        confirmation.setHeaderText("Are you sure you want to proceed?");
+        confirmation.setContentText("Click OK to continue or Cancel to abort.");
 
-    Optional<ButtonType> result = confirmation.showAndWait();
+        Optional<ButtonType> result = confirmation.showAndWait();
 
-    if (result.get() == ButtonType.OK) {
+        if (result.get() == ButtonType.OK) {
 
-        List<analysis> analysisList = analysisData.loadAnalysisDataFromDatabase();
-
-        for (int i = 0; i < analysisList.size(); i++) {
-
-            if (analysisList.get(i).getAnalysisID()
-                    .equals(analysisData.initAnalysis.getAnalysisID())) {
-
-                // Setting the updated details
-                analysisList.get(i).setDoctorID(doctorId.getText());
-                analysisList.get(i).setAnalysisID(analysisId.getText());
-                analysisList.get(i).setDate(date.getPromptText());
-                analysisList.get(i).setDescription(description.getText());
-
-                break;
-            }
-        }
-
-        try (FileWriter account = new FileWriter(
-                "src/main/resources/carecircle/assets/database/analysis.txt",
-                false)) {
-            PrintWriter accountWriter = new PrintWriter(account);
+            List<analysis> analysisList = analysisData.loadAnalysisDataFromDatabase();
 
             for (int i = 0; i < analysisList.size(); i++) {
 
-                accountWriter.println(
-                        analysisList.get(i).getAnalysisID() + ","
-                                + analysisList.get(i).getDoctorID() + ","
-                                + analysisList.get(i).getPatientID() + ","
-                                + analysisList.get(i).getDate());
+                if (analysisList.get(i).getAnalysisID()
+                        .equals(analysisData.initAnalysis.getAnalysisID())) {
+
+                    String editedDate;
+
+                    if (date.getValue() == null) {
+                        editedDate = date.getPromptText();
+                    } else {
+
+                        editedDate = date.getValue().toString();
+                    }
+
+                    // Setting the updated details
+                    analysisList.get(i).setDoctorID(doctorId.getText());
+                    analysisList.get(i).setAnalysisID(analysisId.getText());
+                    analysisList.get(i).setDate(editedDate);
+                    analysisList.get(i).setDescription(description.getText());
+
+                    break;
+                }
             }
-            accountWriter.close();
-            Alert alert = new Alert(AlertType.CONFIRMATION);
-            alert.setTitle("Medical History Edited!");
-            alert.setHeaderText("Medical history record has been edited");
-            alert.showAndWait();
 
-            App.setRoot("patientGeneralDetailsScreen");
+            try (FileWriter account = new FileWriter(
+                    "src/main/resources/carecircle/assets/database/analysis.txt",
+                    false)) {
+                PrintWriter accountWriter = new PrintWriter(account);
 
-        } catch (IOException e) {
-            e.printStackTrace();
+                for (int i = 0; i < analysisList.size(); i++) {
+
+                    accountWriter.println(
+                            analysisList.get(i).getAnalysisID() + ","
+                                    + analysisList.get(i).getDoctorID() + ","
+                                    + analysisList.get(i).getPatientID() + ","
+                                    + analysisList.get(i).getDate() + "," + analysisList.get(i).getDescription());
+                }
+                accountWriter.close();
+                Alert alert = new Alert(AlertType.CONFIRMATION);
+                alert.setTitle("Medical History Edited!");
+                alert.setHeaderText("Medical history record has been edited");
+                alert.showAndWait();
+
+                App.setRoot("patientGeneralDetailsScreen");
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
     }
 }
-}
-

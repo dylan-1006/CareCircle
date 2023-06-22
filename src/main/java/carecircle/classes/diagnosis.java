@@ -1,4 +1,5 @@
 package carecircle.classes;
+
 public class diagnosis {
     public String diagnosisID;
     public String doctorID;
@@ -6,15 +7,15 @@ public class diagnosis {
     public String date;
     public String description;
 
-    public diagnosis(String diagnosisID, String doctorID, String patientID, String date,String description){
-        this.diagnosisID=diagnosisID;
-        this.doctorID=doctorID;
-        this.patientID=patientID;
-        this.date=date;
-        this.description=description;
+    public diagnosis(String diagnosisID, String doctorID, String patientID, String date, String description) {
+        this.diagnosisID = diagnosisID;
+        this.doctorID = doctorID;
+        this.patientID = patientID;
+        this.date = date;
+        this.description = description;
     }
 
-    public void setDiagnosisID (String diagnosisID) {
+    public void setDiagnosisID(String diagnosisID) {
         this.diagnosisID = diagnosisID;
     }
 
@@ -23,13 +24,13 @@ public class diagnosis {
     }
 
     public void setDoctorID(String doctorId) {
-        this.doctorID = doctorID;
+        this.doctorID = doctorId;
     }
 
     public String getDoctorID() {
         return doctorID;
     }
-    
+
     public void setPatientID(String patientID) {
         this.patientID = patientID;
     }

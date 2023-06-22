@@ -21,9 +21,9 @@ import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 
-    public class EditDiagnosisScreen {
+public class EditDiagnosisScreen {
 
- @FXML
+    @FXML
     private Button Continue;
 
     @FXML
@@ -43,7 +43,6 @@ import javafx.scene.layout.Pane;
 
     @FXML
     private TextField patientName;
-
 
     public void initialize() {
 
@@ -85,10 +84,19 @@ import javafx.scene.layout.Pane;
                 if (diagnosisList.get(i).getDiagnosisID()
                         .equals(diagnosisData.initDiagnosis.getDiagnosisID())) {
 
+                    String editedDate;
+
+                    if (date.getValue() == null) {
+                        editedDate = date.getPromptText();
+                    } else {
+
+                        editedDate = date.getValue().toString();
+                    }
+
                     // Setting the updated details
                     diagnosisList.get(i).setDoctorID(doctorId.getText());
                     diagnosisList.get(i).setDiagnosisID(diagnosisID.getText());
-                    diagnosisList.get(i).setDate(date.getPromptText());
+                    diagnosisList.get(i).setDate(editedDate);
                     diagnosisList.get(i).setDescription(description.getText());
 
                     break;
@@ -107,7 +115,7 @@ import javafx.scene.layout.Pane;
                             diagnosisList.get(i).getDiagnosisID() + ","
                                     + diagnosisList.get(i).getDoctorID() + ","
                                     + diagnosisList.get(i).getPatientID() + ","
-                                    + diagnosisList.get(i).getDate());
+                                    + diagnosisList.get(i).getDate() + "," + diagnosisList.get(i).getDescription());
                 }
                 accountWriter.close();
                 Alert alert = new Alert(AlertType.CONFIRMATION);
@@ -126,5 +134,4 @@ import javafx.scene.layout.Pane;
 
     }
 
-    
 }
