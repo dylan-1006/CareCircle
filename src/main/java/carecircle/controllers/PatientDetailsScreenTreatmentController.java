@@ -88,7 +88,6 @@ public class PatientDetailsScreenTreatmentController {
     @FXML
     private TableView<patientTreatmentTableModel> patientDetailsTreatmentTable;
 
-
     public void initialize() {
 
         setSideBarPatientDetails();
@@ -114,39 +113,41 @@ public class PatientDetailsScreenTreatmentController {
 
     void setTreatmentTable() {
 
-        ObservableList<patientTreatmentTableModel> TreatmentDataList = patientTreatmentTableModel.convertSelectedPatientTreatmentDataToModel();
-    
+        ObservableList<patientTreatmentTableModel> TreatmentDataList = patientTreatmentTableModel
+                .convertSelectedPatientTreatmentDataToModel();
+
         if (TreatmentDataList.isEmpty()) {
-    
+
             // Setting table & buttons to be non-visible
             patientDetailsTreatmentTable.setVisible(false);
-    
+
             addTreatmentButton.setVisible(true);
             editTreatmentButton.setVisible(false);
             // deleteTreatmentButton.setVisible(false);
-    
+
         } else {
-    
+
             showAvailabilityOfTreatmentRecord.setVisible(false);
-    
+
             TableColumn<patientTreatmentTableModel, String> TreatmentIDColumn = new TableColumn<>("Treatment ID");
             TableColumn<patientTreatmentTableModel, String> doctorIDColumn = new TableColumn<>("Doctor ID");
             TableColumn<patientTreatmentTableModel, String> patientIDColumn = new TableColumn<>("Patient ID");
             TableColumn<patientTreatmentTableModel, String> dateColumn = new TableColumn<>("Date");
             TableColumn<patientTreatmentTableModel, String> descriptionColumn = new TableColumn<>("Description");
-    
-            patientDetailsTreatmentTable.getColumns().addAll(TreatmentIDColumn, doctorIDColumn, patientIDColumn, dateColumn,
+
+            patientDetailsTreatmentTable.getColumns().addAll(TreatmentIDColumn, doctorIDColumn, patientIDColumn,
+                    dateColumn,
                     descriptionColumn);
-    
+
             TreatmentIDColumn.setCellValueFactory(new PropertyValueFactory<>("TreatmentID"));
             doctorIDColumn.setCellValueFactory(new PropertyValueFactory<>("doctorID"));
             patientIDColumn.setCellValueFactory(new PropertyValueFactory<>("patientID"));
             dateColumn.setCellValueFactory(new PropertyValueFactory<>("date"));
             descriptionColumn.setCellValueFactory(new PropertyValueFactory<>("description"));
-    
+
             patientDetailsTreatmentTable.setItems(TreatmentDataList);
         }
-    
+
     }
 
     @FXML

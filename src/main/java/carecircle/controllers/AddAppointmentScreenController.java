@@ -27,10 +27,10 @@ import javafx.scene.control.TextField;
 public class AddAppointmentScreenController {
 
         ObservableList<String> venueOptions = FXCollections.observableArrayList(
-                         "Main Hospital", "Speciality Clinic");
+                        "Main Hospital", "Speciality Clinic");
 
         ObservableList<String> appointmentTimeOptions = FXCollections.observableArrayList(
-                         "9:00", "9:30", "10:00", "10:30", "11:00", "12:00", "12:30",
+                        "9:00", "9:30", "10:00", "10:30", "11:00", "12:00", "12:30",
                         "13:00", "13:30", "14:00", "15:00", "15:30", "16:00", "16:30", "17:00");
 
         ObservableList<String> departmentOptions = FXCollections.observableArrayList(

@@ -1,6 +1,6 @@
 package carecircle.classes;
 
-public class patient {
+public class patient implements personInterface{
 
     private String patientID;
     private String name;

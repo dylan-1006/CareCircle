@@ -75,61 +75,48 @@ public class AppointmentDetailScreenController {
 
     @FXML
     public void initialize() {
-        
-        setAppointmentDetails();
-       
-    }
-   
 
-        
-      
-  
+        setAppointmentDetails();
+
+    }
 
     public void setAppointmentDetails() {
         List<patient> patientList = patientData.loadPatientDataFromDatabase();
         List<doctor> doctorList = doctorData.loadDoctorDataFromDatabase();
 
-        
-        
         sidePatientID.setText(appointmentData.initAppointmentData.getPatientID());
         sideAppointmentID.setText(appointmentData.initAppointmentData.getAppointmentID());
         sideDoctorID.setText(appointmentData.initAppointmentData.getDoctorID());
-        sideVenue.setText(appointmentData.initAppointmentData.getVenue());     
+        sideVenue.setText(appointmentData.initAppointmentData.getVenue());
         sideDate.setText(appointmentData.initAppointmentData.getDate());
         sideTime.setText(appointmentData.initAppointmentData.getTime());
-        
 
-        appointmentID.setText(appointmentData.initAppointmentData.getAppointmentID());   
+        appointmentID.setText(appointmentData.initAppointmentData.getAppointmentID());
         patientID.setText(appointmentData.initAppointmentData.getPatientID());
         doctorID.setText(appointmentData.initAppointmentData.getDoctorID());
         date.setText(appointmentData.initAppointmentData.getDate());
         venue.setText(appointmentData.initAppointmentData.getVenue());
         time.setText(appointmentData.initAppointmentData.getTime());
         department.setText(appointmentData.initAppointmentData.getDepartment());
-      
-        for(int i=0;i<patientList.size();i++)
-        {
-            if(appointmentData.initAppointmentData.getPatientID().equals(patientList.get(i).getPatientID()))
-            {
+
+        for (int i = 0; i < patientList.size(); i++) {
+            if (appointmentData.initAppointmentData.getPatientID().equals(patientList.get(i).getPatientID())) {
                 patientName.setText(patientList.get(i).getName());
                 contactNumber.setText(patientList.get(i).getPhoneNo());
                 sidePatientName.setText(patientList.get(i).getName());
                 break;
             }
-           
+
         }
-        for(int i=0;i<doctorList.size();i++)
-        {
-            if(appointmentData.initAppointmentData.getDoctorID().equals(doctorList.get(i).getDoctorID()))
-            {
+        for (int i = 0; i < doctorList.size(); i++) {
+            if (appointmentData.initAppointmentData.getDoctorID().equals(doctorList.get(i).getDoctorID())) {
                 doctorName.setText(doctorList.get(i).getName());
                 sideDoctorName.setText(doctorList.get(i).getName());
                 break;
             }
-            
+
         }
     }
-
 
     @FXML
     void editDetails(MouseEvent event) {
@@ -137,7 +124,7 @@ public class AppointmentDetailScreenController {
         time.setEditable(true);
         date.setEditable(true);
     }
-    
+
     @FXML
     void deleteThisAppointment(MouseEvent event) throws IOException {
 
@@ -158,12 +145,10 @@ public class AppointmentDetailScreenController {
         }
 
     }
+
     @FXML
     void goBack(MouseEvent event) throws IOException {
         App.setRoot("appointmentScreenGeneral");
     }
-
-    
-    
 
 }

@@ -17,7 +17,8 @@ public class patientAnalysisTableModel {
     private SimpleStringProperty date;
     private SimpleStringProperty description;
 
-    public patientAnalysisTableModel(String analysisID, String doctorID, String patientID, String date, String description) {
+    public patientAnalysisTableModel(String analysisID, String doctorID, String patientID, String date,
+            String description) {
         this.analysisID = new SimpleStringProperty(analysisID);
         this.doctorID = new SimpleStringProperty(doctorID);
         this.patientID = new SimpleStringProperty(patientID);
@@ -37,7 +38,8 @@ public class patientAnalysisTableModel {
                 String date = analysisList.get(i).getDate();
                 String description = analysisList.get(i).getDescription();
 
-                patientAnalysisTableModel analysisTableModel = new patientAnalysisTableModel(analysisID, doctorID, patientID, date, description);
+                patientAnalysisTableModel analysisTableModel = new patientAnalysisTableModel(analysisID, doctorID,
+                        patientID, date, description);
                 observableAnalysisList.add(analysisTableModel);
             }
         }
@@ -104,4 +106,3 @@ public class patientAnalysisTableModel {
         this.description.set(description);
     }
 }
-

@@ -23,7 +23,6 @@ import javafx.collections.ObservableList;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.cell.PropertyValueFactory;
 
-
 public class PatientDetailsScreenAnalysisController {
 
     @FXML
@@ -117,42 +116,42 @@ public class PatientDetailsScreenAnalysisController {
 
     void setAnalysisTable() {
 
-        ObservableList<patientAnalysisTableModel> analysisDataList = patientAnalysisTableModel.convertSelectedPatientAnalysisDataToModel();
-    
+        ObservableList<patientAnalysisTableModel> analysisDataList = patientAnalysisTableModel
+                .convertSelectedPatientAnalysisDataToModel();
+
         if (analysisDataList.isEmpty()) {
-    
+
             // Setting table & buttons to be non-visible
             patientDetailsAnalysisTable.setVisible(false);
-    
+
             addAnalysisButton.setVisible(true);
             editAnalysisButton.setVisible(false);
             // deleteAnalysisButton.setVisible(false);
-    
+
         } else {
-    
+
             showAvailabilityOfAnalysisRecord.setVisible(false);
-    
+
             TableColumn<patientAnalysisTableModel, String> analysisIDColumn = new TableColumn<>("Analysis ID");
             TableColumn<patientAnalysisTableModel, String> doctorIDColumn = new TableColumn<>("Doctor ID");
             TableColumn<patientAnalysisTableModel, String> patientIDColumn = new TableColumn<>("Patient ID");
             TableColumn<patientAnalysisTableModel, String> dateColumn = new TableColumn<>("Date");
             TableColumn<patientAnalysisTableModel, String> descriptionColumn = new TableColumn<>("Description");
-    
-            patientDetailsAnalysisTable.getColumns().addAll(analysisIDColumn, doctorIDColumn, patientIDColumn, dateColumn,
+
+            patientDetailsAnalysisTable.getColumns().addAll(analysisIDColumn, doctorIDColumn, patientIDColumn,
+                    dateColumn,
                     descriptionColumn);
-    
+
             analysisIDColumn.setCellValueFactory(new PropertyValueFactory<>("analysisID"));
             doctorIDColumn.setCellValueFactory(new PropertyValueFactory<>("doctorID"));
             patientIDColumn.setCellValueFactory(new PropertyValueFactory<>("patientID"));
             dateColumn.setCellValueFactory(new PropertyValueFactory<>("date"));
             descriptionColumn.setCellValueFactory(new PropertyValueFactory<>("description"));
-    
+
             patientDetailsAnalysisTable.setItems(analysisDataList);
         }
-    
+
     }
-    
-    
 
     @FXML
     void deleteThisPatient(ActionEvent event) throws IOException {

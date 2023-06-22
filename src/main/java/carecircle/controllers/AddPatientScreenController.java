@@ -23,10 +23,9 @@ import javafx.scene.control.TextField;
 
 public class AddPatientScreenController {
         ObservableList<String> bloodTypeOptions = FXCollections.observableArrayList(
-                         "A-", "A+", "B-", "B+", "O-", "O+", "AB-", "AB+");
+                        "A-", "A+", "B-", "B+", "O-", "O+", "AB-", "AB+");
         ObservableList<String> genderOptions = FXCollections.observableArrayList(
                         "Male", "Female", "Others");
-        
 
         @FXML
         private Text backToPatientButton;

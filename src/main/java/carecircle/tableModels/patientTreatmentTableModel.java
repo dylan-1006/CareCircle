@@ -17,7 +17,8 @@ public class patientTreatmentTableModel {
     private SimpleStringProperty date;
     private SimpleStringProperty description;
 
-    public patientTreatmentTableModel(String treatmentID, String doctorID, String patientID, String date, String description) {
+    public patientTreatmentTableModel(String treatmentID, String doctorID, String patientID, String date,
+            String description) {
         this.treatmentID = new SimpleStringProperty(treatmentID);
         this.doctorID = new SimpleStringProperty(doctorID);
         this.patientID = new SimpleStringProperty(patientID);
@@ -105,4 +106,3 @@ public class patientTreatmentTableModel {
         this.description.set(description);
     }
 }
-

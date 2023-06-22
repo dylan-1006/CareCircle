@@ -117,39 +117,41 @@ public class PatientDetailsScreenDiagnosisController {
 
     void setDiagnosisTable() {
 
-        ObservableList<patientDiagnosisTableModel> diagnosisDataList = patientDiagnosisTableModel.convertSelectedPatientDiagnosisDataToModel();
-    
+        ObservableList<patientDiagnosisTableModel> diagnosisDataList = patientDiagnosisTableModel
+                .convertSelectedPatientDiagnosisDataToModel();
+
         if (diagnosisDataList.isEmpty()) {
-    
+
             // Setting table & buttons to be non-visible
             patientDetailsDiagnosisTable.setVisible(false);
-    
+
             addDiagnosisButton.setVisible(true);
             editDiagnosisButton.setVisible(false);
             // deletediagnosisButton.setVisible(false);
-    
+
         } else {
-    
+
             showAvailabilityOfDiagnosisRecord.setVisible(false);
-    
+
             TableColumn<patientDiagnosisTableModel, String> diagnosisIDColumn = new TableColumn<>("Diagnosis ID");
             TableColumn<patientDiagnosisTableModel, String> doctorIDColumn = new TableColumn<>("Doctor ID");
             TableColumn<patientDiagnosisTableModel, String> patientIDColumn = new TableColumn<>("Patient ID");
             TableColumn<patientDiagnosisTableModel, String> dateColumn = new TableColumn<>("Date");
             TableColumn<patientDiagnosisTableModel, String> descriptionColumn = new TableColumn<>("Description");
-    
-            patientDetailsDiagnosisTable.getColumns().addAll(diagnosisIDColumn, doctorIDColumn, patientIDColumn, dateColumn,
+
+            patientDetailsDiagnosisTable.getColumns().addAll(diagnosisIDColumn, doctorIDColumn, patientIDColumn,
+                    dateColumn,
                     descriptionColumn);
-    
+
             diagnosisIDColumn.setCellValueFactory(new PropertyValueFactory<>("diagnosisID"));
             doctorIDColumn.setCellValueFactory(new PropertyValueFactory<>("doctorID"));
             patientIDColumn.setCellValueFactory(new PropertyValueFactory<>("patientID"));
             dateColumn.setCellValueFactory(new PropertyValueFactory<>("date"));
             descriptionColumn.setCellValueFactory(new PropertyValueFactory<>("description"));
-    
+
             patientDetailsDiagnosisTable.setItems(diagnosisDataList);
         }
-    
+
     }
 
     @FXML
@@ -182,8 +184,8 @@ public class PatientDetailsScreenDiagnosisController {
     void switchToAddDiagnosisScreen(ActionEvent event) throws IOException {
         App.setRoot("addDiagnosisScreen");
 
-
     }
+
     @FXML
     void switchToAnalysisSection(ActionEvent event) throws IOException {
         App.setRoot("patientDetailsScreenAnalysis");
