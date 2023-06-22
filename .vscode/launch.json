@@ -1,0 +1,85 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        
+        {
+            "type": "java",
+            "name": "Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "App",
+            "request": "launch",
+            "mainClass": "carecircle/carecircle.App",
+            "projectName": "carecircle"
+        },
+        {
+            "type": "java",
+            "name": "analysisData",
+            "request": "launch",
+            "mainClass": "carecircle/carecircle.data.analysisData",
+            "projectName": "carecircle"
+        },
+        {
+            "type": "java",
+            "name": "appointmentData",
+            "request": "launch",
+            "mainClass": "carecircle/carecircle.data.appointmentData",
+            "projectName": "carecircle"
+        },
+        {
+            "type": "java",
+            "name": "diagnosisData",
+            "request": "launch",
+            "mainClass": "carecircle/carecircle.data.diagnosisData",
+            "projectName": "carecircle"
+        },
+        {
+            "type": "java",
+            "name": "doctorData",
+            "request": "launch",
+            "mainClass": "carecircle/carecircle.data.doctorData",
+            "projectName": "carecircle"
+        },
+        {
+            "type": "java",
+            "name": "medicalHistoryData",
+            "request": "launch",
+            "mainClass": "carecircle/carecircle.data.medicalHistoryData",
+            "projectName": "carecircle"
+        },
+        {
+            "type": "java",
+            "name": "medicineData",
+            "request": "launch",
+            "mainClass": "carecircle/carecircle.data.medicineData",
+            "projectName": "carecircle"
+        },
+        {
+            "type": "java",
+            "name": "nurseData",
+            "request": "launch",
+            "mainClass": "carecircle/carecircle.data.nurseData",
+            "projectName": "carecircle"
+        },
+        {
+            "type": "java",
+            "name": "patientData",
+            "request": "launch",
+            "mainClass": "carecircle/carecircle.data.patientData",
+            "projectName": "carecircle"
+        },
+        {
+            "type": "java",
+            "name": "treatmentData",
+            "request": "launch",
+            "mainClass": "carecircle/carecircle.data.treatmentData",
+            "projectName": "carecircle"
+        }
+    ]
+}

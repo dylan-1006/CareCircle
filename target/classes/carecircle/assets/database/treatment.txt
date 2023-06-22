@@ -1,0 +1,17 @@
+T462,D3212,P12345,10-02-2024,Prescription medication and rest
+T809,D4343,P67890,11-17-2024,Dietary changes and hydration
+T231,D4321,P24680,08-06-2024,Antiviral medication and bed rest
+T407,D7654,P54321,09-25-2024,Physical therapy and pain management
+T923,D4269,P97531,12-09-2024,Iron supplements and lifestyle modifications
+T161,D9850,P86420,10-28-2024,Allergy medication and avoiding triggers
+T747,D0057,P35791,08-14-2024,Stress management techniques and counseling
+T609,D1298,P68243,11-30-2024,Medication and lifestyle changes
+T316,D7642,P42681,09-07-2024,Insulin therapy and blood sugar monitoring
+T751,D8756,P91357,10-21-2024,Physical therapy and pain relief measures
+T475,D4591,P82046,12-13-2024,Medication and therapy sessions
+T991,D2435,P31025,11-05-2024,Inhalers and avoiding triggers
+T219,D6734,P68243,09-19-2024,Topical creams and antihistamines
+T727,D2301,P42681,08-27-2024,Medication and gargling with saltwater
+T184,D3124,P91357,12-31-2024,Dietary changes and digestive aids
+T567,D9823,P82046,09-13-2024,Medication and lifestyle modifications
+T819,D5310,P31025,10-09-2024,Medication and pain management techniques

@@ -12,7 +12,6 @@ import java.util.Optional;
 import carecircle.classes.patient;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
-import javafx.scene.control.ButtonType;
 
 public class patientData {
     public static void main(String[] args) {
@@ -52,6 +51,7 @@ public class patientData {
                 patientList.add(newPatient);
 
             }
+            reader.close();
         } catch (IOException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
