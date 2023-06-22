@@ -6,6 +6,7 @@ import java.util.Optional;
 
 import carecircle.App;
 import carecircle.data.patientData;
+import carecircle.tableModels.patientTreatmentTableModel;
 import carecircle.data.treatmentData;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -18,6 +19,10 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextFlow;
+import javafx.scene.control.TableView;
+import javafx.collections.ObservableList;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.cell.PropertyValueFactory;
 
 public class PatientDetailsScreenTreatmentController {
 
@@ -40,13 +45,16 @@ public class PatientDetailsScreenTreatmentController {
     private Button diagnosisButton;
 
     @FXML
-    private Button editTreatment;
+    private Button editTreatmentButton;
 
     @FXML
     private TextField gender;
 
     @FXML
     private Button generalButton;
+
+    @FXML
+    private Pane showAvailabilityOfTreatmentRecord;
 
     @FXML
     private TextField height;
@@ -78,9 +86,13 @@ public class PatientDetailsScreenTreatmentController {
     @FXML
     private Pane patientDetailsSidePane;
 
+    @FXML
+    private TableView<patientTreatmentTableModel> patientDetailsTreatmentTable;
+
     public void initialize() {
 
         setSideBarPatientDetails();
+        setTreatmentTable();
     }
 
     void setSideBarPatientDetails() {
@@ -97,6 +109,45 @@ public class PatientDetailsScreenTreatmentController {
         height.setText(Double.toString(patientData.initPatientData.getHeight()) + "cm");
         weight.setText(Double.toString(patientData.initPatientData.getWeight()) + "kg");
         bloodType.setText(patientData.initPatientData.getBloodType());
+
+    }
+
+    void setTreatmentTable() {
+
+        ObservableList<patientTreatmentTableModel> TreatmentDataList = patientTreatmentTableModel
+                .convertSelectedPatientTreatmentDataToModel();
+
+        if (TreatmentDataList.isEmpty()) {
+
+            // Setting table & buttons to be non-visible
+            patientDetailsTreatmentTable.setVisible(false);
+
+            addTreatmentButton.setVisible(true);
+            editTreatmentButton.setVisible(false);
+            // deleteTreatmentButton.setVisible(false);
+
+        } else {
+
+            showAvailabilityOfTreatmentRecord.setVisible(false);
+
+            TableColumn<patientTreatmentTableModel, String> TreatmentIDColumn = new TableColumn<>("Treatment ID");
+            TableColumn<patientTreatmentTableModel, String> doctorIDColumn = new TableColumn<>("Doctor ID");
+            TableColumn<patientTreatmentTableModel, String> patientIDColumn = new TableColumn<>("Patient ID");
+            TableColumn<patientTreatmentTableModel, String> dateColumn = new TableColumn<>("Date");
+            TableColumn<patientTreatmentTableModel, String> descriptionColumn = new TableColumn<>("Description");
+
+            patientDetailsTreatmentTable.getColumns().addAll(TreatmentIDColumn, doctorIDColumn, patientIDColumn,
+                    dateColumn,
+                    descriptionColumn);
+
+            TreatmentIDColumn.setCellValueFactory(new PropertyValueFactory<>("TreatmentID"));
+            doctorIDColumn.setCellValueFactory(new PropertyValueFactory<>("doctorID"));
+            patientIDColumn.setCellValueFactory(new PropertyValueFactory<>("patientID"));
+            dateColumn.setCellValueFactory(new PropertyValueFactory<>("date"));
+            descriptionColumn.setCellValueFactory(new PropertyValueFactory<>("description"));
+
+            patientDetailsTreatmentTable.setItems(TreatmentDataList);
+        }
 
     }
 

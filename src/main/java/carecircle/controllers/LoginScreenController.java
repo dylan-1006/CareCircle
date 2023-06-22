@@ -54,6 +54,8 @@ public class LoginScreenController {
                     found = true;
                     infoR.close();
                     userData.initUserData.setName(Name);
+                    userData.initUserData.setUsername(Username);
+                    userData.initUserData.setPassword(Password);
                     App.setRoot("homeScreen");
 
                 }

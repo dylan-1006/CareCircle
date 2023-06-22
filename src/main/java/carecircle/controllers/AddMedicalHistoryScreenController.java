@@ -8,12 +8,13 @@ import java.util.List;
 import carecircle.App;
 import carecircle.classes.medicalHistory;
 import carecircle.classes.patient;
-import carecircle.classes.analysis;
+import carecircle.classes.diagnosis;
 import carecircle.classes.treatment;
 import carecircle.classes.procedure;
 import carecircle.data.medicalHistoryData;
 import carecircle.data.patientData;
-import carecircle.data.analysisData;
+import carecircle.data.procedureData;
+import carecircle.data.diagnosisData;
 import carecircle.data.treatmentData;
 
 import javafx.collections.FXCollections;
@@ -60,14 +61,18 @@ public class AddMedicalHistoryScreenController {
     @FXML
     public void initialize() {
         patientNameBox.setItems(fetchAvailablePatientName());
+        diagnosisID.setItems(fetchAvailableDiagnosisID());
+        treatmentID.setItems(fetchAvailableTreatmentID());
+       // procedureID.setItems(fetchAvailableProcedureID());
     }
 
     @FXML
     void addNewMedicalHistory(ActionEvent event) {
         if (patientNameBox.getSelectionModel().isEmpty() ||
                 diagnosisID.getSelectionModel().isEmpty() || treatmentID.getSelectionModel().isEmpty()
-                || procedureID.getSelectionModel().isEmpty() || allergies.getText().equals("")
-                || pastMedication.getText().equals("") || description.getText().equals("")) {
+                || procedureID.getSelectionModel().isEmpty() || procedureID.getSelectionModel().isEmpty()
+                || allergies.getText().equals("") || pastMedication.getText().equals("")
+                || description.getText().equals("")) {
             Alert alert = new Alert(AlertType.ERROR);
             alert.setTitle("Error");
             alert.setHeaderText("Missing Information");
@@ -148,6 +153,45 @@ public class AddMedicalHistoryScreenController {
 
         }
         return patientIdOptions;
+    }
+
+    ObservableList<String> fetchAvailableDiagnosisID() {
+
+        List<diagnosis> diagnosisList = diagnosisData.loadDiagnosisDataFromDatabase();
+        ObservableList<String> diagnosisIdOptions = FXCollections.observableArrayList("Choose diagnosis ID");
+
+        for (int i = 0; i < diagnosisList.size(); i++) {
+
+            diagnosisIdOptions.add(diagnosisList.get(i).getDiagnosisID());
+
+        }
+        return diagnosisIdOptions;
+    }
+
+    ObservableList<String> fetchAvailableTreatmentID() {
+
+        List<treatment> treatmentList = treatmentData.loadTreatmentDataFromDatabase();
+        ObservableList<String> treatmentIdOptions = FXCollections.observableArrayList("Choose treatment ID");
+
+        for (int i = 0; i < treatmentList.size(); i++) {
+
+            treatmentIdOptions.add(treatmentList.get(i).getTreatmentID());
+
+        }
+        return treatmentIdOptions;
+    }
+
+    ObservableList<String> fetchAvailableProcedureID() {
+
+        List<procedure> procedureList = procedureData.loadProcedureDataFromDatabase();
+        ObservableList<String> procedureIdOptions = FXCollections.observableArrayList("Choose procedure ID");
+
+        for (int i = 0; i < procedureIdOptions.size(); i++) {
+
+            procedureIdOptions.add(procedureList.get(i).getProcedureId());
+
+        }
+        return procedureIdOptions;
     }
 
     @FXML

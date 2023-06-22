@@ -131,7 +131,7 @@ public class AddStaffScreenController {
                 alert.setHeaderText(name.getText() + " has been added");
                 alert.showAndWait();
 
-                App.setRoot("homeScreen");
+                App.setRoot("medicalStaffScreenGeneral");
 
             }
 

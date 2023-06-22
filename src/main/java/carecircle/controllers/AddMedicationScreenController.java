@@ -12,7 +12,6 @@ import carecircle.classes.patient;
 import carecircle.data.doctorData;
 import carecircle.data.medicineData;
 import carecircle.data.patientData;
-import carecircle.data.userData;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
