@@ -23,6 +23,7 @@ import javafx.scene.text.Text;
 import javafx.scene.text.TextFlow;
 import carecircle.data.patientData;
 import carecircle.data.doctorData;
+import carecircle.data.nurseData;
 
 public class HomeScreenController {
 
@@ -40,6 +41,9 @@ public class HomeScreenController {
 
     @FXML
     private Text totalPatientAdmissions;
+
+    @FXML
+    private Text totalAvailableNurses;
 
     @FXML
     private Pane sideBarAppointmentButton;
@@ -108,6 +112,7 @@ public class HomeScreenController {
         setUserName();
         setDoctorAmount();
         setPatientAmount();
+        setNurseAmount();
 
     }
 
@@ -119,6 +124,11 @@ public class HomeScreenController {
     void setDoctorAmount() {
         
         totalAvailableDoctors.setText(Integer.toString(doctorData.loadDoctorDataFromDatabase().size()));
+    }
+
+    void setNurseAmount() {
+
+        totalAvailableNurses.setText(Integer.toString(nurseData.loadNurseDataFromDatabase().size()));
     }
 
     void setUserName() {

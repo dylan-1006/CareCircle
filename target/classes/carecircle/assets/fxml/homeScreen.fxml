@@ -107,17 +107,17 @@
          </font></Text>
       <Pane layoutX="297.0" layoutY="85.0" prefHeight="143.0" prefWidth="276.0" style="-fx-background-color: white; -fx-background-radius: 20;">
          <children>
-            <Text fill="#4fb3ff" layoutX="67.0" layoutY="28.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Rooms">
+            <Text fill="#4fb3ff" layoutX="67.0" layoutY="28.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nurses">
                <font>
                   <Font name="SansSerif Bold" size="18.0" />
                </font></Text>
             <Line endX="131.0865478515625" endY="-7.62939453125E-6" layoutX="125.0" layoutY="40.0" startX="-110.61541748046875" startY="-7.62939453125E-6" stroke="#a6a6a6" />
-            <Text fill="#4fb3ff" layoutX="28.0" layoutY="86.0" strokeType="OUTSIDE" strokeWidth="0.0" text="85">
+            <Text fx:id="totalAvailableNurses" fill="#4fb3ff" layoutX="28.0" layoutY="86.0" strokeType="OUTSIDE" strokeWidth="0.0" text="85">
                <font>
                   <Font name="SansSerif Bold" size="24.0" />
                </font>
             </Text>
-            <Text fill="#b3b3b3" layoutX="26.0" layoutY="111.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Available Rooms">
+            <Text fill="#b3b3b3" layoutX="26.0" layoutY="111.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Available Nurses">
                <font>
                   <Font name="SansSerif Bold" size="10.0" />
                </font>
@@ -130,9 +130,9 @@
                   <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#89cff0" height="52.0" layoutX="118.0" layoutY="6.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="21.0" />
                </children>
             </Pane>
-            <ImageView fitHeight="20.0" fitWidth="27.0" layoutX="22.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true" smooth="false">
+            <ImageView fitHeight="25.0" fitWidth="24.0" layoutX="22.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true" smooth="false">
                <image>
-                  <Image url="@../images/homeScreenRoomsIcon.png" />
+                  <Image url="@../images/homeScreenNurseIcon.png" />
                </image>
             </ImageView>
          </children>
