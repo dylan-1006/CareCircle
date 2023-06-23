@@ -21,6 +21,9 @@ import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextFlow;
+import carecircle.data.patientData;
+import carecircle.data.doctorData;
+import carecircle.data.nurseData;
 
 public class HomeScreenController {
 
@@ -32,6 +35,15 @@ public class HomeScreenController {
 
     @FXML
     private Pane navigationSideBar;
+
+    @FXML
+    private Text totalAvailableDoctors;
+
+    @FXML
+    private Text totalPatientAdmissions;
+
+    @FXML
+    private Text totalAvailableNurses;
 
     @FXML
     private Pane sideBarAppointmentButton;
@@ -98,7 +110,25 @@ public class HomeScreenController {
 
         // Setting the username in welcome message
         setUserName();
+        setDoctorAmount();
+        setPatientAmount();
+        setNurseAmount();
 
+    }
+
+    void setPatientAmount() {
+        
+        totalPatientAdmissions.setText(Integer.toString(patientData.loadPatientDataFromDatabase().size()));
+    }
+
+    void setDoctorAmount() {
+        
+        totalAvailableDoctors.setText(Integer.toString(doctorData.loadDoctorDataFromDatabase().size()));
+    }
+
+    void setNurseAmount() {
+
+        totalAvailableNurses.setText(Integer.toString(nurseData.loadNurseDataFromDatabase().size()));
     }
 
     void setUserName() {
