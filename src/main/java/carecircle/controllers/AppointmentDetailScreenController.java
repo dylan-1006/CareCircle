@@ -133,16 +133,16 @@ public class AppointmentDetailScreenController {
         }
     }
 
-    @FXML
-    void editDetails(MouseEvent event) {
-        venue.setEditable(true);
-        time.setEditable(true);
-        date.setEditable(true);
+    // @FXML
+    // void editDetails(MouseEvent event) {
+    //     venue.setEditable(true);
+    //     time.setEditable(true);
+    //     date.setEditable(true);
 
-        saveButton.setVisible(true);
-        cancelButton.setVisible(true);
-        editButton.setVisible(false);
-    }
+    //     saveButton.setVisible(true);
+    //     cancelButton.setVisible(true);
+    //     editButton.setVisible(false);
+    // }
 
     @FXML
     void deleteThisAppointment(MouseEvent event) throws IOException {
