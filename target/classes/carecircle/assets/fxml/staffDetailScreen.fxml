@@ -112,7 +112,7 @@
                   <Font name="SansSerif Regular" size="18.0" />
                </font>
             </Text>
-            <Text fx:id="editButton" layoutX="747.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #000000;" text="Edit">
+            <Text fx:id="editButton" layoutX="747.0" layoutY="33.0" onMouseClicked="#editDetails" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #000000;" text="Edit">
                <font>
                   <Font name="SansSerif Regular" size="18.0" />
                </font>
@@ -153,12 +153,12 @@
                </font>
             </Text>
             <TextField fx:id="email" editable="false" layoutX="554.0" layoutY="194.0" />
-            <Button fx:id="saveButton" layoutX="619.0" layoutY="11.0" mnemonicParsing="false" onAction="#saveAppointmentDetails" style="-fx-background-color: white;" text="Save" textFill="#169bff" visible="false">
+            <Button fx:id="saveButton" layoutX="619.0" layoutY="11.0" mnemonicParsing="false" onAction="#saveDetails" style="-fx-background-color: white;" text="Save" textFill="#169bff" visible="false">
                <font>
                   <Font name="SansSerif Regular" size="16.5" />
                </font>
             </Button>
-            <Button fx:id="cancelButton" layoutX="669.0" layoutY="11.0" mnemonicParsing="false" onAction="#cancelEditAppointment" style="-fx-background-color: white;" text="Cancel" textFill="RED" visible="false">
+            <Button fx:id="cancelButton" layoutX="669.0" layoutY="11.0" mnemonicParsing="false" onAction="#cancelEdit" style="-fx-background-color: white;" text="Cancel" textFill="RED" visible="false">
                <font>
                   <Font name="SansSerif Regular" size="16.5" />
                </font>
