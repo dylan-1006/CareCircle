@@ -1,10 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.shape.*?>
-<?import javafx.scene.text.*?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.text.TextFlow?>
 
 <Pane fx:id="backgroundPane" maxHeight="605.0" maxWidth="1428.0" minHeight="605.0" minWidth="1183.0" prefHeight="605.0" prefWidth="1198.0" style="-fx-background-color: #F6F8FA;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="carecircle.controllers.HomeScreenController">
    <children>
@@ -206,7 +212,7 @@
                </font>
             </Text>
             <Line endX="131.0865478515625" endY="-7.62939453125E-6" layoutX="125.0" layoutY="40.0" startX="-110.61541748046875" startY="-7.62939453125E-6" stroke="#a6a6a6" />
-            <Text fill="#4fb3ff" layoutX="27.0" layoutY="86.0" strokeType="OUTSIDE" strokeWidth="0.0" text="120">
+            <Text fx:id="totalAvailableDoctors" fill="#4fb3ff" layoutX="27.0" layoutY="86.0" strokeType="OUTSIDE" strokeWidth="0.0" text="120">
                <font>
                   <Font name="SansSerif Bold" size="24.0" />
                </font>
@@ -239,7 +245,7 @@
                </font>
             </Text>
             <Line endX="131.0865478515625" endY="-7.62939453125E-6" layoutX="125.0" layoutY="40.0" startX="-110.61541748046875" startY="-7.62939453125E-6" stroke="#a6a6a6" />
-            <Text fill="#4fb3ff" layoutX="28.0" layoutY="86.0" strokeType="OUTSIDE" strokeWidth="0.0" text="37">
+            <Text fx:id="totalPatientAdmissions" fill="#4fb3ff" layoutX="28.0" layoutY="86.0" strokeType="OUTSIDE" strokeWidth="0.0" text="37">
                <font>
                   <Font name="SansSerif Bold" size="24.0" />
                </font>
