@@ -1,17 +1,23 @@
 package carecircle.controllers;
 
+import java.io.FileWriter;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.List;
 import java.util.Optional;
 
 import carecircle.App;
+import carecircle.classes.appointment;
 import carecircle.classes.doctor;
 import carecircle.classes.patient;
 import carecircle.data.appointmentData;
 import carecircle.data.doctorData;
 import carecircle.data.patientData;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
+import javafx.scene.control.Button;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
@@ -36,6 +42,15 @@ public class AppointmentDetailScreenController {
 
     @FXML
     private TextField patientID;
+
+    @FXML
+    private Button cancelButton;
+
+    @FXML
+    private Button saveButton;
+
+    @FXML
+    private Button editButton;
 
     @FXML
     private TextField patientName;
@@ -123,6 +138,10 @@ public class AppointmentDetailScreenController {
         venue.setEditable(true);
         time.setEditable(true);
         date.setEditable(true);
+
+        saveButton.setVisible(true);
+        cancelButton.setVisible(true);
+        editButton.setVisible(false);
     }
 
     @FXML
@@ -145,6 +164,61 @@ public class AppointmentDetailScreenController {
         }
 
     }
+
+    @FXML
+    void cancelEditAppointment(ActionEvent event) throws IOException {
+        App.setRoot("appointmentDetailScreen");
+    }
+
+    @FXML
+    void saveAppointmentDetails(ActionEvent event) {
+        Alert confirmation = new Alert(Alert.AlertType.CONFIRMATION);
+        confirmation.setTitle("Confirmation");
+        confirmation.setHeaderText("Are you sure you want to proceed?");
+        confirmation.setContentText("Click OK to continue or Cancel to abort.");
+
+        Optional<ButtonType> result = confirmation.showAndWait();
+
+        if (result.get() == ButtonType.OK) {
+
+            List<appointment> appointmentList = appointmentData.loadAppointmentDataFromDatabase();
+            
+            for (int i = 0; i < appointmentList.size(); i++) {
+                if (appointmentData.initAppointmentData.getAppointmentID().equals(appointmentList.get(i).getAppointmentID())) {
+                    appointmentList.get(i).setVenue(venue.getText() );
+                    appointmentList.get(i).setTime(time.getText());
+                    appointmentList.get(i).setDate(date.getText());
+                    break;
+                }
+            }
+            try (FileWriter account = new FileWriter(
+                "src/main/resources/carecircle/assets/database/appointment.txt",
+                false)) {
+            PrintWriter accountWriter = new PrintWriter(account);
+
+            for (int i = 0; i < appointmentList.size(); i++) {
+
+                accountWriter.println(
+                        appointmentList.get(i).getAppointmentID() + "," + appointmentList.get(i).getPatientID() + ","
+                                + appointmentList.get(i).getDoctorID() + ","
+                                + appointmentList.get(i).getDate() + ","
+                                + appointmentList.get(i).getTime() + ","
+                                + appointmentList.get(i).getVenue()
+                                + "," + appointmentList.get(i).getDepartment());
+                               
+
+            }
+            accountWriter.close();
+            App.setRoot("appointmentScreenGeneral");
+
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+
+    }
+    }
+
 
     @FXML
     void goBack(MouseEvent event) throws IOException {
