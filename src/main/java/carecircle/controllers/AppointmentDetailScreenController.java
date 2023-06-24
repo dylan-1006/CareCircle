@@ -74,13 +74,7 @@ public class AppointmentDetailScreenController {
     private Text sideDoctorID;
 
     @FXML
-    private Text sideDoctorName;
-
-    @FXML
     private Text sidePatientID;
-
-    @FXML
-    private Text sidePatientName;
 
     @FXML
     private Text sideVenue;
@@ -118,7 +112,7 @@ public class AppointmentDetailScreenController {
             if (appointmentData.initAppointmentData.getPatientID().equals(patientList.get(i).getPatientID())) {
                 patientName.setText(patientList.get(i).getName());
                 contactNumber.setText(patientList.get(i).getPhoneNo());
-                sidePatientName.setText(patientList.get(i).getName());
+
                 break;
             }
 
@@ -126,7 +120,7 @@ public class AppointmentDetailScreenController {
         for (int i = 0; i < doctorList.size(); i++) {
             if (appointmentData.initAppointmentData.getDoctorID().equals(doctorList.get(i).getDoctorID())) {
                 doctorName.setText(doctorList.get(i).getName());
-                sideDoctorName.setText(doctorList.get(i).getName());
+
                 break;
             }
 
