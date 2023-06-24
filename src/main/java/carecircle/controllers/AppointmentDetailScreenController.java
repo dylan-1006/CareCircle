@@ -139,9 +139,14 @@ public class AppointmentDetailScreenController {
         time.setEditable(true);
         date.setEditable(true);
 
+        venue.setStyle("-fx-control-inner-background: #F6F6F6");
+        time.setStyle("-fx-control-inner-background: #F6F6F6");
+        date.setStyle("-fx-control-inner-background: #F6F6F6");
+
         saveButton.setVisible(true);
         cancelButton.setVisible(true);
         editButton.setVisible(false);
+
     }
 
     @FXML
@@ -182,43 +187,43 @@ public class AppointmentDetailScreenController {
         if (result.get() == ButtonType.OK) {
 
             List<appointment> appointmentList = appointmentData.loadAppointmentDataFromDatabase();
-            
+
             for (int i = 0; i < appointmentList.size(); i++) {
-                if (appointmentData.initAppointmentData.getAppointmentID().equals(appointmentList.get(i).getAppointmentID())) {
-                    appointmentList.get(i).setVenue(venue.getText() );
+                if (appointmentData.initAppointmentData.getAppointmentID()
+                        .equals(appointmentList.get(i).getAppointmentID())) {
+                    appointmentList.get(i).setVenue(venue.getText());
                     appointmentList.get(i).setTime(time.getText());
                     appointmentList.get(i).setDate(date.getText());
                     break;
                 }
             }
             try (FileWriter account = new FileWriter(
-                "src/main/resources/carecircle/assets/database/appointment.txt",
-                false)) {
-            PrintWriter accountWriter = new PrintWriter(account);
+                    "src/main/resources/carecircle/assets/database/appointment.txt",
+                    false)) {
+                PrintWriter accountWriter = new PrintWriter(account);
 
-            for (int i = 0; i < appointmentList.size(); i++) {
+                for (int i = 0; i < appointmentList.size(); i++) {
 
-                accountWriter.println(
-                        appointmentList.get(i).getAppointmentID() + "," + appointmentList.get(i).getPatientID() + ","
-                                + appointmentList.get(i).getDoctorID() + ","
-                                + appointmentList.get(i).getDate() + ","
-                                + appointmentList.get(i).getTime() + ","
-                                + appointmentList.get(i).getVenue()
-                                + "," + appointmentList.get(i).getDepartment());
-                               
+                    accountWriter.println(
+                            appointmentList.get(i).getAppointmentID() + "," + appointmentList.get(i).getPatientID()
+                                    + ","
+                                    + appointmentList.get(i).getDoctorID() + ","
+                                    + appointmentList.get(i).getDate() + ","
+                                    + appointmentList.get(i).getTime() + ","
+                                    + appointmentList.get(i).getVenue()
+                                    + "," + appointmentList.get(i).getDepartment());
 
+                }
+                accountWriter.close();
+                App.setRoot("appointmentScreenGeneral");
+
+            } catch (IOException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
             }
-            accountWriter.close();
-            App.setRoot("appointmentScreenGeneral");
 
-        } catch (IOException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
         }
-
     }
-    }
-
 
     @FXML
     void goBack(MouseEvent event) throws IOException {
