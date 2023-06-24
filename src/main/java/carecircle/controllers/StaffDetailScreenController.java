@@ -279,6 +279,12 @@ public class StaffDetailScreenController {
         dateOfBirth.setEditable(true);
         contactNumber.setEditable(true);
 
+        name.setStyle("-fx-control-inner-background: #F6F6F6");
+        gender.setStyle("-fx-control-inner-background: #F6F6F6");
+        email.setStyle("-fx-control-inner-background: #F6F6F6");
+        dateOfBirth.setStyle("-fx-control-inner-background: #F6F6F6");
+        contactNumber.setStyle("-fx-control-inner-background: #F6F6F6");
+
         saveButton.setVisible(true);
         cancelButton.setVisible(true);
         editButton.setVisible(false);

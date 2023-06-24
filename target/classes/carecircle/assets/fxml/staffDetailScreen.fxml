@@ -122,27 +122,27 @@
                   <Font name="SansSerif Regular" size="18.0" />
                </font>
             </Text>
-            <TextField fx:id="name" editable="false" layoutX="82.0" layoutY="96.0" />
-            <TextField fx:id="dateOfBirth" editable="false" layoutX="316.0" layoutY="96.0" />
-            <TextField fx:id="gender" editable="false" layoutX="554.0" layoutY="96.0" />
+            <TextField fx:id="name" editable="false" layoutX="82.0" layoutY="96.0" style="-fx-background-color: white;" />
+            <TextField fx:id="dateOfBirth" editable="false" layoutX="316.0" layoutY="96.0" style="-fx-background-color: white;" />
+            <TextField fx:id="gender" editable="false" layoutX="554.0" layoutY="96.0" style="-fx-background-color: white;" />
             <Text fill="#999194" layoutX="82.0" layoutY="187.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Type Of Staff">
                <font>
                   <Font name="SansSerif Regular" size="18.0" />
                </font>
             </Text>
-            <TextField fx:id="typeOfStaff" editable="false" layoutX="82.0" layoutY="194.0" />
+            <TextField fx:id="typeOfStaff" editable="false" layoutX="82.0" layoutY="194.0" style="-fx-background-color: white;" />
             <Text fill="#999194" layoutX="316.0" layoutY="186.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Contact No.">
                <font>
                   <Font name="SansSerif Regular" size="18.0" />
                </font>
             </Text>
-            <TextField fx:id="contactNumber" editable="false" layoutX="316.0" layoutY="194.0" />
+            <TextField fx:id="contactNumber" editable="false" layoutX="316.0" layoutY="194.0" style="-fx-background-color: white;" />
             <Text fill="#999194" layoutX="554.0" layoutY="187.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email Address">
                <font>
                   <Font name="SansSeri Regular" size="18.0" />
                </font>
             </Text>
-            <TextField fx:id="email" editable="false" layoutX="554.0" layoutY="194.0" />
+            <TextField fx:id="email" editable="false" layoutX="554.0" layoutY="194.0" style="-fx-background-color: white;" />
             <Button fx:id="saveButton" layoutX="619.0" layoutY="11.0" mnemonicParsing="false" onAction="#saveDetails" style="-fx-background-color: white;" text="Save" textFill="#169bff" visible="false">
                <font>
                   <Font name="SansSerif Regular" size="16.5" />
