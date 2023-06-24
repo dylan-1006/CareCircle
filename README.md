@@ -1,5 +1,4 @@
-# CareCircle - Electronic Medical Record (EMR) Application
-
+# CareCircle - Electronic Medical Record (EMR) 
 CareCircle is a comprehensive Electronic Medical Record (EMR) application designed to digitize and centralize patient and medical staff information. Its primary goal is to streamline medical workflow, improve patient care quality, and enhance the efficiency of healthcare professionals.
 
 ## Key Features
@@ -22,15 +21,17 @@ To access the CareCircle software, users have two options: login or register.
 
 - **Registration**: If you are a new user, you can register by providing the required information and following the registration process within the application.
 
+## Technologies Used
 
+CareCircle is developed using JavaFX, a modern and intuitive Java framework for building user interfaces.
 
 ## Support
 
 If you encounter any issues or have questions related to using CareCircle, please reach out to our support team at rexlim2003@gmail.com. We are here to assist you and ensure a smooth user experience.
-
 
 ## About
 
 CareCircle is developed by a group of students from Taylor's University as a group assignment project. We are dedicated to creating innovative solutions that improve patient care and enhance the efficiency of healthcare professionals.
 
 Thank you for choosing CareCircle!
+
