@@ -23,11 +23,10 @@ To access the CareCircle software, users have two options: login or register.
 - **Registration**: If you are a new user, you can register by providing the required information and following the registration process within the application.
 
 
-For more information on contributing to CareCircle, please refer to the [Contribution Guidelines](link-to-contribution-guidelines).
 
 ## Support
 
-If you encounter any issues or have questions related to using CareCircle, please reach out to our support team at support@carecircle.com. We are here to assist you and ensure a smooth user experience.
+If you encounter any issues or have questions related to using CareCircle, please reach out to our support team at rexlim2003@gmail.com. We are here to assist you and ensure a smooth user experience.
 
 
 ## About
