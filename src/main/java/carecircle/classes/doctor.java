@@ -1,13 +1,13 @@
 package carecircle.classes;
 
 public class doctor implements personInterface {
-    public String doctorID;
-    public String name;
-    public String phoneNo;
-    public String email;
-    public String dateOfBirth;
-    public String gender;
-    public String specialization;
+    private String doctorID;
+    private String name;
+    private String phoneNo;
+    private String email;
+    private String dateOfBirth;
+    private String gender;
+    private String specialization;
 
     public doctor(String doctorID, String name, String phoneNo, String email, String dateOfBirth, String gender,
             String specialization) {

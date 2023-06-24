@@ -1,12 +1,12 @@
 package carecircle.classes;
 
 public class nurse implements personInterface{
-    public String nurseID;
-    public String name;
-    public String phoneNo;
-    public String email;
-    public String dateOfBirth;
-    public String gender;
+    private String nurseID;
+    private String name;
+    private String phoneNo;
+    private String email;
+    private String dateOfBirth;
+    private String gender;
 
     public nurse(String nurseID, String name, String phoneNo, String email, String dateOfBirth, String gender) {
         this.nurseID = nurseID;

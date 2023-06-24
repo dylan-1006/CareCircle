@@ -3,9 +3,9 @@ package carecircle.classes;
 import java.util.Date;
 
 public class urineAnalysis extends analysis {
-    double ureaContent;
-    double urinePH;
-    double sugarContent;
+    private double ureaContent;
+    private double urinePH;
+    private double sugarContent;
 
     public urineAnalysis(String analysisID, String date, String description, String patientID, String doctorID,
             double ureaContent, double urinePH, double sugarContent)

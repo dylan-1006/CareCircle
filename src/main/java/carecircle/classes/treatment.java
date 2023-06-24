@@ -4,7 +4,7 @@ public class treatment {
     private String treatmentID;
     private String patientID;
     private String doctorID;
-    public String date;
+    private String date;
     private String description;
 
     public treatment(String treatmentID, String doctorID, String patientID, String date, String description) {

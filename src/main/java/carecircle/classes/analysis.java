@@ -1,22 +1,22 @@
 package carecircle.classes;
-public class analysis {
-    String analysisID;
-    String doctorID;
-    String patientID;
-    String date;
-    String description;
-    
 
-    public analysis(String analysisID, String doctorID, String patientID, String date,String description ){
-        this.analysisID=analysisID;
-        this.patientID=patientID;
-        this.doctorID=doctorID;
-        this.date=date;
-        this.description=description;
-        
+public class analysis {
+    private String analysisID;
+    private String doctorID;
+    private String patientID;
+    private String date;
+    private String description;
+
+    public analysis(String analysisID, String doctorID, String patientID, String date, String description) {
+        this.analysisID = analysisID;
+        this.patientID = patientID;
+        this.doctorID = doctorID;
+        this.date = date;
+        this.description = description;
+
     }
 
-     public void setAnalysisID (String analysisID) {
+    public void setAnalysisID(String analysisID) {
         this.analysisID = analysisID;
     }
 
@@ -31,7 +31,7 @@ public class analysis {
     public String getDoctorID() {
         return doctorID;
     }
-    
+
     public void setPatientID(String patientID) {
         this.patientID = patientID;
     }

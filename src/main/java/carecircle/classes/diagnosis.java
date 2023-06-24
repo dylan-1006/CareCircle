@@ -1,11 +1,11 @@
 package carecircle.classes;
 
 public class diagnosis {
-    public String diagnosisID;
-    public String doctorID;
-    public String patientID;
-    public String date;
-    public String description;
+    private String diagnosisID;
+    private String doctorID;
+    private String patientID;
+    private String date;
+    private String description;
 
     public diagnosis(String diagnosisID, String doctorID, String patientID, String date, String description) {
         this.diagnosisID = diagnosisID;
