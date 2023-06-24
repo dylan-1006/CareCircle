@@ -63,7 +63,7 @@ public class AddMedicalHistoryScreenController {
         patientNameBox.setItems(fetchAvailablePatientName());
         diagnosisID.setItems(fetchAvailableDiagnosisID());
         treatmentID.setItems(fetchAvailableTreatmentID());
-       // procedureID.setItems(fetchAvailableProcedureID());
+        procedureID.setItems(fetchAvailableProcedureID());
     }
 
     @FXML
@@ -186,7 +186,7 @@ public class AddMedicalHistoryScreenController {
         List<procedure> procedureList = procedureData.loadProcedureDataFromDatabase();
         ObservableList<String> procedureIdOptions = FXCollections.observableArrayList("Choose procedure ID");
 
-        for (int i = 0; i < procedureIdOptions.size(); i++) {
+        for (int i = 0; i < procedureList.size(); i++) {
 
             procedureIdOptions.add(procedureList.get(i).getProcedureId());
 
