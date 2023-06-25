@@ -18,4 +18,10 @@ public class bloodAnalysis extends analysis {
         this.wbcCount = wbcCount;
 
     }
+
+    public String getDescription() {
+
+        return "Blood Analysis: " + super.getDescription();
+    }
+
 }

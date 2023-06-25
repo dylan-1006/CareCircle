@@ -17,4 +17,9 @@ public class urineAnalysis extends analysis {
         this.sugarContent = sugarContent;
 
     }
+
+    public String getDescription() {
+
+        return "Urine Analysis: " + super.getDescription();
+    }
 }
