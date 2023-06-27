@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1200.0" style="-fx-background-radius: 20;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="carecircle.controllers.StaffDetailScreenController">
+   <children>
+      <Circle layoutX="934.0" layoutY="113.0" radius="100.0" stroke="WHITE" strokeType="INSIDE">
+         <fill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.30980393290519714" green="0.7019608020782471" blue="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.598243771132193">
+                     <color>
+                        <Color red="0.3100000023841858" green="0.7124999761581421" blue="1.0" opacity="0.5592705011367798" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.3100000023841858" green="0.7124999761581421" blue="1.0" opacity="0.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Circle>
+      <Text layoutX="107.0" layoutY="64.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Staff">
+         <font>
+            <Font name="SansSerif Bold" size="36.0" />
+         </font>
+      </Text>
+      <Text layoutX="193.0" layoutY="63.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #4FB3FF;" text="Details">
+         <font>
+            <Font name="SansSerif Bold" size="36.0" />
+         </font>
+      </Text>
+      <Pane layoutX="107.0" layoutY="124.0" prefHeight="437.0" prefWidth="200.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 10;">
+         <children>
+            <Text fill="#999194" layoutX="14.0" layoutY="167.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Staff ID" wrappingWidth="104.06639099121094">
+               <font>
+                  <Font name="SansSerif Regular" size="18.0" />
+               </font>
+            </Text>
+            <Text fill="#999194" layoutX="14.0" layoutY="201.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gender" wrappingWidth="104.06639099121094">
+               <font>
+                  <Font name="SansSerif Regular" size="18.0" />
+               </font>
+            </Text>
+            <Text fill="#999194" layoutX="14.0" layoutY="238.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Age" wrappingWidth="104.06639099121094">
+               <font>
+                  <Font name="SansSerif Regular" size="18.0" />
+               </font>
+            </Text>
+            <Text fx:id="deleteStaffButton" fill="RED" layoutX="57.0" layoutY="400.0" onMouseClicked="#deleteThisStaff" strokeType="OUTSIDE" strokeWidth="0.0" text="Delete Staff">
+               <font>
+                  <Font name="SansSerif Regular" size="16.5" />
+               </font>
+            </Text>
+            <Text fx:id="sideStaffID" fill="#169bff" layoutX="120.0" layoutY="162.0" strokeType="OUTSIDE" strokeWidth="0.0" text="P193486" wrappingWidth="79.99804687500011">
+               <font>
+                  <Font name="SansSerif Regular" size="16.0" />
+               </font>
+            </Text>
+            <Text fx:id="sideGender" fill="#169bff" layoutX="120.0" layoutY="201.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Male" wrappingWidth="68.06639099121094">
+               <font>
+                  <Font name="SansSerif Regular" size="16.0" />
+               </font>
+            </Text>
+            <Text fx:id="sideAge" fill="#169bff" layoutX="120.0" layoutY="238.0" strokeType="OUTSIDE" strokeWidth="0.0" text="29" wrappingWidth="104.06639099121094">
+               <font>
+                  <Font name="SansSerif Regular" size="16.0" />
+               </font>
+            </Text>
+            <Text fx:id="sideName" fill="#169bff" layoutY="61.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: black; -fx-font-weight: BOLD;" text="James Baker" textAlignment="CENTER" wrappingWidth="199.99999999999977">
+               <font>
+                  <Font name="SansSerif Bold" size="24.0" />
+               </font>
+            </Text>
+         </children>
+      </Pane>
+      <Pane layoutX="338.0" layoutY="427.0" prefHeight="134.0" prefWidth="793.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 10;">
+         <children>
+            <Text layoutX="14.0" layoutY="31.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #4FB3FF;" text="NOTES">
+               <font>
+                  <Font name="SansSerif Regular" size="18.0" />
+               </font>
+            </Text>
+         </children>
+      </Pane>
+      <Pane layoutX="338.0" layoutY="124.0" prefHeight="285.0" prefWidth="793.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 10;">
+         <children>
+            <Text layoutX="14.0" layoutY="34.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #4FB3FF;" text="Personal Details">
+               <font>
+                  <Font name="SansSerif Regular" size="18.0" />
+               </font>
+            </Text>
+            <Text fx:id="editButton" layoutX="747.0" layoutY="33.0" onMouseClicked="#editDetails" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #000000;" text="Edit">
+               <font>
+                  <Font name="SansSerif Regular" size="18.0" />
+               </font>
+            </Text>
+            <Text fill="#999194" layoutX="82.0" layoutY="79.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name">
+               <font>
+                  <Font name="SansSerif Regular" size="18.0" />
+               </font>
+            </Text>
+            <Text fill="#999194" layoutX="316.0" layoutY="79.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date of Birth">
+               <font>
+                  <Font name="SansSerif Regular" size="18.0" />
+               </font>
+            </Text>
+            <Text fill="#999194" layoutX="554.0" layoutY="78.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gender">
+               <font>
+                  <Font name="SansSerif Regular" size="18.0" />
+               </font>
+            </Text>
+            <TextField fx:id="name" editable="false" layoutX="82.0" layoutY="96.0" style="-fx-background-color: white;" />
+            <TextField fx:id="dateOfBirth" editable="false" layoutX="316.0" layoutY="96.0" style="-fx-background-color: white;" />
+            <TextField fx:id="gender" editable="false" layoutX="554.0" layoutY="96.0" style="-fx-background-color: white;" />
+            <Text fill="#999194" layoutX="82.0" layoutY="187.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Type Of Staff">
+               <font>
+                  <Font name="SansSerif Regular" size="18.0" />
+               </font>
+            </Text>
+            <TextField fx:id="typeOfStaff" editable="false" layoutX="82.0" layoutY="194.0" style="-fx-background-color: white;" />
+            <Text fill="#999194" layoutX="316.0" layoutY="186.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Contact No.">
+               <font>
+                  <Font name="SansSerif Regular" size="18.0" />
+               </font>
+            </Text>
+            <TextField fx:id="contactNumber" editable="false" layoutX="316.0" layoutY="194.0" style="-fx-background-color: white;" />
+            <Text fill="#999194" layoutX="554.0" layoutY="187.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email Address">
+               <font>
+                  <Font name="SansSeri Regular" size="18.0" />
+               </font>
+            </Text>
+            <TextField fx:id="email" editable="false" layoutX="554.0" layoutY="194.0" style="-fx-background-color: white;" />
+            <Button fx:id="saveButton" layoutX="619.0" layoutY="11.0" mnemonicParsing="false" onAction="#saveDetails" style="-fx-background-color: white;" text="Save" textFill="#169bff" visible="false">
+               <font>
+                  <Font name="SansSerif Regular" size="16.5" />
+               </font>
+            </Button>
+            <Button fx:id="cancelButton" layoutX="669.0" layoutY="11.0" mnemonicParsing="false" onAction="#cancelEdit" style="-fx-background-color: white;" text="Cancel" textFill="RED" visible="false">
+               <font>
+                  <Font name="SansSerif Regular" size="16.5" />
+               </font>
+            </Button>
+         </children>
+      </Pane>
+      <ImageView fx:id="backButton" fitHeight="20.0" fitWidth="24.0" layoutX="48.0" layoutY="49.0" onMouseClicked="#goBack" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/backButton.png" />
+         </image>
+      </ImageView>
+   </children>
+</Pane>

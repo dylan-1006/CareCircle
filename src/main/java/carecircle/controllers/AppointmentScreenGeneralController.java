@@ -64,6 +64,8 @@ public class AppointmentScreenGeneralController {
         ObservableList<appointmentTableModel> appointmentDataList = appointmentTableModel
                 .convertAppointmentDataToAppointmentDataModel();
 
+
+                //loading the table
         TableColumn appointmentIDColumn = new TableColumn("Appointment ID");
         TableColumn patientIDColumn = new TableColumn<>("Patient ID");
         TableColumn doctorIDColumn = new TableColumn("Doctor ID");
