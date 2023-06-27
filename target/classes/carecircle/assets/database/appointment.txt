@@ -1,0 +1,15 @@
+A007,P12345,D3212,2023-06-20,15:00,Main Hospital,Endocrinology
+A008,P67890,D4343,2023-06-21,16:00,Specialty Clinic,Cardiology
+A011,P24680,D4321,2023-06-24,19:00,Main Hospital,Dermatology
+A012,P54321,D7654,2023-06-25,20:00,Specialty Clinic,Ophthalmology
+A013,P97531,D4269,2023-06-26,21:00,Main Hospital,Gastroen
+A014,P86420,D9850,2023-06-23,12:30,Main Hospital,Dermatology
+A015,P35791,D9850,2023-06-24,12:30,Speciality Clinic,Orthopedics
+A016,P68243,D7654,2023-06-30,12:30,Main Hospital,Dermatology
+A017,P42681,D7654,2023-06-23,14:00,Speciality Clinic,Cardiology
+A018,P12345,D3212,2023-07-01,10:00,Main Hospital,Cardiology
+A019,P67890,D4343,2023-07-02,11:00,Specialty Clinic,Dermatology
+A020,P24680,D4321,2023-07-03,12:00,Main Hospital,Orthopedics
+A021,P54321,D7654,2023-07-04,13:00,Main Hospital,Ophthalmology
+A022,P97531,D4269,2023-07-05,14:00,Specialty Clinic,Pediatrics
+A023,P86420,D9850,2023-07-06,15:00,Main Hospital,Neurology

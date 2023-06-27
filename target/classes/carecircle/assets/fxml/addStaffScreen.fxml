@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1200.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="carecircle.controllers.AddStaffScreenController">
+   <children>
+      <Text layoutX="224.0" layoutY="115.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CreateNew">
+         <font>
+            <Font name="SansSerif Bold" size="36.0" />
+         </font>
+      </Text>
+      <Text layoutX="416.0" layoutY="115.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #4FB3FF;" text="Staff">
+         <font>
+            <Font name="SansSerif Bold" size="36.0" />
+         </font>
+      </Text>
+      <Text layoutX="224.0" layoutY="139.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #A6A6A6;" text="Fill in all required sections below to add a new staff">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Text>
+      <Circle layoutX="944.0" layoutY="123.0" radius="100.0" stroke="WHITE" strokeType="INSIDE">
+         <fill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.30980393290519714" green="0.7019608020782471" blue="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.598243771132193">
+                     <color>
+                        <Color red="0.3100000023841858" green="0.7124999761581421" blue="1.0" opacity="0.5592705011367798" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.3100000023841858" green="0.7124999761581421" blue="1.0" opacity="0.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Circle>
+      <TextField fx:id="name" layoutX="239.0" layoutY="209.0" />
+      <Text layoutX="235.0" layoutY="192.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #4FB3FF;" text="Full Name">
+         <font>
+            <Font name="SansSerif Regular" size="18.0" />
+         </font>
+      </Text>
+      <Text layoutX="699.0" layoutY="192.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #4FB3FF;" text="Identification Card Number">
+         <font>
+            <Font name="SansSerif Regular" size="18.0" />
+         </font>
+      </Text>
+      <TextField fx:id="icNumber" layoutX="697.0" layoutY="211.0" />
+      <Text layoutX="241.0" layoutY="304.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #4FB3FF;" text="Date of Birth">
+         <font>
+            <Font name="SansSerif Regular" size="18.0" />
+         </font>
+      </Text>
+      <DatePicker fx:id="date" layoutX="239.0" layoutY="323.0" prefHeight="23.0" prefWidth="159.0" />
+      <Text layoutX="424.0" layoutY="304.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #4FB3FF;" text="Gender">
+         <font>
+            <Font name="SansSerif Regular" size="18.0" />
+         </font>
+      </Text>
+      <ComboBox fx:id="gender" layoutX="422.0" layoutY="323.0" prefWidth="150.0" promptText="Choose Gender" />
+      <Text layoutX="699.0" layoutY="305.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #4FB3FF;" text="Contact Number">
+         <font>
+            <Font name="SansSerif Regular" size="18.0" />
+         </font>
+      </Text>
+      <TextField fx:id="contactNumber" layoutX="698.0" layoutY="326.0" />
+      <Text layoutX="241.0" layoutY="433.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #4FB3FF;" text="Email Address">
+         <font>
+            <Font name="SansSerif Regular" size="18.0" />
+         </font>
+      </Text>
+      <TextField fx:id="email" layoutX="239.0" layoutY="440.0" prefHeight="27.0" prefWidth="321.0" />
+      <Text layoutX="699.0" layoutY="433.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #4FB3FF;" text="Type of Staff">
+         <font>
+            <Font name="SansSerif Regular" size="18.0" />
+         </font>
+      </Text>
+      <Button layoutX="559.0" layoutY="514.0" mnemonicParsing="false" onAction="#createNewStaff" prefHeight="51.0" prefWidth="177.0" style="-fx-background-radius: 15; -fx-background-color: #4FB3FF;" text="Continue" textFill="WHITE">
+         <font>
+            <Font name="SansSerif Bold" size="18.0" />
+         </font>
+      </Button>
+          <Text fx:id="backToStaffButton" fill="#4fb3ff" layoutX="33.0" layoutY="47.0" onMouseClicked="#backToStaffScreen" strokeType="OUTSIDE" strokeWidth="0.0" text="＜  Staff" wrappingWidth="100.0458984375">
+         <font>
+            <Font name="SansSerif Regular" size="16.0" />
+         </font>
+      </Text>
+      <ComboBox fx:id="typeOfStaff" layoutX="702.0" layoutY="441.0" prefWidth="150.0" promptText="Choose Staff" />
+   </children>
+</Pane>
