@@ -42,6 +42,7 @@ public class LoginScreenController {
 
         try {
             boolean found = false;
+            //below is reading the user file
             FileReader info = new FileReader("src/main/resources/carecircle/assets/database/user.txt");
             BufferedReader infoR = new BufferedReader(info);
             String line = "";

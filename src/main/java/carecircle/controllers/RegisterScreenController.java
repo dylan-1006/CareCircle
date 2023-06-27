@@ -44,7 +44,7 @@ public class RegisterScreenController {
                 Optional<String> input = nameInput.showAndWait();
                 String name = input.get();
                 user newUser = new user(name, username.getText(), password.getText());
-
+                //below is writing the new user data into the file
                 FileWriter account = new FileWriter("src/main/resources/carecircle/assets/database/user.txt", true);
 
                 PrintWriter accountWriter = new PrintWriter(account);

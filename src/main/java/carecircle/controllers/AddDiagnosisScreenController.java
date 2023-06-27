@@ -46,11 +46,18 @@ public class AddDiagnosisScreenController {
         @FXML
         private ComboBox<String> patientNameBox;
 
+
+        //initialize
+
         @FXML
         public void initialize() {
                 patientNameBox.setItems(fetchAvailablePatientName());
                 doctorID.setItems(fetchAvailableDoctorId());
         }
+
+
+        //addNewDiagnosis
+
 
         @FXML
         void addNewDiagnosis(ActionEvent event) {
@@ -93,6 +100,8 @@ public class AddDiagnosisScreenController {
                                                 patientId,
                                                 date.getValue().toString(),
                                                 description.getText());
+                                                
+                                //below is writing into the file
 
                                 FileWriter account = new FileWriter(
                                                 "src/main/resources/carecircle/assets/database/diagnosis.txt", true);

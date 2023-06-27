@@ -93,7 +93,7 @@ public class EditTreatmentScreen {
                     break;
                 }
             }
-
+            //below is writing the updated data into the file
             try (FileWriter account = new FileWriter(
                     "src/main/resources/carecircle/assets/database/treatment.txt",
                     false)) {

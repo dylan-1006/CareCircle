@@ -307,7 +307,7 @@ public class PatientGeneralDetailsScreenController {
             }
 
             String patientId = patientData.initPatientData.getPatientID();
-
+            //below is writing into the file
             try (FileWriter account = new FileWriter(
                     "src/main/resources/carecircle/assets/database/patient.txt",
                     false)) {

@@ -53,18 +53,22 @@ public class AddStaffScreenController {
     @FXML
     private Text backToStaffButton;
 
+    // initialize
     @FXML
     void initialize() {
         gender.setItems(genderOptions);
         typeOfStaff.setItems(staffOptions);
     }
 
+    // go back to previous screen
     @FXML
     void backToStaffScreen(MouseEvent event) throws IOException {
 
         App.setRoot("medicalStaffScreenGeneral");
 
     }
+
+    // addNewStaff
 
     @FXML
     void createNewStaff(ActionEvent event) {
@@ -79,6 +83,7 @@ public class AddStaffScreenController {
                 doctor newDoctor = new doctor(newDoctorIdFormatted, name.getText(), contactNumber.getText(),
                         email.getText(), date.getValue().toString(),
                         gender.getValue().toString(), " ");
+                // below is writing into the file
                 FileWriter account = new FileWriter(
                         "src/main/resources/carecircle/assets/database/doctor.txt",
                         true);

@@ -191,9 +191,11 @@ public class AppointmentDetailScreenController {
                     break;
                 }
             }
-            try (FileWriter account = new FileWriter(
-                    "src/main/resources/carecircle/assets/database/appointment.txt",
-                    false)) {
+            try (
+                    // below is writing into the file
+                    FileWriter account = new FileWriter(
+                            "src/main/resources/carecircle/assets/database/appointment.txt",
+                            false)) {
                 PrintWriter accountWriter = new PrintWriter(account);
 
                 for (int i = 0; i < appointmentList.size(); i++) {

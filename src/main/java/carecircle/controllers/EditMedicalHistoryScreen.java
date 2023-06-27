@@ -100,7 +100,7 @@ public class EditMedicalHistoryScreen {
                 }
 
             }
-
+            //below is writing updated data into the file
             try (FileWriter account = new FileWriter(
                     "src/main/resources/carecircle/assets/database/medicalHistory.txt",
                     false)) {

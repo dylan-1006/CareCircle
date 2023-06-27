@@ -15,6 +15,8 @@ public class diagnosis {
         this.description = description;
     }
 
+    //belows are setters and getters
+
     public void setDiagnosisID(String diagnosisID) {
         this.diagnosisID = diagnosisID;
     }

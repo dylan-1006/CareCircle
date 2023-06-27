@@ -20,6 +20,8 @@ public class doctor implements personInterface {
                 this.gender=gender;
                 this.specialization=specialization;
     }
+
+    //belows are setters and getters
     
         public String getDoctorID() {
             return doctorID;

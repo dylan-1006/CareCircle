@@ -98,7 +98,6 @@ public class HomeScreenController {
 
         homeScreenPatientTable.getColumns().addAll(patientIdColumn, patientNameColumn, icColumn, phoneNoColumn,
                 dateOfBirthColumn, detailsColumn);
-
         patientIdColumn.setCellValueFactory(new PropertyValueFactory<>("patientId"));
         patientNameColumn.setCellValueFactory(new PropertyValueFactory<>("patientName"));
         icColumn.setCellValueFactory(new PropertyValueFactory<>("ic"));

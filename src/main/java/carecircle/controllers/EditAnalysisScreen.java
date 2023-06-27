@@ -98,7 +98,7 @@ public class EditAnalysisScreen {
                     break;
                 }
             }
-
+            //below is writing the updated and edited data into the file
             try (FileWriter account = new FileWriter(
                     "src/main/resources/carecircle/assets/database/analysis.txt",
                     false)) {

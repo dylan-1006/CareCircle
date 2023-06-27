@@ -17,6 +17,7 @@ public class nurse implements personInterface{
         this.gender = gender;
 
     }
+    //belows are setters and getters
 
     public String getNurseID() {
         return nurseID;

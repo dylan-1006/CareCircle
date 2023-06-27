@@ -52,6 +52,8 @@ public class AddAnalysisScreenController {
         patientNameBox.setItems(fetchAvailablePatientName());
     }
 
+
+    //addNewAnalysis
     @FXML
     void addNewAnalysis(ActionEvent event) {
         if (patientNameBox.getSelectionModel().isEmpty() ||
@@ -94,6 +96,8 @@ public class AddAnalysisScreenController {
                         date.getValue().toString(),
                         description.getText());
 
+
+                        //below is writing into the file
                 FileWriter account = new FileWriter(
                         "src/main/resources/carecircle/assets/database/analysis.txt", true);
 

@@ -18,6 +18,8 @@ public class urineAnalysis extends analysis {
 
     }
 
+    //belows are setters and getters
+
     public String getDescription() {
 
         return "Urine Analysis: " + super.getDescription();

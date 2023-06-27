@@ -16,6 +16,8 @@ public class procedure {
         this.date = date;
     }
 
+    //belows are setters and getters
+
     public String getProcedureId() {
         return procedureId;
     }

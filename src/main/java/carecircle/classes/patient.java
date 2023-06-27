@@ -29,6 +29,8 @@ public class patient implements personInterface{
         this.bloodType = bloodType;
     }
 
+    //belows are setters and getters
+
     public String getPatientID() {
         return patientID;
     }

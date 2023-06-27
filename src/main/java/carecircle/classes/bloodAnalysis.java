@@ -19,6 +19,8 @@ public class bloodAnalysis extends analysis {
 
     }
 
+    //belows are setters and getters
+
     public String getDescription() {
 
         return "Blood Analysis: " + super.getDescription();

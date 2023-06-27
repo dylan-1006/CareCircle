@@ -116,7 +116,7 @@ public class AddPatientScreenController {
                                                 gender.getValue().toString(), " ",
                                                 Double.parseDouble(height.getText()),
                                                 Double.parseDouble(weight.getText()), bloodType.getValue().toString());
-
+                                // below is writing into the file
                                 FileWriter account = new FileWriter(
                                                 "src/main/resources/carecircle/assets/database/patient.txt",
                                                 true);

@@ -103,7 +103,7 @@ public class EditDiagnosisScreen {
                 }
 
             }
-
+            //below is writing the updated and edited data into the file
             try (FileWriter account = new FileWriter(
                     "src/main/resources/carecircle/assets/database/diagnosis.txt",
                     false)) {

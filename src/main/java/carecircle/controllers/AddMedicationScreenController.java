@@ -117,7 +117,7 @@ public class AddMedicationScreenController {
                         medicationName.getText(),
                         Integer.parseInt(quantity.getText()),
                         Double.parseDouble(dosage.getText()));
-
+                //below is writing into the file
                 FileWriter account = new FileWriter(
                         "src/main/resources/carecircle/assets/database/medicine.txt", true);
 

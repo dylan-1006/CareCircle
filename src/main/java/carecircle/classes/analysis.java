@@ -16,6 +16,8 @@ public class analysis {
 
     }
 
+    //belows are setters and getters
+
     public void setAnalysisID(String analysisID) {
         this.analysisID = analysisID;
     }

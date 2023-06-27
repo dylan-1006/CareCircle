@@ -80,6 +80,8 @@ public class AddAppointmentScreenController {
         private ComboBox<String> appointmentTime;
 
         @FXML
+
+        //setItems
         public void initialize() {
 
                 doctorID.setItems(fetchAvailableDoctorId());
@@ -88,6 +90,8 @@ public class AddAppointmentScreenController {
                 department.setItems(departmentOptions);
                 patientNameBox.setItems(fetchAvailablePatientName());
         }
+
+        //addNewAppointment
 
         @FXML
         void addAppointment(ActionEvent event) {
@@ -134,6 +138,7 @@ public class AddAppointmentScreenController {
                                                 venue.getSelectionModel().getSelectedItem().toString(),
                                                 appointmentTime.getSelectionModel().getSelectedItem(),
                                                 department.getSelectionModel().getSelectedItem().toString());
+                                //below is writing into the file
 
                                 FileWriter account = new FileWriter(
                                                 "src/main/resources/carecircle/assets/database/appointment.txt", true);

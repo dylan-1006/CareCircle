@@ -112,7 +112,7 @@ public class AddMedicalHistoryScreenController {
                         allergies.getText(),
                         pastMedication.getText(),
                         description.getText());
-
+                //below is writing into the file
                 FileWriter account = new FileWriter(
                         "src/main/resources/carecircle/assets/database/medicalHistory.txt", true);
 

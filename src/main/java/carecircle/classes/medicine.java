@@ -18,6 +18,8 @@ public class medicine {
         this.dosage = dosage;
     }
 
+    //belows are setters and getters
+    
     public String getMedicineID() {
         return medicineID;
     }

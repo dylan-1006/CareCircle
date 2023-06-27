@@ -93,7 +93,7 @@ public class AddTreatmentScreenController {
                                                 patientId,
                                                 date.getValue().toString(),
                                                 description.getText());
-
+                                // below is writing into the file
                                 FileWriter account = new FileWriter(
                                                 "src/main/resources/carecircle/assets/database/treatment.txt", true);
 

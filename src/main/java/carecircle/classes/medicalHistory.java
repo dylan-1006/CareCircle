@@ -24,6 +24,8 @@ public class medicalHistory {
         this.medicalHistoryId = medicalHistoryId;
     }
 
+    //belows are setters and getters
+
     public String getMedicalHistoryId() {
         return medicalHistoryId;
     }

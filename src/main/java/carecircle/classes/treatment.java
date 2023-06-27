@@ -15,6 +15,8 @@ public class treatment {
         this.description = description;
     }
 
+
+    //belows are setters and getters
     public void setTreatmentID(String treatmentID) {
         this.treatmentID = treatmentID;
     }

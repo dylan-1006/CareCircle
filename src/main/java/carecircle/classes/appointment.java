@@ -20,6 +20,8 @@ public class appointment {
         this.department = department;
     }
 
+    //belows are setters and getters
+
     public void setAppointmentID(String appointmentID) {
         this.appointmentID = appointmentID;
     }
