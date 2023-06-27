@@ -187,8 +187,6 @@ public class StaffDetailScreenController {
 
                 }
 
-                // String patientId = doctorD.initPatientData.getPatientID();
-
                 try (FileWriter account = new FileWriter(
                         "src/main/resources/carecircle/assets/database/doctor.txt",
                         false)) {

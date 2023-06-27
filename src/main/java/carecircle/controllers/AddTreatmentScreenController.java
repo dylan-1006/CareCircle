@@ -48,12 +48,15 @@ public class AddTreatmentScreenController {
 
         @FXML
         public void initialize() {
+                // Set combox box selection items and patient name
                 doctorID.setItems(fetchAvailableDoctorId());
                 patientNameBox.setItems(fetchAvailablePatientName());
         }
 
         @FXML
         void addNewTreatment(ActionEvent event) {
+
+                // Make sure all required details are filled in
                 if (patientNameBox.getSelectionModel().isEmpty() ||
                                 doctorID.getSelectionModel().isEmpty() || date.getValue().toString().equals("")
                                 || description.getText().equals("event")) {
@@ -66,6 +69,7 @@ public class AddTreatmentScreenController {
                 } else {
                         try {
                                 List<treatment> treatmentList = treatmentData.loadTreatmentDataFromDatabase();
+                                // Generate new id based on last id in the database
                                 int newTreatmentID = Integer
                                                 .parseInt(treatmentList.get(treatmentList.size() - 1)
                                                                 .getTreatmentID()
@@ -78,7 +82,7 @@ public class AddTreatmentScreenController {
 
                                 String patientId = " ";
                                 for (int i = 0; i < patientList.size(); i++) {
-
+                                        // Get patient id based on patient name
                                         if (patientList.get(i).getName().equals(patientNameBox.getSelectionModel()
                                                         .getSelectedItem().toString())) {
 
@@ -87,7 +91,7 @@ public class AddTreatmentScreenController {
                                         }
 
                                 }
-
+                                // Get filled in details
                                 treatment newTreatment = new treatment(newTreatmentIdFormatted,
                                                 doctorID.getSelectionModel().getSelectedItem().toString(),
                                                 patientId,
@@ -98,6 +102,7 @@ public class AddTreatmentScreenController {
                                                 "src/main/resources/carecircle/assets/database/treatment.txt", true);
 
                                 PrintWriter accountWriter = new PrintWriter(account);
+                                // Append new data to the .txt file
                                 accountWriter.println(
                                                 newTreatmentIdFormatted + "," + newTreatment.getDoctorID() + ","
                                                                 + newTreatment.getPatientID() + ","
@@ -120,7 +125,7 @@ public class AddTreatmentScreenController {
         }
 
         ObservableList<String> fetchAvailableDoctorId() {
-
+                // Get data from database
                 List<doctor> doctorList = doctorData.loadDoctorDataFromDatabase();
                 ObservableList<String> doctorIdOptions = FXCollections.observableArrayList("Choose doctor ID");
 
@@ -134,7 +139,7 @@ public class AddTreatmentScreenController {
         }
 
         ObservableList<String> fetchAvailablePatientName() {
-
+                // Get data from database
                 List<patient> patientList = patientData.loadPatientDataFromDatabase();
                 ObservableList<String> patientIdOptions = FXCollections.observableArrayList("Choose patient name");
 
@@ -149,6 +154,7 @@ public class AddTreatmentScreenController {
 
         @FXML
         void backToTreamentScreen(MouseEvent event) throws IOException {
+                // Return to previous screen
                 App.setRoot("patientDetailsScreenTreatment");
         }
 }

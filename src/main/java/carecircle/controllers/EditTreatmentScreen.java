@@ -44,6 +44,7 @@ public class EditTreatmentScreen {
 
     void setDiagnosisDetails() {
 
+        // Setting necessary details
         treatmentId.setText(treatmentData.initTreatment.getTreatmentID());
         doctorId.setText(treatmentData.initTreatment.getDoctorID());
         date.setPromptText(treatmentData.initTreatment.getDate());
@@ -77,6 +78,7 @@ public class EditTreatmentScreen {
 
                     String editedDate;
 
+                    // Checking if date was changed
                     if (date.getValue() == null) {
                         editedDate = date.getPromptText();
                     } else {

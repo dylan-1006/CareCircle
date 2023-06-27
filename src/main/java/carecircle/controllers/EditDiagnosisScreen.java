@@ -52,6 +52,7 @@ public class EditDiagnosisScreen {
 
     void setDiagnosisDetails() {
 
+        // Setting necessary details
         patientName.setText(patientData.initPatientData.getName());
         diagnosisID.setText(diagnosisData.initDiagnosis.getDiagnosisID());
         date.setPromptText(diagnosisData.initDiagnosis.getDate());
@@ -86,6 +87,7 @@ public class EditDiagnosisScreen {
 
                     String editedDate;
 
+                    // Check if date is edited
                     if (date.getValue() == null) {
                         editedDate = date.getPromptText();
                     } else {

@@ -36,6 +36,7 @@ public class staffTableModel {
 
     public static ObservableList<staffTableModel> convertStaffDataToStaffDataModel() {
 
+        // Load both doctor and nurse data from database
         List<doctor> doctorList = doctorData.loadDoctorDataFromDatabase();
         List<nurse> nurseList = nurseData.loadNurseDataFromDatabase();
         ObservableList<staffTableModel> observableStaffList = FXCollections.observableArrayList();
@@ -54,6 +55,7 @@ public class staffTableModel {
                     gender,
                     department);
 
+            // Add all the doctor data that is converted into staffTableModel into the list
             observableStaffList.add(staffDoctorTableModel);
 
         }
@@ -72,6 +74,7 @@ public class staffTableModel {
                     gender,
                     department);
 
+            // Add all the nurse data that is converted into staffTableModel into the list after doctor data
             observableStaffList.add(staffNurseTableModel);
 
         }
@@ -80,6 +83,7 @@ public class staffTableModel {
 
     }
 
+    // The following are getters and setters that get n set the data of this class
     public String getStaffID() {
         return staffID.get();
     }

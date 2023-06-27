@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.Optional;
 
 import carecircle.App;
-import carecircle.classes.patient;
+
 import carecircle.classes.user;
 import carecircle.data.userData;
 import javafx.fxml.FXML;
@@ -78,6 +78,8 @@ public class SettingsController {
     private TextField userPassword;
 
     public void initialize() {
+
+        // Set user details
         name.setText(userData.initUserData.getName());
         userName.setText(userData.initUserData.getUsername());
         userPassword.setText(userData.initUserData.getPassword());
@@ -103,6 +105,7 @@ public class SettingsController {
 
             for (int i = 0; i < userList.size(); i++) {
 
+                // Find user from database
                 if (userList.get(i).getUsername().equals(userData.initUserData.getUsername())) {
 
                     // Setting the updated details
@@ -120,7 +123,7 @@ public class SettingsController {
                 PrintWriter accountWriter = new PrintWriter(account);
 
                 for (int i = 0; i < userList.size(); i++) {
-
+                    // Writing updated user details into .txt file
                     accountWriter.println(
                             userList.get(i).getName() + "," + userList.get(i).getUsername() + ","
                                     + userList.get(i).getPassword());
@@ -156,6 +159,7 @@ public class SettingsController {
 
         if (result.get() == ButtonType.OK) {
 
+            // Delete current user
             userData.deleteUser(userData.initUserData.getUsername());
             App.setRoot("loginScreen");
         } else {

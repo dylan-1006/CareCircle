@@ -25,6 +25,8 @@ public class procedureData {
         ) {
             String newLine;
             while ((newLine = reader.readLine()) != null) {
+
+                // Reading data from .txt file
                 String[] procedureData = newLine.split(",");
                 String procedureId = procedureData[0].trim();
                 String doctorId = procedureData[1].trim();
@@ -33,6 +35,8 @@ public class procedureData {
                 String description = procedureData[4].trim();
 
                 procedure newProcedure = new procedure(procedureId, doctorId, patientId, date, description);
+
+                // Adding procedure data into previously created list
                 procedureList.add(newProcedure);
 
             }

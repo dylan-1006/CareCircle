@@ -125,7 +125,6 @@ public class PatientDetailsScreenTreatmentController {
 
             addTreatmentButton.setVisible(true);
             editTreatmentButton.setVisible(false);
-            // deleteTreatmentButton.setVisible(false);
 
         } else {
 

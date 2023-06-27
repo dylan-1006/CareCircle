@@ -129,7 +129,7 @@ public class PatientDetailsScreenDiagnosisController {
 
             addDiagnosisButton.setVisible(true);
             editDiagnosisButton.setVisible(false);
-            // deletediagnosisButton.setVisible(false);
+
 
         } else {
 

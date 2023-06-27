@@ -82,6 +82,7 @@ public class AddAppointmentScreenController {
         @FXML
         public void initialize() {
 
+                // Set combox box selection items
                 doctorID.setItems(fetchAvailableDoctorId());
                 appointmentTime.setItems(appointmentTimeOptions);
                 venue.setItems(venueOptions);
@@ -92,6 +93,7 @@ public class AddAppointmentScreenController {
         @FXML
         void addAppointment(ActionEvent event) {
 
+                // Make sure all required details are filled in
                 if (patientNameBox.getSelectionModel().isEmpty() ||
                                 doctorID.getSelectionModel().isEmpty() || date.getValue().toString().equals("")
                                 || venue.getSelectionModel().isEmpty() || appointmentTime.getSelectionModel().isEmpty()
@@ -105,6 +107,7 @@ public class AddAppointmentScreenController {
                 } else {
                         try {
                                 List<appointment> appointmentList = appointmentData.loadAppointmentDataFromDatabase();
+                                // Generate new id based on last id in the database
                                 int newAppointmentID = Integer
                                                 .parseInt(appointmentList.get(appointmentList.size() - 1)
                                                                 .getAppointmentID()
@@ -126,7 +129,7 @@ public class AddAppointmentScreenController {
                                         }
 
                                 }
-
+                                // Get filled in details
                                 appointment newAppointment = new appointment(newAppointmentIdFormatted,
                                                 patientId,
                                                 doctorID.getSelectionModel().getSelectedItem().toString(),
@@ -139,6 +142,8 @@ public class AddAppointmentScreenController {
                                                 "src/main/resources/carecircle/assets/database/appointment.txt", true);
 
                                 PrintWriter accountWriter = new PrintWriter(account);
+
+                                // Append new data to the .txt file
                                 accountWriter.println(
                                                 newAppointmentIdFormatted + "," + newAppointment.getPatientID() + ","
                                                                 + newAppointment.getDoctorID() + ","
@@ -163,7 +168,7 @@ public class AddAppointmentScreenController {
         }
 
         ObservableList<String> fetchAvailableDoctorId() {
-
+                // Get data from database
                 List<doctor> doctorList = doctorData.loadDoctorDataFromDatabase();
                 ObservableList<String> doctorIdOptions = FXCollections.observableArrayList("Choose doctor ID");
 
@@ -178,6 +183,7 @@ public class AddAppointmentScreenController {
 
         ObservableList<String> fetchAvailablePatientName() {
 
+                // Get data from database
                 List<patient> patientList = patientData.loadPatientDataFromDatabase();
                 ObservableList<String> patientIdOptions = FXCollections.observableArrayList("Choose patient name");
 
@@ -192,6 +198,7 @@ public class AddAppointmentScreenController {
 
         @FXML
         void backToAppointmentScreen(MouseEvent event) throws IOException {
+                // Return to previous screen
                 App.setRoot("appointmentScreenGeneral");
         }
 

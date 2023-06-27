@@ -27,6 +27,8 @@ public class medicalHistoryData {
 
             String newLine;
             while ((newLine = reader.readLine()) != null) {
+
+                // Reads data from .txt file
                 String[] medicalHistoryData = newLine.split(",");
                 String medicalHistoryId = medicalHistoryData[0].trim();
                 String patientId = medicalHistoryData[1].trim();
@@ -41,6 +43,7 @@ public class medicalHistoryData {
                         treatmentId, procedureId,
                         description, allergies, pastMedicationId);
 
+                // Adds data into previously created list
                 medicalHistoryList.add(newMedicalHistory);
             }
 
@@ -57,6 +60,8 @@ public class medicalHistoryData {
 
         for (int i = 0; i < medicalHistoryList.size(); i++) {
             if (medicalHistoryList.get(i).getMedicalHistoryId().equals(medicalHistoryId)) {
+
+                // Deletes selected data
                 medicalHistoryList.remove(i);
                 break;
             }
@@ -69,6 +74,7 @@ public class medicalHistoryData {
             for (int i = 0; i < medicalHistoryList.size(); i++) {
                 medicalHistory medicalHistory = medicalHistoryList.get(i);
 
+                // Rewrite newly edited data into .txt file
                 printWriter.println(
                         medicalHistory.getMedicalHistoryId() + "," +
                                 medicalHistory.getPatientId() + "," + medicalHistory.getDiagnosisId() + ","
@@ -82,6 +88,8 @@ public class medicalHistoryData {
             printWriter.close();
 
             Alert alert = new Alert(AlertType.CONFIRMATION);
+
+            // Alert that medical history has been deleted
             alert.setTitle("Medical History Deleted!");
             alert.setHeaderText("Medical history record has been deleted");
             alert.showAndWait();
@@ -90,6 +98,7 @@ public class medicalHistoryData {
         }
     }
 
+    // Initialising a medicalHistory object that can referenced elsewhere later
     public static medicalHistory initMedicalHistoryData = new medicalHistory(" ", " ", " ", " ",
             " ", " ", " ", " ");
 }

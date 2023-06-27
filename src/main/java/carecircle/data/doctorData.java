@@ -26,6 +26,7 @@ public class doctorData {
 
             String newLine;
             while ((newLine = reader.readLine()) != null) {
+                // Reading data from .txt file
                 String[] doctorData = newLine.split(",");
                 String doctorID = doctorData[0].trim();
                 String name = doctorData[1].trim();
@@ -37,6 +38,7 @@ public class doctorData {
 
                 doctor newDoctor = new doctor(doctorID, name, phoneNo, email, dateOfBirth, gender, specialization);
 
+                // Adding data into previously created list
                 doctorList.add(newDoctor);
             }
 
@@ -45,12 +47,14 @@ public class doctorData {
         }
         return doctorList;
     }
+
     public static void deleteData(String doctorID) throws IOException {
 
         List<doctor> doctorList = doctorData.loadDoctorDataFromDatabase();
         for (int i = 0; i < doctorList.size(); i++) {
             if (doctorList.get(i).getDoctorID().equals(doctorID)) {
 
+                // Remove selected doctor data
                 doctorList.remove(i);
                 break;
 
@@ -65,8 +69,9 @@ public class doctorData {
 
             for (int i = 0; i < doctorList.size(); i++) {
 
-               accountWriter.println(
-                        doctorList.get(i).getDoctorID() + "," +  doctorList.get(i).getName() + ","
+                // Rewrite newly edited data into .txt file
+                accountWriter.println(
+                        doctorList.get(i).getDoctorID() + "," + doctorList.get(i).getName() + ","
                                 + doctorList.get(i).getPhoneNo() + ","
                                 + doctorList.get(i).getEmail() + ","
                                 + doctorList.get(i).getDateOfBirth()
@@ -88,6 +93,7 @@ public class doctorData {
 
     }
 
+    // Initialising a doctor object that can be referenced else where later
     public static doctor initDoctorData = new doctor(" ", " ", " ", " ", " ", " ", " ");
 
 }

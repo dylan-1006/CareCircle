@@ -117,12 +117,12 @@ public class HomeScreenController {
     }
 
     void setPatientAmount() {
-        
+
         totalPatientAdmissions.setText(Integer.toString(patientData.loadPatientDataFromDatabase().size()));
     }
 
     void setDoctorAmount() {
-        
+
         totalAvailableDoctors.setText(Integer.toString(doctorData.loadDoctorDataFromDatabase().size()));
     }
 
@@ -134,9 +134,10 @@ public class HomeScreenController {
     void setUserName() {
 
         Text welcomeBackText = new Text("Welcome back,");
-        // welcomeBackText.setLayoutY(35);
+
         welcomeBackText.setFont(Font.font("SansSerif", FontWeight.BOLD, 36));
 
+        // Giving effect to text and making it look nice
         DropShadow dropShadow = new DropShadow();
         dropShadow.setBlurType(BlurType.GAUSSIAN);
         dropShadow.setColor(Color.rgb(0, 0, 0, 0.25));
@@ -148,6 +149,7 @@ public class HomeScreenController {
         welcomeBackText.setEffect(dropShadow);
         welcomeBackText.setWrappingWidth(803);
 
+        // Get user's name
         Text homeScreenUserName = new Text(userData.initUserData.getName());
         homeScreenUserName.setFont(Font.font("SansSerif", FontWeight.BOLD, 36));
         homeScreenUserName.setFill(Color.web("#4FB3FF"));
@@ -155,6 +157,7 @@ public class HomeScreenController {
         homeScreenUserName.setEffect(dropShadow);
         homeScreenUserName.setWrappingWidth(803);
 
+        // Add user's name into welcome message
         welcomeMessageTextFlow.getChildren().addAll(welcomeBackText, homeScreenUserName);
     }
 

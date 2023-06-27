@@ -54,6 +54,7 @@ public class EditMedicalHistoryScreen {
 
     void setMedicalHistoryDetails() {
 
+        // Setting necessary details
         name.setText(patientData.initPatientData.getName());
         treatment.setText(medicalHistoryData.initMedicalHistoryData.getTreatmentId());
         allergies.setText(medicalHistoryData.initMedicalHistoryData.getAllergies());
