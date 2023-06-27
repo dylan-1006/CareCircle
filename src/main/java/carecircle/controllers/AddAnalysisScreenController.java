@@ -48,6 +48,8 @@ public class AddAnalysisScreenController {
 
     @FXML
     public void initialize() {
+
+        // Set combox box selection items
         doctorID.setItems(fetchAvailableDoctorId());
         patientNameBox.setItems(fetchAvailablePatientName());
     }
@@ -56,6 +58,8 @@ public class AddAnalysisScreenController {
     //addNewAnalysis
     @FXML
     void addNewAnalysis(ActionEvent event) {
+
+        // Make sure all required details are filled in
         if (patientNameBox.getSelectionModel().isEmpty() ||
                 doctorID.getSelectionModel().isEmpty() || date.getValue().toString().equals("")
                 || description.getText().equals("event")) {
@@ -66,8 +70,11 @@ public class AddAnalysisScreenController {
             alert.showAndWait();
 
         } else {
+
             try {
                 List<analysis> analysisList = analysisData.loadAnalysisDataFromDatabase();
+
+                // Generate new id based on last id in the database
                 int newAnalysisID = Integer
                         .parseInt(analysisList.get(analysisList.size() - 1)
                                 .getAnalysisID()
@@ -90,9 +97,10 @@ public class AddAnalysisScreenController {
 
                 }
 
+                // Get filled in details
                 analysis newAnalysis = new analysis(newAnalysisIdFormatted,
                         doctorID.getSelectionModel().getSelectedItem().toString(),
-                        patientId,
+                        patientData.initPatientData.getPatientID(),
                         date.getValue().toString(),
                         description.getText());
 
@@ -101,6 +109,7 @@ public class AddAnalysisScreenController {
                 FileWriter account = new FileWriter(
                         "src/main/resources/carecircle/assets/database/analysis.txt", true);
 
+                // Append new data to the .txt file
                 PrintWriter accountWriter = new PrintWriter(account);
                 accountWriter.println(
                         newAnalysisIdFormatted + "," + newAnalysis.getDoctorID() + "," + newAnalysis.getPatientID()
@@ -123,6 +132,7 @@ public class AddAnalysisScreenController {
 
     ObservableList<String> fetchAvailableDoctorId() {
 
+        // Get data from database
         List<doctor> doctorList = doctorData.loadDoctorDataFromDatabase();
         ObservableList<String> doctorIdOptions = FXCollections.observableArrayList("Choose doctor ID");
 
@@ -137,6 +147,7 @@ public class AddAnalysisScreenController {
 
     ObservableList<String> fetchAvailablePatientName() {
 
+        // Get data from database
         List<patient> patientList = patientData.loadPatientDataFromDatabase();
         ObservableList<String> patientIdOptions = FXCollections.observableArrayList("Choose patient name");
 
@@ -151,6 +162,8 @@ public class AddAnalysisScreenController {
 
     @FXML
     void backToAnalysisScreen(MouseEvent event) throws IOException {
+
+        // Return to previous screen
         App.setRoot("patientDetailsScreenAnalysis");
     }
 }

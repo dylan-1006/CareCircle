@@ -3,7 +3,7 @@ package carecircle.tableModels;
 import java.util.List;
 
 import carecircle.classes.appointment;
-import carecircle.data.appointmentData; 
+import carecircle.data.appointmentData;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -16,11 +16,11 @@ public class appointmentTableModel {
     private SimpleStringProperty date;
     private SimpleStringProperty time;
     private SimpleStringProperty venue;
-    private SimpleStringProperty department; 
+    private SimpleStringProperty department;
     private Button details;
-    
+
     public appointmentTableModel(String appointmentID, String patientID, String doctorID, String date, String time,
-        String venue, String department) {
+            String venue, String department) {
         this.appointmentID = new SimpleStringProperty(appointmentID);
         this.patientID = new SimpleStringProperty(patientID);
         this.doctorID = new SimpleStringProperty(doctorID);
@@ -34,11 +34,13 @@ public class appointmentTableModel {
 
     public static ObservableList<appointmentTableModel> convertAppointmentDataToAppointmentDataModel() {
 
+        // Load appointment data
         List<appointment> appointmentList = appointmentData.loadAppointmentDataFromDatabase();
         ObservableList<appointmentTableModel> observableAppointmentList = FXCollections.observableArrayList();
 
         for (int i = 0; i < appointmentList.size(); i++) {
 
+            // Read appointment data into different variables
             String appointmentID = appointmentList.get(i).getAppointmentID();
             String patientID = appointmentList.get(i).getPatientID();
             String doctorID = appointmentList.get(i).getDoctorID();
@@ -47,9 +49,12 @@ public class appointmentTableModel {
             String venue = appointmentList.get(i).getVenue();
             String department = appointmentList.get(i).getDepartment();
 
-            appointmentTableModel appointmentTableModel = new appointmentTableModel(appointmentID, patientID, doctorID, date, 
-            time, venue, department);
+            // Add appointment data into a new appointmentTableModel
+            appointmentTableModel appointmentTableModel = new appointmentTableModel(appointmentID, patientID, doctorID,
+                    date,
+                    time, venue, department);
 
+            // Add new appointmentTableModel object into list
             observableAppointmentList.add(appointmentTableModel);
 
         }
@@ -58,69 +63,74 @@ public class appointmentTableModel {
 
     }
 
-    
-        public String getAppointmentID() {
-            return appointmentID.get();
-        }
-    
-        public void setAppointmentID(String appointmentID) {
-            this.appointmentID.set(appointmentID);
-        }
-    
-        public String getPatientID() {
-            return patientID.get();
-        }
-    
-        public void setPatientID(String patientID) {
-            this.patientID.set(patientID);;
-        }
-    
-        public String getDoctorID() {
-            return doctorID.get();
-        }
-    
-        public void setDoctorID(String doctorID) {
-            this.doctorID.set(doctorID);;
-        }
-    
-        public String getDate() {
-            return date.get();
-        }
-    
-        public void setDate(String date) {
-            this.date.set(date);;
-        }
-    
-        public String getTime() {
-            return time.get();
-        }
-    
-        public void setTime(String time) {
-            this.time.set(time);;
-        }
-    
-        public String getVenue() {
-            return venue.get();
-        }
-    
-        public void setVenue(String venue) {
-            this.venue.set(venue);;
-        }
-    
-        public String getDepartment() {
-            return department.get();
-        }
-    
-        public void setDepartment(String department) {
-            this.department.set(department);;
-        }
-
-        public Button getDetails() {
-            return details;
-        }
-    
-        public void setDetails(Button details) {
-            this.details = details;
-        }
+    // The following are getters and setters that get n set the data of this class
+    public String getAppointmentID() {
+        return appointmentID.get();
     }
-    
+
+    public void setAppointmentID(String appointmentID) {
+        this.appointmentID.set(appointmentID);
+    }
+
+    public String getPatientID() {
+        return patientID.get();
+    }
+
+    public void setPatientID(String patientID) {
+        this.patientID.set(patientID);
+        ;
+    }
+
+    public String getDoctorID() {
+        return doctorID.get();
+    }
+
+    public void setDoctorID(String doctorID) {
+        this.doctorID.set(doctorID);
+        ;
+    }
+
+    public String getDate() {
+        return date.get();
+    }
+
+    public void setDate(String date) {
+        this.date.set(date);
+        ;
+    }
+
+    public String getTime() {
+        return time.get();
+    }
+
+    public void setTime(String time) {
+        this.time.set(time);
+        ;
+    }
+
+    public String getVenue() {
+        return venue.get();
+    }
+
+    public void setVenue(String venue) {
+        this.venue.set(venue);
+        ;
+    }
+
+    public String getDepartment() {
+        return department.get();
+    }
+
+    public void setDepartment(String department) {
+        this.department.set(department);
+        ;
+    }
+
+    public Button getDetails() {
+        return details;
+    }
+
+    public void setDetails(Button details) {
+        this.details = details;
+    }
+}

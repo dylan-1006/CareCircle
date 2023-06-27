@@ -30,6 +30,8 @@ public class treatmentData {
         ) {
             String newLine;
             while ((newLine = reader.readLine()) != null) {
+
+                // Reading data from .txt file
                 String[] treatmentData = newLine.split(",");
                 String treatmentId = treatmentData[0].trim();
                 String doctorId = treatmentData[1].trim();
@@ -54,10 +56,12 @@ public class treatmentData {
 
         for (int i = 0; i < treatmentList.size(); i++) {
             if (treatmentList.get(i).getTreatmentID().equals(treatmentId)) {
+
+                // Remove selected data from list
                 treatmentList.remove(i);
                 break;
             }
-               }
+        }
 
         try (FileWriter fileWriter = new FileWriter("src/main/resources/carecircle/assets/database/diagnosis.txt",
                 false)) {
@@ -66,6 +70,7 @@ public class treatmentData {
             for (int i = 0; i < treatmentList.size(); i++) {
                 treatment treatment = treatmentList.get(i);
 
+                // Overwrite .txt file with newly edited data
                 printWriter.println(
                         treatment.getTreatmentID() + ","
                                 + treatment.getDoctorID() + ","
@@ -85,7 +90,7 @@ public class treatmentData {
         }
     }
 
+    // Initialise a treatment object that can be referenced else where later
     public static treatment initTreatment = new treatment("treatmentID ", "doctorID ", "patientID ", "date ",
             "description ");
-    }
-
+}

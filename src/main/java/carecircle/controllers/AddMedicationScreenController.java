@@ -48,6 +48,8 @@ public class AddMedicationScreenController {
 
     @FXML
     public void initialize() {
+
+        // Set combox box selection items
         patientNameBox.setText(patientData.initPatientData.getName());
         doctorID.setItems(fetchAvailableDoctorId());
     }
@@ -55,10 +57,9 @@ public class AddMedicationScreenController {
     @FXML
     void addNewMedication(ActionEvent event) {
 
-        System.out.println("Entered add new medication");
-
         boolean isDoubleInput = true;
 
+        // Check if data is inputted is the correct data format
         try {
             Integer.parseInt(quantity.getText());
             Double.parseDouble(dosage.getText());
@@ -66,6 +67,8 @@ public class AddMedicationScreenController {
         } catch (NumberFormatException e) {
             isDoubleInput = false;
         }
+
+        // Make sure all required details are filled in
         if (doctorID.getSelectionModel().isEmpty() || medicationName.getText().equals("")
                 || quantity.getText().equals("") || dosage.getText().equals("")) {
             Alert alert = new Alert(AlertType.ERROR);
@@ -74,6 +77,7 @@ public class AddMedicationScreenController {
             alert.setContentText("Please fill in all the required fields.");
             alert.showAndWait();
 
+            // Make sure data inputted is correct data type
         } else if (isDoubleInput == false) {
             Alert alert = new Alert(AlertType.ERROR);
             alert.setTitle("Error");
@@ -88,6 +92,7 @@ public class AddMedicationScreenController {
         else {
             try {
                 List<medicine> medicineList = medicineData.loadMedicineDataFromDatabase();
+                // Generate new id based on last id in the database
                 int newMedicationID = Integer
                         .parseInt(medicineList.get(medicineList.size() - 1)
                                 .getMedicineID()
@@ -101,6 +106,7 @@ public class AddMedicationScreenController {
                 String patientId = " ";
                 for (int i = 0; i < patientList.size(); i++) {
 
+                    // Get patient id based on patient name
                     if (patientList.get(i).getName().equals(patientNameBox.getText())) {
 
                         patientId = patientList.get(i).getPatientID();
@@ -111,6 +117,7 @@ public class AddMedicationScreenController {
 
                 }
 
+                // Get filled in details
                 medicine newMedicine = new medicine(newMedicationIdFormatted,
                         doctorID.getSelectionModel().getSelectedItem().toString(),
                         patientId,
@@ -122,6 +129,7 @@ public class AddMedicationScreenController {
                         "src/main/resources/carecircle/assets/database/medicine.txt", true);
 
                 PrintWriter accountWriter = new PrintWriter(account);
+                // Append new data to the .txt file
                 accountWriter.println(
                         newMedicationIdFormatted + "," + newMedicine.getDoctorId() + ","
                                 + newMedicine.getPatientId() + ","
@@ -146,7 +154,7 @@ public class AddMedicationScreenController {
     }
 
     ObservableList<String> fetchAvailableDoctorId() {
-
+        // Get data from database
         List<doctor> doctorList = doctorData.loadDoctorDataFromDatabase();
         ObservableList<String> doctorIdOptions = FXCollections.observableArrayList("Choose doctor ID");
 
@@ -160,7 +168,7 @@ public class AddMedicationScreenController {
     }
 
     ObservableList<String> fetchAvailablePatientName() {
-
+        // Get data from database
         List<patient> patientList = patientData.loadPatientDataFromDatabase();
         ObservableList<String> patientIdOptions = FXCollections.observableArrayList("Choose patient name");
 
@@ -175,6 +183,7 @@ public class AddMedicationScreenController {
 
     @FXML
     void backToPatientScreen(MouseEvent event) throws IOException {
+        // Return to previous screen
         App.setRoot("patientDetailsScreenMedicalHistory");
     }
 

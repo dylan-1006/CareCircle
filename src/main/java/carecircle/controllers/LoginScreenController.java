@@ -36,21 +36,24 @@ public class LoginScreenController {
     @FXML
     private TextField username;
 
-
     @FXML
     void logIn(ActionEvent event) throws IOException {
 
         try {
             boolean found = false;
-            //below is reading the user file
+
+            // Load user data from database
             FileReader info = new FileReader("src/main/resources/carecircle/assets/database/user.txt");
             BufferedReader infoR = new BufferedReader(info);
             String line = "";
+
             while ((line = infoR.readLine()) != null) {
                 StringTokenizer infoToken = new StringTokenizer(line, ",");
                 String Name = infoToken.nextToken();
                 String Username = infoToken.nextToken();
                 String Password = infoToken.nextToken();
+
+                // Checking if username & password match any records in database
                 if (username.getText().equals(Username) && password.getText().equals(Password)) {
                     found = true;
                     infoR.close();

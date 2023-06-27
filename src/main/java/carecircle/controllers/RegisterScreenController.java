@@ -35,6 +35,7 @@ public class RegisterScreenController {
     void register(ActionEvent event) throws IOException {
 
         try {
+            // Check if input is empty
             if (!(username.getText()).equals("") && !(password.getText().equals(""))) {
 
                 TextInputDialog nameInput = new TextInputDialog();
@@ -43,19 +44,24 @@ public class RegisterScreenController {
                 nameInput.setContentText("Name");
                 Optional<String> input = nameInput.showAndWait();
                 String name = input.get();
+
+                // Create new user objecet
                 user newUser = new user(name, username.getText(), password.getText());
                 //below is writing the new user data into the file
                 FileWriter account = new FileWriter("src/main/resources/carecircle/assets/database/user.txt", true);
 
                 PrintWriter accountWriter = new PrintWriter(account);
+
+                // Write new user into database
                 accountWriter.println(newUser.getName() + "," + newUser.getUsername() + "," + newUser.getPassword());
                 accountWriter.close();
                 Alert alert = new Alert(AlertType.CONFIRMATION);
                 alert.setTitle("Sign up successful!");
                 alert.setHeaderText("Welcome " + name);
                 alert.showAndWait();
-                userData.initUserData.setName(name);
 
+                // Set current user into init object for later reference
+                userData.initUserData.setName(name);
                 userData.initUserData.setUsername(newUser.getUsername());
                 userData.initUserData.setPassword(newUser.getPassword());
                 App.setRoot("homeScreen");

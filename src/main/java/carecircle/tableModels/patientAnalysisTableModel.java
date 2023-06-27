@@ -30,8 +30,10 @@ public class patientAnalysisTableModel {
         List<analysis> analysisList = analysisData.loadAnalysisDataFromDatabase();
         ObservableList<patientAnalysisTableModel> observableAnalysisList = FXCollections.observableArrayList();
 
+        // Load analysis data
         for (int i = 0; i < analysisList.size(); i++) {
             if (analysisList.get(i).getPatientID().equals(patientData.initPatientData.getPatientID())) {
+
                 String analysisID = analysisList.get(i).getAnalysisID();
                 String doctorID = analysisList.get(i).getDoctorID();
                 String patientID = analysisList.get(i).getPatientID();
@@ -40,12 +42,15 @@ public class patientAnalysisTableModel {
 
                 patientAnalysisTableModel analysisTableModel = new patientAnalysisTableModel(analysisID, doctorID,
                         patientID, date, description);
+
+                // Add converted analysis data from string into list
                 observableAnalysisList.add(analysisTableModel);
             }
         }
         return observableAnalysisList;
     }
 
+    // The following are getters and setters that get n set the data of this class
     public String getAnalysisID() {
         return analysisID.get();
     }

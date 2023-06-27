@@ -24,7 +24,7 @@ public class appointmentData {
         List<appointment> appointmentList = new ArrayList<>();
 
         try (
-
+                // Reads .txt file from the database
                 BufferedReader reader = new BufferedReader(new FileReader(fileName))
 
         ) {
@@ -39,8 +39,9 @@ public class appointmentData {
                 String venue = appointmentData[5].trim();
                 String department = appointmentData[6].trim();
 
-                appointment newAppointment = new appointment(appointmentId, patientId, doctorId, date, 
-                time, venue, department);
+                // Creates a new appointment object and adds it to the appointmentList
+                appointment newAppointment = new appointment(appointmentId, patientId, doctorId, date,
+                        time, venue, department);
 
                 appointmentList.add(newAppointment);
 
@@ -53,13 +54,12 @@ public class appointmentData {
         return appointmentList;
     }
 
-
     public static void deleteAppointment(String appointmentID) throws IOException {
 
         List<appointment> appointmentList = appointmentData.loadAppointmentDataFromDatabase();
         for (int i = 0; i < appointmentList.size(); i++) {
             if (appointmentList.get(i).getAppointmentID().equals(appointmentID)) {
-
+                // Removes the selected appointment data
                 appointmentList.remove(i);
                 break;
 
@@ -73,7 +73,7 @@ public class appointmentData {
             PrintWriter accountWriter = new PrintWriter(account);
 
             for (int i = 0; i < appointmentList.size(); i++) {
-
+                // Writes the updated appointment data to the .txt file
                 accountWriter.println(
                         appointmentList.get(i).getAppointmentID() + "," + appointmentList.get(i).getPatientID() + ","
                                 + appointmentList.get(i).getDoctorID() + ","
@@ -81,10 +81,10 @@ public class appointmentData {
                                 + appointmentList.get(i).getTime() + ","
                                 + appointmentList.get(i).getVenue()
                                 + "," + appointmentList.get(i).getDepartment());
-                               
 
             }
             accountWriter.close();
+            // Displays an alert confirming the successful deletion
             Alert alert = new Alert(AlertType.CONFIRMATION);
             alert.setTitle("Appointment Deleted!");
             alert.setHeaderText("Appointment record has been deleted");
@@ -96,6 +96,7 @@ public class appointmentData {
         }
 
     }
-    
+
+    // Initializes an appointment object that can be referenced elsewhere
     public static appointment initAppointmentData = new appointment(" ", " ", " ", " ", " ", " ", " ");
 }

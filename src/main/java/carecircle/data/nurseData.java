@@ -26,6 +26,8 @@ public class nurseData {
 
             String newLine;
             while ((newLine = reader.readLine()) != null) {
+
+                // Reading data from .txt file
                 String[] nurseData = newLine.split(",");
                 String nurseID = nurseData[0].trim();
                 String name = nurseData[1].trim();
@@ -36,6 +38,7 @@ public class nurseData {
 
                 nurse newNurse = new nurse(nurseID, name, phoneNo, email, dateOfBirth, gender);
 
+                // Adding data into previously created list
                 nurseList.add(newNurse);
             }
 
@@ -52,6 +55,7 @@ public class nurseData {
         for (int i = 0; i < nurseList.size(); i++) {
             if (nurseList.get(i).getNurseID().equals(nurseID)) {
 
+                // Delete selected nurse
                 nurseList.remove(i);
                 break;
 
@@ -66,6 +70,7 @@ public class nurseData {
 
             for (int i = 0; i < nurseList.size(); i++) {
 
+                // Rewrite newly edited data back into .txt3 file
                 accountWriter.println(
                         nurseList.get(i).getNurseID() + "," + nurseList.get(i).getName() + ","
                                 + nurseList.get(i).getPhoneNo() + ","
@@ -86,6 +91,7 @@ public class nurseData {
 
     }
 
+    //Initialising a nurse object that can be referenced else where
     public static nurse initNurseData = new nurse(" ", " ", " ", " ", " ", " ");
 
 }

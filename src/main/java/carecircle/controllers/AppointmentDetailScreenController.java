@@ -90,9 +90,12 @@ public class AppointmentDetailScreenController {
     }
 
     public void setAppointmentDetails() {
+
+        // Load data from database
         List<patient> patientList = patientData.loadPatientDataFromDatabase();
         List<doctor> doctorList = doctorData.loadDoctorDataFromDatabase();
 
+        // Set required text based on loaded data
         sidePatientID.setText(appointmentData.initAppointmentData.getPatientID());
         sideAppointmentID.setText(appointmentData.initAppointmentData.getAppointmentID());
         sideDoctorID.setText(appointmentData.initAppointmentData.getDoctorID());
@@ -129,6 +132,8 @@ public class AppointmentDetailScreenController {
 
     @FXML
     void editDetails(MouseEvent event) {
+
+        // Change into edit modde by changing bg colour n set editable to be true
         venue.setEditable(true);
         time.setEditable(true);
         date.setEditable(true);
@@ -154,7 +159,7 @@ public class AppointmentDetailScreenController {
         Optional<ButtonType> result = confirmation.showAndWait();
 
         if (result.get() == ButtonType.OK) {
-
+            // Delete appointment
             appointmentData.deleteAppointment(appointmentData.initAppointmentData.getAppointmentID());
             App.setRoot("appointmentScreenGeneral");
         } else {
@@ -183,6 +188,8 @@ public class AppointmentDetailScreenController {
             List<appointment> appointmentList = appointmentData.loadAppointmentDataFromDatabase();
 
             for (int i = 0; i < appointmentList.size(); i++) {
+
+                // Get editing data and update it
                 if (appointmentData.initAppointmentData.getAppointmentID()
                         .equals(appointmentList.get(i).getAppointmentID())) {
                     appointmentList.get(i).setVenue(venue.getText());
@@ -199,7 +206,7 @@ public class AppointmentDetailScreenController {
                 PrintWriter accountWriter = new PrintWriter(account);
 
                 for (int i = 0; i < appointmentList.size(); i++) {
-
+                    // Writing updated data into .txt file
                     accountWriter.println(
                             appointmentList.get(i).getAppointmentID() + "," + appointmentList.get(i).getPatientID()
                                     + ","
@@ -223,6 +230,8 @@ public class AppointmentDetailScreenController {
 
     @FXML
     void goBack(MouseEvent event) throws IOException {
+
+        // Return to previous screen
         App.setRoot("appointmentScreenGeneral");
     }
 

@@ -60,6 +60,8 @@ public class AddMedicalHistoryScreenController {
 
     @FXML
     public void initialize() {
+
+        // Set combox box selection items
         patientNameBox.setItems(fetchAvailablePatientName());
         diagnosisID.setItems(fetchAvailableDiagnosisID());
         treatmentID.setItems(fetchAvailableTreatmentID());
@@ -68,6 +70,7 @@ public class AddMedicalHistoryScreenController {
 
     @FXML
     void addNewMedicalHistory(ActionEvent event) {
+        // Make sure all required details are filled in
         if (patientNameBox.getSelectionModel().isEmpty() ||
                 diagnosisID.getSelectionModel().isEmpty() || treatmentID.getSelectionModel().isEmpty()
                 || procedureID.getSelectionModel().isEmpty() || procedureID.getSelectionModel().isEmpty()
@@ -82,6 +85,7 @@ public class AddMedicalHistoryScreenController {
         } else {
             try {
                 List<medicalHistory> medicalHistoryList = medicalHistoryData.loadMedicalHistoryDataFromDatabase();
+                // Generate new id based on last id in the database
                 int newMedicalHistoryID = Integer
                         .parseInt(medicalHistoryList.get(medicalHistoryList.size() - 1)
                                 .getMedicalHistoryId()
@@ -103,7 +107,7 @@ public class AddMedicalHistoryScreenController {
                     }
 
                 }
-
+                // Get filled in details
                 medicalHistory newMedicalHistory = new medicalHistory(newMedicalHistoryIdFormatted,
                         patientId,
                         diagnosisID.getSelectionModel().toString(),
@@ -117,6 +121,7 @@ public class AddMedicalHistoryScreenController {
                         "src/main/resources/carecircle/assets/database/medicalHistory.txt", true);
 
                 PrintWriter accountWriter = new PrintWriter(account);
+                // Append new data to the .txt file
                 accountWriter.println(
                         newMedicalHistoryIdFormatted + ","
                                 + newMedicalHistory.getPatientId() + ","
@@ -143,7 +148,7 @@ public class AddMedicalHistoryScreenController {
     }
 
     ObservableList<String> fetchAvailablePatientName() {
-
+        // Get data from database
         List<patient> patientList = patientData.loadPatientDataFromDatabase();
         ObservableList<String> patientIdOptions = FXCollections.observableArrayList("Choose patient name");
 
@@ -156,7 +161,7 @@ public class AddMedicalHistoryScreenController {
     }
 
     ObservableList<String> fetchAvailableDiagnosisID() {
-
+        // Get data from database
         List<diagnosis> diagnosisList = diagnosisData.loadDiagnosisDataFromDatabase();
         ObservableList<String> diagnosisIdOptions = FXCollections.observableArrayList("Choose diagnosis ID");
 
@@ -169,7 +174,7 @@ public class AddMedicalHistoryScreenController {
     }
 
     ObservableList<String> fetchAvailableTreatmentID() {
-
+        // Get data from database
         List<treatment> treatmentList = treatmentData.loadTreatmentDataFromDatabase();
         ObservableList<String> treatmentIdOptions = FXCollections.observableArrayList("Choose treatment ID");
 
@@ -182,7 +187,7 @@ public class AddMedicalHistoryScreenController {
     }
 
     ObservableList<String> fetchAvailableProcedureID() {
-
+        // Get data from database
         List<procedure> procedureList = procedureData.loadProcedureDataFromDatabase();
         ObservableList<String> procedureIdOptions = FXCollections.observableArrayList("Choose procedure ID");
 
@@ -196,6 +201,7 @@ public class AddMedicalHistoryScreenController {
 
     @FXML
     void backToMedicalHistoryScreen(MouseEvent event) throws IOException {
+        // Return to previous screen
         App.setRoot("patientDetailsScreenMedicalHistory");
     }
 }

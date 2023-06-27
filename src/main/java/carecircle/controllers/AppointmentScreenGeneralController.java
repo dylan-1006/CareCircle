@@ -100,19 +100,18 @@ public class AppointmentScreenGeneralController {
 
     }
 
-
     @FXML
     void switchToUpdateAppointmentScreen(MouseEvent event) {
-        System.out.println("GEGEGFFEF");
+
         appointmentTableModel selectedAppointment = appointmentTable.getSelectionModel().getSelectedItem();
 
         appointmentData.initAppointmentData.setAppointmentID(selectedAppointment.getAppointmentID());
         List<appointment> appointmentList = appointmentData.loadAppointmentDataFromDatabase();
 
-        // System.out.println(patientData.initPatientData.getPatientID());
         for (int i = 0; i < appointmentList.size(); i++) {
 
-            if (appointmentList.get(i).getAppointmentID().equals(appointmentData.initAppointmentData.getAppointmentID())) {
+            if (appointmentList.get(i).getAppointmentID()
+                    .equals(appointmentData.initAppointmentData.getAppointmentID())) {
 
                 appointmentData.initAppointmentData.setPatientID(appointmentList.get(i).getPatientID());
                 appointmentData.initAppointmentData.setDoctorID(appointmentList.get(i).getDoctorID());
@@ -120,13 +119,13 @@ public class AppointmentScreenGeneralController {
                 appointmentData.initAppointmentData.setTime(appointmentList.get(i).getTime());
                 appointmentData.initAppointmentData.setVenue(appointmentList.get(i).getVenue());
                 appointmentData.initAppointmentData.setDepartment(appointmentList.get(i).getDepartment());
-               
+
                 try {
                     App.setRoot("appointmentDetailScreen");
-                    
+
                 } catch (IOException e) {
                     // TODO Auto-generated catch block
-                    
+
                     e.printStackTrace();
                 }
 

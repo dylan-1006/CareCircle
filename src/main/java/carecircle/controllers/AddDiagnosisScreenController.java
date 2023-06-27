@@ -51,6 +51,7 @@ public class AddDiagnosisScreenController {
 
         @FXML
         public void initialize() {
+                // Set combox box selection items
                 patientNameBox.setItems(fetchAvailablePatientName());
                 doctorID.setItems(fetchAvailableDoctorId());
         }
@@ -61,6 +62,7 @@ public class AddDiagnosisScreenController {
 
         @FXML
         void addNewDiagnosis(ActionEvent event) {
+                // Make sure all required details are filled in
                 if (patientNameBox.getSelectionModel().isEmpty() ||
                                 doctorID.getSelectionModel().isEmpty() || date.getValue().toString().equals("")
                                 || description.getText().equals("event")) {
@@ -73,6 +75,7 @@ public class AddDiagnosisScreenController {
                 } else {
                         try {
                                 List<diagnosis> diagnosisList = diagnosisData.loadDiagnosisDataFromDatabase();
+                                // Generate new id based on last id in the database
                                 int newDiagnosisID = Integer
                                                 .parseInt(diagnosisList.get(diagnosisList.size() - 1)
                                                                 .getDiagnosisID()
@@ -95,6 +98,7 @@ public class AddDiagnosisScreenController {
 
                                 }
 
+                                // Get filled in details
                                 diagnosis newDiagnosis = new diagnosis(newDiagnosisIdFormatted,
                                                 doctorID.getSelectionModel().getSelectedItem().toString(),
                                                 patientId,
@@ -107,6 +111,7 @@ public class AddDiagnosisScreenController {
                                                 "src/main/resources/carecircle/assets/database/diagnosis.txt", true);
 
                                 PrintWriter accountWriter = new PrintWriter(account);
+                                // Append new data to the .txt file
                                 accountWriter.println(
                                                 newDiagnosisIdFormatted + "," + newDiagnosis.getDoctorID() + ","
                                                                 + newDiagnosis.getPatientID() + ","
@@ -129,7 +134,7 @@ public class AddDiagnosisScreenController {
         }
 
         ObservableList<String> fetchAvailableDoctorId() {
-
+                // Get data from database
                 List<doctor> doctorList = doctorData.loadDoctorDataFromDatabase();
                 ObservableList<String> doctorIdOptions = FXCollections.observableArrayList("Choose doctor ID");
 
@@ -143,7 +148,7 @@ public class AddDiagnosisScreenController {
         }
 
         ObservableList<String> fetchAvailablePatientName() {
-
+                // Get data from database
                 List<patient> patientList = patientData.loadPatientDataFromDatabase();
                 ObservableList<String> patientIdOptions = FXCollections.observableArrayList("Choose patient name");
 
@@ -158,6 +163,7 @@ public class AddDiagnosisScreenController {
 
         @FXML
         void backToTreamentScreen(MouseEvent event) throws IOException {
+                // Return to previous screen
                 App.setRoot("patientDetailsScreenDiagnosis");
         }
 

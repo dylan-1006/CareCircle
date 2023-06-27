@@ -54,6 +54,7 @@ public class EditPastMedicationScreen {
 
     void setPastMedicationDetails() {
 
+        // Setting necessary details
         doctorIdComboBox.setPromptText(medicineData.initMedicineData.getDoctorId());
         medicineName.setText(medicineData.initMedicineData.getMedicineName());
         quantitiy.setText(Integer.toString(medicineData.initMedicineData.getQuantity()));
@@ -142,6 +143,7 @@ public class EditPastMedicationScreen {
 
     ObservableList<String> fetchAvailableDoctorId() {
 
+        // Fetching necessary data from database
         List<doctor> doctorList = doctorData.loadDoctorDataFromDatabase();
         ObservableList<String> doctorIdOptions = FXCollections.observableArrayList("Choose doctor ID");
 

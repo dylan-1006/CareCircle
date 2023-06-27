@@ -128,7 +128,6 @@ public class PatientDetailsScreenAnalysisController {
 
             addAnalysisButton.setVisible(true);
             editAnalysisButton.setVisible(false);
-            // deleteAnalysisButton.setVisible(false);
 
         } else {
 
@@ -166,7 +165,7 @@ public class PatientDetailsScreenAnalysisController {
         Optional<ButtonType> result = confirmation.showAndWait();
 
         if (result.get() == ButtonType.OK) {
-
+            // Delete patient
             patientData.deletePatient(patientData.initPatientData.getPatientID());
             App.setRoot("patientScreenGeneral");
         } else {

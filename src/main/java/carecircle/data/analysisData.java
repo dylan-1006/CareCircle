@@ -20,13 +20,17 @@ public class analysisData {
     public static String fileName = "src/main/resources/carecircle/assets/database/analysis.txt";
 
     public static List<analysis> loadAnalysisDataFromDatabase() {
+
+        //Creates new array list for analysis
         List<analysis> analysisList = new ArrayList<>();
 
         try (
 
+                //Reads .txt file from database
                 BufferedReader reader = new BufferedReader(new FileReader(fileName))
 
         ) {
+            //Adds data from the .txt file into array list created just now
             String newLine;
             while ((newLine = reader.readLine()) != null) {
                 String[] analysisData = newLine.split(",");
@@ -45,13 +49,19 @@ public class analysisData {
             e.printStackTrace();
         }
 
+        //Return array list with data from .txt file
         return analysisList;
     }
 
+
     public static void deleteAnalysis(String analysisId) {
 
+
+        //Retrieves data from .txt file
         List<analysis> analysisList = analysisData.loadAnalysisDataFromDatabase();
 
+
+        //Removes selected data
         for (int i = 0; i < analysisList.size(); i++) {
             if (analysisList.get(i).getAnalysisID().equals(analysisId)) {
                 analysisList.remove(i);
@@ -59,6 +69,7 @@ public class analysisData {
             }
         }
 
+        //Overwrite the .txt file with the newly edited data
         try (FileWriter fileWriter = new FileWriter("src/main/resources/carecircle/assets/database/analysis.txt",
                 false)) {
             PrintWriter printWriter = new PrintWriter(fileWriter);
@@ -75,6 +86,7 @@ public class analysisData {
 
             printWriter.close();
 
+            //Alert that the deletion of data has been completed
             Alert alert = new Alert(AlertType.CONFIRMATION);
             alert.setTitle("Analysis Deleted!");
             alert.setHeaderText("Analysis record has been deleted");
@@ -84,6 +96,7 @@ public class analysisData {
         }
     }
 
+    //Initialise an analysis object that can be referenced else where
     public static analysis initAnalysis = new analysis("analysisID ", "doctorID ", "patientID ", "date ",
             "description ");
 }

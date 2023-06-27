@@ -56,6 +56,8 @@ public class AddStaffScreenController {
     // initialize
     @FXML
     void initialize() {
+
+        // Set combox box selection items
         gender.setItems(genderOptions);
         typeOfStaff.setItems(staffOptions);
     }
@@ -63,7 +65,7 @@ public class AddStaffScreenController {
     // go back to previous screen
     @FXML
     void backToStaffScreen(MouseEvent event) throws IOException {
-
+        // Return to previous screen
         App.setRoot("medicalStaffScreenGeneral");
 
     }
@@ -72,14 +74,18 @@ public class AddStaffScreenController {
 
     @FXML
     void createNewStaff(ActionEvent event) {
+
+        // Check if type of staff is doctor or nurse
         if (typeOfStaff.getValue().toString().equals("Doctor")) {
             try {
                 List<doctor> doctorList = doctorData.loadDoctorDataFromDatabase();
+                // Generate new id based on last id in the database
                 int newDoctorId = Integer.parseInt(doctorList.get(doctorList.size() - 1).getDoctorID()
                         .substring(1))
                         + 1;
                 String newDoctorIdFormatted = String.format("D%02d", newDoctorId);
 
+                // Get filled in details
                 doctor newDoctor = new doctor(newDoctorIdFormatted, name.getText(), contactNumber.getText(),
                         email.getText(), date.getValue().toString(),
                         gender.getValue().toString(), " ");
@@ -88,6 +94,7 @@ public class AddStaffScreenController {
                         "src/main/resources/carecircle/assets/database/doctor.txt",
                         true);
                 PrintWriter accountWriter = new PrintWriter(account);
+                // Append new data to the .txt file
                 accountWriter.println(
                         newDoctor.getDoctorID() + "," + newDoctor.getName() + ","
                                 + newDoctor.getPhoneNo() + ","
@@ -112,10 +119,12 @@ public class AddStaffScreenController {
         } else if (typeOfStaff.getValue().toString().equals("Nurse")) {
             try {
                 List<nurse> nurseList = nurseData.loadNurseDataFromDatabase();
+                // Generate new id based on last id in the database
                 int newNurseId = Integer.parseInt(nurseList.get(nurseList.size() - 1).getNurseID()
                         .substring(1))
                         + 1;
                 String newNurseIdFormatted = String.format("N%02d", newNurseId);
+                // Get filled in details
                 nurse newNurse = new nurse(newNurseIdFormatted, name.getText(), contactNumber.getText(),
                         email.getText(),
                         date.getValue().toString(),
@@ -124,6 +133,7 @@ public class AddStaffScreenController {
                         "src/main/resources/carecircle/assets/database/nurse.txt",
                         true);
                 PrintWriter accountWriter = new PrintWriter(account);
+                // Append new data to the .txt file
                 accountWriter.println(
                         newNurse.getNurseID() + "," + newNurse.getName() + ","
                                 + newNurse.getPhoneNo() + ","

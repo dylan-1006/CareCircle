@@ -39,6 +39,7 @@ public class patientMedicalHistoryTableModel {
 
     public static ObservableList<patientMedicalHistoryTableModel> convertSelectedPatientMedicalHistoryDataToModel() {
 
+        // Load data from database
         List<medicalHistory> medicalHistoryList = medicalHistoryData.loadMedicalHistoryDataFromDatabase();
         ObservableList<patientMedicalHistoryTableModel> observableMedicalHistoryList = FXCollections
                 .observableArrayList();
@@ -61,6 +62,7 @@ public class patientMedicalHistoryTableModel {
                         patientId,
                         diagnosisId, treatmentId, procedureId, description, allergies, pastMedicationId);
 
+                // Add created medicalHistoryTableModel into list
                 observableMedicalHistoryList.add(medicalHistoryTableModel);
 
             }
@@ -70,6 +72,7 @@ public class patientMedicalHistoryTableModel {
 
     }
 
+    // The following are getters and setters that get n set the data of this class
     public String getPatientId() {
         return patientId.get();
     }

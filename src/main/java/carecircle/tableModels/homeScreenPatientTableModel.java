@@ -33,6 +33,7 @@ public class homeScreenPatientTableModel {
 
     public static ObservableList<homeScreenPatientTableModel> convertPatientDataToPatientDataModel() {
 
+        // Load patient data
         List<patient> patientList = patientData.loadPatientDataFromDatabase();
         ObservableList<homeScreenPatientTableModel> observablePatientList = FXCollections.observableArrayList();
 
@@ -44,6 +45,7 @@ public class homeScreenPatientTableModel {
             String phoneNo = patientList.get(i).getPhoneNo();
             String dateOfBirth = patientList.get(i).getDateOfBirth();
 
+            // Create new patient table model with data from database
             homeScreenPatientTableModel patientTableModel = new homeScreenPatientTableModel(patientId, patientName, ic,
                     phoneNo,
                     dateOfBirth);
@@ -56,6 +58,7 @@ public class homeScreenPatientTableModel {
 
     }
 
+    // The following are getters and setters that get n set the data of this class
     public String getPatientId() {
         return patientId.get();
     }

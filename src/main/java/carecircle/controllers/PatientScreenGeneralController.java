@@ -115,11 +115,12 @@ public class PatientScreenGeneralController {
         patientData.initPatientData.setPatientID(selectedPatient.getPatientId());
         List<patient> patientList = patientData.loadPatientDataFromDatabase();
 
-        // System.out.println(patientData.initPatientData.getPatientID());
         for (int i = 0; i < patientList.size(); i++) {
 
             if (patientList.get(i).getPatientID().equals(patientData.initPatientData.getPatientID())) {
 
+                // Set the necessary details that will be used in the update patient details
+                // screen
                 patientData.initPatientData.setName(patientList.get(i).getName());
                 patientData.initPatientData.setIc(patientList.get(i).getIc());
                 patientData.initPatientData.setPhoneNo(patientList.get(i).getPhoneNo());

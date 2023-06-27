@@ -37,6 +37,7 @@ public class patientTableModel {
 
     public static ObservableList<patientTableModel> convertPatientDataToPatientDataModel() {
 
+        // Load data from database
         List<patient> patientList = patientData.loadPatientDataFromDatabase();
         ObservableList<patientTableModel> observablePatientList = FXCollections.observableArrayList();
 
@@ -55,6 +56,7 @@ public class patientTableModel {
                     phoneNo,
                     dateOfBirth, height, weight, bloodType);
 
+            // Add patientTableModel into list
             observablePatientList.add(patientTableModel);
 
         }
@@ -63,6 +65,7 @@ public class patientTableModel {
 
     }
 
+    // The following are getters and setters that get n set the data of this class
     public String getPatientId() {
         return patientId.get();
     }

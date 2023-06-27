@@ -48,6 +48,7 @@ public class EditAnalysisScreen {
 
     void setAnalysisDetails() {
 
+        // Setting necessary details
         patientName.setText(patientData.initPatientData.getName());
         analysisId.setText(analysisData.initAnalysis.getAnalysisID());
         date.setPromptText(analysisData.initAnalysis.getDate());
@@ -82,6 +83,7 @@ public class EditAnalysisScreen {
 
                     String editedDate;
 
+                    // Check if date is changed
                     if (date.getValue() == null) {
                         editedDate = date.getPromptText();
                     } else {

@@ -215,7 +215,7 @@ public class PatientGeneralDetailsScreenController {
         Optional<ButtonType> result = confirmation.showAndWait();
 
         if (result.get() == ButtonType.OK) {
-
+            // Delete patient
             patientData.deletePatient(patientData.initPatientData.getPatientID());
             App.setRoot("patientScreenGeneral");
         } else {
@@ -306,8 +306,10 @@ public class PatientGeneralDetailsScreenController {
 
             }
 
+
             String patientId = patientData.initPatientData.getPatientID();
             //below is writing into the file
+
             try (FileWriter account = new FileWriter(
                     "src/main/resources/carecircle/assets/database/patient.txt",
                     false)) {

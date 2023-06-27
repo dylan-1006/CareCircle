@@ -26,6 +26,8 @@ public class medicineData {
 
             String newLine;
             while ((newLine = reader.readLine()) != null) {
+
+                // Reads data from .txt file
                 String[] medicineData = newLine.split(",");
                 String medicineID = medicineData[0].trim();
                 String patientId = medicineData[1].trim();
@@ -52,6 +54,8 @@ public class medicineData {
 
         for (int i = 0; i < medicineList.size(); i++) {
             if (medicineList.get(i).getMedicineID().equals(medicineID)) {
+
+                // Remove selected data
                 medicineList.remove(i);
                 break;
             }
@@ -64,6 +68,7 @@ public class medicineData {
             for (int i = 0; i < medicineList.size(); i++) {
                 medicine medicine = medicineList.get(i);
 
+                // Rewrite newly edited data into .txt file
                 printWriter.println(
                         medicine.getMedicineID() + "," +
                                 medicine.getPatientId() + "," + medicine.getDoctorId() + ","
@@ -74,6 +79,7 @@ public class medicineData {
 
             printWriter.close();
 
+            // Alert that deletion was succesful
             Alert alert = new Alert(AlertType.CONFIRMATION);
             alert.setTitle("Medicine Deleted!");
             alert.setHeaderText("Medicine record has been deleted");
@@ -83,5 +89,6 @@ public class medicineData {
         }
     }
 
+    // Initialise a medicine object that can be referenced elsewhere later
     public static medicine initMedicineData = new medicine(fileName, fileName, fileName, fileName, 0, 0);
 }

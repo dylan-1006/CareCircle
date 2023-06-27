@@ -27,11 +27,13 @@ public class userData {
         ) {
             String newLine;
             while ((newLine = reader.readLine()) != null) {
+
+                // Read data from .txt file
                 String[] userData = newLine.split(",");
                 String name = userData[0].trim();
                 String userName = userData[1].trim();
                 String userPassword = userData[2].trim();
-               
+
                 user newUser = new user(name, userName, userPassword);
                 userList.add(newUser);
 
@@ -50,6 +52,7 @@ public class userData {
         for (int i = 0; i < userList.size(); i++) {
             if (userList.get(i).getUsername().equals(userName)) {
 
+                // Delete selected user from list
                 userList.remove(i);
                 break;
 
@@ -64,6 +67,7 @@ public class userData {
 
             for (int i = 0; i < userList.size(); i++) {
 
+                // Rewrite newly edited data into .txt file
                 accountWriter.println(
                         userList.get(i).getName() + "," + userList.get(i).getUsername() + ","
                                 + userList.get(i).getPassword());
@@ -82,6 +86,7 @@ public class userData {
 
     }
 
+    // Initialise an user object tht can be used for reference elsewhere
     public static user initUserData = new user(" ", null, null);
 
 }

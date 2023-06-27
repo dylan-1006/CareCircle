@@ -61,6 +61,8 @@ public class AddPatientScreenController {
 
         @FXML
         public void initialize() {
+
+                // Set combox box selection items
                 bloodType.setItems(bloodTypeOptions);
                 gender.setItems(genderOptions);
         }
@@ -69,7 +71,7 @@ public class AddPatientScreenController {
         void addNewPatient(ActionEvent event) {
 
                 boolean isDoubleInput = true;
-
+                // Check if data is inputted is the correct data format
                 try {
                         Double.parseDouble(height.getText());
                         Double.parseDouble(weight.getText());
@@ -79,6 +81,7 @@ public class AddPatientScreenController {
                 }
 
                 try {
+                        // Make sure all required details are filled in
                         if (name.getText().equals("") || icNumber.getText().equals("") ||
                                         contactNumber.getText().equals("") ||
                                         email.getText().equals("") || date.getValue().toString().equals("")
@@ -91,6 +94,7 @@ public class AddPatientScreenController {
                                 alert.setContentText("Please fill in all the required fields.");
                                 alert.showAndWait();
 
+                                // Make sure data inputted is correct data type
                         } else if (isDoubleInput == false) {
                                 Alert alert = new Alert(AlertType.ERROR);
                                 alert.setTitle("Error");
@@ -102,6 +106,7 @@ public class AddPatientScreenController {
 
                         } else {
                                 List<patient> patientList = patientData.loadPatientDataFromDatabase();
+                                // Generate new id based on last id in the database
                                 int newPatientId = Integer
                                                 .parseInt(patientList.get(patientList.size() - 1).getPatientID()
                                                                 .substring(1))
@@ -109,6 +114,7 @@ public class AddPatientScreenController {
 
                                 String newPatientIdFormatted = String.format("P%03d", newPatientId);
 
+                                // Get filled in details
                                 patient newPatient = new patient(newPatientIdFormatted, name.getText(),
                                                 icNumber.getText(),
                                                 contactNumber.getText(),
@@ -122,6 +128,7 @@ public class AddPatientScreenController {
                                                 true);
 
                                 PrintWriter accountWriter = new PrintWriter(account);
+                                // Append new data to the .txt file
                                 accountWriter.println(
                                                 newPatient.getPatientID() + "," + newPatient.getName() + ","
                                                                 + newPatient.getIc() + ","
@@ -149,6 +156,7 @@ public class AddPatientScreenController {
 
         @FXML
         void backToPatientScreen(MouseEvent event) throws IOException {
+                // Return to previous screen
                 App.setRoot("patientScreenGeneral");
 
         }
